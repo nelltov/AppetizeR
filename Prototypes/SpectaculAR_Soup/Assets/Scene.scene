@@ -1977,7 +1977,7 @@
   PrefabRemaps:
     []
   Name: Examples
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: -40.000000}
@@ -4583,6 +4583,7 @@
     []
   Components:
     - !<own> ce0d62b2-61aa-4399-b7bf-0a6ec3adc24e
+    - !<own> d06c7015-c130-4685-917c-8c8d27d07f99
 - !<SceneObject/adc75353-1cbe-476e-a85f-d1f14ed9eeed>
   PrefabRemaps:
     []
@@ -5628,6 +5629,22 @@
     - !<own> 7dbdd563-5651-4640-8d68-0be06bbb0b57
   Components:
     - !<own> b426d87f-c8a6-47bf-a64e-7be86f43921d
+- !<ScriptComponent/d06c7015-c130-4685-917c-8c8d27d07f99>
+  PrefabRemaps:
+    []
+  Name: SoupPotMarker
+  Enabled: true
+  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/d3340ef4-90e8-49c1-aeb6-4194ed9937f9>
   PrefabRemaps:
     []
@@ -6048,6 +6065,7 @@
     - ad052587-5b1f-4920-afe6-584d66f54fd4: 16c01c34-19f7-4d9e-6b31-1b5ef924e742
     - c8d48fae-facb-4462-a0c0-1671817c6bf1: 9c1299aa-3c14-4019-7919-037cab91246a
     - ce0d62b2-61aa-4399-b7bf-0a6ec3adc24e: 8b257308-77d4-47f1-51d8-dd5a68d72744
+    - d06c7015-c130-4685-917c-8c8d27d07f99: 89dbe484-04a2-4336-8293-bd073cee336b
     - db7887ca-3d8e-4394-b6a9-00de6e192976: 3c3adb00-7181-4a3c-6d63-56f01269c5d5
     - dcd47067-9d47-4fb8-ad06-9b428ba9ee49: 8817648a-2690-4984-4f08-8f82fb4747a8
     - ddf3a805-74b2-4820-8520-157940eca97a: dbd9260c-7fa1-4926-7618-e76f6095d495
