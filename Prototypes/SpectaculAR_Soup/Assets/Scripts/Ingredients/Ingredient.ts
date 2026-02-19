@@ -1,8 +1,16 @@
 import { getEnumMember, getEnumMemberName, IngredientCategory } from "./IngredientTypes";
-export type IngredientInfo = {
+
+export class IngredientInfo {
     category: IngredientCategory
-    variantId: number // The actual choice within our IngredientCategory
+    variantId: number
     variantName: string
+
+    // Used to initialize an instance of this class by passing in the category and variant numbers
+    constructor(category: IngredientCategory, variantId: number) {
+        this.category = category
+        this.variantId = variantId
+        this.variantName = getEnumMemberName(category, variantId) ?? "Unknown Ingredient"
+    }
 }
 
 @component
@@ -13,20 +21,17 @@ export class Ingredient extends BaseScriptComponent {
     @input
     public variantId: number = 0
 
+    private ingredientInfo: IngredientInfo | null = null
+
+    // Returns the ingredientInfo object (initializing it if not yet created)
     public getIngredientInfo(): IngredientInfo {
-        return {
-            category: this.categoryNumber as IngredientCategory,
-            variantId: this.variantId,
-            variantName: this.getVariantName()
+        if (!this.ingredientInfo) {
+            this.ingredientInfo = new IngredientInfo(this.categoryNumber as IngredientCategory, this.variantId)
         }
+        return this.ingredientInfo
     }
 
     protected getVariantName(): string {
         return getEnumMemberName(this.categoryNumber, this.variantId) ?? "Unknown Ingredient"
-    }
-
-    onAwake() {
-        // Debug print message to verify that the correct subcategory was chosen
-        // print(`Ingredient awake. In category ${this.categoryNumber}, and variant #${this.variantId} (${this.getVariantName()})`)
     }
 }

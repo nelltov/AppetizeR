@@ -1,4 +1,5 @@
 import { EventManager } from "Scripts/EventManager";
+import { IngredientInfo } from "Scripts/Ingredients/Ingredient";
 
 @component
 export class SoupPotMarker extends BaseScriptComponent {
@@ -15,10 +16,9 @@ export class SoupPotMarker extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.soupCollider = this.sceneObj.getComponent("ColliderComponent") as ColliderComponent
 
-        // print("on start of SoupPotMarker")
-        // EventManager.SoupPotIngredientCollisionEvent.add((message: string) => {
-        //     print("Received message in SoupPotMarker: " + message)
+        // EventManager.SoupPotIngredientCollisionEvent.add((IngredientInfo: IngredientInfo) => {
+        //     print("Received message in SoupPotMarker: " + IngredientInfo.variantName)
         // })
-        // EventManager.SoupPotIngredientCollisionEvent.trigger("chicken")
+        // EventManager.SoupPotIngredientCollisionEvent.trigger(new IngredientInfo(1, 2))
     }
 }
