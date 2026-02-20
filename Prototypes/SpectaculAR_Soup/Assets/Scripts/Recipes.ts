@@ -1,11 +1,7 @@
-import { getEnumMember, getEnumMemberName, IngredientCategory } from "./IngredientTypes";
-import {SyncEntity} from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
-import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
-import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
-import { IngredientInfo } from "./Ingredient";
+import { getEnumMember, getEnumMemberName, IngredientCategory } from "./Ingredients/IngredientTypes";
+import { IngredientInfo } from "./Ingredients/Ingredient";
 
-type Recipes = [string, IngredientInfo[]] 
-
+export type Recipes = [string, IngredientInfo[]] 
 
 export const Recipe0 : IngredientInfo[] = [
     new IngredientInfo(1,1),    //Onion
@@ -27,9 +23,7 @@ export const Recipe1 : IngredientInfo[] = [
     new IngredientInfo(5,0)     //Noodles
 ]
 
-const ourRecipes : Recipes[] = [
+export const ourRecipes : Recipes[] = [
     ["BeefStew", Recipe0],
     ["Chicken Noodle", Recipe1]
-    
 ]
-
