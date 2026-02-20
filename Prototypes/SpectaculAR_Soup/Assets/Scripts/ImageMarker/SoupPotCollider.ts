@@ -2,7 +2,7 @@ import { EventManager } from "Scripts/EventManager";
 import { Ingredient, IngredientInfo } from "Scripts/Ingredients/Ingredient";
 
 @component
-export class SoupPotMarker extends BaseScriptComponent {
+export class SoupPotCollider extends BaseScriptComponent {
     private sceneObj: SceneObject
     private soupCollider: ColliderComponent
 
