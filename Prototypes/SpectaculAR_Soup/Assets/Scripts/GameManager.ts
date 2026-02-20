@@ -3,9 +3,7 @@ import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
-import { BaseButton } from "SpectaclesUIKit.lspkg/Scripts/Components/Button/BaseButton";
 import { ourRecipes } from "./Recipes";
-import { FrameButton } from "SpectaclesUIKit.lspkg/Scripts/Components/Frame/modules/FrameButton";
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
 
 export enum RoundState{
@@ -31,14 +29,7 @@ export class GameManager extends BaseScriptComponent {
 
     onReady() 
     {
-        //Reference to the UI button to start game
-        const startGameButton = this.getSceneObject().getComponent(
-            FrameButton.getTypeName()
-        ) as FrameButton;
 
-        
-
-        startGameButton
     }
 
 
@@ -54,7 +45,7 @@ export class GameManager extends BaseScriptComponent {
         this.syncEntity.addStorageProperty(this.currentChef);
     }
     
-    chooseRandomChef()
+    public chooseRandomChef()
     {
         //Sort through all users
         const users = SessionController.getInstance().getUsers();
