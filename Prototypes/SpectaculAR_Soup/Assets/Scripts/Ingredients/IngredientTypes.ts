@@ -10,9 +10,9 @@ export enum IngredientCategory {
 export enum MeatType {
     Beef = 0,
     Chicken = 1,
-    PorkMeat = 2,
-    Shellfish = 3,
-    Fish = 4, 
+    Bacon = 2,
+    Shrimp = 3,
+    
 }
 
 export enum VegetableType {
@@ -21,48 +21,48 @@ export enum VegetableType {
     Carrot = 2,
     Beet = 3,
     Ginger = 4,
-    Yams = 5,
+    Corn = 5,
     Tomato = 6,
     Celery = 7,
-    Brocoli = 8,
+    Mushroom = 8,
     Cucumber = 9,
-    Beans = 10,
+    SoyBeans = 10,
     Garlic = 11,
-    Squash = 12,
+    Leek = 12,
+    Taro = 13,
+    Pumpkin = 14,
+    RedBeans = 15
 }
 
 export enum SpiceType {
-    Salt = 0,
+    LemonZest = 0,
     Pepper = 1,
     Oregano = 2,
     Paprika = 3,
     Thyme = 4,
-    Rosemary = 5,
-    Basil = 6,
-    Bayleaf = 7,
+    Basil = 5,
 }
 
 export enum BrothType {
-    Cream = 0,
-    Seafood = 1,
-    Vegetable = 2,
-    Beef = 3,
-    Chicken = 4,
+    HeavyCream = 0,
+    TomatoPaste = 1,
+    LimeJuice = 2,
+    RedWine = 3,
+    CoconutMilk = 4,
 }
 
 export enum GreensType {
     Spinach = 0,
-    Lettuce = 1,
+    RoseMary = 1,
     Cabbage = 2,
     Kale = 3,
-    CollardGreens = 4,
+    Cilantro = 4,
     Chard = 5,
     Bayleaf = 6,
 }
 
 export enum CarbsType {
     Noodles = 0,
-    Rice = 1,
 }
 
 /**

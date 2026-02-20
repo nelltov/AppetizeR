@@ -5,6 +5,8 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
 import { BaseButton } from "SpectaclesUIKit.lspkg/Scripts/Components/Button/BaseButton";
 import { ourRecipes } from "./Recipes";
+import { FrameButton } from "SpectaclesUIKit.lspkg/Scripts/Components/Frame/modules/FrameButton";
+import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
 
 export enum RoundState{
     
@@ -23,18 +25,20 @@ export class GameManager extends BaseScriptComponent {
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private currentChef = StorageProperty.manualString("currentChefConnectionId", "");
 
+    @input
+    gameStartButton : SceneObject
 
 
     onReady() 
     {
         //Reference to the UI button to start game
         const startGameButton = this.getSceneObject().getComponent(
-            BaseButton.getTypeName()
-        ) as BaseButton;
+            FrameButton.getTypeName()
+        ) as FrameButton;
 
-        //Event subscribing to make a new chef
-        let startEvent = startGameButton.onStateChanged
-        startEvent.bind(() => { this.chooseRandomChef() })
+        
+
+        startGameButton
     }
 
 
