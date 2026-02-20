@@ -31,6 +31,10 @@ export class Ingredient extends BaseScriptComponent {
         return this.ingredientInfo
     }
 
+    public isSameIngredient(other: Ingredient): boolean {
+        return this.categoryNumber === other.categoryNumber && this.variantId === other.variantId
+    }
+
     protected getVariantName(): string {
         return getEnumMemberName(this.categoryNumber, this.variantId) ?? "Unknown Ingredient"
     }

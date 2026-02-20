@@ -16,9 +16,10 @@ export class SoupPotMarker extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.soupCollider = this.sceneObj.getComponent("ColliderComponent") as ColliderComponent
 
-        // EventManager.SoupPotIngredientCollisionEvent.add((IngredientInfo: IngredientInfo) => {
-        //     print("Received message in SoupPotMarker: " + IngredientInfo.variantName)
-        // })
-        // EventManager.SoupPotIngredientCollisionEvent.trigger(new IngredientInfo(1, 2))
+        EventManager.SoupPotIngredientCollisionEvent.add((IngredientInfo: IngredientInfo) => {
+            print("Received message in SoupPotMarker: " + IngredientInfo.variantName)
+            // update storage property
+        })
+        EventManager.SoupPotIngredientCollisionEvent.trigger(new IngredientInfo(1, 2))
     }
 }
