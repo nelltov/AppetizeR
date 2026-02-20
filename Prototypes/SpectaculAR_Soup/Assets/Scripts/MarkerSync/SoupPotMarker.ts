@@ -1,5 +1,5 @@
 import { EventManager } from "Scripts/EventManager";
-import { IngredientInfo } from "Scripts/Ingredients/Ingredient";
+import { Ingredient, IngredientInfo } from "Scripts/Ingredients/Ingredient";
 
 @component
 export class SoupPotMarker extends BaseScriptComponent {
@@ -14,12 +14,30 @@ export class SoupPotMarker extends BaseScriptComponent {
 
     onStart() {
         this.sceneObj = this.getSceneObject()
-        this.soupCollider = this.sceneObj.getComponent("ColliderComponent") as ColliderComponent
 
-        EventManager.SoupPotIngredientCollisionEvent.add((IngredientInfo: IngredientInfo) => {
-            print("Received message in SoupPotMarker: " + IngredientInfo.variantName)
-            // update storage property
+        // Bind onCollisionEnter event for the soup pot's collider
+        this.soupCollider = this.sceneObj.getComponent("ColliderComponent") as ColliderComponent
+        if (this.soupCollider) {
+            this.soupCollider.onCollisionEnter.add((e) => this.onCollisionEnter(e))
+        }
+
+        // Debug print whenever collision event triggers to verify collision and ingredient info retrieval
+        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => {
+            print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
         })
-        EventManager.SoupPotIngredientCollisionEvent.trigger(new IngredientInfo(1, 2))
+    }
+
+    private onCollisionEnter(other: any) {
+        var otherObj = other?.collision?.collider?.sceneObject
+        if (isNull(otherObj)) return
+
+        const ingredient = otherObj.getComponent(
+            Ingredient.getTypeName()
+        ) as Ingredient
+        
+        if (ingredient) {
+            // Trigger event for ingredient colliding with the pot, passing in the ingredient info
+            EventManager.SoupPotIngredientCollisionEvent.trigger(ingredient.getIngredientInfo())
+        }
     }
 }
