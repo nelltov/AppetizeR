@@ -1684,12 +1684,14 @@
   Enabled: true
   ScriptAsset: !<reference> 048ab135-c965-40c8-bf1b-9b3f1744937d
   ScriptInputsDefault:
-    {}
+    minRotationThresholdDeg: true
+    maxRotationThresholdDiff: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      {}
+      minRotationThresholdDeg: !<float> 1.000000
+      maxRotationThresholdDiff: !<float> 5.000000
   ScriptTypes:
     "":
       {}
