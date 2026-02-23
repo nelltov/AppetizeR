@@ -6,9 +6,11 @@ import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { StorageTypes } from "SpectaclesSyncKit.lspkg/Core/StorageTypes";
 
 
-
 @component
 export class IngredientManager extends BaseScriptComponent{
+
+    @input
+    ingredientPrefabList : ObjectPrefab[];
 
     private currentIngredients: StorageProperty<StorageTypes.vec2Array>
     onAwake()
@@ -37,4 +39,6 @@ export class IngredientManager extends BaseScriptComponent{
         this.currentIngredients.setPendingValue(newIngredientList)
         
     }
+
+
 }

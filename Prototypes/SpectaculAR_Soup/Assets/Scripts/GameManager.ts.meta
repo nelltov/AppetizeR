@@ -27,6 +27,8 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     gameStartButton: false
+    ingManager: false
+    instantiator: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -36,9 +38,13 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
+    - // @input AssignableType instantiator
+    - // @input AssignableType_1 ingManager
     - // @input SceneObject gameStartButton
