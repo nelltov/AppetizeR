@@ -49,6 +49,7 @@ export enum BrothType {
     LimeJuice = 2,
     RedWine = 3,
     CoconutMilk = 4,
+    ChickenBroth = 5
 }
 
 export enum GreensType {
