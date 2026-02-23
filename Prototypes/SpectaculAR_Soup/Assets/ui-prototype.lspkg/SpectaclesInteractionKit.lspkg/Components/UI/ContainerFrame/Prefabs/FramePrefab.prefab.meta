@@ -1,0 +1,75 @@
+- !<AssetImportMetadata/8cdff2a1-d8b0-949d-307e-e164e373f1a9>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 30cbe901-a4ea-435a-8ada-ace690c7a00c
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 30cbe901-a4ea-435a-8ada-ace690c7a00c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> bf38ec32-c972-40ae-ab3b-00f14e12ddec
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/2d848f95-78a3-4042-99b3-49061e2e27ce>
+  PrefabRemaps:
+    []
+  Name: FramePrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 41715af4-0df8-44d0-a8f9-7896cdacc302
+    - !<own> e22c7760-1599-4ea7-8159-fba626f6208d
+- !<ColliderComponent/41715af4-0df8-44d0-a8f9-7896cdacc302>
+  PrefabRemaps:
+    []
+  Name: Physics Collider
+  Enabled: true
+  Shape: !<Box>
+    FitVisual: false
+    Size: {x: 1.000000, y: 1.000000, z: 0.050000}
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+- !<ObjectPrefabAssetData/bf38ec32-c972-40ae-ab3b-00f14e12ddec>
+  Prototype: !<ObjectOwner/68b8a467-0a3c-4814-ab2e-297c176df340>
+    PackagePath: ""
+    objects:
+      - !<own> 2d848f95-78a3-4042-99b3-49061e2e27ce
+- !<RenderMeshVisual/e22c7760-1599-4ea7-8159-fba626f6208d>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 754db7ec-cc0b-4f4f-98eb-894c7ade3c41
+  Mesh: !<reference> 3d91ea8c-fa4e-4c8a-b450-0af41a7ef716
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
