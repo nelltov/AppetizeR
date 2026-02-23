@@ -39,7 +39,8 @@ export class SoupStirring extends BaseScriptComponent {
         if (Math.abs(rotationSinceLastFrame) >= this.minRotationThresholdDeg) {
             this.soupShader.swirlAmount = lerp(this.soupShader.swirlAmount, Math.sign(rotationSinceLastFrame), smoothingAlpha) 
         } else {
-            this.soupShader.swirlAmount = lerp(this.soupShader.swirlAmount, 0, smoothingAlpha)
+            // Decay at a slower rate than speed up
+            this.soupShader.swirlAmount = lerp(this.soupShader.swirlAmount, 0, smoothingAlpha / 5)
         }
 
         // Update rotation value for next frame
