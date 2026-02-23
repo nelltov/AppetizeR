@@ -1,10 +1,8 @@
 import {SyncEntity} from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
-import { IngredientInfo } from "./Ingredients/Ingredient";
-import { EventManager } from "Scripts/EventManager";
-import { ourRecipes } from "./Recipes";
-import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
+import { Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
+import { IngredientManager } from "./IngredientManager";
 
 export enum RoundState{
     
@@ -19,12 +17,20 @@ export class GameManager extends BaseScriptComponent {
     
 
     private syncEntity: SyncEntity
-    private playerId: number
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private currentChef = StorageProperty.manualString("currentChefConnectionId", "");
 
+    private chosenPlayersId = StorageProperty.manualStringArray("playerIDs")
+
+    @input
+    instantiator : Instantiator
+
+    @input
+    ingManager: IngredientManager
+
     @input
     gameStartButton : SceneObject
+    
 
 
     onReady() 
@@ -43,24 +49,60 @@ export class GameManager extends BaseScriptComponent {
 
         //Initializing the Chef Variab;le
         this.syncEntity.addStorageProperty(this.currentChef);
+
     }
     
-    public chooseRandomChef()
+public RandomizePlayerRoles()
+{
+    //Get the Users in the session
+    const users = SessionController.getInstance().getUsers();
+    //remap them with connectionID (use this to assign authority later on)
+    const ids = users.map(u => (u as any).connectionId as string);
+
+    //Choose a chef
+    const chosenChef = this.getRandomElement(users);
+    const chosenChefConnectionId = (chosenChef as any).connectionId as string;
+
+    this.currentChef.setPendingValue(chosenChefConnectionId);
+
+    //Make an array of the nonChef players
+    const nonChefIds: string[] = ids.filter(id => id !== chosenChefConnectionId);
+
+
+    const prefabs = this.ingManager.ingredientPrefabList;
+    const total = prefabs.length;
+    const nonChefCount = nonChefIds.length;
+
+    if (nonChefCount <= 0)
     {
-        //Sort through all users
-        const users = SessionController.getInstance().getUsers();
-
-        //Choose Random
-        const chosenChef = this.getRandomElement(users);
-
-        //Get connection Id from UserInfo
-        const chosenConnectionId = (chosenChef as any).connectionId as string;
-
-        //sets new Main Chef
-        this.currentChef.setPendingValue(chosenConnectionId)
-
-        print("Picked chef connectionId = " + chosenConnectionId);
+        print("No non-chef players to receive ingredients.");
+        return;
     }
+
+    const baseEach = Math.floor(total / nonChefCount);
+    const remainder = total % nonChefCount;
+
+    let prefabIndex = 0;
+
+    for (let p = 0; p < nonChefCount; p++)
+    {
+        const receiverId = nonChefIds[p];
+        const countForThisPlayer = baseEach + (p < remainder ? 1 : 0);
+
+        for (let k = 0; k < countForThisPlayer; k++)
+        {
+            const prefab = prefabs[prefabIndex];
+            prefabIndex++;
+
+            // Spawn once per object
+            const spawned = this.instantiator.instantiate(prefab);
+            print(spawned);
+        
+        }
+    }
+
+    print("Picked chef connectionId = " + chosenChefConnectionId);
+}
     getRandomElement<T>(array: T[]): T | undefined
     {
         if (array.length === 0)
