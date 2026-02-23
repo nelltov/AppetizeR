@@ -5,6 +5,7 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 8261937e-a088-45c4-b03f-cb478bab35af
+    - !<own> 79054cd7-fac5-4b29-90cb-ce023e0f8eb0
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -2669,7 +2670,7 @@
   PrefabRemaps:
     []
   Name: SoloButton
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 13.389139, y: -10.643577, z: -87.061562}
@@ -5897,6 +5898,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/79054cd7-fac5-4b29-90cb-ce023e0f8eb0>
+  PrefabRemaps:
+    []
+  Name: ChefInstruction
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -84.406784}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9cf2d148-2731-47ac-acdb-a23ca1beb5cd
 - !<ScriptComponent/797bdad1-dcef-42f2-b88a-6e9eda564a11>
   PrefabRemaps:
     []
@@ -7209,8 +7225,8 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 5f734777-d5b5-4f3f-b83c-9a35fa7ca34d
-          functionName: lockForEveryone
+        - scriptComponent: !<reference.ScriptComponent> d598f9b6-9a59-41e6-870e-167549f0975e
+          functionName: RandomizePlayerRoles
       onValueChangeCallbacks:
         []
       onFinishedCallbacks:
@@ -8148,6 +8164,92 @@
     - !<own> 14379d5a-1f20-49f3-b122-2c549eb70de0
     - !<own> d5141293-44df-4552-8845-746471092b33
     - !<own> a35a24d5-125f-4ccb-a05d-45bb53e88b3f
+- !<Text/9cf2d148-2731-47ac-acdb-a23ca1beb5cd>
+  PrefabRemaps:
+    []
+  Name: Text
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Left
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Text: |-
+    YOU ARE THE CHEF!
+    
+    You are making a Beef Stew
+    
+    The recipe is a secret  so don't name the ingredients  just describe them to your sous Chefs  Ingredients 1 at a Time: Onion Garlic Beef RedWine Tomato Carror RoseMary   
+  Editable: false
+  ShowEditingPreview: true
+  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
+  SizeToFit: false
+  FontSize: 72
+  Font: !<reference> 00000000-0000-0000-0000-000000000000
+  LayoutRect:
+    left: -7.500000
+    bottom: -2.250000
+    right: 7.500000
+    top: 2.250000
+  OverflowVertical: Overflow
+  OverflowHorizontal: Overflow
+  Fill: !<TextFill>
+    Mode: Solid
+    Color: {x: 1.000000, y: 0.000000, z: 0.015686, w: 1.000000}
+    Texture: !<reference> 00000000-0000-0000-0000-000000000000
+    ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    TileCount: 5.000000
+    TileZone: Rect
+    TextureStretch: FitWidth
+  BlendMode: PremultipliedAlpha
+  Outline: !<OutlineSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Size: 0.250000
+  Dropshadow: !<DropshadowSettings>
+    Enabled: true
+    Fill: !<TextFill>
+      Mode: Texture
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    OffsetX: 0.300000
+    OffsetY: 0.250000
+  Background: !<BackgroundSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Margins:
+      left: 0.000000
+      bottom: 0.000000
+      right: 0.000000
+      top: 0.000000
+    CornerRadius: 0.000000
+  AdvancedLayout: !<TextAdvancedLayout>
+    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+    LetterSpacing: 0.000000
+    LineSpacing: 1.000000
+    CapitalizationOverride: None
+  DepthTest: false
+  TwoSided: false
 - !<SceneObject/9d09997c-4749-41e9-841b-0fb7c4d526f3>
   PrefabRemaps:
     []
@@ -11530,6 +11632,7 @@
       instantiator: !<MappingBased.AssignableType> c73175f2-acae-41b7-99dd-470d2790ad56
       ingManager: !<MappingBased.AssignableType_1> 6b33856e-52ee-4add-9cee-48b3f97dabe0
       gameStartButton: !<reference.SceneObject> 33408f0a-efdb-4654-8c8d-ff1ceccae3a2
+      chefPlayerInfo: !<reference.SceneObject> 79054cd7-fac5-4b29-90cb-ce023e0f8eb0
   ScriptTypes:
     "":
       {}

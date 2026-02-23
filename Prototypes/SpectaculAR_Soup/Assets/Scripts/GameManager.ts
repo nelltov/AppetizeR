@@ -19,6 +19,7 @@ export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private currentChef = StorageProperty.manualString("currentChefConnectionId", "");
+    private myID : string;
 
     private player: number | null = null
 
@@ -30,6 +31,9 @@ export class GameManager extends BaseScriptComponent {
 
     @input
     gameStartButton : SceneObject
+
+    @input
+    chefPlayerInfo : SceneObject
 
     onReady() 
     {
@@ -61,6 +65,7 @@ public RandomizePlayerRoles()
         const chosenChef = this.getRandomElement(users);
         const chosenChefConnectionId = (chosenChef as any).connectionId as string;
 
+        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
         this.currentChef.setPendingValue(chosenChefConnectionId);
 
         //Make an array of the nonChef players
@@ -88,7 +93,12 @@ public RandomizePlayerRoles()
         const remainder = total % nonChefCount;
 
         let prefabIndex = 0;
-        
+        for( let c = 0; c < users.length; c++){
+            if (chosenChefConnectionId == this.myID) 
+            {
+                this.chefPlayerInfo.enabled = true;
+            }
+        }
         //For loop to spawn all the objects correctly Though I don't know how to assign them yet.
         for (let p = 0; p < nonChefCount; p++)
             {
