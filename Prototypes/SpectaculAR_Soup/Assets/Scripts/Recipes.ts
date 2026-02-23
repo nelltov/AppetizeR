@@ -4,13 +4,13 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 export type Recipes = [string, IngredientInfo[]] 
 
 export const Recipe0 : IngredientInfo[] = [
-    new IngredientInfo(1,1),    //Onion
-    new IngredientInfo(1,11),   //Garlic
+    new IngredientInfo(1,1),    //Onion1
+    new IngredientInfo(1,11),   //Garlic1
     new IngredientInfo(0,0),    //Beef
-    new IngredientInfo(3,4),    //ChickenBroth
-    new IngredientInfo(1,6),    //Tomato
-    new IngredientInfo(1,2),    //Carrot
-    new IngredientInfo(2,5)     //Rosemary
+    new IngredientInfo(3,3),    //RedWine
+    new IngredientInfo(1,6),    //Tomato1
+    new IngredientInfo(1,2),    //Carrot1
+    new IngredientInfo(4,1)     //Rosemary
 ]
 
 export const Recipe1 : IngredientInfo[] = [

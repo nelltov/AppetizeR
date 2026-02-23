@@ -99,7 +99,8 @@ public RandomizePlayerRoles()
                 {
                     const prefab = prefabs[prefabIndex];
                     prefabIndex++;
-
+                    //Remove the spawn?
+                    //maybe spawn oin each player
                     this.spawn(prefab);
         
                 }
