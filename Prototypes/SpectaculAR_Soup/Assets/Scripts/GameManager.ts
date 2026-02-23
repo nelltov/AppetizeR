@@ -3,6 +3,7 @@ import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
 import { InstantiationOptions, Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
 import { IngredientManager } from "./IngredientManager";
+import { EventManager } from "./EventManager";
 
 export enum RoundState{
     
@@ -18,6 +19,7 @@ export class GameManager extends BaseScriptComponent {
 
     private syncEntity: SyncEntity
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
+    private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("currentChefConnectionId", "");
     private myID : string;
 
@@ -37,7 +39,13 @@ export class GameManager extends BaseScriptComponent {
 
     onReady() 
     {
+    // Subscribe to synced chef property changes
+    this.currentChef.onAnyChange.add((newChefId: string) =>
+    {
+        print("Chef changed to: " + newChefId);
 
+        this.amITheChef();
+    });
     }
 
 
@@ -56,16 +64,21 @@ export class GameManager extends BaseScriptComponent {
     
 public RandomizePlayerRoles()
     {
+        if (this.chefSelected.currentOrPendingValue == true) return;  
         //Get the Users in the session
         const users = SessionController.getInstance().getUsers();
         //remap them with connectionID (use this to assign authority later on)
         const ids = users.map(u => (u as any).connectionId as string);
 
         //Choose a chef
+
         const chosenChef = this.getRandomElement(users);
         const chosenChefConnectionId = (chosenChef as any).connectionId as string;
 
-        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+        //Set Chef Chosen
+        this.chefSelected.setPendingValue(true);
+        
+        //Set the current Chef Connection ID as a string
         this.currentChef.setPendingValue(chosenChefConnectionId);
 
         //Make an array of the nonChef players
@@ -93,12 +106,7 @@ public RandomizePlayerRoles()
         const remainder = total % nonChefCount;
 
         let prefabIndex = 0;
-        for( let c = 0; c < users.length; c++){
-            if (chosenChefConnectionId == this.myID) 
-            {
-                this.chefPlayerInfo.enabled = true;
-            }
-        }
+
         //For loop to spawn all the objects correctly Though I don't know how to assign them yet.
         for (let p = 0; p < nonChefCount; p++)
             {
@@ -115,9 +123,24 @@ public RandomizePlayerRoles()
         
                 }
             }
-
+        
+        
         print("Picked chef connectionId = " + chosenChefConnectionId);
     }
+
+private amITheChef()
+{   
+    print("Am I Chef Event Triggered");
+    //Get my own ID
+    this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+    //Turn off game Start Locally
+    this.gameStartButton.enabled = false;
+    //If myid is same as chef I am the chef so I should turn on this local object
+    if (this.myID == this.currentChef.currentOrPendingValue){
+        this.chefPlayerInfo.enabled = true;
+        print(this.myID + " Should turn on the Chef Info")
+    }
+}
 
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
 private spawn(prefab: ObjectPrefab) 
