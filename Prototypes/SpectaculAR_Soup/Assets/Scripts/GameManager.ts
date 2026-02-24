@@ -21,7 +21,8 @@ export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
-    private currentChef = StorageProperty.manualString("currentChefConnectionId", "");
+    private currentChef = StorageProperty.manualString("", "");
+    private soupIngredientsCorrect = StorageProperty.manualBool("Soup ing were correct", false);
     private myID : string;
 
     private player: number | null = null
@@ -38,19 +39,27 @@ export class GameManager extends BaseScriptComponent {
     @input
     chefPlayerInfo : SceneObject
 
-    onReady() 
-    {
+    @input
+    chefRecipeCheckButton : SceneObject
+
+    @input
+    victoryObject: SceneObject[]
+
+onReady() 
+{
     // Subscribe to synced chef property changes
-    this.currentChef.onAnyChange.add((newChefId: string) =>
+    this.currentChef.onAnyChange.add(() =>
     {
-        print("Chef changed to: " + newChefId);
+        print("Chef subscribed");
 
         this.amITheChef();
     });
-    }
 
 
-    onAwake() {
+}
+
+onAwake() 
+{
 
         //Setting Sync Entity
         this.syncEntity = new SyncEntity(this);
@@ -60,8 +69,11 @@ export class GameManager extends BaseScriptComponent {
 
         //Initializing the Chef Variab;le
         this.syncEntity.addStorageProperty(this.currentChef);
+        this.syncEntity.addStorageProperty(this.soupIngredientsCorrect)
+        this.syncEntity.addStorageProperty(this.currentRecipe)
+        this.syncEntity.addStorageProperty(this.chefSelected)
 
-    }
+}
     
 public RandomizePlayerRoles()
     {
@@ -135,61 +147,129 @@ private amITheChef()
     //Get my own ID
     this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
     //Turn off game Start Locally
+    if (this.chefSelected.currentOrPendingValue !== true) return;
     this.gameStartButton.enabled = false;
     //If myid is same as chef I am the chef so I should turn on this local object
     if (this.myID == this.currentChef.currentOrPendingValue){
         this.chefPlayerInfo.enabled = true;
+        this.chefRecipeCheckButton.enabled = true;
         print(this.myID + " Should turn on the Chef Info")
     }
 }
 
-private isTheSoupRight(currentRecipeChosen: number): boolean
+private playerVictoryActivated(value)
+{
+    for (let i = 0; i <this.victoryObject.length; i++)
     {
-        // Store selected recipe id (synced)
-        this.currentRecipe.setPendingValue(currentRecipeChosen);
+      this.victoryObject[i].enabled = value;  
+    }
+    
+}
 
-        // Get the pot ingredients list (vec2 pairs, apparently)
-        const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
+private addIngredientDemo()
+{
+    for(let i=0; i < Recipe0.length; i++)
+    this.ingManager.updateStorageProperties(Recipe0[i])
+}
+private isTheSoupRight(currentRecipeChosen: number): boolean
+{
+    // Store selected recipe id (synced)
+    this.currentRecipe.setPendingValue(currentRecipeChosen);
 
-        // Pick which recipe list to compare against
-        // TODO: replace this with your real selection from Recipes/ourRecipes if available.
-        const recipe = Recipe0;
+    // Get pot contents (vec2[] where x=category, y=variantId)
+    const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
 
-        // Quick fail: different lengths means it can't be an exact match
-        if (pot.length !== recipe.length)
+    // Validate recipe index
+    if (currentRecipeChosen < 0 || currentRecipeChosen >= ourRecipes.length)
+    {
+        print("Soup check failed: invalid recipe index " + currentRecipeChosen);
+        return false;
+    }
+
+    // Pull the chosen recipe from recipe table
+    const chosenRecipeTuple = ourRecipes[currentRecipeChosen]; // [string, IngredientInfo[]]
+    const recipeName = chosenRecipeTuple[0];
+    const recipe = chosenRecipeTuple[1];
+
+    // Quick fail: different lengths cannot match exactly
+    if (pot.length !== recipe.length)
+    {
+        print("Soup check failed for " + recipeName + ": pot length " + pot.length + " != recipe length " + recipe.length);
+        return false;
+    }
+
+    // Compare each ingredient slot
+    for (let i = 0; i < pot.length; i++)
+    {
+        const potVec = pot[i];
+        const expected = recipe[i];
+
+        // Compare values
+        const matches =
+            potVec.x === expected.category &&
+            potVec.y === expected.variantId;
+
+        if (!matches)
         {
-            print("Soup check failed: pot length " + pot.length + " != recipe length " + recipe.length);
+            print(
+                "Soup check failed for " + recipeName +
+                " at index " + i +
+                " pot=(" + potVec.x + "," + potVec.y + ")" +
+                " expected=(" + expected.category + "," + expected.variantId + ")"
+            );
             return false;
         }
-
-        // Compare every entry
-        for (let i = 0; i < pot.length; i++)
-        {
-            const potVec = pot[i];
-
-            // Build the "expected" values for this slot
-            const expectedCategory = recipe[i].category;
-            const expectedVariantId = recipe[i].variantId;
-
-            // IMPORTANT: don't use `potVec == new vec2(...)`.
-            // Compare components (x/y) so it checks VALUES, not object identity.
-            const matches =
-                potVec.x === expectedCategory &&
-                potVec.y === expectedVariantId;
-
-            if (!matches)
-            {
-                print("Soup check failed at index " + i +
-                    " pot=(" + potVec.x + "," + potVec.y + ")" +
-                    " expected=(" + expectedCategory + "," + expectedVariantId + ")");
-                return false;
-            }
-        }
-
-        // If we never failed, it's correct
-        print("Soup check passed: all ingredients match.");
-        return true;
     }
+
+    // If we never failed, it matches
+    print("Soup check passed for " + recipeName);
+    return true;
+}
+
+private isTheSoupRightDemo()
+{
+
+    // Get pot contents (vec2[] where x=category, y=variantId)
+    const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
+
+
+    // Quick fail: different lengths cannot match exactly
+    if (pot.length !== Recipe0.length)
+    {
+        print(pot.length + ": pot length and Recipe length is: " + Recipe0)
+        this.playerVictoryActivated(false);
+        return false;
+    }
+
+    // Compare each ingredient slot
+    for (let i = 0; i < pot.length; i++)
+    {
+        const potVec = pot[i];
+        const expected = Recipe0[i];
+
+        // Compare values
+        const matches =
+            potVec.x === expected.category &&
+            potVec.y === expected.variantId;
+
+        if (!matches)
+        {
+            print(
+                "Soup check failed for " + Recipe0 +
+                " at index " + i +
+                " pot=(" + potVec.x + "," + potVec.y + ")" +
+                " expected=(" + expected.category + "," + expected.variantId + ")"
+            );
+            this.playerVictoryActivated(false);
+            return false;
+        }
+    }
+
+    // If we never failed, it matches
+    print("Soup check passed for " + Recipe0);
+    this.playerVictoryActivated(true);
+    return true;
+}
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
 private spawn(prefab: ObjectPrefab) 
     {
@@ -201,14 +281,14 @@ private spawn(prefab: ObjectPrefab)
 
             this.instantiator.instantiate(prefab, options)
         }
-    }
-    getRandomElement<T>(array: T[]): T | undefined
-    {
+}
+getRandomElement<T>(array: T[]): T | undefined
+{
         if (array.length === 0)
         {
             return undefined;
         }
         const randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
-    }
+}
 }
