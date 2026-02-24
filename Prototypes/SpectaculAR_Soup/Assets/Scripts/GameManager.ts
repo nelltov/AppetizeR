@@ -4,6 +4,7 @@ import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController
 import { InstantiationOptions, Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
+import { ourRecipes, Recipe0, Recipes } from "./Recipes";
 
 export enum RoundState{
     
@@ -142,6 +143,53 @@ private amITheChef()
     }
 }
 
+private isTheSoupRight(currentRecipeChosen: number): boolean
+    {
+        // Store selected recipe id (synced)
+        this.currentRecipe.setPendingValue(currentRecipeChosen);
+
+        // Get the pot ingredients list (vec2 pairs, apparently)
+        const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
+
+        // Pick which recipe list to compare against
+        // TODO: replace this with your real selection from Recipes/ourRecipes if available.
+        const recipe = Recipe0;
+
+        // Quick fail: different lengths means it can't be an exact match
+        if (pot.length !== recipe.length)
+        {
+            print("Soup check failed: pot length " + pot.length + " != recipe length " + recipe.length);
+            return false;
+        }
+
+        // Compare every entry
+        for (let i = 0; i < pot.length; i++)
+        {
+            const potVec = pot[i];
+
+            // Build the "expected" values for this slot
+            const expectedCategory = recipe[i].category;
+            const expectedVariantId = recipe[i].variantId;
+
+            // IMPORTANT: don't use `potVec == new vec2(...)`.
+            // Compare components (x/y) so it checks VALUES, not object identity.
+            const matches =
+                potVec.x === expectedCategory &&
+                potVec.y === expectedVariantId;
+
+            if (!matches)
+            {
+                print("Soup check failed at index " + i +
+                    " pot=(" + potVec.x + "," + potVec.y + ")" +
+                    " expected=(" + expectedCategory + "," + expectedVariantId + ")");
+                return false;
+            }
+        }
+
+        // If we never failed, it's correct
+        print("Soup check passed: all ingredients match.");
+        return true;
+    }
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
 private spawn(prefab: ObjectPrefab) 
     {
