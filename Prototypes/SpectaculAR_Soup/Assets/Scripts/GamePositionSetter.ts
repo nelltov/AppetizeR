@@ -12,22 +12,18 @@ export class GamePositionSetter extends BaseScriptComponent
     @input
     ingredientsObjects: SceneObject[]
 
-   
-    private interactableComponent: InteractableManipulation | null = null;
+    @input
+    public interactableComponent: InteractableManipulation | null = null;
 
     private syncEntity: SyncEntity | null = null;
-
+    private MenuSyncEntity: SyncEntity | null = null;
     private isLockedProp: StorageProperty<any> | null = null;
-
 
     onAwake()
     {
         // Programmatic SyncEntity (matches the AirHockey sample pattern)
         this.syncEntity = new SyncEntity(this);
-    
-        this.interactableComponent = this.getSceneObject().getComponent(
-            InteractableManipulation.getTypeName()
-        ) as InteractableManipulation;
+
 
         this.syncEntity.notifyOnReady(() =>
         {
@@ -55,13 +51,18 @@ export class GamePositionSetter extends BaseScriptComponent
     // Call this when YOU want to lock it for everyone (button press / release event / etc.)
     public lockForEveryone()
     {
-       
+        for (let i =0; i < this.ingredientsObjects.length; i++)
+        {
+                this.ingredientsObjects[i].enabled = true;
+                print("turning on objects");
+        }
+
+    
         if (!this.syncEntity || !this.isLockedProp) return;
 
             this.isLockedProp!.setPendingValue(true);
             this.applyLockedState(); // do it immediately locally too
 
-        
 
     }
 
@@ -73,12 +74,6 @@ export class GamePositionSetter extends BaseScriptComponent
             this.interactableComponent.setCanRotate(false);
             this.interactableComponent.setCanScale(false);
             print(this.interactableComponent.canTranslate + " This is the Translate Value.")
-            
-        for (let i =0; i < this.ingredientsObjects.length; i++)
-            {
-                this.ingredientsObjects[i].enabled = this.isLockedProp.currentOrPendingValue;
-                print("turning on objects");
-            }
 
         if (this.menuObject)
         {
