@@ -12,8 +12,8 @@ export class IngredientManager extends BaseScriptComponent{
     @input
     ingredientPrefabList : ObjectPrefab[];
 
-    private currentIngredients: StorageProperty<StorageTypes.vec2Array>
-    
+    public currentIngredients: StorageProperty<StorageTypes.vec2Array>
+
     onAwake()
     {
         
@@ -23,6 +23,7 @@ export class IngredientManager extends BaseScriptComponent{
 
     onStart()
     {
+        this.currentIngredients = StorageProperty.manualVec2Array("currentIngredients", []);
         EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => 
                 {
                     print(`Ingredient Manager heard the collision`);
@@ -38,8 +39,9 @@ export class IngredientManager extends BaseScriptComponent{
    
     updateStorageProperties(newIngredient : IngredientInfo)
     {
+        print(newIngredient + " has been added to Soup")
         const newIngredientToAdd = new vec2(newIngredient.category, newIngredient.variantId)
-        var newIngredientList: vec2[] = this.currentIngredients.currentValue
+        var newIngredientList: vec2[] = this.currentIngredients.currentOrPendingValue
         newIngredientList.push(newIngredientToAdd);
         this.currentIngredients.setPendingValue(newIngredientList)
         
