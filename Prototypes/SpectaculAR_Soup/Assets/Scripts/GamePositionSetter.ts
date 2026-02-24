@@ -68,6 +68,14 @@ export class GamePositionSetter extends BaseScriptComponent
     // This runs locally on EVERY player when isLocked becomes true
     private applyLockedState()
     {
+        if (this.interactableComponent == null)
+            {
+                this.interactableComponent = this.getSceneObject().getParent().getComponent(InteractableManipulation.getTypeName()
+                ) as InteractableManipulation;
+                /*this.interactableComponent = this.getSceneObject().getComponent(
+                InteractableManipulation.getTypeName()
+                ) as InteractableManipulation;*/
+            }
 
             this.interactableComponent.setCanTranslate(false);
             this.interactableComponent.setCanRotate(false);
