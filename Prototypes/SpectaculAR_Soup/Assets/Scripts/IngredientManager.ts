@@ -13,6 +13,7 @@ export class IngredientManager extends BaseScriptComponent{
     ingredientPrefabList : ObjectPrefab[];
 
     private currentIngredients: StorageProperty<StorageTypes.vec2Array>
+    
     onAwake()
     {
         
@@ -30,6 +31,10 @@ export class IngredientManager extends BaseScriptComponent{
     
     }
 
+    public getCurrentIngredientsInPot()
+    {
+        return this.currentIngredients;
+    }
    
     updateStorageProperties(newIngredient : IngredientInfo)
     {
