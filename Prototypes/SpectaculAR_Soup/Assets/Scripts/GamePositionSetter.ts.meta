@@ -27,7 +27,6 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     ingredientsObjects: false
-    interactableComponent: false
     menuObject: false
   ScriptTypesHidden:
     {}
@@ -41,11 +40,9 @@
     - menuObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientsObjects: !<reference.SceneObject[]>
         []
-      interactableComponent: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject menuObject
     - "// @input SceneObject[] ingredientsObjects"
-    - // @input AssignableType interactableComponent
