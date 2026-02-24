@@ -26,9 +26,12 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    chefPlayerInfo: false
+    chefRecipeCheckButton: false
     gameStartButton: false
     ingManager: false
     instantiator: false
+    victoryObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -41,6 +44,10 @@
     - instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      victoryObject: !<reference.SceneObject[]>
+        []
   ScriptTypes:
     -
       {}
@@ -48,3 +55,6 @@
     - // @input AssignableType instantiator
     - // @input AssignableType_1 ingManager
     - // @input SceneObject gameStartButton
+    - // @input SceneObject chefPlayerInfo
+    - // @input SceneObject chefRecipeCheckButton
+    - "// @input SceneObject[] victoryObject"
