@@ -44,6 +44,10 @@ export class SoupPotCollider extends BaseScriptComponent {
         if (ingredient) {
             // Trigger event for ingredient colliding with the pot, passing in the ingredient info
             EventManager.SoupPotIngredientCollisionEvent.trigger(ingredient.getIngredientInfo())
+
+            // Destroy the object at the end of the frame
+            let updateEvent = ingredient.createEvent("UpdateEvent")
+            updateEvent.bind(() => { ingredient.getSceneObject().destroy() })
         }
     }
 }
