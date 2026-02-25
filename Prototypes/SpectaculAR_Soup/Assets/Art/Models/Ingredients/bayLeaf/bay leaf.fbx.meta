@@ -1,0 +1,130 @@
+- !<AssetImportMetadata/0383c1f2-9dcd-4a41-8f0b-a6110029bb8b>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 9bb14ade-b1e8-44be-99cd-7919985855b1
+    .hidden/white: !<reference> d8dce711-1717-4af6-b9d1-70cf749d23c8
+    2028ca51e4a54211: !<reference> 48787d5c-ce96-4fce-b27a-4586071fd905
+    51fe1427bf92a064: !<reference> dd92effc-1b42-4589-9a1c-43d3581a8e33
+    7a0dd5cd69df73fa: !<reference> e5d18c8f-c02b-400b-8910-670647e2e797
+    Animations/BaseLayer: !<reference> d040d5f1-d596-4cd9-aea0-836f7e7aaa9c
+    Materials/openPBR_shader1: !<reference> 054849da-fe13-461a-b116-ba99c08b2235
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> 74a64ad7-791d-415a-b94a-3f39c7ad4a3c
+    Meshes/bay_leaf: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
+    Scene: !<reference> 80989ae8-46f9-4a1b-955e-9db06fd2f46a
+    aa73f118e61b8bbf: !<reference> 0a235037-ecf6-40d4-b0be-bd98bba846f6
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 80989ae8-46f9-4a1b-955e-9db06fd2f46a
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 11e179f7-ea56-45db-b180-43d63e7401c6
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<RenderMeshVisual/0a235037-ecf6-40d4-4f41-42674457b909>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 054849da-fe13-461a-b116-ba99c08b2235
+  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/11e179f7-ea56-45db-b180-43d63e7401c6>
+  Prototype: !<ObjectOwner/c5bfb5e6-f8bc-4dd7-b513-120638f30b8b>
+    PackagePath: ""
+    objects:
+      - !<own> e5d18c8f-c02b-400b-76ef-98f9b81d1868
+- !<AnimationPlayer/48787d5c-ce96-4fce-4d85-ba79f8e026fa>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> d040d5f1-d596-4cd9-aea0-836f7e7aaa9c
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/dd92effc-1b42-4589-65e3-bc2ca7e571cc>
+  PrefabRemaps:
+    []
+  Name: bay_leaf
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0a235037-ecf6-40d4-4f41-42674457b909
+- !<SceneObject/e5d18c8f-c02b-400b-76ef-98f9b81d1868>
+  PrefabRemaps:
+    []
+  Name: bay leaf
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> dd92effc-1b42-4589-65e3-bc2ca7e571cc
+  Components:
+    - !<own> 48787d5c-ce96-4fce-4d85-ba79f8e026fa
