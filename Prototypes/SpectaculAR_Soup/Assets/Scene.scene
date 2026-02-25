@@ -7,6 +7,7 @@
     - !<own> 8261937e-a088-45c4-b03f-cb478bab35af
     - !<own> 18acdb9a-d5ed-4315-ac6b-0a5d523c21d9
     - !<own> a138eea5-a4f8-4845-90c7-d4683d7dccb2
+    - !<own> f1f95fa9-ad86-4f47-9231-230857ecb1a8
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -483,6 +484,23 @@
     - !<own> 298f274e-575f-40f7-a4f3-e4eaeaaecd67
   Components:
     []
+- !<ScriptComponent/1f22a03f-cf51-4334-803a-83b25690818d>
+  PrefabRemaps:
+    []
+  Name: TestMarkerSync
+  Enabled: true
+  ScriptAsset: !<reference> dd9ffc3a-8da7-4f45-ac08-365d6cac11c3
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      markerTrackingComponent: !<reference.MarkerTrackingComponent> cf76f491-2da7-497b-9ff9-b3ad099873f7
+      objectUnderMarker: !<reference.SceneObject> 52e86cc9-180b-46f1-b840-166f155e290c
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/1fbad860-d2cc-4f57-a307-5ac38abfa448>
   PrefabRemaps:
     []
@@ -4619,6 +4637,21 @@
   Components:
     - !<own> 0f260dbc-457e-4266-a9e5-e721ceab4ff1
     - !<own> 25dc7dcc-d6fa-4956-a6ff-a658d32f4a7d
+- !<SceneObject/f1f95fa9-ad86-4f47-9231-230857ecb1a8>
+  PrefabRemaps:
+    []
+  Name: TestMarkerSync
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 1f22a03f-cf51-4334-803a-83b25690818d
 - !<Text/f471a8b2-c4b0-49a2-82b2-d98e2104f5f4>
   PrefabRemaps:
     []
