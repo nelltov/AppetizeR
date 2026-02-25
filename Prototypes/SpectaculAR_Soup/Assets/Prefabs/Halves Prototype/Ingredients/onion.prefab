@@ -1,27 +1,38 @@
-- !<ObjectPrefab/434675ea-74bd-4584-8a74-5f98b11b2d84>
+- !<ObjectPrefab/de52708b-0a3a-4cd9-944d-62e1cb6f6ab4>
   PackagePath: ""
   objects:
-    - !<own> 470161a2-eebe-4a26-ae7c-31d229d8ec94
+    - !<own> 0739ed2e-6342-4416-8d3f-54b29cdfc0f0
   LazyLoading: false
   RetainAssets: true
-- !<ScriptComponent/1028bbd1-809e-4288-848f-3fe6770646b8>
+- !<SceneObject/0739ed2e-6342-4416-8d3f-54b29cdfc0f0>
   PrefabRemaps:
-    []
-  Name: Ingredient
+    - 0739ed2e-6342-4416-8d3f-54b29cdfc0f0: 0739ed2e-6342-4416-72c0-ab4d63203f0f
+    - 330395e9-fc97-4461-95b8-1969eaba8a1d: 330395e9-fc97-4461-6a47-e696154575e2
+    - 4ff2ce8e-c31b-4f81-abd6-30bd739c0a9f: 4ff2ce8e-c31b-4f81-5429-cf428c63f560
+    - 6bd1ce39-0119-4441-9fb7-c806b4cef132: 6bd1ce39-0119-4441-6048-37f94b310ecd
+    - 8086f81b-1df3-4ed8-9616-b2b1140a5812: 8086f81b-1df3-4ed8-69e9-4d4eebf5a7ed
+    - 974f2d35-81b1-47bf-9ba8-ad18a1b82ca3: 974f2d35-81b1-47bf-6457-52e75e47d35c
+    - d3bf84d6-35eb-4520-ac0f-9f5526643fc0: d3bf84d6-35eb-4520-53f0-60aad99bc03f
+    - f0e67fd6-5517-48b4-ba17-101b0e45930a: f0e67fd6-5517-48b4-45e8-efe4f1ba6cf5
+  Name: onion
   Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 1.000000
-  ScriptTypes:
-    "":
-      {}
-- !<RenderMeshVisual/43433c31-5565-4d6f-b8ce-e1883b075c4b>
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 330395e9-fc97-4461-95b8-1969eaba8a1d
+    - !<own> f0e67fd6-5517-48b4-ba17-101b0e45930a
+    - !<own> d3bf84d6-35eb-4520-ac0f-9f5526643fc0
+    - !<own> 974f2d35-81b1-47bf-9ba8-ad18a1b82ca3
+    - !<own> 6bd1ce39-0119-4441-9fb7-c806b4cef132
+    - !<own> 4ff2ce8e-c31b-4f81-abd6-30bd739c0a9f
+    - !<own> 8086f81b-1df3-4ed8-9616-b2b1140a5812
+- !<RenderMeshVisual/330395e9-fc97-4461-95b8-1969eaba8a1d>
   PrefabRemaps:
     []
   Name: component_0
@@ -41,126 +52,7 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/470161a2-eebe-4a26-ae7c-31d229d8ec94>
-  PrefabRemaps:
-    - 1028bbd1-809e-4288-848f-3fe6770646b8: 1028bbd1-809e-4288-7b70-c01988f9b947
-    - 43433c31-5565-4d6f-b8ce-e1883b075c4b: 43433c31-5565-4d6f-4731-1e77c4f8a3b4
-    - 470161a2-eebe-4a26-ae7c-31d229d8ec94: 470161a2-eebe-4a26-5183-ce2dd627136b
-    - 50faee37-9db1-42e1-97d4-f92fc31b1f35: 50faee37-9db1-42e1-682b-06d03ce4e0ca
-    - 51e95303-663f-4c4d-9898-d928b871d4e7: 51e95303-663f-4c4d-6767-26d7478e2b18
-    - 61854966-0961-46c9-b97f-b7243a58db42: 61854966-0961-46c9-4680-48dbc5a724bd
-    - d051c766-1a9e-45e6-a710-09bb9dc46cd5: d051c766-1a9e-45e6-58ef-f644623b932a
-    - f5050eeb-41cd-4455-96cb-83de051b3fa6: f5050eeb-41cd-4455-6934-7c21fae4c059
-  Name: onion
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -64.537582, z: -244.507721}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 43433c31-5565-4d6f-b8ce-e1883b075c4b
-    - !<own> 50faee37-9db1-42e1-97d4-f92fc31b1f35
-    - !<own> f5050eeb-41cd-4455-96cb-83de051b3fa6
-    - !<own> 1028bbd1-809e-4288-848f-3fe6770646b8
-    - !<own> 61854966-0961-46c9-b97f-b7243a58db42
-    - !<own> d051c766-1a9e-45e6-a710-09bb9dc46cd5
-    - !<own> 51e95303-663f-4c4d-9898-d928b871d4e7
-- !<AnimationPlayer/50faee37-9db1-42e1-97d4-f92fc31b1f35>
-  PrefabRemaps:
-    []
-  Name: component_1
-  Enabled: true
-  Autoplay: true
-  ClipRangeType: Frames
-  AnimationClips:
-    - !<AnimationClip>
-      AnimationAsset: !<reference> 4db7b8ef-f7c0-485c-be37-35635861084c
-      Name: BaseLayer
-      Weight: 1.000000
-      PlaybackSpeed: 1.000000
-      Begin: 0.000000
-      End: 0.000000
-      Offset: 0.000000
-      Reversed: false
-      Disabled: false
-      BlendMode: Default
-      ScaleMode: Multiply
-      PlaybackMode: Loop
-- !<ScriptComponent/51e95303-663f-4c4d-9898-d928b871d4e7>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/61854966-0961-46c9-b97f-b7243a58db42>
-  PrefabRemaps:
-    []
-  Name: Interactable
-  Enabled: true
-  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
-  ScriptInputsDefault:
-    targetingMode: true
-    targetingVisual: true
-    ignoreInteractionPlane: true
-    keepHoverOnTrigger: true
-    enableInstantDrag: true
-    isScrollable: true
-    allowMultipleInteractors: true
-    enablePokeDirectionality: true
-    acceptableXDirections: true
-    acceptableYDirections: true
-    acceptableZDirections: true
-    useFilteredPinch: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      targetingMode: !<float> 3.000000
-      targetingVisual: !<float> 1.000000
-      ignoreInteractionPlane: false
-      keepHoverOnTrigger: false
-      enableInstantDrag: false
-      isScrollable: false
-      allowMultipleInteractors: true
-      enablePokeDirectionality: false
-      acceptableXDirections: !<float> 0.000000
-      acceptableYDirections: !<float> 0.000000
-      acceptableZDirections: !<float> 1.000000
-      useFilteredPinch: false
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/d051c766-1a9e-45e6-a710-09bb9dc46cd5>
+- !<ScriptComponent/4ff2ce8e-c31b-4f81-abd6-30bd739c0a9f>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -218,7 +110,94 @@
   ScriptTypes:
     "":
       {}
-- !<BodyComponent/f5050eeb-41cd-4455-96cb-83de051b3fa6>
+- !<ScriptComponent/6bd1ce39-0119-4441-9fb7-c806b4cef132>
+  PrefabRemaps:
+    []
+  Name: Interactable
+  Enabled: true
+  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
+  ScriptInputsDefault:
+    targetingMode: true
+    targetingVisual: true
+    ignoreInteractionPlane: true
+    keepHoverOnTrigger: true
+    enableInstantDrag: true
+    isScrollable: true
+    allowMultipleInteractors: true
+    enablePokeDirectionality: true
+    acceptableXDirections: true
+    acceptableYDirections: true
+    acceptableZDirections: true
+    useFilteredPinch: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 3.000000
+      targetingVisual: !<float> 1.000000
+      ignoreInteractionPlane: false
+      keepHoverOnTrigger: false
+      enableInstantDrag: false
+      isScrollable: false
+      allowMultipleInteractors: true
+      enablePokeDirectionality: false
+      acceptableXDirections: !<float> 0.000000
+      acceptableYDirections: !<float> 0.000000
+      acceptableZDirections: !<float> 1.000000
+      useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/8086f81b-1df3-4ed8-9616-b2b1140a5812>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/974f2d35-81b1-47bf-9ba8-ad18a1b82ca3>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      categoryNumber: !<float> 1.000000
+      variantId: !<float> 1.000000
+  ScriptTypes:
+    "":
+      {}
+- !<BodyComponent/d3bf84d6-35eb-4520-ac0f-9f5526643fc0>
   PrefabRemaps:
     []
   Name: Physics Body
@@ -241,3 +220,24 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<AnimationPlayer/f0e67fd6-5517-48b4-ba17-101b0e45930a>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 4db7b8ef-f7c0-485c-be37-35635861084c
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
