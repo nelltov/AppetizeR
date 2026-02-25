@@ -1,0 +1,130 @@
+- !<AssetImportMetadata/21141772-45da-47f0-ba8b-58e73be6f770>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 2a3103ad-27f2-4510-a11d-2124281ded22
+    .hidden/white: !<reference> e4eb3b65-3cff-4101-9200-b7f4c6012818
+    2028ca51e4a54211: !<reference> b8a725ac-9765-4b3b-9104-093f02883afb
+    7a0dd5cd69df73fa: !<reference> 56fd3124-0090-4f52-a001-3388d0a20585
+    Animations/BaseLayer: !<reference> 347b7eb3-df06-4ce3-9fc5-78a33164140c
+    Materials/openPBR_shader1: !<reference> 425a925d-5141-4d75-8688-11eee857001b
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> 73d6ba3b-02bf-43b4-9a9f-98db5182d0a9
+    Meshes/carrot: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
+    Scene: !<reference> d369853e-9cfd-4413-ad2b-c546bdd2d6af
+    a8e5eb2cbac91146: !<reference> d18ecdf7-dfca-489b-9e1d-0a13992bda16
+    c7327ba574eedaa7: !<reference> a0d514e6-7c39-4b1c-aed2-e7d4efbb28a3
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> d369853e-9cfd-4413-ad2b-c546bdd2d6af
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 0987f2c6-f798-44ae-99c6-46e3f82aeb13
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<ObjectPrefabAssetData/0987f2c6-f798-44ae-99c6-46e3f82aeb13>
+  Prototype: !<ObjectOwner/b93379be-d408-4726-a86f-d21ea99ca637>
+    PackagePath: ""
+    objects:
+      - !<own> 56fd3124-0090-4f52-5ffe-cc772f5dfa7a
+- !<SceneObject/56fd3124-0090-4f52-5ffe-cc772f5dfa7a>
+  PrefabRemaps:
+    []
+  Name: carrot
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d18ecdf7-dfca-489b-61e2-f5ec66d425e9
+  Components:
+    - !<own> b8a725ac-9765-4b3b-6efb-f6c0fd77c504
+- !<RenderMeshVisual/a0d514e6-7c39-4b1c-512d-182b1044d75c>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 425a925d-5141-4d75-8688-11eee857001b
+  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<AnimationPlayer/b8a725ac-9765-4b3b-6efb-f6c0fd77c504>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 347b7eb3-df06-4ce3-9fc5-78a33164140c
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/d18ecdf7-dfca-489b-61e2-f5ec66d425e9>
+  PrefabRemaps:
+    []
+  Name: carrot
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 8.743603, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a0d514e6-7c39-4b1c-512d-182b1044d75c
