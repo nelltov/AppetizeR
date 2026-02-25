@@ -360,6 +360,7 @@
     - bdfce9f7-d87e-496b-a885-edb7a85301de: bdfce9f7-d87e-496b-577a-124857acfe21
     - cb96d142-c932-45ce-88c8-955cf4147aa7: cb96d142-c932-45ce-7737-6aa30beb8558
     - d410f602-1afc-483b-824c-00492340bf03: d410f602-1afc-483b-7db3-ffb6dcbf40fc
+    - db67726f-9340-4605-8d74-e6ae87d9cbad: 86d706ab-b401-468c-9925-c38c0b1b8a90
     - e568d4a5-e0a8-4e81-87b2-ef8fe5267e90: e568d4a5-e0a8-4e81-784d-10701ad9816f
     - e893b01d-4f42-420d-bd8b-ad739cc5a8cb: e893b01d-4f42-420d-4274-528c633a5734
     - f7e89864-8672-4378-964d-b13fd3be86a6: f7e89864-8672-4378-69b2-4ec02c417959
@@ -377,7 +378,7 @@
     - !<own> 258bd1f9-5c4e-4d8b-b66b-2a34907c2e4d
     - !<own> f7e89864-8672-4378-964d-b13fd3be86a6
   Components:
-    []
+    - !<own> db67726f-9340-4605-8d74-e6ae87d9cbad
 - !<BodyComponent/84395a67-af93-482a-92f8-e976693d50a7>
   PrefabRemaps:
     []
@@ -870,6 +871,38 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<ScriptComponent/db67726f-9340-4605-8d74-e6ae87d9cbad>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/e568d4a5-e0a8-4e81-87b2-ef8fe5267e90>
   PrefabRemaps:
     []

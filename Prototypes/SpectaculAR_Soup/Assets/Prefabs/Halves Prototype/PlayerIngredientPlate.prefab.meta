@@ -362,7 +362,7 @@
     - !<own> 258bd1f9-5c4e-4d8b-4994-d5cb6f83d1b2
     - !<own> f7e89864-8672-4378-69b2-4ec02c417959
   Components:
-    []
+    - !<own> 86d706ab-b401-468c-9925-c38c0b1b8a90
 - !<BodyComponent/84395a67-af93-482a-6d07-168996c2af58>
   PrefabRemaps:
     []
@@ -504,6 +504,38 @@
       acceptableYDirections: !<float> 0.000000
       acceptableZDirections: !<float> 1.000000
       useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/86d706ab-b401-468c-9925-c38c0b1b8a90>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
   ScriptTypes:
     "":
       {}

@@ -24,7 +24,7 @@ export class IngredientManager extends BaseScriptComponent{
     onStart()
     {
         this.currentIngredients = StorageProperty.manualVec2Array("currentIngredients", []);
-        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => 
+        EventManager.SoupPotIngredientLocalCollisionEvent.add((ingredientInfo: IngredientInfo) => 
                 {
                     print(`Ingredient Manager heard the collision`);
                     this.updateStorageProperties(ingredientInfo);
