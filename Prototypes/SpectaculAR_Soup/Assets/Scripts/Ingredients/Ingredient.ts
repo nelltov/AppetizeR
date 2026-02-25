@@ -24,9 +24,11 @@ export class Ingredient extends BaseScriptComponent {
 
     private ingredientInfo: IngredientInfo | null = null
     private syncentity: SyncEntity;
+    
 
     onAwake(){
-        this.syncentity = new SyncEntity(this);
+        const sceneObj = this.getSceneObject();
+        this.syncentity = SyncEntity.getSyncEntityOnSceneObject(sceneObj)
     }
     // Returns the ingredientInfo object (initializing it if not yet created)
     public getIngredientInfo(): IngredientInfo {
