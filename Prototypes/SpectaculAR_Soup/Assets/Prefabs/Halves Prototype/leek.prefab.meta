@@ -1,0 +1,80 @@
+- !<AssetImportMetadata/851976e6-c656-4d1d-ae03-8a1d5d43e8a6>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> bf65e8a5-a601-4e61-a107-a85e6c5a86e9
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> bf65e8a5-a601-4e61-a107-a85e6c5a86e9
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 337d62cc-4d12-465f-8384-433259d3bd36
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/337d62cc-4d12-465f-8384-433259d3bd36>
+  Prototype: !<ObjectOwner/a069b5d3-00e0-4a9e-b0e4-3c649f2dc905>
+    PackagePath: ""
+    objects:
+      - !<own> 3cc25f7e-4240-4852-62d3-8150ec092b3a
+- !<SceneObject/3cc25f7e-4240-4852-62d3-8150ec092b3a>
+  PrefabRemaps:
+    []
+  Name: leek
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2
+    - !<own> efe55d61-3487-4fc1-9b98-95feba3705d2
+- !<RenderMeshVisual/6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> 73698ed4-ed15-4871-ae43-0f1f9461def8
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<BodyComponent/efe55d61-3487-4fc1-9b98-95feba3705d2>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: true
+    Radius: 6.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: false
+  BodySetting: Density
+  BodySettingValue: 1.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000

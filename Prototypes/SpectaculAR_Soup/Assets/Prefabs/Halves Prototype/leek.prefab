@@ -1,0 +1,67 @@
+- !<ObjectPrefab/bf65e8a5-a601-4e61-a107-a85e6c5a86e9>
+  PackagePath: ""
+  objects:
+    - !<own> 3cc25f7e-4240-4852-9d2c-7eaf13f6d4c5
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/3cc25f7e-4240-4852-9d2c-7eaf13f6d4c5>
+  PrefabRemaps:
+    - 3cc25f7e-4240-4852-9d2c-7eaf13f6d4c5: 3cc25f7e-4240-4852-62d3-8150ec092b3a
+    - 5b001f9d-dc26-4588-9835-156b1b3de879: efe55d61-3487-4fc1-9b98-95feba3705d2
+    - 6205e253-b96c-42d5-9027-4e463d0c1b1d: 6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2
+  Name: leek
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6205e253-b96c-42d5-9027-4e463d0c1b1d
+    - !<own> 5b001f9d-dc26-4588-9835-156b1b3de879
+- !<BodyComponent/5b001f9d-dc26-4588-9835-156b1b3de879>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: true
+    Radius: 6.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: false
+  BodySetting: Density
+  BodySettingValue: 1.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
+- !<RenderMeshVisual/6205e253-b96c-42d5-9027-4e463d0c1b1d>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> 73698ed4-ed15-4871-ae43-0f1f9461def8
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
