@@ -47,7 +47,7 @@ export class SoupPotCollider extends BaseScriptComponent {
 
             // Destroy the object at the end of the frame
             let updateEvent = ingredient.createEvent("UpdateEvent")
-            updateEvent.bind(() => { ingredient.getSceneObject().destroy() })
+            updateEvent.bind(() => { ingredient.getSceneObject().enabled = false })
         }
     }
 }
