@@ -5,8 +5,6 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 8261937e-a088-45c4-b03f-cb478bab35af
-    - !<own> 18acdb9a-d5ed-4315-ac6b-0a5d523c21d9
-    - !<own> a138eea5-a4f8-4845-90c7-d4683d7dccb2
     - !<own> f1f95fa9-ad86-4f47-9231-230857ecb1a8
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
@@ -431,7 +429,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: -40.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -3068,7 +3066,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: -40.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -3103,7 +3101,8 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 18acdb9a-d5ed-4315-ac6b-0a5d523c21d9
+    - !<own> a138eea5-a4f8-4845-90c7-d4683d7dccb2
   Components:
     []
 - !<SceneObject/a702aad2-e621-42d4-afd6-3946f6425bb8>
@@ -4565,7 +4564,7 @@
   PrefabRemaps:
     []
   Name: "[OPTIONAL] Connected Lens"
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
