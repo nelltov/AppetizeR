@@ -1,20 +1,58 @@
-- !<AssetImportMetadata/851976e6-c656-4d1d-ae03-8a1d5d43e8a6>
+- !<AssetImportMetadata/c968be2f-7570-458c-871f-44e1a4b9528d>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> bf65e8a5-a601-4e61-a107-a85e6c5a86e9
+    ObjectPrefab: !<reference> dfacf05d-de4c-4fb7-a6b3-1a2fe6541433
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> bf65e8a5-a601-4e61-a107-a85e6c5a86e9
+  PrimaryAsset: !<reference> dfacf05d-de4c-4fb7-a6b3-1a2fe6541433
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 337d62cc-4d12-465f-8384-433259d3bd36
+    ObjectPrefab: !<own> 6d761c90-c90e-4d87-8482-0e88bdb800e7
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptComponent/0fd038c3-a482-4c9d-b04f-da0c088d42f4>
+- !<ScriptComponent/10881cd6-1fe2-45a0-70a6-3f7e0a1104e0>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      categoryNumber: !<float> 1.000000
+      variantId: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
+- !<AnimationPlayer/138928cd-01ee-49aa-5262-109fe7459794>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 347b7eb3-df06-4ce3-9fc5-78a33164140c
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<ScriptComponent/1475bce9-b46e-435c-6a0b-f3e6c84bee4c>
   PrefabRemaps:
     []
   Name: SyncTransform
@@ -46,35 +84,60 @@
   ScriptTypes:
     "":
       {}
-- !<ObjectPrefabAssetData/337d62cc-4d12-465f-8384-433259d3bd36>
-  Prototype: !<ObjectOwner/a069b5d3-00e0-4a9e-b0e4-3c649f2dc905>
-    PackagePath: ""
-    objects:
-      - !<own> 3cc25f7e-4240-4852-62d3-8150ec092b3a
-- !<SceneObject/3cc25f7e-4240-4852-62d3-8150ec092b3a>
+- !<BodyComponent/188168a0-0a73-4f36-43ed-01466d2d3d24>
   PrefabRemaps:
     []
-  Name: leek
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Cylinder>
+    Axis: Y
+    Length: 18.000000
+    Radius: 6.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
+- !<ObjectPrefabAssetData/6d761c90-c90e-4d87-8482-0e88bdb800e7>
+  Prototype: !<ObjectOwner/540a62a9-ad81-496c-96bc-3815449961d4>
+    PackagePath: ""
+    objects:
+      - !<own> 88cfde59-2235-4066-6da8-7c02ddad9879
+- !<SceneObject/88cfde59-2235-4066-6da8-7c02ddad9879>
+  PrefabRemaps:
+    []
+  Name: carrot
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: -23.970366, y: -60.000000, z: -240.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
   Components:
-    - !<own> 6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2
-    - !<own> efe55d61-3487-4fc1-9b98-95feba3705d2
-    - !<own> c4d9bfe9-2af6-4ea6-adbd-72862e37af63
-    - !<own> 9d095457-ad40-4883-aa93-e10fca01f3ee
-    - !<own> f1c06a46-3952-4526-ac97-94155742f036
-    - !<own> 0fd038c3-a482-4c9d-b04f-da0c088d42f4
-- !<RenderMeshVisual/6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2>
+    - !<own> 8d37cfa7-7a92-40b7-5379-b5b2be93be65
+    - !<own> 138928cd-01ee-49aa-5262-109fe7459794
+    - !<own> 188168a0-0a73-4f36-43ed-01466d2d3d24
+    - !<own> 10881cd6-1fe2-45a0-70a6-3f7e0a1104e0
+    - !<own> a72e1120-cf46-4c13-6188-2ad2127e1fca
+    - !<own> c91916aa-81dd-4303-7f09-5ca0a33a0c68
+    - !<own> 1475bce9-b46e-435c-6a0b-f3e6c84bee4c
+- !<RenderMeshVisual/8d37cfa7-7a92-40b7-5379-b5b2be93be65>
   PrefabRemaps:
     []
-  Name: component_1
+  Name: component_0
   Enabled: true
   RenderOrder: 0
   StretchMode: Stretch
@@ -84,19 +147,19 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
-  Mesh: !<reference> 73698ed4-ed15-4871-ae43-0f1f9461def8
+    - !<reference> 3afb1753-b095-461a-8825-de4293002b90
+  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/9d095457-ad40-4883-aa93-e10fca01f3ee>
+- !<ScriptComponent/a72e1120-cf46-4c13-6188-2ad2127e1fca>
   PrefabRemaps:
     []
   Name: Interactable
   Enabled: true
-  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
   ScriptInputsDefault:
     targetingMode: true
     targetingVisual: true
@@ -129,53 +192,12 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/c4d9bfe9-2af6-4ea6-adbd-72862e37af63>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 12.000000
-  ScriptTypes:
-    "":
-      {}
-- !<BodyComponent/efe55d61-3487-4fc1-9b98-95feba3705d2>
-  PrefabRemaps:
-    []
-  Name: Physics Body
-  Enabled: true
-  Shape: !<Cylinder>
-    Axis: Y
-    Length: 18.000000
-    Radius: 6.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
-  Dynamic: true
-  BodySetting: Density
-  BodySettingValue: 0.000000
-  Damping: 0.000000
-  AngularDamping: 0.000000
-- !<ScriptComponent/f1c06a46-3952-4526-ac97-94155742f036>
+- !<ScriptComponent/c91916aa-81dd-4303-7f09-5ca0a33a0c68>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
+  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
