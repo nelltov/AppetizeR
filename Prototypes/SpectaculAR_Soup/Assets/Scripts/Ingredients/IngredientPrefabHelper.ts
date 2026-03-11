@@ -27,7 +27,7 @@ export class IngredientPrefabHelper extends BaseScriptComponent
 
     private onReady()
     {
-
+        
     }
 
 
@@ -37,13 +37,9 @@ export class IngredientPrefabHelper extends BaseScriptComponent
         this.playerOwnerNumber.setPendingValue(number);
     }
 
-    public getPlayerOwner(number)
+    public getPlayerOwner(): number
     {
-        if (number == this.playerOwnerNumber)
-        {
-            return true;
-        }
-        else return false;
+        return this.playerOwnerNumber.currentOrPendingValue;
     }
 }
 

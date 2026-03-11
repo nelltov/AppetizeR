@@ -25,7 +25,7 @@ export class SoupPotCollider extends BaseScriptComponent {
         }
 
         // Debug print whenever collision event triggers to verify collision and ingredient info retrieval
-        EventManager.SoupPotIngredientNetworkCollisionEvent.add((ingredientInfo: IngredientInfo) => {
+        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => {
             print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
             if (this.debugText) {
                 this.debugText.text = `${ingredientInfo.variantName} has been added to the soup`
@@ -37,17 +37,19 @@ export class SoupPotCollider extends BaseScriptComponent {
         var otherObj = other?.collision?.collider?.sceneObject
         if (isNull(otherObj)) return
 
+        // Guard against double-processing if collision fires again before disabled
+        if (!otherObj.enabled) return
+
         const ingredient = otherObj.getComponent(
             Ingredient.getTypeName()
         ) as Ingredient
-        
-        if (ingredient) {
-            // Trigger event for ingredient colliding with the pot, passing in the ingredient info
-            EventManager.SoupPotIngredientLocalCollisionEvent.trigger(ingredient.getIngredientInfo())
 
-            // Destroy the object at the end of the frame
-            let updateEvent = ingredient.createEvent("UpdateEvent")
-            updateEvent.bind(() => { ingredient.getSceneObject().enabled = false })
+        if (ingredient) {
+            // Disable immediately so re-entry collisions are ignored
+            otherObj.enabled = false
+
+            // Trigger event for ingredient colliding with the pot, passing in the ingredient info
+            EventManager.SoupPotIngredientCollisionEvent.trigger(ingredient.getIngredientInfo())
         }
     }
 }
