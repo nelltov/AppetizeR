@@ -48,6 +48,8 @@ export class GameManager extends BaseScriptComponent {
 onReady()
 {
     // Subscribe to synced chef property changes
+    this.playerVictoryActivated(false);
+
     this.currentChef.onAnyChange.add(() =>
     {
         print("Chef subscribed");
@@ -57,6 +59,10 @@ onReady()
     this.chefSelected.onAnyChange.add(() =>
     {
         this.amITheChef();
+    });
+
+    this.soupIngredientsCorrect.onAnyChange.add(() =>{
+         this.playerVictoryActivated(this.soupIngredientsCorrect.currentOrPendingValue);
     });
 
     // Handle late-joiners: if chef was already selected before this player joined,
@@ -128,7 +134,7 @@ private assignChef(chefId: string, nonChefCount: number)
 
 private amITheChef()
 {   
-    print("Am I Chef Event Triggered");
+    //print("Am I Chef Event Triggered");
     //Get my own ID
     this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
     //Turn off game Start Locally
@@ -144,6 +150,7 @@ private amITheChef()
 
 private playerVictoryActivated(value)
 {
+    print(this.soupIngredientsCorrect.currentOrPendingValue);
     for (let i = 0; i <this.victoryObject.length; i++)
     {
       this.victoryObject[i].enabled = value;  
@@ -222,7 +229,6 @@ private isTheSoupRightDemo()
     if (pot.length !== Recipe0.length)
     {
         print(pot.length + ": pot length and Recipe length is: " + Recipe0)
-        this.playerVictoryActivated(false);
         return false;
     }
 
