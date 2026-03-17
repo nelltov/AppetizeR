@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    ingManager: false
     ingredientsPrefab: false
     instantiator: false
   ScriptTypesHidden:
@@ -39,9 +40,11 @@
   DefaultScriptInputs:
     - instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       ingredientsPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AssignableType instantiator
     - // @input Asset.ObjectPrefab ingredientsPrefab
+    - // @input AssignableType_1 ingManager
