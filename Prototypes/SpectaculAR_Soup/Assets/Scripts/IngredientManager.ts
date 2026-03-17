@@ -8,8 +8,8 @@ import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 
 
 @component
-export class IngredientManager extends BaseScriptComponent{
-
+export class IngredientManager extends BaseScriptComponent
+{
     @input
     ingredientPrefabList : ObjectPrefab[];
 
@@ -43,13 +43,10 @@ export class IngredientManager extends BaseScriptComponent{
    
     updateStorageProperties(newIngredient : IngredientInfo)
     {
-        print(newIngredient + " has been added to Soup")
         const newIngredientToAdd = new vec2(newIngredient.category, newIngredient.variantId)
         var newIngredientList: vec2[] = this.currentIngredients.currentOrPendingValue
         newIngredientList.push(newIngredientToAdd);
         this.currentIngredients.setPendingValue(newIngredientList)
-        
+        print(newIngredient + " has been added to the soup \n\n" )
     }
-
-
 }

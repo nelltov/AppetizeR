@@ -150,7 +150,7 @@ private amITheChef()
 
 private playerVictoryActivated(value)
 {
-    print(this.soupIngredientsCorrect.currentOrPendingValue);
+    print(7 + "house");
     for (let i = 0; i <this.victoryObject.length; i++)
     {
       this.victoryObject[i].enabled = value;  
@@ -220,10 +220,11 @@ private isTheSoupRight(currentRecipeChosen: number): boolean
 
 private isTheSoupRightDemo()
 {
-
+    
     // Get pot contents (vec2[] where x=category, y=variantId)
     const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-
+    //print(pot[0]);
+    /*
 
     // Quick fail: different lengths cannot match exactly
     if (pot.length !== Recipe0.length)
@@ -232,6 +233,8 @@ private isTheSoupRightDemo()
         return false;
     }
 
+    
+    
     // Compare each ingredient slot
     for (let i = 0; i < pot.length; i++)
     {
@@ -259,7 +262,7 @@ private isTheSoupRightDemo()
     // If we never failed, it matches
     print("Soup check passed for " + Recipe0);
     this.playerVictoryActivated(true);
-    return true;
+    return true;*/
 }
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
 private spawn(prefab: ObjectPrefab) 
