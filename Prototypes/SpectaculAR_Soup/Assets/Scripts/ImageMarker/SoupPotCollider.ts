@@ -25,7 +25,7 @@ export class SoupPotCollider extends BaseScriptComponent {
         }
 
         // Debug print whenever collision event triggers to verify collision and ingredient info retrieval
-        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => {
+        EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
             print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
             if (this.debugText) {
                 this.debugText.text = `${ingredientInfo.variantName} has been added to the soup`
@@ -49,7 +49,7 @@ export class SoupPotCollider extends BaseScriptComponent {
             otherObj.enabled = false
 
             // Trigger event for ingredient colliding with the pot, passing in the ingredient info
-            EventManager.SoupPotIngredientCollisionEvent.trigger(ingredient.getIngredientInfo())
+            EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo())
         }
     }
 }

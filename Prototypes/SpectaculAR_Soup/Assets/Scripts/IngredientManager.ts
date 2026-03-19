@@ -29,11 +29,15 @@ export class IngredientManager extends BaseScriptComponent
 
     onStart()
     {
-        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) =>
-                {
-                    print(`Ingredient Manager heard the collision`);
-                    this.updateStorageProperties(ingredientInfo);
-                })
+        this.syncEntity.notifyOnReady(() =>
+        {
+            EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
+            {
+                print(`Ingredient Manager heard the collision`);
+                this.updateStorageProperties(ingredientInfo);
+                EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(ingredientInfo)
+            });
+        });
     }
 
     public getCurrentIngredientsInPot()
@@ -44,9 +48,8 @@ export class IngredientManager extends BaseScriptComponent
     updateStorageProperties(newIngredient : IngredientInfo)
     {
         const newIngredientToAdd = new vec2(newIngredient.category, newIngredient.variantId)
-        var newIngredientList: vec2[] = this.currentIngredients.currentOrPendingValue
-        newIngredientList.push(newIngredientToAdd);
+        const newIngredientList: vec2[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
         this.currentIngredients.setPendingValue(newIngredientList)
-        print(newIngredient + " has been added to the soup \n\n" )
+        print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot`)
     }
 }

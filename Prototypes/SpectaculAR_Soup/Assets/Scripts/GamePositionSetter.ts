@@ -87,8 +87,9 @@ export class GamePositionSetter extends BaseScriptComponent
             this.interactableComponent.setCanScale(false);
             print(this.interactableComponent.canTranslate + " This is the Translate Value.")
             
-        for (let i =0; i < this.ingredientsObjects.length; i++)
+        for (let i = 0; i < this.ingredientsObjects.length; i++)
             {
+                if (isNull(this.ingredientsObjects[i])) continue;
                 this.ingredientsObjects[i].enabled = this.isLockedProp.currentOrPendingValue;
                 print("turning on objects");
             }
