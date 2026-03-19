@@ -12,6 +12,7 @@ export enum MeatType {
     Chicken = 1,
     Bacon = 2,
     Shrimp = 3,
+    Tofu = 4,
     
 }
 

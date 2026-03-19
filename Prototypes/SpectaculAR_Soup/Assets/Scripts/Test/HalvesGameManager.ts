@@ -34,11 +34,11 @@ export class HalvesGameManager extends BaseScriptComponent {
 
         // Create a network event to replicate ingredient collisions across all devices
         this.syncEntity.onEventReceived.add('ingredientCollision', (messageInfo) => {
-            EventManager.SoupPotIngredientCollisionEvent.trigger(messageInfo.data as IngredientInfo)
+            EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(messageInfo.data as IngredientInfo)
         })
 
         // bind game manager event
-        EventManager.SoupPotIngredientCollisionEvent.add((ingredientInfo: IngredientInfo) => {
+        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) => {
             print(`from Game Manager - Ingredient collided with pot: ${ingredientInfo.variantName}`)
             this.ingManager.updateStorageProperties(ingredientInfo);
             this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
