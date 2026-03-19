@@ -1,0 +1,92 @@
+- !<AssetImportMetadata/d530a242-852d-4794-8737-29c3349f6994>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> a31cdd3e-7378-41ae-823e-791341b99924
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> a31cdd3e-7378-41ae-823e-791341b99924
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 0f8cdbf9-537e-431c-8f7f-8ebc0c29a88f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<AnimationPlayer/0049a576-9d77-455d-6583-b3b69874d5ff>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 633c80e8-6972-44c3-802f-c0efb0d0350b
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<ObjectPrefabAssetData/0f8cdbf9-537e-431c-8f7f-8ebc0c29a88f>
+  Prototype: !<ObjectOwner/566c8314-22b8-49e0-b927-cd48b3c7a880>
+    PackagePath: ""
+    objects:
+      - !<own> b0a725f5-5841-4cce-7a2b-ac44ff74c630
+- !<SceneObject/b0a725f5-5841-4cce-7a2b-ac44ff74c630>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> f08826bd-8d58-44e6-6456-fa6f3c7137e6
+  Components:
+    - !<own> 0049a576-9d77-455d-6583-b3b69874d5ff
+- !<RenderMeshVisual/e40e268a-a7f9-4cc8-5f41-4296cb3c44a0>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> d6a397ef-54e9-4d45-add2-fb648236bfc0
+  Mesh: !<reference> 011df40e-c898-47c2-9ac9-96deaf3ad009
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/f08826bd-8d58-44e6-6456-fa6f3c7137e6>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -32.379494}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e40e268a-a7f9-4cc8-5f41-4296cb3c44a0

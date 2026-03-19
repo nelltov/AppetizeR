@@ -1,0 +1,130 @@
+- !<AssetImportMetadata/bf7d74d2-8e95-4b9d-a77c-842f477246b8>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 0a10c5f0-fda9-4fd6-a893-1a1f2291a752
+    .hidden/white: !<reference> 29a43418-2c36-4c7e-bd43-df96105ce0ce
+    2028ca51e4a54211: !<reference> 2add505e-0143-4ac9-944f-8e87fb6ab9d1
+    3e0cfc676dd64f39: !<reference> b54601f3-f800-4c89-a658-bdd967797e54
+    7a0dd5cd69df73fa: !<reference> b73f1e92-09ec-42fe-ad6b-af65cc62ba7f
+    Animations/BaseLayer: !<reference> 633c80e8-6972-44c3-802f-c0efb0d0350b
+    Materials/openPBR_shader1: !<reference> c37f65df-3274-4326-817d-7547b6a8991c
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> 086a930c-e174-4f8f-99cd-9dae0932fc5d
+    Meshes/chicken: !<reference> 011df40e-c898-47c2-9ac9-96deaf3ad009
+    Scene: !<reference> 2adcd8cd-de38-44c0-b2eb-69377d444d12
+    ac98579a0ace763c: !<reference> 392d51da-2ff2-4dcc-82a9-69c95e43aaf1
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 2adcd8cd-de38-44c0-b2eb-69377d444d12
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> eacc0fd9-4613-4fc1-b77b-73730a4e3738
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<AnimationPlayer/2add505e-0143-4ac9-6bb0-71780495462e>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 633c80e8-6972-44c3-802f-c0efb0d0350b
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<RenderMeshVisual/392d51da-2ff2-4dcc-7d56-9636a1bc550e>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> c37f65df-3274-4326-817d-7547b6a8991c
+  Mesh: !<reference> 011df40e-c898-47c2-9ac9-96deaf3ad009
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/b54601f3-f800-4c89-59a7-4226988681ab>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 392d51da-2ff2-4dcc-7d56-9636a1bc550e
+- !<SceneObject/b73f1e92-09ec-42fe-5294-509a339d4580>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> b54601f3-f800-4c89-59a7-4226988681ab
+  Components:
+    - !<own> 2add505e-0143-4ac9-6bb0-71780495462e
+- !<ObjectPrefabAssetData/eacc0fd9-4613-4fc1-b77b-73730a4e3738>
+  Prototype: !<ObjectOwner/c6e9c21d-3ba2-4033-af5e-459c8053c538>
+    PackagePath: ""
+    objects:
+      - !<own> b73f1e92-09ec-42fe-5294-509a339d4580
