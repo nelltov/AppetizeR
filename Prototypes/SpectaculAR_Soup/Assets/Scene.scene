@@ -1974,10 +1974,10 @@
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Mesh>
-    Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
-    Convex: false
-    Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  Shape: !<Cylinder>
+    Axis: Y
+    Length: 12.000000
+    Radius: 2.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -5021,7 +5021,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: Mushroom
+  Text: Carrot
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -7415,7 +7415,7 @@
   PrefabRemaps:
     []
   Name: Plate3
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 4.991316, y: -1.217464, z: 8.738720}
@@ -9637,12 +9637,12 @@
     - a656ea6c-751a-4ef4-b21a-d89b70671a8c: db24c102-8d0d-49fc-b208-a14b1856e90e
     - de2300df-390c-4a6a-a533-b24b0e78ab4b: cdab1d20-637a-4a11-8053-25227186b36f
   Name: Mushroom
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 13.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 50.000000, z: 0.000000}
-    Scale: {x: 0.075000, y: 0.750000, z: 0.075000}
+    Scale: {x: 0.100000, y: 1.000000, z: 0.100000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 0d6e43ac-d209-4c01-ba8f-3dbf8c1d97f6
