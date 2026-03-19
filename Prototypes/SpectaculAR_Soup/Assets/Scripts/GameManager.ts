@@ -45,6 +45,8 @@ export class GameManager extends BaseScriptComponent {
     @input
     victoryObject: SceneObject[]
 
+    private currentIngredientInfoPosition : number = 0;
+
 onReady()
 {
     // Subscribe to synced chef property changes
@@ -158,64 +160,18 @@ private playerVictoryActivated(value)
     
 }
 
-private addIngredientDemo()
-{
-    for(let i=0; i < Recipe0.length; i++)
-    this.ingManager.updateStorageProperties(Recipe0[i])
-}
-private isTheSoupRight(currentRecipeChosen: number): boolean
-{
-    // Store selected recipe id (synced)
-    this.currentRecipe.setPendingValue(currentRecipeChosen);
-
-    // Get pot contents (vec2[] where x=category, y=variantId)
-    const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-
-    // Validate recipe index
-    if (currentRecipeChosen < 0 || currentRecipeChosen >= ourRecipes.length)
-    {
-        print("Soup check failed: invalid recipe index " + currentRecipeChosen);
-        return false;
-    }
-
-    // Pull the chosen recipe from recipe table
-    const chosenRecipeTuple = ourRecipes[currentRecipeChosen]; // [string, IngredientInfo[]]
-    const recipeName = chosenRecipeTuple[0];
-    const recipe = chosenRecipeTuple[1];
-
-    // Quick fail: different lengths cannot match exactly
-    if (pot.length !== recipe.length)
-    {
-        print("Soup check failed for " + recipeName + ": pot length " + pot.length + " != recipe length " + recipe.length);
-        return false;
-    }
-
-    // Compare each ingredient slot
-    for (let i = 0; i < pot.length; i++)
-    {
-        const potVec = pot[i];
-        const expected = recipe[i];
-
-        // Compare values
-        const matches =
-            potVec.x === expected.category &&
-            potVec.y === expected.variantId;
-
-        if (!matches)
+private nextChefIngredient()
+{   
+    const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
+    this.chefPlayerInfo.getComponent("Text").text =  "Current Ingredient to put in soup is " +currentIngredientDisplayed;
+    if (this.currentIngredientInfoPosition < Recipe0.length) 
         {
-            print(
-                "Soup check failed for " + recipeName +
-                " at index " + i +
-                " pot=(" + potVec.x + "," + potVec.y + ")" +
-                " expected=(" + expected.category + "," + expected.variantId + ")"
-            );
-            return false;
+            this.currentIngredientInfoPosition++;
         }
-    }
-
-    // If we never failed, it matches
-    print("Soup check passed for " + recipeName);
-    return true;
+    else if (this.currentIngredientInfoPosition = Recipe0.length)
+        {
+            this.currentIngredientInfoPosition = Recipe0.length
+        }
 }
 
 private isTheSoupRightDemo()
@@ -223,8 +179,8 @@ private isTheSoupRightDemo()
     
     // Get pot contents (vec2[] where x=category, y=variantId)
     const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-    //print(pot[0]);
-    /*
+    //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
+    
 
     // Quick fail: different lengths cannot match exactly
     if (pot.length !== Recipe0.length)
@@ -262,7 +218,7 @@ private isTheSoupRightDemo()
     // If we never failed, it matches
     print("Soup check passed for " + Recipe0);
     this.playerVictoryActivated(true);
-    return true;*/
+    return true;
 }
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
 private spawn(prefab: ObjectPrefab) 
