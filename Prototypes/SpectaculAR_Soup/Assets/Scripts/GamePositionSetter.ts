@@ -9,12 +9,11 @@ export class GamePositionSetter extends BaseScriptComponent
     @input
     menuObject: SceneObject;
 
-    
-
     @input
     ingredientsObjects: SceneObject[]
 
-    private renderMesh: RenderMeshVisual | null = null;
+    @input
+    renderMesh: RenderMeshVisual | null = null;
    
     private interactableComponent: InteractableManipulation | null = null;
 
