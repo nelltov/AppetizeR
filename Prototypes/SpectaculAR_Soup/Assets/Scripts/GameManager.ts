@@ -28,6 +28,9 @@ export class GameManager extends BaseScriptComponent {
     private player: number | null = null
 
     @input
+    camera: Camera
+
+    @input
     instantiator : Instantiator
 
     @input
@@ -46,6 +49,7 @@ export class GameManager extends BaseScriptComponent {
     victoryObject: SceneObject[]
 
     private currentIngredientInfoPosition : number = 0;
+    private followingHead : boolean = true;
 
 onReady()
 {
@@ -72,8 +76,21 @@ onReady()
     this.amITheChef();
 }
 
-onAwake() 
+onAwake()
 {
+        // Keep gameStartButton in front of the headset until the game starts
+        const update = this.createEvent("UpdateEvent")
+        update.bind(() =>
+        {
+            if (!this.followingHead || !this.camera || !this.gameStartButton) return;
+            if (!SessionController.getInstance().isHost()) return;
+            const t = this.camera.getTransform();
+            const worldOffset = t.getWorldRotation().multiplyVec3(new vec3(0, 0, -60));
+            this.gameStartButton.getTransform().setWorldPosition(t.getWorldPosition().add(worldOffset));
+            // Match headset rotation
+            this.gameStartButton.getTransform().setWorldRotation(t.getWorldRotation());
+
+        })
 
         //Setting Sync Entity
         this.syncEntity = new SyncEntity(this);
@@ -92,6 +109,7 @@ onAwake()
 public RandomizePlayerRoles()
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
+        this.followingHead = false;
 
         // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
@@ -121,7 +139,7 @@ public RandomizePlayerRoles()
             const countForThisPlayer = baseEach + (p < remainder ? 1 : 0);
             for (let k = 0; k < countForThisPlayer; k++)
             {
-                this.spawn(prefabs[prefabIndex++]);
+                //this.spawn(prefabs[prefabIndex++]);
             }
         }
     }
@@ -146,6 +164,7 @@ private amITheChef()
     if (this.myID == this.currentChef.currentOrPendingValue){
         this.chefPlayerInfo.enabled = true;
         this.chefRecipeCheckButton.enabled = true;
+        this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
         print(this.myID + " Should turn on the Chef Info")
     }
 }
@@ -161,17 +180,18 @@ private playerVictoryActivated(value)
 }
 
 private nextChefIngredient()
-{   
+{
+    this.currentIngredientInfoPosition++;
+
+    if (this.currentIngredientInfoPosition >= Recipe0.length)
+    {
+        this.currentIngredientInfoPosition = Recipe0.length - 1;
+        this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
+        return;
+    }
+
     const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
-    this.chefPlayerInfo.getComponent("Text").text =  "Current Ingredient to put in soup is " +currentIngredientDisplayed;
-    if (this.currentIngredientInfoPosition < Recipe0.length) 
-        {
-            this.currentIngredientInfoPosition++;
-        }
-    else if (this.currentIngredientInfoPosition = Recipe0.length)
-        {
-            this.currentIngredientInfoPosition = Recipe0.length
-        }
+    this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is " + currentIngredientDisplayed;
 }
 
 private isTheSoupRightDemo()

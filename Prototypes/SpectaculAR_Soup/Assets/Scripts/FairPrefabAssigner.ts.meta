@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/f20f6939-f895-48ce-b9ae-2940caa2a499>
+- !<AssetImportMetadata/24acd3a8-5908-46c3-aed0-1a66c096e982>
   ImportedAssetIds:
-    TypeScriptAsset: !<reference> 99152b9f-4805-477f-8ab3-c42b01dcc057
+    TypeScriptAsset: !<reference> 0b972c74-915f-4dfd-9a19-f9f9b2ee4f37
   ImporterName: TypeScriptAssetImporter
-  PrimaryAsset: !<reference> 99152b9f-4805-477f-8ab3-c42b01dcc057
+  PrimaryAsset: !<reference> 0b972c74-915f-4dfd-9a19-f9f9b2ee4f37
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    TypeScriptAsset: !<own> e8d531d4-99b3-4986-bcc5-59c549017a6b
+    TypeScriptAsset: !<own> db2a09e8-c608-4920-9526-de979ad10bdc
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<TypeScriptAssetData/e8d531d4-99b3-4986-bcc5-59c549017a6b>
+- !<TypeScriptAssetData/db2a09e8-c608-4920-9526-de979ad10bdc>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -22,13 +22,13 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 0267ebf0-1a0c-4e06-aaec-04b19ce67375
+  ComponentUid: 9cdab6a6-5411-4568-9619-6c3914b275b5
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    ingManager: false
-    ingredientsPrefab: false
     instantiator: false
+    persistenceString: false
+    prefabPool: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,13 +39,13 @@
     []
   DefaultScriptInputs:
     - instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
-      ingredientsPrefab: !<reference.ObjectPrefab[]>
+      prefabPool: !<reference.ObjectPrefab[]>
         []
-      ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      persistenceString: Owner
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AssignableType instantiator
-    - "// @input Asset.ObjectPrefab[] ingredientsPrefab"
-    - // @input AssignableType_1 ingManager
+    - "// @input Asset.ObjectPrefab[] prefabPool"
+    - '// @input string persistenceString = "Owner" {"label":"Persistence", "widget":"combobox", "values":[{"label":"Ephemeral", "value":"Ephemeral"}, {"label":"Owner", "value":"Owner"}, {"label":"Session", "value":"Session"}, {"label":"Persist", "value":"Persist"}]}'

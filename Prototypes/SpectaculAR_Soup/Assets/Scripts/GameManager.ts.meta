@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    camera: false
     chefPlayerInfo: false
     chefRecipeCheckButton: false
     gameStartButton: false
@@ -41,7 +42,8 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
@@ -52,6 +54,7 @@
     -
       {}
   InputLines:
+    - // @input Component.Camera camera
     - // @input AssignableType instantiator
     - // @input AssignableType_1 ingManager
     - // @input SceneObject gameStartButton
