@@ -1,0 +1,56 @@
+- !<AssetImportMetadata/69a9638b-5d7a-44b3-90fb-29e5148bb4ec>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> b704bcb1-1e11-4f70-84c5-a4b6327e9d57
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> b704bcb1-1e11-4f70-84c5-a4b6327e9d57
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> fd44ac68-3d0d-4dc7-bdf3-b7f8b8163078
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/8230c78c-0942-465a-6752-38da9ffad549>
+  PrefabRemaps:
+    []
+  Name: bay_leaf
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b633a034-df0d-402d-56a0-173d0a97392f
+- !<RenderMeshVisual/b633a034-df0d-402d-56a0-173d0a97392f>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 56d4ac8d-2111-4efd-bca3-2072d98e0d2e
+  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/fd44ac68-3d0d-4dc7-bdf3-b7f8b8163078>
+  Prototype: !<ObjectOwner/7fae07f9-e07b-4021-9832-82d19d8d3611>
+    PackagePath: ""
+    objects:
+      - !<own> 8230c78c-0942-465a-6752-38da9ffad549

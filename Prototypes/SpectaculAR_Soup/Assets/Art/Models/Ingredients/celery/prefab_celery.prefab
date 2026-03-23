@@ -1,0 +1,80 @@
+- !<ObjectPrefab/a16140e7-6345-4739-83b6-1c77b5a0f20f>
+  PackagePath: ""
+  objects:
+    - !<own> d87ff192-cfb6-4f92-b6b5-0c3dd20ed78c
+  LazyLoading: false
+  RetainAssets: true
+- !<RenderMeshVisual/2ef84be0-8919-441a-9fe9-1504fbcdb610>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 7bd10464-1cad-437a-9be6-0654fbb3db11
+  Mesh: !<reference> d22354e7-e09f-4877-9a40-aef7eb6ab594
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<AnimationPlayer/9426587d-d60a-4caf-870f-138333721718>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 3ebd266c-28ba-4ba5-8197-45661e347562
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/d87ff192-cfb6-4f92-b6b5-0c3dd20ed78c>
+  PrefabRemaps:
+    - 2ef84be0-8919-441a-9fe9-1504fbcdb610: 2ef84be0-8919-441a-6016-eafb043249ef
+    - 9426587d-d60a-4caf-870f-138333721718: 9426587d-d60a-4caf-78f0-ec7ccc8de8e7
+    - d87ff192-cfb6-4f92-b6b5-0c3dd20ed78c: d87ff192-cfb6-4f92-494a-f3c22df12873
+    - ed903484-8907-4337-9ca2-69509ca3d23f: ed903484-8907-4337-635d-96af635c2dc0
+  Name: celery
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -37.641277}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ed903484-8907-4337-9ca2-69509ca3d23f
+  Components:
+    - !<own> 9426587d-d60a-4caf-870f-138333721718
+- !<SceneObject/ed903484-8907-4337-9ca2-69509ca3d23f>
+  PrefabRemaps:
+    []
+  Name: celery
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.695471, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2ef84be0-8919-441a-9fe9-1504fbcdb610
