@@ -46,9 +46,21 @@
     - Port_Input0_N006:
         typeIdx: 1
         value: 1.000000
+    - Port_Input0_N008:
+        typeIdx: 1
+        value: 0.500000
+    - Port_Input0_N010:
+        typeIdx: 1
+        value: 1.000000
     - Port_Input0_N011:
         typeIdx: 1
         value: 1.000000
+    - Port_Input0_N016:
+        typeIdx: 1
+        value: -0.500000
+    - Port_Input0_N017:
+        typeIdx: 1
+        value: -0.500000
     - Port_Input0_N035:
         typeIdx: 5
         value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
@@ -58,12 +70,18 @@
     - Port_Input0_N042:
         typeIdx: 5
         value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Input0_N043:
+        typeIdx: 1
+        value: 2.000000
     - Port_Input0_N044:
         typeIdx: 1
         value: 0.000000
     - Port_Input0_N068:
         typeIdx: 5
         value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Input0_N069:
+        typeIdx: 1
+        value: 2.000000
     - Port_Input0_N070:
         typeIdx: 5
         value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
@@ -88,6 +106,9 @@
     - Port_Input0_N078:
         typeIdx: 1
         value: 1.000000
+    - Port_Input1_N008:
+        typeIdx: 1
+        value: 0.500000
     - Port_Input1_N009:
         typeIdx: 1
         value: 0.000000
@@ -97,12 +118,18 @@
     - Port_Input1_N020:
         typeIdx: 1
         value: 1.000000
+    - Port_Input1_N025:
+        typeIdx: 3
+        value: {x: 0.500000, y: 0.500000}
     - Port_Input1_N026:
         typeIdx: 3
         value: {x: 1.000000, y: 1.000000}
     - Port_Input1_N031:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
+    - Port_Input1_N032:
+        typeIdx: 1
+        value: 2.000000
     - Port_Input1_N034:
         typeIdx: 3
         value: {x: 0.000000, y: 0.000000}
@@ -113,6 +140,9 @@
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - Port_Input1_N044:
+        typeIdx: 1
+        value: 0.000000
+    - Port_Input1_N068:
         typeIdx: 1
         value: 0.000000
     - Port_Input1_N069:
@@ -316,6 +346,9 @@
     - Port_borderSize_N007:
         typeIdx: 1
         value: 0.200000
+    - Port_borderSoftness_N007:
+        typeIdx: 1
+        value: 0.030000
     - Port_color0_N046:
         typeIdx: 5
         value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
@@ -436,6 +469,9 @@
     - Port_uv_N080:
         typeIdx: 3
         value: {x: 0.000000, y: 0.000000}
+    - PreviewEnabled:
+        typeIdx: 0
+        value: 0
     - Tweak_N52:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
@@ -448,16 +484,121 @@
     - "Tweak_N52[2]":
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - backgroundColor:
+        typeIdx: 5
+        value: {x: 0.702113, y: 0.702113, z: 0.702113, w: 1.000000}
+    - backgroundTexture:
+        typeIdx: 9
+        value:
+          id: ffffffff-ffff-ffff-ffff-ffffffffffff
+          sampler:
+            filteringMode: Trilinear
+            wrapModeU: Repeat
+            wrapModeV: Repeat
+            wrapModeW: Repeat
+            borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+            mipmaps: false
+          type: Texture2D
     - backgroundTextureBorderColor:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - backgroundTextureDims:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - backgroundTextureTransform:
+        typeIdx: 7
+        value:
+          0: {x: 1.000000, y: 0.000000, z: 0.000000}
+          1: {x: 0.000000, y: 1.000000, z: 0.000000}
+          2: {x: 0.000000, y: 0.000000, z: 1.000000}
     - backgroundTextureUvMinMax:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - border:
+        typeIdx: 1
+        value: 1.000000
+    - borderColor:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[0]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[1]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[2]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[3]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[4]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientColors[5]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "borderGradientPercents[0]":
+        typeIdx: 1
+        value: 0.000000
+    - "borderGradientPercents[1]":
+        typeIdx: 1
+        value: 0.000000
+    - "borderGradientPercents[2]":
+        typeIdx: 1
+        value: 0.000000
+    - "borderGradientPercents[3]":
+        typeIdx: 1
+        value: 0.000000
+    - "borderGradientPercents[4]":
+        typeIdx: 1
+        value: 0.000000
+    - "borderGradientPercents[5]":
+        typeIdx: 1
+        value: 0.000000
+    - borderGradientStartPosition:
+        typeIdx: 3
+        value: {x: 1.000000, y: 1.000000}
+    - borderGradientStops:
+        typeIdx: 0
+        value: 0
+    - borderGradientType:
+        typeIdx: 1
+        value: 1.000000
+    - borderLinearGradientAngle:
+        typeIdx: 1
+        value: 1.000000
+    - borderLinearGradientLength:
+        typeIdx: 1
+        value: 1.000000
+    - borderLinearGradientStart:
+        typeIdx: 1
+        value: 1.000000
+    - borderRadialGradientLength:
+        typeIdx: 1
+        value: 1.000000
+    - borderSize:
+        typeIdx: 1
+        value: 0.200000
     - colors:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[0]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[1]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[2]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[3]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[4]":
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - "colors[5]":
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - "colors[6]":
@@ -466,7 +607,25 @@
     - "colors[7]":
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - cornerRadius:
+        typeIdx: 1
+        value: 0.500000
+    - gradientStartPosition:
+        typeIdx: 3
+        value: {x: 1.000000, y: 1.000000}
+    - gradientType:
+        typeIdx: 1
+        value: 1.000000
+    - linearGradientAngle:
+        typeIdx: 1
+        value: 1.000000
     - linearGradientLen:
+        typeIdx: 1
+        value: 1.000000
+    - linearGradientLength:
+        typeIdx: 1
+        value: 1.000000
+    - linearGradientStart:
         typeIdx: 1
         value: 1.000000
     - mainColor:
@@ -475,7 +634,46 @@
     - opacity:
         typeIdx: 1
         value: 1.000000
+    - opacityFactor:
+        typeIdx: 1
+        value: 1.000000
+    - "percents[0]":
+        typeIdx: 1
+        value: 0.000000
+    - "percents[1]":
+        typeIdx: 1
+        value: 0.000000
+    - "percents[2]":
+        typeIdx: 1
+        value: 0.000000
+    - "percents[3]":
+        typeIdx: 1
+        value: 0.000000
+    - "percents[4]":
+        typeIdx: 1
+        value: 0.000000
+    - "percents[5]":
+        typeIdx: 1
+        value: 0.000000
+    - radialGradientLength:
+        typeIdx: 1
+        value: 1.000000
+    - size:
+        typeIdx: 3
+        value: {x: 42.000000, y: 5.000000}
+    - stops:
+        typeIdx: 0
+        value: 0
+    - textureMode:
+        typeIdx: 3
+        value: {x: 1.000000, y: 1.000000}
+    - textureWrap:
+        typeIdx: 1
+        value: 1.000000
     - useBorder:
+        typeIdx: 1
+        value: 1.000000
+    - useTexture:
         typeIdx: 1
         value: 1.000000
   DepthWrite: true

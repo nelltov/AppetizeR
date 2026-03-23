@@ -1,0 +1,130 @@
+- !<AssetImportMetadata/c0301e68-a787-47fe-b4dc-9b94c5c01ca3>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 084f3512-5c76-45be-b676-3367acdf4623
+    .hidden/white: !<reference> b00401db-6418-4ccd-9e63-217d2ce288e1
+    0a849e018ab51cc3: !<reference> 44df9c0b-8559-4324-bcb0-6bf2b0a75291
+    1cfc7f054025c196: !<reference> 229139f6-8b98-431d-924a-7e92cf71e03c
+    2028ca51e4a54211: !<reference> 91c83d7a-ebad-4d90-9dcb-1a94d535bbdf
+    7a0dd5cd69df73fa: !<reference> db526513-94fd-4058-8067-d437b39cb844
+    Animations/BaseLayer: !<reference> 3ebd266c-28ba-4ba5-8197-45661e347562
+    Materials/openPBR_shader1: !<reference> 9e9401cb-76d7-4244-9f9d-ea57d54889c6
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> d7833891-6bc6-4c87-b434-499332418eec
+    Meshes/celery: !<reference> d22354e7-e09f-4877-9a40-aef7eb6ab594
+    Scene: !<reference> 691f5f23-9d65-46ea-88b9-d08f6cf7570e
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 691f5f23-9d65-46ea-88b9-d08f6cf7570e
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 8ac088a4-7afc-4fb7-8263-692712dbb509
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<SceneObject/229139f6-8b98-431d-6db5-816d308e1fc3>
+  PrefabRemaps:
+    []
+  Name: celery
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.695471, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 44df9c0b-8559-4324-434f-940d4f58ad6e
+- !<RenderMeshVisual/44df9c0b-8559-4324-434f-940d4f58ad6e>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9e9401cb-76d7-4244-9f9d-ea57d54889c6
+  Mesh: !<reference> d22354e7-e09f-4877-9a40-aef7eb6ab594
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/8ac088a4-7afc-4fb7-8263-692712dbb509>
+  Prototype: !<ObjectOwner/4c32cc1b-4bbf-407e-ac16-1f7b53e640bc>
+    PackagePath: ""
+    objects:
+      - !<own> db526513-94fd-4058-7f98-2bc84c6347bb
+- !<AnimationPlayer/91c83d7a-ebad-4d90-6234-e56b2aca4420>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 3ebd266c-28ba-4ba5-8197-45661e347562
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/db526513-94fd-4058-7f98-2bc84c6347bb>
+  PrefabRemaps:
+    []
+  Name: celery
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 229139f6-8b98-431d-6db5-816d308e1fc3
+  Components:
+    - !<own> 91c83d7a-ebad-4d90-6234-e56b2aca4420
