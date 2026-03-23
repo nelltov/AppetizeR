@@ -5,6 +5,7 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 8261937e-a088-45c4-b03f-cb478bab35af
+    - !<own> 3a0235c9-e917-4752-b10e-1f76b1262a70
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -226,6 +227,27 @@
   ScriptTypes:
     "":
       {}
+- !<AnimationPlayer/0054ec39-b2b7-4a33-8428-faff221cde62>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 633c80e8-6972-44c3-802f-c0efb0d0350b
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
 - !<SceneObject/00e7a6f6-7f3e-4523-b016-17422a08525f>
   PrefabRemaps:
     - 00e7a6f6-7f3e-4523-b016-17422a08525f: 0739ed2e-6342-4416-72c0-ab4d63203f0f
@@ -273,7 +295,7 @@
   PrefabRemaps:
     []
   Name: Plate6
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 10.000000, y: 0.000000, z: 5.000000}
@@ -284,6 +306,21 @@
     - !<own> 6baee798-20d5-4d7d-b9fe-fad90737db85
   Components:
     - !<own> 8acf9a75-7725-412b-8317-c8820b586cbe
+- !<SceneObject/01b24298-ab31-406e-859f-7092ca4efde5>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -11.780861}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c7fb8bed-ac8f-4f97-9806-17c38003c80b
 - !<SceneObject/02927b71-b7ac-4cca-a9c5-3e4ef4710222>
   PrefabRemaps:
     []
@@ -585,7 +622,7 @@
   PrefabRemaps:
     []
   Name: Plate6
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 10.000000, y: 0.300000, z: 5.000000}
@@ -1671,7 +1708,7 @@
   PrefabRemaps:
     []
   Name: Plate1
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -13.008684, y: -1.217464, z: 11.738720}
@@ -1751,7 +1788,7 @@
   PrefabRemaps:
     []
   Name: Plate3
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 4.991316, y: -1.217464, z: 8.738720}
@@ -2167,7 +2204,7 @@
   PrefabRemaps:
     []
   Name: Plate4
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 13.991316, y: -1.217464, z: 11.738720}
@@ -2476,6 +2513,24 @@
     - !<own> 1fbad860-d2cc-4f57-a307-5ac38abfa448
   Components:
     []
+- !<SceneObject/3a0235c9-e917-4752-b10e-1f76b1262a70>
+  PrefabRemaps:
+    - 0054ec39-b2b7-4a33-8428-faff221cde62: 2add505e-0143-4ac9-6bb0-71780495462e
+    - 01b24298-ab31-406e-859f-7092ca4efde5: b54601f3-f800-4c89-59a7-4226988681ab
+    - 3a0235c9-e917-4752-b10e-1f76b1262a70: b73f1e92-09ec-42fe-5294-509a339d4580
+    - c7fb8bed-ac8f-4f97-9806-17c38003c80b: 392d51da-2ff2-4dcc-7d56-9636a1bc550e
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 01b24298-ab31-406e-859f-7092ca4efde5
+  Components:
+    - !<own> 0054ec39-b2b7-4a33-8428-faff221cde62
 - !<SceneObject/3a4261f4-2931-43c1-9fdf-cceacb788e80>
   PrefabRemaps:
     []
@@ -2637,7 +2692,7 @@
   PrefabRemaps:
     []
   Name: Plate4
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 13.991316, y: -1.217464, z: 11.738720}
@@ -2721,7 +2776,7 @@
   PrefabRemaps:
     []
   Name: Plate1
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -13.008684, y: -1.217464, z: 11.738720}
@@ -4166,7 +4221,7 @@
   PrefabRemaps:
     []
   Name: Plate5
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -10.000000, y: 0.300000, z: 5.000000}
@@ -6031,7 +6086,7 @@
   PrefabRemaps:
     []
   Name: Plate5
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -10.000000, y: 0.000000, z: 5.000000}
@@ -8736,6 +8791,26 @@
   ScriptTypes:
     "":
       {}
+- !<RenderMeshVisual/c7fb8bed-ac8f-4f97-9806-17c38003c80b>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> a8dbf16b-1c77-4884-8d62-95824252a20d
+  Mesh: !<reference> 011df40e-c898-47c2-9ac9-96deaf3ad009
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/c89d7e48-75a6-414e-a253-874f80bfe792>
   PrefabRemaps:
     []
@@ -9116,7 +9191,7 @@
   PrefabRemaps:
     []
   Name: Plate3
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 4.991316, y: -1.217464, z: 8.738720}
@@ -9285,7 +9360,7 @@
   PrefabRemaps:
     []
   Name: Plate2
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -4.099777, y: -1.217464, z: 8.881104}
@@ -9320,7 +9395,7 @@
   PrefabRemaps:
     []
   Name: Plate2
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -4.099777, y: -1.217464, z: 8.881104}
@@ -9780,9 +9855,9 @@
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Cylinder>
+  Shape: !<Capsule>
     Axis: Y
-    Length: 18.000000
+    Length: 12.000000
     Radius: 2.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -9793,8 +9868,8 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
-  Dynamic: false
+  ShowCollider: true
+  Dynamic: true
   BodySetting: Density
   BodySettingValue: 0.000000
   Damping: 0.000000
