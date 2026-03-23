@@ -1,0 +1,80 @@
+- !<ObjectPrefab/6af7391b-fcb0-4c18-a722-8f53e19d9a8c>
+  PackagePath: ""
+  objects:
+    - !<own> 8ef5c547-9b50-4553-8dc1-f8f717157d75
+  LazyLoading: false
+  RetainAssets: true
+- !<RenderMeshVisual/59274890-5b8b-4bd3-91ae-f97f681e6c66>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/8ef5c547-9b50-4553-8dc1-f8f717157d75>
+  PrefabRemaps:
+    - 59274890-5b8b-4bd3-91ae-f97f681e6c66: 59274890-5b8b-4bd3-6e51-068097e19399
+    - 8ef5c547-9b50-4553-8dc1-f8f717157d75: 8ef5c547-9b50-4553-723e-0708e8ea828a
+    - bded6c9b-b3d0-447b-88aa-a531b952cb03: bded6c9b-b3d0-447b-7755-5ace46ad34fc
+    - dd4b553c-7d0e-44ac-a63e-3a499942e11e: dd4b553c-7d0e-44ac-59c1-c5b666bd1ee1
+  Name: tofu
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 46.816441, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> dd4b553c-7d0e-44ac-a63e-3a499942e11e
+  Components:
+    - !<own> bded6c9b-b3d0-447b-88aa-a531b952cb03
+- !<AnimationPlayer/bded6c9b-b3d0-447b-88aa-a531b952cb03>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> a8296910-b601-4b43-ac33-ea73077e3c8b
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/dd4b553c-7d0e-44ac-a63e-3a499942e11e>
+  PrefabRemaps:
+    []
+  Name: tofu
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -46.814243, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 59274890-5b8b-4bd3-91ae-f97f681e6c66
