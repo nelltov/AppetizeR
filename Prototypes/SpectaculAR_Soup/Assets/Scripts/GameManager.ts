@@ -8,9 +8,9 @@ import { ourRecipes, Recipe0, Recipes } from "./Recipes";
 
 export enum RoundState{
     
-    PreRound,
-    InRound,
-    PostRound
+    PreRound, //0
+    InRound, //1
+    PostRound //2
 }
 
 @component
@@ -45,17 +45,31 @@ export class GameManager extends BaseScriptComponent {
     @input
     victoryObject: SceneObject[]
 
-onReady() 
+    private currentIngredientInfoPosition : number = 0;
+
+onReady()
 {
     // Subscribe to synced chef property changes
+    this.playerVictoryActivated(false);
+
     this.currentChef.onAnyChange.add(() =>
     {
         print("Chef subscribed");
-
         this.amITheChef();
     });
 
+    this.chefSelected.onAnyChange.add(() =>
+    {
+        this.amITheChef();
+    });
 
+    this.soupIngredientsCorrect.onAnyChange.add(() =>{
+         this.playerVictoryActivated(this.soupIngredientsCorrect.currentOrPendingValue);
+    });
+
+    // Handle late-joiners: if chef was already selected before this player joined,
+    // onAnyChange will never fire, so check the current value immediately
+    this.amITheChef();
 }
 
 onAwake() 
@@ -77,73 +91,52 @@ onAwake()
     
 public RandomizePlayerRoles()
     {
-        if (this.chefSelected.currentOrPendingValue == true) return;  
-        //Get the Users in the session
+        if (this.chefSelected.currentOrPendingValue == true) return;
+
+        // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
-        //remap them with connectionID (use this to assign authority later on)
-        const ids = users.map(u => (u as any).connectionId as string);
+        const chefId = (this.getRandomElement(users) as any).connectionId as string;
+        const nonChefIds = users
+            .map(u => (u as any).connectionId as string)
+            .filter(id => id !== chefId);
 
-        //Choose a chef
 
-        const chosenChef = this.getRandomElement(users);
-        const chosenChefConnectionId = (chosenChef as any).connectionId as string;
+        if (nonChefIds.length === 0)
+        {
+            print("No non-chef players to receive ingredients.");
+            return;
+        }
 
-        //Set Chef Chosen
-        this.chefSelected.setPendingValue(true);
-        
-        //Set the current Chef Connection ID as a string
-        this.currentChef.setPendingValue(chosenChefConnectionId);
+        this.assignChef(chefId, nonChefIds.length);
 
-        //Make an array of the nonChef players
-        const nonChefIds: string[] = ids.filter(id => id !== chosenChefConnectionId);
-
-        //Prefab[] from Instantiator and Manager
+        // Distribute ingredient prefabs as evenly as possible across non-chef players
+        // e.g. 9 prefabs / 4 players → 3 players get 2, 1 player gets 3
         const prefabs = this.ingManager.ingredientPrefabList;
-        const total = prefabs.length;
-        const nonChefCount = nonChefIds.length;
-
-        
-        //assigning a value to each player
-        if (nonChefCount <= 0)
-            {
-                print("No non-chef players to receive ingredients.");
-                return;
-            }
-        else 
-            {
-            this.player = nonChefCount;
-            }
-
-        //making sure to return an Int so the prefab list is devided somewhat fairly between players (**9 objects 4 players means 3 get 2 objects and one will get 3**)
-        const baseEach = Math.floor(total / nonChefCount);
-        const remainder = total % nonChefCount;
+        const baseEach = Math.floor(prefabs.length / nonChefIds.length);
+        const remainder = prefabs.length % nonChefIds.length;
 
         let prefabIndex = 0;
-
-        //For loop to spawn all the objects correctly Though I don't know how to assign them yet.
-        for (let p = 0; p < nonChefCount; p++)
+        for (let p = 0; p < nonChefIds.length; p++)
+        {
+            const countForThisPlayer = baseEach + (p < remainder ? 1 : 0);
+            for (let k = 0; k < countForThisPlayer; k++)
             {
-                const receiverId = nonChefIds[p];
-                const countForThisPlayer = baseEach + (p < remainder ? 1 : 0);
-
-                for (let k = 0; k < countForThisPlayer; k++)
-                {
-                    const prefab = prefabs[prefabIndex];
-                    prefabIndex++;
-                    //Remove the spawn?
-                    //maybe spawn oin each player
-                    this.spawn(prefab);
-        
-                }
+                this.spawn(prefabs[prefabIndex++]);
             }
-        
-        
-        print("Picked chef connectionId = " + chosenChefConnectionId);
+        }
     }
+
+private assignChef(chefId: string, nonChefCount: number)
+{
+    this.chefSelected.setPendingValue(true);
+    this.currentChef.setPendingValue(chefId);
+    this.player = nonChefCount;
+    print("Picked chef connectionId = " + chefId);
+}
 
 private amITheChef()
 {   
-    print("Am I Chef Event Triggered");
+    //print("Am I Chef Event Triggered");
     //Get my own ID
     this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
     //Turn off game Start Locally
@@ -159,6 +152,7 @@ private amITheChef()
 
 private playerVictoryActivated(value)
 {
+    print(7 + "house");
     for (let i = 0; i <this.victoryObject.length; i++)
     {
       this.victoryObject[i].enabled = value;  
@@ -166,81 +160,37 @@ private playerVictoryActivated(value)
     
 }
 
-private addIngredientDemo()
-{
-    for(let i=0; i < Recipe0.length; i++)
-    this.ingManager.updateStorageProperties(Recipe0[i])
-}
-private isTheSoupRight(currentRecipeChosen: number): boolean
-{
-    // Store selected recipe id (synced)
-    this.currentRecipe.setPendingValue(currentRecipeChosen);
-
-    // Get pot contents (vec2[] where x=category, y=variantId)
-    const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-
-    // Validate recipe index
-    if (currentRecipeChosen < 0 || currentRecipeChosen >= ourRecipes.length)
-    {
-        print("Soup check failed: invalid recipe index " + currentRecipeChosen);
-        return false;
-    }
-
-    // Pull the chosen recipe from recipe table
-    const chosenRecipeTuple = ourRecipes[currentRecipeChosen]; // [string, IngredientInfo[]]
-    const recipeName = chosenRecipeTuple[0];
-    const recipe = chosenRecipeTuple[1];
-
-    // Quick fail: different lengths cannot match exactly
-    if (pot.length !== recipe.length)
-    {
-        print("Soup check failed for " + recipeName + ": pot length " + pot.length + " != recipe length " + recipe.length);
-        return false;
-    }
-
-    // Compare each ingredient slot
-    for (let i = 0; i < pot.length; i++)
-    {
-        const potVec = pot[i];
-        const expected = recipe[i];
-
-        // Compare values
-        const matches =
-            potVec.x === expected.category &&
-            potVec.y === expected.variantId;
-
-        if (!matches)
+private nextChefIngredient()
+{   
+    const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
+    this.chefPlayerInfo.getComponent("Text").text =  "Current Ingredient to put in soup is " +currentIngredientDisplayed;
+    if (this.currentIngredientInfoPosition < Recipe0.length) 
         {
-            print(
-                "Soup check failed for " + recipeName +
-                " at index " + i +
-                " pot=(" + potVec.x + "," + potVec.y + ")" +
-                " expected=(" + expected.category + "," + expected.variantId + ")"
-            );
-            return false;
+            this.currentIngredientInfoPosition++;
         }
-    }
-
-    // If we never failed, it matches
-    print("Soup check passed for " + recipeName);
-    return true;
+    else if (this.currentIngredientInfoPosition = Recipe0.length)
+        {
+            this.currentIngredientInfoPosition = Recipe0.length
+        }
 }
 
 private isTheSoupRightDemo()
 {
-
+    
     // Get pot contents (vec2[] where x=category, y=variantId)
     const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-
+    //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
+    
 
     // Quick fail: different lengths cannot match exactly
     if (pot.length !== Recipe0.length)
     {
         print(pot.length + ": pot length and Recipe length is: " + Recipe0)
-        this.playerVictoryActivated(false);
         return false;
     }
 
+    
+    
     // Compare each ingredient slot
     for (let i = 0; i < pot.length; i++)
     {

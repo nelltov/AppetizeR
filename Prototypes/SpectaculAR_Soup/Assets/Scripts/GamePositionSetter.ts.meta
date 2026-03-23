@@ -28,6 +28,7 @@
   ScriptInputsHidden:
     ingredientsObjects: false
     menuObject: false
+    renderMesh: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,9 +41,11 @@
     - menuObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientsObjects: !<reference.SceneObject[]>
         []
+      renderMesh: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject menuObject
     - "// @input SceneObject[] ingredientsObjects"
+    - // @input Component.RenderMeshVisual renderMesh

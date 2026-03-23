@@ -21,6 +21,8 @@ export class Ingredient extends BaseScriptComponent {
     @input
     public variantId: number = 0
 
+    
+
     private ingredientInfo: IngredientInfo | null = null
 
     // Returns the ingredientInfo object (initializing it if not yet created)
@@ -38,5 +40,7 @@ export class Ingredient extends BaseScriptComponent {
     protected getVariantName(): string {
         return getEnumMemberName(this.categoryNumber, this.variantId) ?? "Unknown Ingredient"
     }
+
+    
 
 }

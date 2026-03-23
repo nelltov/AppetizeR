@@ -12,6 +12,8 @@ export class GamePositionSetter extends BaseScriptComponent
     @input
     ingredientsObjects: SceneObject[]
 
+    @input
+    renderMesh: RenderMeshVisual | null = null;
    
     private interactableComponent: InteractableManipulation | null = null;
 
@@ -28,6 +30,8 @@ export class GamePositionSetter extends BaseScriptComponent
         this.interactableComponent = this.getSceneObject().getComponent(
             InteractableManipulation.getTypeName()
         ) as InteractableManipulation;
+
+        this.renderMesh = this.getSceneObject().getComponent("Component.RenderMeshVisual") as RenderMeshVisual;
 
         this.syncEntity.notifyOnReady(() =>
         {
@@ -82,16 +86,23 @@ export class GamePositionSetter extends BaseScriptComponent
             this.interactableComponent.setCanScale(false);
             print(this.interactableComponent.canTranslate + " This is the Translate Value.")
             
-        for (let i =0; i < this.ingredientsObjects.length; i++)
+        for (let i = 0; i < this.ingredientsObjects.length; i++)
             {
+                if (isNull(this.ingredientsObjects[i])) continue;
                 this.ingredientsObjects[i].enabled = this.isLockedProp.currentOrPendingValue;
                 print("turning on objects");
             }
 
-        if (this.menuObject)
+        if (this.renderMesh)
         {
-            this.menuObject.enabled = false;
+            print("Going to turn off rendermesh. Rendermesh bool = " + this.renderMesh.enabled)
+            this.renderMesh.enabled = false;
+            print("Trying to turn off rendermesh. Rendermesh bool = " + this.renderMesh.enabled)
         }
+        if (this.menuObject)
+            {
+                this.menuObject.enabled = false;
+            }
 
         print("[GamePositionSetter] Locked: interactable/menu disabled locally.");
     }

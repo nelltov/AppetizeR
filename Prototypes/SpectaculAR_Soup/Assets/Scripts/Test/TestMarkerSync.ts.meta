@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/4b444737-d894-42d1-9b4c-a2fd8a4d8879>
+- !<AssetImportMetadata/0cdecd79-1d19-4cb4-9eb4-bc46b9a46874>
   ImportedAssetIds:
-    TypeScriptAsset: !<reference> 6f19f395-84b6-4aa0-89c1-ed0c6cdaa6a3
+    TypeScriptAsset: !<reference> dd9ffc3a-8da7-4f45-ac08-365d6cac11c3
   ImporterName: TypeScriptAssetImporter
-  PrimaryAsset: !<reference> 6f19f395-84b6-4aa0-89c1-ed0c6cdaa6a3
+  PrimaryAsset: !<reference> dd9ffc3a-8da7-4f45-ac08-365d6cac11c3
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    TypeScriptAsset: !<own> 8d1d8f48-9290-4e4f-9475-4e07b4db3821
+    TypeScriptAsset: !<own> 5a4ebf4d-ebfc-4b95-82f7-733b77574279
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<TypeScriptAssetData/8d1d8f48-9290-4e4f-9475-4e07b4db3821>
+- !<TypeScriptAssetData/5a4ebf4d-ebfc-4b95-82f7-733b77574279>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -22,11 +22,12 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 03a1d258-18f4-467e-bdd4-abda54270fdf
+  ComponentUid: b2302a86-3114-45eb-9cd4-43a8fcc81fd5
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    worldRoot: false
+    markerTrackingComponent: false
+    objectUnderMarker: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -36,9 +37,11 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - worldRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - markerTrackingComponent: !<reference.MarkerTrackingComponent> 00000000-0000-0000-0000-000000000000
+      objectUnderMarker: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input SceneObject worldRoot
+    - // @input Component.MarkerTrackingComponent markerTrackingComponent
+    - // @input SceneObject objectUnderMarker
