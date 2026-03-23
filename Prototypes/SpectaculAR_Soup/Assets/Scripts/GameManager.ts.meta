@@ -29,6 +29,7 @@
     camera: false
     chefPlayerInfo: false
     chefRecipeCheckButton: false
+    enableHeadFollow: false
     gameStartButton: false
     ingManager: false
     instantiator: false
@@ -50,6 +51,7 @@
       chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       victoryObject: !<reference.SceneObject[]>
         []
+      enableHeadFollow: true
   ScriptTypes:
     -
       {}
@@ -61,3 +63,4 @@
     - // @input SceneObject chefPlayerInfo
     - // @input SceneObject chefRecipeCheckButton
     - "// @input SceneObject[] victoryObject"
+    - // @input bool enableHeadFollow = true

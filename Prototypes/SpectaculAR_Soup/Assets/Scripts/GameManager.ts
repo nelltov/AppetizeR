@@ -48,6 +48,9 @@ export class GameManager extends BaseScriptComponent {
     @input
     victoryObject: SceneObject[]
 
+    @input
+    enableHeadFollow: boolean = true;
+
     private currentIngredientInfoPosition : number = 0;
     private followingHead : boolean = true;
 
@@ -82,7 +85,7 @@ onAwake()
         const update = this.createEvent("UpdateEvent")
         update.bind(() =>
         {
-            if (!this.followingHead || !this.camera || !this.gameStartButton) return;
+            if (!this.enableHeadFollow || !this.followingHead || !this.camera || !this.gameStartButton) return;
             if (!SessionController.getInstance().isHost()) return;
             const t = this.camera.getTransform();
             const worldOffset = t.getWorldRotation().multiplyVec3(new vec3(0, 0, -60));
