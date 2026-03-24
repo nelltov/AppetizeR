@@ -26,8 +26,10 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    gameRootObject: false
     instructionArray: false
     instructionHolderObject: false
+    saltShakerObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,9 +42,13 @@
     - instructionArray: !<string[]>
         []
       instructionHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - "// @input string[] instructionArray"
     - // @input SceneObject instructionHolderObject
+    - // @input SceneObject saltShakerObject
+    - // @input SceneObject gameRootObject
