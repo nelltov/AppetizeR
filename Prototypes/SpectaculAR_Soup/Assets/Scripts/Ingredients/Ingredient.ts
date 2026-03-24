@@ -1,4 +1,4 @@
-import { getEnumMember, getEnumMemberName, IngredientCategory } from "./IngredientTypes";
+import { getEnumMemberName, IngredientCategory } from "./IngredientTypes";
 
 export class IngredientInfo {
     category: IngredientCategory

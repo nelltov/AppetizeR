@@ -1,7 +1,5 @@
-import { getEnumMember, getEnumMemberName, IngredientCategory } from "./Ingredients/IngredientTypes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
-import { StoragePropertySet } from "SpectaclesSyncKit.lspkg/Core/StoragePropertySet";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { StorageTypes } from "SpectaclesSyncKit.lspkg/Core/StorageTypes";
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
@@ -11,10 +9,16 @@ import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 export class IngredientManager extends BaseScriptComponent
 {
     @input
+    debugText: Text;
+
+    @input
     ingredientPrefabList : ObjectPrefab[];
 
-    public currentIngredients: StorageProperty<StorageTypes.vec2Array>
     private syncEntity: SyncEntity
+    public currentIngredients: StorageProperty<StorageTypes.vec2Array>
+
+    private processedIngredientCollisions: StorageProperty<StorageTypes.stringArray>
+    private ingredientCollisions: Set<string>
 
     onAwake()
     {
@@ -23,21 +27,49 @@ export class IngredientManager extends BaseScriptComponent
         this.currentIngredients = StorageProperty.manualVec2Array("currentIngredients", []);
         this.syncEntity.addStorageProperty(this.currentIngredients);
 
-        let startEvent = this.createEvent("OnStartEvent")
-        startEvent.bind(() => { this.onStart() })
+        this.ingredientCollisions = new Set<string>();
+        this.processedIngredientCollisions = StorageProperty.manualStringArray("processedIngredientCollisions", []);
+        this.syncEntity.addStorageProperty(this.processedIngredientCollisions);
+
+        this.syncEntity.notifyOnReady(() => this.onReady())
     }
 
-    onStart()
+    onReady()
     {
-        this.syncEntity.notifyOnReady(() =>
-        {
-            EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
-            {
-                print(`Ingredient Manager heard the collision`);
-                this.updateStorageProperties(ingredientInfo);
-                EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(ingredientInfo)
-            });
+        // Create a network event to replicate ingredient collisions across all devices
+        this.syncEntity.onEventReceived.add('ingredientCollision', (messageInfo) => {
+            EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(messageInfo.data as IngredientInfo)
+        })
+
+        // Sync the set with any new processed collisions
+        this.processedIngredientCollisions.onAnyChange.add((newVal: string[]) => {
+            newVal.forEach(id => this.ingredientCollisions.add(id));
         });
+
+        // Handle the one-time local event, manage synced information, send out network event to all devices
+        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo, networkId: string) =>
+        {
+            if (this.ingredientCollisions.has(networkId)) {
+                return; // Ignore if we've already processed a collision from this network ID
+            }
+
+            // Add to the synced array if not already present
+            const currentCollisions = this.processedIngredientCollisions.currentOrPendingValue;
+            if (!currentCollisions.includes(networkId)) {
+                this.processedIngredientCollisions.setPendingValue([...currentCollisions, networkId]);
+
+                print(`Ingredient Manager heard the collision + ${networkId}`);
+                this.debugText.text = this.debugText.text + `\nIngredientManager: ${ingredientInfo.variantName} collided with the pot!`
+
+                this.updateStorageProperties(ingredientInfo);
+                this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
+
+                const ingredientSyncEntity = SyncEntity.findById(networkId) as SyncEntity
+                if (ingredientSyncEntity) {
+                    ingredientSyncEntity.localScript.sceneObject.enabled = false; // Disable the ingredient across all clients
+                }
+            }
+        }); 
     }
 
     public getCurrentIngredientsInPot()
