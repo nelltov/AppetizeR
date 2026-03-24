@@ -2,7 +2,7 @@ import { EventManager } from "Scripts/EventManager"
 import { IngredientInfo } from "Scripts/Ingredients/Ingredient"
 
 @component
-export class SoupMarkerController extends BaseScriptComponent {
+export class SoupController extends BaseScriptComponent {
     @input
     private soupDebugText: Text
 
