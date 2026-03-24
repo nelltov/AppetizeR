@@ -21,7 +21,7 @@ export class SpawnAtHeadset extends BaseScriptComponent {
 
             // Non-host: move object to local camera position
             const t = this.camera.getTransform()
-            this.targetObject.getTransform().setWorldPosition(t.getWorldPosition())
+            this.targetObject.getTransform().setWorldPosition(t.getWorldPosition().add(new vec3(0,0,-50)))
             this.targetObject.getTransform().setWorldRotation(t.getWorldRotation())
             print("[SpawnAtHeadset] Non-host placed object at local headset.")
         })

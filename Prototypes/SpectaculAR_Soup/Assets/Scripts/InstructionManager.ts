@@ -1,0 +1,43 @@
+import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
+import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
+
+@component
+export class InstructionManager extends BaseScriptComponent {
+
+    @input
+    public instructionArray : string[];
+
+    @input
+    public instructionHolderObject : SceneObject;
+
+    @input
+    public saltShakerObject : SceneObject;
+
+    @input
+    public gameRootObject : SceneObject;
+
+    private syncEntity : SyncEntity
+    private currentInstruction = StorageProperty.manualInt("currentInstruction", 0)
+
+    onAwake() {
+        this.syncEntity = new SyncEntity(this)
+        this.syncEntity.addStorageProperty(this.currentInstruction)
+
+        // Update UI on all clients whenever the instruction index changes
+        this.currentInstruction.onAnyChange.add((value) => {
+            if (value >= this.instructionArray.length)
+            {
+                this.saltShakerObject.enabled = false;
+                this.gameRootObject.enabled = true;
+                return;
+            }
+            this.instructionHolderObject.getComponent("Text").text = this.instructionArray[value];
+        })
+    }
+
+    public nextInstruction()
+    {
+        const next = this.currentInstruction.currentOrPendingValue + 1;
+        this.currentInstruction.setPendingValue(next);
+    }
+}
