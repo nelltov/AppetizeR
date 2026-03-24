@@ -31,7 +31,10 @@ export class GamePositionSetter extends BaseScriptComponent
             InteractableManipulation.getTypeName()
         ) as InteractableManipulation;
 
+        if (this.renderMesh == null)
+        {
         this.renderMesh = this.getSceneObject().getComponent("Component.RenderMeshVisual") as RenderMeshVisual;
+        }
 
         this.syncEntity.notifyOnReady(() =>
         {
