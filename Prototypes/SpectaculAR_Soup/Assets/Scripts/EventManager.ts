@@ -7,7 +7,7 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 @component
 export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
-    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
+    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo, string]>() 
     static ChefSelectedEvent = new EventWrapper<boolean[]>() 
 
     // Add more events as needed, following the pattern above.

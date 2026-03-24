@@ -1,11 +1,9 @@
 import { EventManager } from "Scripts/EventManager";
-import { Ingredient, IngredientInfo } from "Scripts/Ingredients/Ingredient";
+import { Ingredient } from "Scripts/Ingredients/Ingredient";
+import { SyncTransform } from "SpectaclesSyncKit.lspkg/Components/SyncTransform";
 
 @component
 export class SoupPotCollider extends BaseScriptComponent {
-    @input
-    private debugText: Text
-
     private sceneObj: SceneObject
     private soupCollider: ColliderComponent
 
@@ -23,33 +21,26 @@ export class SoupPotCollider extends BaseScriptComponent {
         if (this.soupCollider) {
             this.soupCollider.onCollisionEnter.add((e) => this.onCollisionEnter(e))
         }
-
-        // Debug print whenever collision event triggers to verify collision and ingredient info retrieval
-        EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
-            print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
-            if (this.debugText) {
-                this.debugText.text = `${ingredientInfo.variantName} has been added to the soup`
-            }
-        })
     }
 
     private onCollisionEnter(other: any) {
         var otherObj = other?.collision?.collider?.sceneObject
         if (isNull(otherObj)) return
 
-        // Guard against double-processing if collision fires again before disabled
-        if (!otherObj.enabled) return
-
+        // Get relevant information from the colliding ingredient object
         const ingredient = otherObj.getComponent(
             Ingredient.getTypeName()
         ) as Ingredient
 
-        if (ingredient) {
-            // Disable immediately so re-entry collisions are ignored
-            otherObj.enabled = false
+        const ingredientSyncTransform = otherObj.getComponent(
+            SyncTransform.getTypeName()
+        ) as SyncTransform
 
-            // Trigger event for ingredient colliding with the pot, passing in the ingredient info
-            EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo())
+        const ingredientSyncEntity = ingredientSyncTransform?.syncEntity
+
+        // Trigger one-time event for ingredient colliding with the pot, passing in the ingredient info
+        if (ingredient && ingredientSyncEntity) {
+            EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo(), ingredientSyncEntity.networkId)
         }
     }
 }

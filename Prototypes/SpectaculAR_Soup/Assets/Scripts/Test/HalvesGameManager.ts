@@ -38,7 +38,7 @@ export class HalvesGameManager extends BaseScriptComponent {
         })
 
         // bind game manager event
-        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) => {
+        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo, _: string) => {
             print(`from Game Manager - Ingredient collided with pot: ${ingredientInfo.variantName}`)
             this.ingManager.updateStorageProperties(ingredientInfo);
             this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
