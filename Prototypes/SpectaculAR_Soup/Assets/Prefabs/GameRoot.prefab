@@ -7033,20 +7033,26 @@
   Enabled: true
   ScriptAsset: !<reference> 9a4248d4-6fb3-4694-86dc-7dede6a2e6a3
   ScriptInputsDefault:
-    {}
+    camera: true
+    instantiator: true
+    ingManager: true
+    chefPlayerInfo: true
+    chefRecipeCheckButton: true
+    victoryObject: true
+    enableHeadFollow: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      instantiator: !<MappingBased.AssignableType> 249a760b-fee4-4c38-af1f-0e1da00f1435
-      ingManager: !<MappingBased.AssignableType_1> 9a9e6fe0-4002-4868-8b6e-4db91359ac19
+      camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> f7a2ce85-0687-49ac-9bcd-fcfc1a56b114
-      chefPlayerInfo: !<reference.SceneObject> eb502789-5bc6-4d26-80a3-fb3c3e9c8bcb
-      chefRecipeCheckButton: !<reference.SceneObject> a1f0049b-0a7e-4731-977c-36e68dc6e069
+      chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       victoryObject: !<reference.SceneObject[]>
-        - !<reference> 057680bb-b061-4404-895a-5ebb5d2a5ab8
-        - !<reference> 2df18717-a9ae-4414-b133-15d09a53c11f
-        - !<reference> 7e6d6080-fa01-43df-8753-621ac4a9353d
+        []
+      enableHeadFollow: true
   ScriptTypes:
     "":
       {}

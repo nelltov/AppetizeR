@@ -9,7 +9,7 @@ export class HalvesGameManager extends BaseScriptComponent {
     @input
     instantiator: Instantiator
     @input
-    ingredientsPrefab: ObjectPrefab
+    ingredientsPrefab: ObjectPrefab[]
     @input
     ingManager: IngredientManager 
 
@@ -28,7 +28,7 @@ export class HalvesGameManager extends BaseScriptComponent {
             print("spawning ingredients")
             const options = new InstantiationOptions()
             options.localPosition = new vec3(0, -25, 0)
-            this.instantiator.instantiate(this.ingredientsPrefab, options)
+            //this.instantiator.instantiate(this.ingredientsPrefab[0], options)
             
         }
 
