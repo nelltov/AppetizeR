@@ -19,9 +19,7 @@ export class InstructionManager extends BaseScriptComponent {
     
         if (this.currentInstruction >= this.instructionArray.length)
         {
-            this.currentInstruction = this.instructionArray.length - 1;
-            this.instructionHolderObject.getComponent("Text").text = "No more ingredients should be added!";
-            return;
+            this.currentInstruction = 0;
         }
     
         const currentInstructionDisplayed = this.instructionArray[this.currentInstruction];
