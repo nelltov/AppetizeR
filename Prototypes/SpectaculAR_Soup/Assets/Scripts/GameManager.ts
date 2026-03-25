@@ -15,9 +15,6 @@ export enum RoundState{
 
 @component
 export class GameManager extends BaseScriptComponent {
-
-    
-
     private syncEntity: SyncEntity
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
@@ -49,38 +46,53 @@ export class GameManager extends BaseScriptComponent {
     victoryObject: SceneObject[]
 
     @input
-    enableHeadFollow: boolean = true;
+    enableHeadFollow: boolean = true
 
-    private currentIngredientInfoPosition : number = 0;
-    private followingHead : boolean = true;
+    @input
+    chefPlateObjects: SceneObject[]
 
-onReady()
-{
-    // Subscribe to synced chef property changes
-    this.playerVictoryActivated(false);
+    private currentIngredientInfoPosition : number = 0
+    private followingHead : boolean = true
 
-    this.currentChef.onAnyChange.add(() =>
+    private nonChefPlateIndex: number = -1
+
+    onReady()
     {
-        print("Chef subscribed");
-        this.amITheChef();
-    });
+        // Subscribe to synced chef property changes
+        this.playerVictoryActivated(false)
 
-    this.chefSelected.onAnyChange.add(() =>
+        this.currentChef.onAnyChange.add(() =>
+        {
+            print("Chef subscribed");
+            this.amITheChef();
+        })
+
+        this.chefSelected.onAnyChange.add(() =>
+        {
+            this.amITheChef();
+        })
+
+        this.soupIngredientsCorrect.onAnyChange.add(() =>{
+            this.playerVictoryActivated(this.soupIngredientsCorrect.currentOrPendingValue);
+        })
+
+        // Network event for assigning non-chef plate index
+        this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
+            const data = messageInfo.data as { connectionId: string, plateIndex: number }
+
+            // respond if client is the target
+            if (SessionController.getInstance().getLocalUserInfo().connectionId === data.connectionId) {
+                this.nonChefPlateIndex = data.plateIndex;
+            }
+        })
+
+        // Handle late-joiners: if chef was already selected before this player joined,
+        // onAnyChange will never fire, so check the current value immediately
+        this.amITheChef()
+    }
+
+    onAwake()
     {
-        this.amITheChef();
-    });
-
-    this.soupIngredientsCorrect.onAnyChange.add(() =>{
-         this.playerVictoryActivated(this.soupIngredientsCorrect.currentOrPendingValue);
-    });
-
-    // Handle late-joiners: if chef was already selected before this player joined,
-    // onAnyChange will never fire, so check the current value immediately
-    this.amITheChef();
-}
-
-onAwake()
-{
         // Keep gameStartButton in front of the headset until the game starts
         const update = this.createEvent("UpdateEvent")
         update.bind(() =>
@@ -106,10 +118,9 @@ onAwake()
         this.syncEntity.addStorageProperty(this.soupIngredientsCorrect)
         this.syncEntity.addStorageProperty(this.currentRecipe)
         this.syncEntity.addStorageProperty(this.chefSelected)
-
-}
-    
-public RandomizePlayerRoles()
+    }
+        
+    public RandomizePlayerRoles()
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
         this.followingHead = false;
@@ -121,11 +132,16 @@ public RandomizePlayerRoles()
             .map(u => (u as any).connectionId as string)
             .filter(id => id !== chefId);
 
-
         if (nonChefIds.length === 0)
         {
             print("No non-chef players to receive ingredients.");
             return;
+        }
+
+        // Assign index for plate to spawn for each of the non-chef players
+        for (let i = 0; i < nonChefIds.length; i++)
+        {
+            this.syncEntity.sendEvent("assignNonChefPlateIndex", { connectionId: nonChefIds[i], plateIndex: i });
         }
 
         this.assignChef(chefId, nonChefIds.length);
@@ -147,104 +163,111 @@ public RandomizePlayerRoles()
         }
     }
 
-private assignChef(chefId: string, nonChefCount: number)
-{
-    this.chefSelected.setPendingValue(true);
-    this.currentChef.setPendingValue(chefId);
-    this.player = nonChefCount;
-    print("Picked chef connectionId = " + chefId);
-}
-
-private amITheChef()
-{   
-    //print("Am I Chef Event Triggered");
-    //Get my own ID
-    this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
-    //Turn off game Start Locally
-    if (this.chefSelected.currentOrPendingValue !== true) return;
-    this.gameStartButton.enabled = false;
-    //If myid is same as chef I am the chef so I should turn on this local object
-    if (this.myID == this.currentChef.currentOrPendingValue){
-        this.chefPlayerInfo.enabled = true;
-        this.chefRecipeCheckButton.enabled = true;
-        this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
-        print(this.myID + " Should turn on the Chef Info")
-    }
-}
-
-private playerVictoryActivated(value)
-{
-    print(7 + "house");
-    for (let i = 0; i <this.victoryObject.length; i++)
+    private assignChef(chefId: string, nonChefCount: number)
     {
-      this.victoryObject[i].enabled = value;  
-    }
-    
-}
-
-private nextChefIngredient()
-{
-    this.currentIngredientInfoPosition++;
-
-    if (this.currentIngredientInfoPosition >= Recipe0.length)
-    {
-        this.currentIngredientInfoPosition = Recipe0.length - 1;
-        this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
-        return;
+        this.chefSelected.setPendingValue(true);
+        this.currentChef.setPendingValue(chefId);
+        this.player = nonChefCount;
+        print("Picked chef connectionId = " + chefId);
     }
 
-    const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
-    this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is " + currentIngredientDisplayed;
-}
+    private amITheChef()
+    {   
+        // Get my own ID
+        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
 
-private isTheSoupRightDemo()
-{
-    
-    // Get pot contents (vec2[] where x=category, y=variantId)
-    const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-    //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
-    
+        // Turn off game start locally
+        if (this.chefSelected.currentOrPendingValue !== true) return;
+        this.gameStartButton.enabled = false;
 
-    // Quick fail: different lengths cannot match exactly
-    if (pot.length !== Recipe0.length)
-    {
-        print(pot.length + ": pot length and Recipe length is: " + Recipe0)
-        return false;
-    }
-
-    
-    
-    // Compare each ingredient slot
-    for (let i = 0; i < pot.length; i++)
-    {
-        const potVec = pot[i];
-        const expected = Recipe0[i];
-
-        // Compare values
-        const matches =
-            potVec.x === expected.category &&
-            potVec.y === expected.variantId;
-
-        if (!matches)
-        {
-            print(
-                "Soup check failed for " + Recipe0 +
-                " at index " + i +
-                " pot=(" + potVec.x + "," + potVec.y + ")" +
-                " expected=(" + expected.category + "," + expected.variantId + ")"
-            );
-            this.playerVictoryActivated(false);
-            return false;
+        // If myID is same as chef I am the chef so I should turn on this local object
+        if (this.myID === this.currentChef.currentOrPendingValue) {
+            this.chefPlayerInfo.enabled = true;
+            this.chefRecipeCheckButton.enabled = true;
+            this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
+            print(this.myID + " Should turn on the Chef Info")
+        }
+        else {  // non-chef player: try to enable corresponding plate based on assigned index
+            if (this.nonChefPlateIndex >= 0 && this.nonChefPlateIndex < this.chefPlateObjects.length) {
+                this.chefPlateObjects[this.nonChefPlateIndex].enabled = true;
+                print(this.myID + " Should turn on plate " + this.nonChefPlateIndex)
+            }
         }
     }
 
-    // If we never failed, it matches
-    print("Soup check passed for " + Recipe0);
-    this.playerVictoryActivated(true);
-    return true;
-}
+    private playerVictoryActivated(value)
+    {
+        print(7 + "house");
+        for (let i = 0; i <this.victoryObject.length; i++)
+        {
+        this.victoryObject[i].enabled = value;  
+        }
+        
+    }
+
+    private nextChefIngredient()
+    {
+        this.currentIngredientInfoPosition++;
+
+        if (this.currentIngredientInfoPosition >= Recipe0.length)
+        {
+            this.currentIngredientInfoPosition = Recipe0.length - 1;
+            this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
+            return;
+        }
+
+        const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
+        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is " + currentIngredientDisplayed;
+    }
+
+    private isTheSoupRightDemo()
+    {
+        
+        // Get pot contents (vec2[] where x=category, y=variantId)
+        const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
+        //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
+        
+
+        // Quick fail: different lengths cannot match exactly
+        if (pot.length !== Recipe0.length)
+        {
+            print(pot.length + ": pot length and Recipe length is: " + Recipe0)
+            return false;
+        }
+
+        
+        // Compare each ingredient slot
+        for (let i = 0; i < pot.length; i++)
+        {
+            const potVec = pot[i];
+            const expected = Recipe0[i];
+
+            // Compare values
+            const matches =
+                potVec.x === expected.category &&
+                potVec.y === expected.variantId;
+
+            if (!matches)
+            {
+                print(
+                    "Soup check failed for " + Recipe0 +
+                    " at index " + i +
+                    " pot=(" + potVec.x + "," + potVec.y + ")" +
+                    " expected=(" + expected.category + "," + expected.variantId + ")"
+                );
+                this.playerVictoryActivated(false);
+                return false;
+            }
+        }
+
+        // If we never failed, it matches
+        print("Soup check passed for " + Recipe0);
+        this.playerVictoryActivated(true);
+        return true;
+    }
+
     //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
-private spawn(prefab: ObjectPrefab) 
+    private spawn(prefab: ObjectPrefab) 
     {
         if (this.instantiator.isReady()) {
             // Spawn piece using the SpectaclesSyncKit instantiator, set local start position
@@ -254,14 +277,15 @@ private spawn(prefab: ObjectPrefab)
 
             this.instantiator.instantiate(prefab, options)
         }
-}
-getRandomElement<T>(array: T[]): T | undefined
-{
+    }
+
+    private getRandomElement<T>(array: T[]): T | undefined
+    {
         if (array.length === 0)
         {
             return undefined;
         }
         const randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
-}
+    }
 }

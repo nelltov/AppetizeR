@@ -894,6 +894,9 @@
       victoryObject: !<reference.SceneObject[]>
         []
       enableHeadFollow: false
+      chefPlateObjects: !<reference.SceneObject[]>
+        - !<reference> 9489a85b-fdcd-47ed-aa49-9827829e9c61
+        - !<reference> dcc9a628-a986-4c35-9559-ab4be865a853
   ScriptTypes:
     "":
       {}
@@ -5014,8 +5017,6 @@
         - !<reference> 5ad8d9bc-c520-4c88-b6ec-d4273352d470
         - !<reference> 6f678e3e-a3db-4ac1-a274-517db365da21
         - !<reference> 9bf0779e-1613-4a07-b6be-a02b30aad38e
-        - !<reference> 9489a85b-fdcd-47ed-aa49-9827829e9c61
-        - !<reference> dcc9a628-a986-4c35-9559-ab4be865a853
       renderMesh: !<reference.RenderMeshVisual> 29e9e981-4450-4cbb-9133-6b9f356c4c7e
   ScriptTypes:
     "":
@@ -6020,7 +6021,7 @@
   PrefabRemaps:
     []
   Name: DebugTextPanel
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -7.000000, y: 0.000000, z: -30.000000}
