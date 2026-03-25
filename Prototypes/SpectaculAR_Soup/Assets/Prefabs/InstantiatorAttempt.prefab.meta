@@ -609,6 +609,7 @@
   ScriptInputsDefault:
     victoryObject: true
     enableHeadFollow: true
+    chefPlateObjects: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -622,6 +623,8 @@
       victoryObject: !<reference.SceneObject[]>
         []
       enableHeadFollow: true
+      chefPlateObjects: !<reference.SceneObject[]>
+        []
   ScriptTypes:
     "":
       {}
@@ -701,7 +704,6 @@
       ingredientsPrefab: !<reference.ObjectPrefab[]>
         - !<reference> 04ebf69d-91d9-4a8c-9573-3516f8d3bda4
         - !<reference> b9cae5d5-f147-42aa-8e1e-31d0af7ffc03
-      ingManager: !<MappingBased.AssignableType_1> f4fbcb27-a02a-40b6-60da-71b28e14f0d5
   ScriptTypes:
     "":
       {}
@@ -918,11 +920,12 @@
   Enabled: true
   ScriptAsset: !<reference> c9d95565-a2df-4a9f-b8a4-55b626a94e06
   ScriptInputsDefault:
-    {}
+    debugText: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       ingredientPrefabList: !<reference.ObjectPrefab[]>
         - !<reference> 04ebf69d-91d9-4a8c-9573-3516f8d3bda4
         - !<reference> b9cae5d5-f147-42aa-8e1e-31d0af7ffc03

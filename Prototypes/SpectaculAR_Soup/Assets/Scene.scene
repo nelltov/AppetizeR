@@ -3214,12 +3214,12 @@
   Enabled: true
   ScriptAsset: !<reference> 048ab135-c965-40c8-bf1b-9b3f1744937d
   ScriptInputsDefault:
-    minRotationThresholdDeg: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      minRotationThresholdDeg: !<float> 1.000000
+      {}
   ScriptTypes:
     "":
       {}
@@ -3541,7 +3541,7 @@
   PrefabRemaps:
     []
   Name: Image Tracking
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3795,6 +3795,7 @@
     []
   Components:
     - !<own> 5facb603-f167-4f46-9a08-4966634ae540
+    - !<own> 5b718377-a5a5-40c1-8e62-b50a8a4462f2
 - !<BodyComponent/532f2898-dd8d-48b4-87cb-a6d6045d75f4>
   PrefabRemaps:
     []
@@ -4105,7 +4106,7 @@
   PrefabRemaps:
     []
   Name: debugText
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -1.000000, y: 10.000000, z: -0.000004}
@@ -4367,6 +4368,22 @@
     []
   Components:
     - !<own> 35ab0bea-c20a-4962-a436-a96af67d0911
+- !<ScriptComponent/5b718377-a5a5-40c1-8e62-b50a8a4462f2>
+  PrefabRemaps:
+    []
+  Name: MarkerRotation
+  Enabled: true
+  ScriptAsset: !<reference> 46d491ea-e8ee-4d93-b85c-fd4a237b1249
+  ScriptInputsDefault:
+    minRotationThresholdDeg: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      minRotationThresholdDeg: !<float> 1.000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/5bddfcd8-996f-443c-917f-cd2cd38305bf>
   PrefabRemaps:
     []
@@ -4603,7 +4620,7 @@
   PrefabRemaps:
     []
   Name: component_2
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -5759,7 +5776,7 @@
   PrefabRemaps:
     []
   Name: component_4
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -7065,7 +7082,7 @@
   PrefabRemaps:
     []
   Name: component_0
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -8099,7 +8116,7 @@
   PrefabRemaps:
     []
   Name: SoupCollider
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 1.250000, z: 0.000000}
@@ -9671,7 +9688,7 @@
   PrefabRemaps:
     []
   Name: component_5
-  Enabled: true
+  Enabled: false
   Autoplay: true
   ClipRangeType: Frames
   AnimationClips:
@@ -10478,7 +10495,7 @@
   PrefabRemaps:
     []
   Name: component_3
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -10857,27 +10874,8 @@
   TwoSided: false
 - !<SceneObject/ddf3a805-74b2-4820-8520-157940eca97a>
   PrefabRemaps:
-    - 02927b71-b7ac-4cca-a9c5-3e4ef4710222: c8619bb8-efdc-4b30-65ef-3008081c8040
-    - 32f17e4f-44e0-460d-befc-0520642ee1cc: 5ad287e7-5e49-497d-8281-62ecfba717fb
-    - 44749fa9-862b-4e04-8068-8569d5cef1e3: 9146e3ae-4147-4019-b81d-d5555779ca2c
-    - 52e86cc9-180b-46f1-b840-166f155e290c: 85d27259-e3ae-4152-5fea-c2d00a5b906e
-    - 57c77e9f-8432-4b2d-ad4e-a18e2a8067fd: 07ffa60d-4757-4b16-ad05-1f40fc64cd04
-    - 5facb603-f167-4f46-9a08-4966634ae540: dc3a6e43-f32b-4f68-485b-ec3ffcc68d2c
-    - 723ae77e-9ddf-441c-86d7-499c0bfc488e: 2578c1f9-7acf-4810-4373-af4ba62a495b
-    - 7802d7e8-3e0a-46c2-b66e-4f1d44880045: 0ee9f540-8281-4d44-7435-44932af214ac
-    - 8a0ff2e1-caa5-460b-8456-4484071d1783: a93f9f54-ba87-4b51-5939-414c50402bfc
-    - 92a42fc5-e498-41f1-ab3b-0cf5b029e4ce: 9120c6b3-2ac0-43ae-40e2-ab0f5e7e43d2
-    - ad052587-5b1f-4920-afe6-584d66f54fd4: 16c01c34-19f7-4d9e-6b31-1b5ef924e742
-    - c8d48fae-facb-4462-a0c0-1671817c6bf1: 9c1299aa-3c14-4019-7919-037cab91246a
-    - ce0d62b2-61aa-4399-b7bf-0a6ec3adc24e: 8b257308-77d4-47f1-51d8-dd5a68d72744
-    - d06c7015-c130-4685-917c-8c8d27d07f99: 89dbe484-04a2-4336-8293-bd073cee336b
-    - db7887ca-3d8e-4394-b6a9-00de6e192976: 3c3adb00-7181-4a3c-6d63-56f01269c5d5
-    - dcd47067-9d47-4fb8-ad06-9b428ba9ee49: 8817648a-2690-4984-4f08-8f82fb4747a8
-    - ddf3a805-74b2-4820-8520-157940eca97a: dbd9260c-7fa1-4926-7618-e76f6095d495
-    - e557ba0e-8fc6-4f71-94d8-470646deaa47: 1397734e-9ac2-4b24-7387-d4023fab05f6
-    - e70556ff-89e2-4b01-993f-6748fa23b196: 0f57dfa0-5000-4434-50f4-646d7e3794f1
-    - ececa033-7f00-4b86-8d4f-7610030eb156: 21db786d-fbc3-4dfc-4f6b-300329c93507
-  Name: PotSet
+    []
+  Name: InvisibleMarkerObject
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
@@ -11360,7 +11358,7 @@
   PrefabRemaps:
     []
   Name: component_1
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
