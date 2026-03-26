@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    debugText: false
     ingredientPrefabList: false
   ScriptTypesHidden:
     {}
@@ -36,10 +37,12 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - ingredientPrefabList: !<reference.ObjectPrefab[]>
+    - debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      ingredientPrefabList: !<reference.ObjectPrefab[]>
         []
   ScriptTypes:
     -
       {}
   InputLines:
+    - // @input Component.Text debugText
     - "// @input Asset.ObjectPrefab[] ingredientPrefabList"

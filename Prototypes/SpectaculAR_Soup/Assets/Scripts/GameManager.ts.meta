@@ -27,6 +27,7 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     camera: false
+    chefPlateObjects: false
     chefPlayerInfo: false
     chefRecipeCheckButton: false
     enableHeadFollow: false
@@ -52,6 +53,8 @@
       victoryObject: !<reference.SceneObject[]>
         []
       enableHeadFollow: true
+      chefPlateObjects: !<reference.SceneObject[]>
+        []
   ScriptTypes:
     -
       {}
@@ -64,3 +67,4 @@
     - // @input SceneObject chefRecipeCheckButton
     - "// @input SceneObject[] victoryObject"
     - // @input bool enableHeadFollow = true
+    - "// @input SceneObject[] chefPlateObjects"

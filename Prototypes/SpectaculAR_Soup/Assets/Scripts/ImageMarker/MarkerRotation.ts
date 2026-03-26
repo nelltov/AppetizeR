@@ -1,10 +1,10 @@
 import { lerp } from "SpectaclesInteractionKit.lspkg/Utils/mathUtils"
+import { EventManager } from "Scripts/EventManager"
 
 @component
 export class SoupStirring extends BaseScriptComponent {
-    private soupMaterial: Material
-    private soupShader: Pass
     private prevFrameRot: quat
+    private swirlAmount: number
 
     // Shader parameters
     @input
@@ -20,12 +20,8 @@ export class SoupStirring extends BaseScriptComponent {
     }
 
     onStart() {
-        // Assign references to material and shader
-        this.soupMaterial = this.sceneObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
-        this.soupShader = this.soupMaterial.mainPass
-
         // Initialize shader parameters and previous rotation
-        this.soupShader.swirlAmount = 0
+        this.swirlAmount = 0
         this.prevFrameRot = this.sceneObject.getTransform().getWorldRotation()
     }
 
@@ -37,11 +33,13 @@ export class SoupStirring extends BaseScriptComponent {
         // Update shader values based on rotation
         const smoothingAlpha = 0.05
         if (Math.abs(rotationSinceLastFrame) >= this.minRotationThresholdDeg) {
-            this.soupShader.swirlAmount = lerp(this.soupShader.swirlAmount, Math.sign(rotationSinceLastFrame), smoothingAlpha) 
+            this.swirlAmount = lerp(this.swirlAmount, Math.sign(rotationSinceLastFrame), smoothingAlpha) 
         } else {
             // Decay at a slower rate than speed up
-            this.soupShader.swirlAmount = lerp(this.soupShader.swirlAmount, 0, smoothingAlpha / 5)
+            this.swirlAmount = lerp(this.swirlAmount, 0, smoothingAlpha / 5)
         }
+
+        EventManager.UpdateSoupSwirlAmount.trigger(this.swirlAmount)
 
         // Update rotation value for next frame
         this.prevFrameRot = currentRot

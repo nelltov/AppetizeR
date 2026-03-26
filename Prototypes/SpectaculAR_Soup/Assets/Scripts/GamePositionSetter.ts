@@ -1,4 +1,3 @@
-import { Interactable } from "SpectaclesInteractionKit.lspkg/Components/Interaction/Interactable/Interactable";
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
@@ -33,7 +32,7 @@ export class GamePositionSetter extends BaseScriptComponent
 
         if (this.renderMesh == null)
         {
-        this.renderMesh = this.getSceneObject().getComponent("Component.RenderMeshVisual") as RenderMeshVisual;
+            this.renderMesh = this.getSceneObject().getComponent("Component.RenderMeshVisual") as RenderMeshVisual;
         }
 
         this.syncEntity.notifyOnReady(() =>
@@ -62,39 +61,35 @@ export class GamePositionSetter extends BaseScriptComponent
     // Call this when YOU want to lock it for everyone (button press / release event / etc.)
     public lockForEveryone()
     {
-       
         if (!this.syncEntity || !this.isLockedProp) return;
 
-            this.isLockedProp!.setPendingValue(true);
-            this.applyLockedState(); // do it immediately locally too
-
-        
-
+        this.isLockedProp!.setPendingValue(true);
+        this.applyLockedState(); // do it immediately locally too
     }
 
     // This runs locally on EVERY player when isLocked becomes true
     private applyLockedState()
     {
         if (this.interactableComponent == null)
-            {
-                this.interactableComponent = this.getSceneObject().getParent().getComponent(InteractableManipulation.getTypeName()
-                ) as InteractableManipulation;
-                /*this.interactableComponent = this.getSceneObject().getComponent(
-                InteractableManipulation.getTypeName()
-                ) as InteractableManipulation;*/
-            }
+        {
+            this.interactableComponent = this.getSceneObject().getParent().getComponent(InteractableManipulation.getTypeName()
+            ) as InteractableManipulation;
+            /*this.interactableComponent = this.getSceneObject().getComponent(
+            InteractableManipulation.getTypeName()
+            ) as InteractableManipulation;*/
+        }
 
-            this.interactableComponent.setCanTranslate(false);
-            this.interactableComponent.setCanRotate(false);
-            this.interactableComponent.setCanScale(false);
-            print(this.interactableComponent.canTranslate + " This is the Translate Value.")
+        this.interactableComponent.setCanTranslate(false);
+        this.interactableComponent.setCanRotate(false);
+        this.interactableComponent.setCanScale(false);
+        print(this.interactableComponent.canTranslate + " This is the Translate Value.")
             
         for (let i = 0; i < this.ingredientsObjects.length; i++)
-            {
-                if (isNull(this.ingredientsObjects[i])) continue;
-                this.ingredientsObjects[i].enabled = this.isLockedProp.currentOrPendingValue;
-                print("turning on objects");
-            }
+        {
+            if (isNull(this.ingredientsObjects[i])) continue;
+            this.ingredientsObjects[i].enabled = this.isLockedProp.currentOrPendingValue;
+            print("turning on objects");
+        }
 
         if (this.renderMesh)
         {
@@ -103,9 +98,9 @@ export class GamePositionSetter extends BaseScriptComponent
             print("Trying to turn off rendermesh. Rendermesh bool = " + this.renderMesh.enabled)
         }
         if (this.menuObject)
-            {
-                this.menuObject.enabled = false;
-            }
+        {
+            this.menuObject.enabled = false;
+        }
 
         print("[GamePositionSetter] Locked: interactable/menu disabled locally.");
     }
