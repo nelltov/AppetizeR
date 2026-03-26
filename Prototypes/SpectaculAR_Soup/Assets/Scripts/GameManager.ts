@@ -197,7 +197,8 @@ export class GameManager extends BaseScriptComponent {
 
     private playerVictoryActivated(value)
     {
-        print(7 + "house");
+        //Claude Hallucination happened here
+        if (value == true) print("Turn on Victory Objects!");
         for (let i = 0; i <this.victoryObject.length; i++)
         {
         this.victoryObject[i].enabled = value;  
@@ -207,17 +208,18 @@ export class GameManager extends BaseScriptComponent {
 
     private nextChefIngredient()
     {
-        this.currentIngredientInfoPosition++;
+        
 
-        if (this.currentIngredientInfoPosition >= Recipe0.length)
+        if (this.currentIngredientInfoPosition > Recipe0.length)
         {
-            this.currentIngredientInfoPosition = Recipe0.length - 1;
+            this.currentIngredientInfoPosition = Recipe0.length;
             this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
             return;
         }
-
+        
         const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
         this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is " + currentIngredientDisplayed;
+        this.currentIngredientInfoPosition++;
     }
 
     private isTheSoupRightDemo()
@@ -229,9 +231,9 @@ export class GameManager extends BaseScriptComponent {
         
 
         // Quick fail: different lengths cannot match exactly
-        if (pot.length !== Recipe0.length)
+        if (pot.length != Recipe0.length)
         {
-            print(pot.length + ": pot length and Recipe length is: " + Recipe0)
+            print(pot.length + ": pot length and Recipe length is: " + Recipe0.length)
             return false;
         }
 
