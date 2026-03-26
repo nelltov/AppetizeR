@@ -2578,7 +2578,8 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    {}
+    saltShakerObject: true
+    gameRootObject: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2593,6 +2594,8 @@
         - "Let's begin with the first ingredient"
         - "Describe 'Carrot' "
       instructionHolderObject: !<reference.SceneObject> 0be9d085-2824-4df3-6d91-695f923e1a20
+      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}
