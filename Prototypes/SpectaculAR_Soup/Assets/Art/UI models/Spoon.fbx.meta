@@ -1,0 +1,107 @@
+- !<AssetImportMetadata/b2b809b8-2e1e-461c-89b1-52ca9f2a35ae>
+  ImportedAssetIds:
+    .hidden/Spoons: !<reference> 6a982f36-69b0-44aa-9a8d-3ab5996bfc02
+    .hidden/white: !<reference> deaf8cc0-89f8-4cfe-a17c-87299f94c5a9
+    7a0dd5cd69df73fa: !<reference> 69fd8dfd-1848-4f68-96ff-5d195c218399
+    Materials/Spoons: !<reference> a8dccae4-7aae-4e22-a62c-7b47377325d0
+    Materials/Spoons|Spoons|GraphPassInfo: !<reference> 38551f65-46a8-41e6-8296-91e08af55eb6
+    Meshes/Cube.005: !<reference> 3426c6c2-acc8-4c30-be42-52c96835539e
+    Scene: !<reference> ae27ab7b-12da-4ca7-922e-573421f86dbe
+    c3263a3920efeae1: !<reference> 6341b0b6-bf14-4bb9-9788-8a82839b9834
+    dcf5d4f37951140e: !<reference> 7e8a907b-fa3a-4e79-87de-f66d033b3e4a
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> ae27ab7b-12da-4ca7-922e-573421f86dbe
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 6e554bea-ab55-4d93-9639-d07e5b52b6a8
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<SceneObject/6341b0b6-bf14-4bb9-6877-757d7c6467cb>
+  PrefabRemaps:
+    []
+  Name: Cube.005
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 19.898804, y: -141.107574, z: 86.114738}
+    Rotation: {x: -87.900963, y: 63.801079, z: 6.568660}
+    Scale: {x: 79.438622, y: 79.438614, z: 79.438622}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7e8a907b-fa3a-4e79-7821-0992fcc4c1b5
+- !<SceneObject/69fd8dfd-1848-4f68-6900-a2e6a3de7c66>
+  PrefabRemaps:
+    []
+  Name: Spoon
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 6341b0b6-bf14-4bb9-6877-757d7c6467cb
+  Components:
+    []
+- !<ObjectPrefabAssetData/6e554bea-ab55-4d93-9639-d07e5b52b6a8>
+  Prototype: !<ObjectOwner/312e5d87-c072-4fa3-a3c4-2425628f1bff>
+    PackagePath: ""
+    objects:
+      - !<own> 69fd8dfd-1848-4f68-6900-a2e6a3de7c66
+- !<RenderMeshVisual/7e8a907b-fa3a-4e79-7821-0992fcc4c1b5>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> a8dccae4-7aae-4e22-a62c-7b47377325d0
+  Mesh: !<reference> 3426c6c2-acc8-4c30-be42-52c96835539e
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
