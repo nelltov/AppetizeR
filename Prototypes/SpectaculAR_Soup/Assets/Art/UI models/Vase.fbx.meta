@@ -1,0 +1,123 @@
+- !<AssetImportMetadata/722d257e-35e8-4d80-9d75-01393e07deb4>
+  ImportedAssetIds:
+    .hidden/3DModel_Retopo: !<reference> 0b76ff22-8f1a-4f6c-99dd-130f3ea704f7
+    .hidden/white: !<reference> f6b749a2-7078-4f82-b832-b477f2ad83ed
+    15510c02ed2def9d: !<reference> 148fb953-5c5c-46b9-a253-f7dcd3724e7e
+    7a0dd5cd69df73fa: !<reference> b8d46df0-8f8d-4783-a87b-d42a59e75e69
+    Materials/3DModel_Retopo: !<reference> 432d4c12-328b-4ab1-9c21-1b74cfe55b99
+    Materials/3DModel_Retopo|3DModel_Retopo|GraphPassInfo: !<reference> 1282c984-d615-403b-b23a-8c0350b82517
+    Meshes/3DModel_Retopo: !<reference> 23694506-9e3e-4252-b6f5-c35326c2940e
+    Scene: !<reference> 7c4b3166-34a8-409e-b375-1d626dd21696
+    c4af78fa5ce86f7c: !<reference> aa27c31f-711c-42f7-95da-b20e75ee27c6
+    f2f847f05d07127e: !<reference> 591b4b7c-b438-4197-8cd4-e6217e2c074d
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 7c4b3166-34a8-409e-b375-1d626dd21696
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 14b535be-dedf-4bfa-afe1-31655bd76f25
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<RenderMeshVisual/148fb953-5c5c-46b9-5dac-08232c8db181>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 432d4c12-328b-4ab1-9c21-1b74cfe55b99
+  Mesh: !<reference> 23694506-9e3e-4252-b6f5-c35326c2940e
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/14b535be-dedf-4bfa-afe1-31655bd76f25>
+  Prototype: !<ObjectOwner/a5f5b8bd-9eb9-4014-835e-3e4e730af768>
+    PackagePath: ""
+    objects:
+      - !<own> b8d46df0-8f8d-4783-5784-2bd5a618a196
+- !<SceneObject/591b4b7c-b438-4197-732b-19de81d3f8b2>
+  PrefabRemaps:
+    []
+  Name: Vase | Orientation
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 89.980217, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> aa27c31f-711c-42f7-6a25-4df18a11d839
+  Components:
+    []
+- !<SceneObject/aa27c31f-711c-42f7-6a25-4df18a11d839>
+  PrefabRemaps:
+    []
+  Name: 3DModel_Retopo
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 11.934464, y: -124.426689, z: 86.313103}
+    Rotation: {x: 0.000000, y: -0.000000, z: 0.000014}
+    Scale: {x: 58.027588, y: 58.027588, z: 58.027588}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 148fb953-5c5c-46b9-5dac-08232c8db181
+- !<SceneObject/b8d46df0-8f8d-4783-5784-2bd5a618a196>
+  PrefabRemaps:
+    []
+  Name: Vase
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 591b4b7c-b438-4197-732b-19de81d3f8b2
+  Components:
+    []

@@ -1,0 +1,185 @@
+- !<AssetImportMetadata/f83bb017-f413-43ef-9f43-d137f76fb50a>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 8b83f7c4-072f-4153-9b0f-f8b6db1cc8fa
+    .hidden/white: !<reference> 345bc61f-2a51-4e06-9be6-55adff50418b
+    2028ca51e4a54211: !<reference> 5db20173-481d-4e2c-9e1e-1a5e449af072
+    203919b90772da0e: !<reference> 8ebc0c87-1889-459c-97c0-d84495404574
+    6affe25b26faa449: !<reference> f6ff9ea7-734a-46fa-a715-7e3f8881d135
+    7a0dd5cd69df73fa: !<reference> d3599534-a5f7-4d3f-9b4c-901d18ceb6d8
+    84bacec83a08d236: !<reference> 7473acba-51ad-4c99-83c5-d4d1286ea7bb
+    9731be2b05ac8da5: !<reference> fd88332d-f085-4797-83b2-5f2c2b8cd512
+    993f3e23e0a6933c: !<reference> eacfc588-b265-4247-bede-7cf5055d11ea
+    Animations/BaseLayer: !<reference> d9c6085e-b369-4b22-bc86-f0ca13116cc3
+    Materials/openPBR_shader1: !<reference> 131eed88-f000-4aa4-a483-9f6ef8edc543
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> f4d2ef42-602e-45d7-b2b7-208b9c007a5d
+    Meshes/pCylinder2: !<reference> d10f096d-e147-46d1-8860-e7bcb0c9c0f2
+    Meshes/polySurface4: !<reference> 42a1d154-09fe-4f00-92cb-f9a8d2acc3e2
+    Scene: !<reference> 8ba19c1c-804a-43d6-bff2-cbf7b97cbf7b
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 8ba19c1c-804a-43d6-bff2-cbf7b97cbf7b
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 63431355-d4cc-4322-9a77-fc3df178cd1b
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<AnimationPlayer/5db20173-481d-4e2c-61e1-e5a1bb650f8d>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> d9c6085e-b369-4b22-bc86-f0ca13116cc3
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<ObjectPrefabAssetData/63431355-d4cc-4322-9a77-fc3df178cd1b>
+  Prototype: !<ObjectOwner/ad320d7f-270b-4fc6-b014-f6feeef1f6d0>
+    PackagePath: ""
+    objects:
+      - !<own> d3599534-a5f7-4d3f-64b3-6fe2e7314927
+- !<SceneObject/7473acba-51ad-4c99-7c3a-2b2ed7915844>
+  PrefabRemaps:
+    []
+  Name: pCylinder2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.036154, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.865397, y: 0.865397, z: 0.865397}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> eacfc588-b265-4247-4121-830afaa2ee15
+- !<SceneObject/8ebc0c87-1889-459c-683f-27bb6abfba8b>
+  PrefabRemaps:
+    []
+  Name: polySurface4
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> fd88332d-f085-4797-7c4d-a0d3d4732aed
+- !<SceneObject/d3599534-a5f7-4d3f-64b3-6fe2e7314927>
+  PrefabRemaps:
+    []
+  Name: chefhat simple
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> f6ff9ea7-734a-46fa-58ea-81c0777e2eca
+  Components:
+    - !<own> 5db20173-481d-4e2c-61e1-e5a1bb650f8d
+- !<RenderMeshVisual/eacfc588-b265-4247-4121-830afaa2ee15>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 131eed88-f000-4aa4-a483-9f6ef8edc543
+  Mesh: !<reference> d10f096d-e147-46d1-8860-e7bcb0c9c0f2
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/f6ff9ea7-734a-46fa-58ea-81c0777e2eca>
+  PrefabRemaps:
+    []
+  Name: chefhat
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 8ebc0c87-1889-459c-683f-27bb6abfba8b
+    - !<own> 7473acba-51ad-4c99-7c3a-2b2ed7915844
+  Components:
+    []
+- !<RenderMeshVisual/fd88332d-f085-4797-7c4d-a0d3d4732aed>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 131eed88-f000-4aa4-a483-9f6ef8edc543
+  Mesh: !<reference> 42a1d154-09fe-4f00-92cb-f9a8d2acc3e2
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}

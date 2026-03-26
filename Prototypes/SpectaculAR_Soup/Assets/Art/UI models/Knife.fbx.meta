@@ -1,0 +1,188 @@
+- !<AssetImportMetadata/0b2a82a6-dfc0-4b1a-953d-af9761dfb204>
+  ImportedAssetIds:
+    .hidden/Plastic 01: !<reference> 9a7f9e10-bf93-429e-b0de-fbb6223de3f0
+    .hidden/white: !<reference> 23cebdac-4a59-4941-9e3b-37274d5e26c1
+    12b0728d323a6234: !<reference> 6ba934c7-57bd-43ba-85f1-edc39aeab5aa
+    1feed8787cce6380: !<reference> 7e89a104-40cd-402b-94e2-5134c2e3eef2
+    329b75dcc1a63a71: !<reference> 66b1db3b-5ccb-47bf-8769-76691b858ba1
+    7a0dd5cd69df73fa: !<reference> 4e5c40fd-663b-431a-b5e7-b07b87577e30
+    995e8b48c2c87010: !<reference> 8b1bda95-0494-476e-8ddb-3d34a9ab6ce4
+    Materials/Plastic 01: !<reference> 3054adfc-b285-4258-89ca-28bfe6675589
+    Materials/Plastic 01|Plastic 01|GraphPassInfo: !<reference> cf8dc749-aaf1-4a45-a814-6bb879b69ed1
+    Materials/Stainless Steel: !<reference> a9c575ba-4881-47a8-8ae9-b9f2edcde688
+    Materials/Stainless Steel Nails: !<reference> f432a926-123e-4834-b6f5-37ecd3ba09f4
+    Materials/Stainless Steel Nails|Stainless Steel Nails|GraphPassInfo: !<reference> 0e55681b-1a67-42e7-9bb2-b3143a76ec7d
+    Materials/Stainless Steel|Stainless Steel|GraphPassInfo: !<reference> bd10bcb0-308e-4a40-9f38-bb7c0f23f043
+    Meshes/Blade: !<reference> 7edf0aa7-4b64-475b-a6f6-6acccdb9b26d
+    Meshes/Cleaver Knife: !<reference> f17fbaa3-5552-4eb4-bd3d-b58016859d73
+    Meshes/Nails: !<reference> a5cd232d-0820-4e5a-b03a-c57b64b61c23
+    Scene: !<reference> f5208aaa-ca21-42eb-8c06-908989815a31
+    a665379020fa977a: !<reference> 4cbb3157-c667-46ff-bd13-fa86a50f7d1c
+    c0d9abc204f92cf6: !<reference> c9d543df-9215-4f29-b2e5-4fa27ca7f746
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> f5208aaa-ca21-42eb-8c06-908989815a31
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 3c0a71ec-5674-453a-8299-f9bd154e05ed
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<ObjectPrefabAssetData/3c0a71ec-5674-453a-8299-f9bd154e05ed>
+  Prototype: !<ObjectOwner/6aa81393-e7e5-4315-9b3c-e13fbfba4919>
+    PackagePath: ""
+    objects:
+      - !<own> 4e5c40fd-663b-431a-4a18-4f8478a881cf
+- !<SceneObject/4cbb3157-c667-46ff-42ec-05795af082e3>
+  PrefabRemaps:
+    []
+  Name: Nails
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.214539, y: -0.054169, z: 1.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.295281, y: 0.295281, z: 1.123638}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 66b1db3b-5ccb-47bf-7896-8996e47a745e
+- !<SceneObject/4e5c40fd-663b-431a-4a18-4f8478a881cf>
+  PrefabRemaps:
+    []
+  Name: Knife
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> c9d543df-9215-4f29-4d1a-b05d835808b9
+  Components:
+    []
+- !<RenderMeshVisual/66b1db3b-5ccb-47bf-7896-8996e47a745e>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> f432a926-123e-4834-b6f5-37ecd3ba09f4
+  Mesh: !<reference> a5cd232d-0820-4e5a-b03a-c57b64b61c23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/6ba934c7-57bd-43ba-7a0e-123c65154a55>
+  PrefabRemaps:
+    []
+  Name: Blade
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 14.880035, y: -1.683350, z: 1.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8b1bda95-0494-476e-7224-c2cb5654931b
+- !<RenderMeshVisual/7e89a104-40cd-402b-6b1d-aecb3d1c110d>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 3054adfc-b285-4258-89ca-28bfe6675589
+  Mesh: !<reference> f17fbaa3-5552-4eb4-bd3d-b58016859d73
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/8b1bda95-0494-476e-7224-c2cb5654931b>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> a9c575ba-4881-47a8-8ae9-b9f2edcde688
+  Mesh: !<reference> 7edf0aa7-4b64-475b-a6f6-6acccdb9b26d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/c9d543df-9215-4f29-4d1a-b05d835808b9>
+  PrefabRemaps:
+    []
+  Name: Cleaver Knife
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -25.933111, y: -165.583725, z: 84.863411}
+    Rotation: {x: 0.000000, y: -0.000000, z: 113.410248}
+    Scale: {x: 0.896875, y: 0.896875, z: 0.896876}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 4cbb3157-c667-46ff-42ec-05795af082e3
+    - !<own> 6ba934c7-57bd-43ba-7a0e-123c65154a55
+  Components:
+    - !<own> 7e89a104-40cd-402b-6b1d-aecb3d1c110d

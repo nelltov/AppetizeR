@@ -1,0 +1,56 @@
+- !<AssetImportMetadata/2e85f67d-e214-4ff6-8db8-d40ace744222>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> a7fdcf75-7a47-4259-a845-a697e6579ead
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> a7fdcf75-7a47-4259-a845-a697e6579ead
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> a793da29-03f8-425c-87ba-dcc1504182b4
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<RenderMeshVisual/1af11b7e-1873-42d0-781c-e7c5c3fe6cf0>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 420e3f6e-6523-4294-b19a-3533065960c4
+  Mesh: !<reference> bb888944-3ea3-4ec3-b6ca-8309252dac96
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/a793da29-03f8-425c-87ba-dcc1504182b4>
+  Prototype: !<ObjectOwner/f9364c0a-5b77-46b7-81cb-8d2d4096805c>
+    PackagePath: ""
+    objects:
+      - !<own> fb0219bd-8c10-4ad6-79b3-5a067d03cfe6
+- !<SceneObject/fb0219bd-8c10-4ad6-79b3-5a067d03cfe6>
+  PrefabRemaps:
+    []
+  Name: Plate
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -18.728477, y: -34.565048, z: -44.443974}
+    Rotation: {x: -90.000008, y: 0.000014, z: -0.000000}
+    Scale: {x: 30.000000, y: 30.000000, z: 30.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 1af11b7e-1873-42d0-781c-e7c5c3fe6cf0
