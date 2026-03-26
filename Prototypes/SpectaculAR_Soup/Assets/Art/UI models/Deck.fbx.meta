@@ -1,0 +1,97 @@
+- !<AssetImportMetadata/da193e80-bcbf-40d7-9928-7add49291db5>
+  ImportedAssetIds:
+    249e9606a9111917: !<reference> 2eae3d24-03bf-46b5-b7d0-a0c2017ca5f4
+    5d98120585e9c4aa: !<reference> 4602685f-2579-4b5a-941c-1cb5c1c5b8f1
+    7a0dd5cd69df73fa: !<reference> 2994d48f-c7e1-4642-97ca-33c09d524ece
+    Meshes/Desk: !<reference> 8a14df8d-65c8-47aa-9e39-171bba38a339
+    Scene: !<reference> 2e8e613a-53ee-41ce-a586-385e93e849b6
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 2e8e613a-53ee-41ce-a586-385e93e849b6
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 9163bab5-4b76-4e4c-a91a-70f8268fd0c0
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+    ExtensionMappings:
+      mesh: None Compression
+    Overrides:
+      {}
+- !<SceneObject/2994d48f-c7e1-4642-6835-cc3f62adb131>
+  PrefabRemaps:
+    []
+  Name: Deck
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 2eae3d24-03bf-46b5-482f-5f3dfe835a0b
+  Components:
+    []
+- !<SceneObject/2eae3d24-03bf-46b5-482f-5f3dfe835a0b>
+  PrefabRemaps:
+    []
+  Name: Desk
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -9.204173, y: -123.698135, z: 85.619102}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4602685f-2579-4b5a-6be3-e34a3e3a470e
+- !<RenderMeshVisual/4602685f-2579-4b5a-6be3-e34a3e3a470e>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    []
+  Mesh: !<reference> 8a14df8d-65c8-47aa-9e39-171bba38a339
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/9163bab5-4b76-4e4c-a91a-70f8268fd0c0>
+  Prototype: !<ObjectOwner/0e009cee-25d7-4043-9d44-9e9ca3c338b0>
+    PackagePath: ""
+    objects:
+      - !<own> 2994d48f-c7e1-4642-6835-cc3f62adb131
