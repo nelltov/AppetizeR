@@ -20,6 +20,10 @@ export class GamePositionSetter extends BaseScriptComponent
     @input
     gameRoot: SceneObject;
 
+    @input
+    confirmButtonText: Text | null = null;
+
+    private awaitingConfirmation: boolean = false;
     private interactableComponent: InteractableManipulation | null = null;
     private gameRootInteractable: InteractableManipulation | null = null;
 
@@ -75,6 +79,13 @@ export class GamePositionSetter extends BaseScriptComponent
     public lockForEveryone()
     {
         if (!this.syncEntity || !this.isLockedProp) return;
+
+        if (!this.awaitingConfirmation)
+        {
+            this.awaitingConfirmation = true;
+            if (this.confirmButtonText) this.confirmButtonText.text = "Finalize position?";
+            return;
+        }
 
         this.isLockedProp!.setPendingValue(true);
         this.applyLockedState();

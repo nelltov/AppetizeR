@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    confirmButtonText: false
     gameRoot: false
     ingredientsObjects: false
     lockGameRoot: false
@@ -46,6 +47,7 @@
       renderMesh: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       lockGameRoot: false
       gameRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -55,3 +57,4 @@
     - // @input Component.RenderMeshVisual renderMesh
     - // @input bool lockGameRoot
     - // @input SceneObject gameRoot
+    - // @input Component.Text confirmButtonText

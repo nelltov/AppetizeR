@@ -201,9 +201,11 @@ export class GameManager extends BaseScriptComponent {
     private playerVictoryActivated(value)
     {
         //Claude Hallucination happened here
-        if (value == true) print("Turn on Victory Objects!");
+        
         for (let i = 0; i <this.victoryObject.length; i++)
         {
+        if (value == true) print("Turn on Victory Objects!");
+        this.chefPlayerInfo.getComponent("Text").text = "Soup was CORRECT!"
         this.victoryObject[i].enabled = value;  
         }
         
@@ -221,7 +223,7 @@ export class GameManager extends BaseScriptComponent {
         }
         
         const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
-        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is (Remember No names or colors!): " + currentIngredientDisplayed;
+        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
         this.currentIngredientInfoPosition++;
     }
 
