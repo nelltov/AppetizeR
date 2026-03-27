@@ -995,7 +995,8 @@
   Enabled: true
   ScriptAsset: !<reference> 9be78003-e182-442e-88d7-a704c3e57ce6
   ScriptInputsDefault:
-    {}
+    lockGameRoot: true
+    gameRoot: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -1009,6 +1010,8 @@
         - !<reference> 92e6b15f-1aa6-4eb7-820d-a1dc8af90571
         - !<reference> e23052b5-4c84-4810-a49d-e22fc415f40f
       renderMesh: !<reference.RenderMeshVisual> 8244bf9e-f995-486a-8a66-bc90465fda95
+      lockGameRoot: false
+      gameRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

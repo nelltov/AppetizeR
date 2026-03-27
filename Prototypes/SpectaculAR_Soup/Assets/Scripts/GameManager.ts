@@ -53,6 +53,7 @@ export class GameManager extends BaseScriptComponent {
 
     private currentIngredientInfoPosition : number = 0
     private followingHead : boolean = true
+    private readonly headOffset : vec3 = new vec3(0, 0, -60)
 
     private nonChefPlateIndex: number = -1
 
@@ -97,14 +98,16 @@ export class GameManager extends BaseScriptComponent {
         const update = this.createEvent("UpdateEvent")
         update.bind(() =>
         {
-            if (!this.enableHeadFollow || !this.followingHead || !this.camera || !this.gameStartButton) return;
+            if (!this.followingHead) {
+                update.enabled = false;
+                return;
+            }
+            if (!this.enableHeadFollow || !this.camera || !this.gameStartButton) return;
             if (!SessionController.getInstance().isHost()) return;
             const t = this.camera.getTransform();
-            const worldOffset = t.getWorldRotation().multiplyVec3(new vec3(0, 0, -60));
+            const worldOffset = t.getWorldRotation().multiplyVec3(this.headOffset);
             this.gameStartButton.getTransform().setWorldPosition(t.getWorldPosition().add(worldOffset));
-            // Match headset rotation
             this.gameStartButton.getTransform().setWorldRotation(t.getWorldRotation());
-
         })
 
         //Setting Sync Entity
@@ -218,7 +221,7 @@ export class GameManager extends BaseScriptComponent {
         }
         
         const currentIngredientDisplayed = Recipe0[this.currentIngredientInfoPosition].variantName;
-        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is " + currentIngredientDisplayed;
+        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is (Remember No names or colors!): " + currentIngredientDisplayed;
         this.currentIngredientInfoPosition++;
     }
 
