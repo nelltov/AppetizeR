@@ -65,6 +65,7 @@ export enum GreensType {
 
 export enum CarbsType {
     Noodles = 0,
+    Ramen = 1,
 }
 
 /**
@@ -114,3 +115,25 @@ export function getEnumMemberName(categoryNumber: number, subNumber: number): st
     const name = (e as any)[subNumber];
     return typeof name === 'string' ? name : undefined;
 }
+
+// export const INGREDIENT_SHADER_INDEX: { [key: string]: number } = {
+//     [`${IngredientCategory.Meat}_${MeatType.Bacon}`]:              0,  // Bacon
+//     [`${IngredientCategory.Greens}_${GreensType.Bayleaf}`]:        1,  // Bayleaf
+//     [`${IngredientCategory.Meat}_${MeatType.Beef}`]:               2,  // Beef
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Carrot}`]:   3,  // Carrot
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Celery}`]:   4,  // Celery
+//     [`${IngredientCategory.Meat}_${MeatType.Chicken}`]:            5,  // Chicken
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Corn}`]:     6,  // Corn
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Leek}`]:     7,  // Leek
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Mushroom}`]: 8,  // Mushroom
+//     [`${IngredientCategory.Carbs}_${CarbsType.Noodles}`]:          9,  // Noodle
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Onion}`]:    10, // Onion
+//     [`${IngredientCategory.Vegetable}_${VegetableType.Potato}`]:   11, // Potatoes
+//     [`${IngredientCategory.Carbs}_${CarbsType.Ramen}`]:            12, // Ramen
+//     [`${IngredientCategory.Greens}_${GreensType.Spinach}`]:        13, // Spinach
+//     [`${IngredientCategory.Meat}_${MeatType.Tofu}`]:               14, // Tofu
+// };
+
+// export function getIngredientShaderIndex(category: IngredientCategory, variantId: number): number {
+//     return INGREDIENT_SHADER_INDEX[`${category}_${variantId}`] ?? -1;
+// }
