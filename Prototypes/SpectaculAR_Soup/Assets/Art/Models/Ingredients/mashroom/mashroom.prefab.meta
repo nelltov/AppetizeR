@@ -1,0 +1,154 @@
+- !<AssetImportMetadata/b9cfeedd-51fd-4d2b-979c-4ab66982d9f9>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> af990955-cefd-4b7d-95e8-84db3b0b525d
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> af990955-cefd-4b7d-95e8-84db3b0b525d
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> a57db0b4-14e1-4664-8535-4e5abcbb4057
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/12476ba8-f715-407b-54bf-592c494b3a26>
+  PrefabRemaps:
+    []
+  Name: pCylinder2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.025358, y: 0.240985, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -3.265713}
+    Scale: {x: 1.034614, y: 1.034614, z: 1.034614}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 72a87f92-a94f-429e-5761-f1d08722a490
+  Components:
+    []
+- !<SceneObject/48e5f78e-e5ae-4e47-5a1f-d32bcb8f77b1>
+  PrefabRemaps:
+    []
+  Name: transform13
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
+- !<SceneObject/72a87f92-a94f-429e-5761-f1d08722a490>
+  PrefabRemaps:
+    []
+  Name: transform12
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
+- !<ObjectPrefabAssetData/a57db0b4-14e1-4664-8535-4e5abcbb4057>
+  Prototype: !<ObjectOwner/2153aae6-bad0-4f3e-9c70-0f9b01ff0830>
+    PackagePath: ""
+    objects:
+      - !<own> dfa8f7a6-f162-4df8-684c-feede84f5be7
+- !<RenderMeshVisual/a87e2484-589c-4102-5b04-fde81992f41d>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac602355-9ea4-4de8-9926-6d3ae95c05a8
+  Mesh: !<reference> b81c8545-f254-47fa-9570-bf1e4660bca5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<AnimationPlayer/af64672f-edfa-4a35-56d0-594434702101>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> e06bb8d0-3d55-481d-ade4-4861a4d6de4f
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/dfa8f7a6-f162-4df8-684c-feede84f5be7>
+  PrefabRemaps:
+    []
+  Name: mashroom
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 12476ba8-f715-407b-54bf-592c494b3a26
+    - !<own> e6e46569-94b7-42fe-651e-f4de930a821b
+    - !<own> e8a51752-3069-4669-5e26-5c2606f2eb7a
+  Components:
+    - !<own> af64672f-edfa-4a35-56d0-594434702101
+- !<SceneObject/e6e46569-94b7-42fe-651e-f4de930a821b>
+  PrefabRemaps:
+    []
+  Name: pSphere2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 1.002014, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.893759, y: 0.852145, z: 0.893759}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 48e5f78e-e5ae-4e47-5a1f-d32bcb8f77b1
+  Components:
+    []
+- !<SceneObject/e8a51752-3069-4669-5e26-5c2606f2eb7a>
+  PrefabRemaps:
+    []
+  Name: MASHROOM
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a87e2484-589c-4102-5b04-fde81992f41d
