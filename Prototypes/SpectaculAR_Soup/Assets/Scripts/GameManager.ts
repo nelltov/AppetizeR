@@ -204,9 +204,12 @@ export class GameManager extends BaseScriptComponent {
         
         for (let i = 0; i <this.victoryObject.length; i++)
         {
-        if (value == true) print("Turn on Victory Objects!");
-        this.chefPlayerInfo.getComponent("Text").text = "Soup was CORRECT!"
-        this.victoryObject[i].enabled = value;  
+            if (value == true) 
+            {
+                 print("Turn on Victory Objects!");
+                this.chefPlayerInfo.getComponent("Text").text = "Soup was CORRECT!"
+                this.victoryObject[i].enabled = value;  
+            }
         }
         
     }
