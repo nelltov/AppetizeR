@@ -12,11 +12,11 @@ export class SoupController extends BaseScriptComponent {
 
     @input ingredientShaderObject: SceneObject;
 
-    // private soupMaterial: Material
+    private soupMaterial: Material
 
-    // private soupShader: Pass
+    private soupShader: Pass
     
-    // private ingredientList: Float32Array = new Float32Array(15)
+    private ingredientList: Float32Array = new Float32Array(16)
 
      onAwake() {
         // Set up during Start event after all components are awake
@@ -32,11 +32,7 @@ export class SoupController extends BaseScriptComponent {
         // this.soupShader = this.soupMaterial.mainPass
         // this.soupShader.ingredient_list = this.ingredientList;
          EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
-            // const idx = getIngredientShaderIndex(ingredientInfo.category, ingredientInfo.variantId);
-            // if (idx >= 0) {
-            //     this.ingredientList[idx] = 1;
-            //     this.soupShader.ingredient_list = this.ingredientList;
-            // }
+
             print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
             
             if (this.debugTextPanel) {
@@ -44,6 +40,7 @@ export class SoupController extends BaseScriptComponent {
             }
             if (this.soupDebugText) {
                 this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
+                
             }
         })
     }
