@@ -823,6 +823,32 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Loop
+- !<ScriptComponent/0ef06e7d-fc79-488d-9f10-d9e1b915d6ee>
+  PrefabRemaps:
+    []
+  Name: Billboard
+  Enabled: true
+  ScriptAsset: !<reference> 74eafc23-e98b-4073-ab18-82ca532994e3
+  ScriptInputsDefault:
+    _xAxisEnabled: true
+    _yAxisEnabled: true
+    _zAxisEnabled: true
+    _axisBufferDegrees: true
+    _axisEasing: true
+    duration: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      _xAxisEnabled: false
+      _yAxisEnabled: true
+      _zAxisEnabled: false
+      _axisBufferDegrees: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
+      _axisEasing: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
+      duration: 0.033000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/0ef8c5d2-1b58-438d-a536-6f05faa025b6>
   PrefabRemaps:
     []
@@ -1445,6 +1471,7 @@
     - !<own> e3c5886c-75a8-4692-bd1f-ade575368d6d
   Components:
     - !<own> 0c955608-e96e-4f3d-b1d4-a395f7a1bfbf
+    - !<own> 0ef06e7d-fc79-488d-9f10-d9e1b915d6ee
 - !<RenderMeshVisual/181c8d51-8fbc-4918-a854-f6d53edd5b34>
   PrefabRemaps:
     []
@@ -6971,32 +6998,6 @@
   ScriptInputs:
     "":
       enableSyncCursors: true
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/713a50ba-9563-4262-82c8-819af58bd720>
-  PrefabRemaps:
-    []
-  Name: Billboard
-  Enabled: true
-  ScriptAsset: !<reference> 74eafc23-e98b-4073-ab18-82ca532994e3
-  ScriptInputsDefault:
-    _xAxisEnabled: true
-    _yAxisEnabled: true
-    _zAxisEnabled: true
-    _axisBufferDegrees: true
-    _axisEasing: true
-    duration: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      _xAxisEnabled: false
-      _yAxisEnabled: true
-      _zAxisEnabled: false
-      _axisBufferDegrees: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      _axisEasing: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      duration: 0.033000
   ScriptTypes:
     "":
       {}
@@ -14759,7 +14760,6 @@
     []
   Components:
     - !<own> 520d5e8b-bd53-4a7d-a6ea-48ba963c95b7
-    - !<own> 713a50ba-9563-4262-82c8-819af58bd720
 - !<ScriptComponent/e4d12fa5-f43b-4acd-ab8c-fd38e3d9195b>
   PrefabRemaps:
     []
