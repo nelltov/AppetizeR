@@ -58,12 +58,12 @@ export class IngredientManager extends BaseScriptComponent
             if (!currentCollisions.includes(networkId)) {
                 this.processedIngredientCollisions.setPendingValue([...currentCollisions, networkId]);
 
-                print(`Ingredient Manager heard the collision + ${networkId}`);
+                
                 this.debugText.text = this.debugText.text + `\nIngredientManager: ${ingredientInfo.variantName} collided with the pot!`
 
                 this.updateStorageProperties(ingredientInfo);
                 this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
-
+                
                 const ingredientSyncEntity = SyncEntity.findById(networkId) as SyncEntity
                 if (ingredientSyncEntity) {
                     ingredientSyncEntity.localScript.sceneObject.enabled = false; // Disable the ingredient across all clients
@@ -82,6 +82,6 @@ export class IngredientManager extends BaseScriptComponent
         const newIngredientToAdd = new vec2(newIngredient.category, newIngredient.variantId)
         const newIngredientList: vec2[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
         this.currentIngredients.setPendingValue(newIngredientList)
-        print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot`)
+        print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot and the current length of that list is ${this.currentIngredients.currentOrPendingValue.length}`)
     }
 }
