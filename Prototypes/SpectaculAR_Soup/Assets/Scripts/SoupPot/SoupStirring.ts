@@ -13,9 +13,7 @@ export class SoupStirring extends BaseScriptComponent {
 
     onStart() {
         // Assign references to material and shader
-        const meshVisual = this.sceneObject.getComponent("Component.RenderMeshVisual") as RenderMeshVisual
-        this.soupMaterial = meshVisual.getMaterial(0).clone()
-        meshVisual.mainMaterial = this.soupMaterial
+        this.soupMaterial = this.sceneObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
         this.soupShader = this.soupMaterial.mainPass
 
         this.soupShader.swirlAmount = 0
