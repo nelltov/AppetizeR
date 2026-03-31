@@ -9,6 +9,7 @@ export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
     static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo, string]>() 
     static PlayerVictoryNetworkEvent = new EventWrapper()
+    static PlayerVictoryLocalEvent = new EventWrapper()
     static ChefSelectedEvent = new EventWrapper<boolean[]>() 
     static UpdateSoupSwirlAmount = new EventWrapper<[number]>()
 

@@ -1,5 +1,6 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
+import { GameManager } from "./GameManager";
 
 @component
 export class InstructionManager extends BaseScriptComponent {
@@ -16,6 +17,7 @@ export class InstructionManager extends BaseScriptComponent {
     @input
     public gameRootObject : SceneObject;
 
+
     private syncEntity : SyncEntity
     private currentInstruction = StorageProperty.manualInt("currentInstruction", 0)
 
@@ -29,6 +31,7 @@ export class InstructionManager extends BaseScriptComponent {
             {
                 this.saltShakerObject.enabled = false;
                 this.gameRootObject.enabled = true;
+                
                 return;
             }
             this.instructionHolderObject.getComponent("Text").text = this.instructionArray[value];

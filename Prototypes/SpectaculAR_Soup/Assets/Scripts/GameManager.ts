@@ -16,6 +16,7 @@ export enum RoundState{
 @component
 export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
+    
     private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
@@ -43,9 +44,6 @@ export class GameManager extends BaseScriptComponent {
     chefRecipeCheckButton : SceneObject
 
     @input
-    victoryObject: SceneObject[]
-
-    @input
     enableHeadFollow: boolean = true
 
     @input
@@ -60,8 +58,6 @@ export class GameManager extends BaseScriptComponent {
     onReady()
     {
         // Subscribe to synced chef property changes
-        this.playerVictoryActivated(false)
-
         this.currentChef.onAnyChange.add(() =>
         {
             print("Chef subscribed");
@@ -83,13 +79,18 @@ export class GameManager extends BaseScriptComponent {
             }
         })
 
-        
-        EventManager.PlayerVictoryNetworkEvent.add((e) => {
+        //ensuring all players hear the networked event
+        this.syncEntity.onEventReceived.add('heardVictoryCondition', () => {
+            EventManager.PlayerVictoryNetworkEvent.trigger(true)
+        })
 
-                print("GM heard the Event Manager call for a victory");
-                this.playerVictoryActivated(this.soupIngredientsCorrect.currentOrPendingValue);
-
-                })
+        //
+        EventManager.PlayerVictoryLocalEvent.add(() =>
+                {
+          
+                        this.syncEntity.sendEvent('heardVictoryCondition')
+                
+                }); 
         // Handle late-joiners: if chef was already selected before this player joined,
         // onAnyChange will never fire, so check the current value immediately
         this.amITheChef()
@@ -99,6 +100,7 @@ export class GameManager extends BaseScriptComponent {
     {
         // Keep gameStartButton in front of the headset until the game starts
         const update = this.createEvent("UpdateEvent")
+
         update.bind(() =>
         {
             if (!this.followingHead) {
@@ -115,6 +117,7 @@ export class GameManager extends BaseScriptComponent {
 
         //Setting Sync Entity
         this.syncEntity = new SyncEntity(this);
+    
 
         //Setting up necessary functions and subscriptions once in sessions
         this.syncEntity.notifyOnReady(() => this.onReady())
@@ -201,20 +204,6 @@ export class GameManager extends BaseScriptComponent {
         }
     }
 
-    private playerVictoryActivated(value)
-    {
-        //Claude Hallucination happened here
-        
-        for (let i = 0; i <this.victoryObject.length; i++)
-        {
-            if (value == true) 
-            {
-                 print("Turn on Victory Objects!");
-                this.victoryObject[i].enabled = value;  
-            }
-        }
-        
-    }
 
     private nextChefIngredient()
     {
@@ -267,15 +256,18 @@ export class GameManager extends BaseScriptComponent {
                     " pot=(" + potVec.x + "," + potVec.y + ")" +
                     " expected=(" + expected.category + "," + expected.variantId + ")"
                 );
-                this.playerVictoryActivated(false);
+                
                 return false;
             }
         }
 
         // If we never failed, it matches
-        print("Soup check passed. Setting the soupIngredientsCorrect");
         this.soupIngredientsCorrect.setPendingValue(true);
-        EventManager.PlayerVictoryNetworkEvent.trigger;
+
+        print("Soup check passed. Setting the soupIngredientsCorrect to True");
+        
+        EventManager.PlayerVictoryLocalEvent.trigger(true);
+
         return true;
     }
 
