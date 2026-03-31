@@ -1,5 +1,6 @@
 import { EventManager } from "Scripts/EventManager"
 import { IngredientInfo } from "Scripts/Ingredients/Ingredient"
+import { IngredientsToShaderIndex, getEnumMemberName } from "Scripts/Ingredients/IngredientTypes"
 
 @component
 export class SoupShaderController extends BaseScriptComponent {
@@ -16,6 +17,9 @@ export class SoupShaderController extends BaseScriptComponent {
 
     @input
     private soupIngredientsObject: SceneObject
+    private soupIngredientsMaterial: Material
+    private soupIngredientsShader: Pass
+    private ingredientList: Float32Array
 
      onAwake() {
         // Set up during Start event after all components are awake
@@ -36,6 +40,17 @@ export class SoupShaderController extends BaseScriptComponent {
         })
 
         // Ingredients being added to the soup
+        this.soupIngredientsMaterial = this.soupIngredientsObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
+        this.soupIngredientsShader = this.soupIngredientsMaterial.mainPass
+        this.ingredientList = this.soupIngredientsShader.ingredient_list as Float32Array
+        
+        // Set all ingredient values to 0
+        for (let i = 0; i < this.ingredientList.length; i++) {
+            this.ingredientList[i] = 0.0
+        }
+
+        this.soupIngredientsShader.ingredient_list = this.ingredientList;
+
         EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
             print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
             
@@ -44,6 +59,13 @@ export class SoupShaderController extends BaseScriptComponent {
             }
             if (this.soupDebugText) {
                 this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
+            }
+
+            const ingredientName = getEnumMemberName(ingredientInfo.category, ingredientInfo.variantId)
+            const shaderIndex = IngredientsToShaderIndex[ingredientName]
+            if (shaderIndex !== undefined) {
+                this.ingredientList[shaderIndex] = 1.0
+                this.soupIngredientsShader.ingredient_list = this.ingredientList; 
             }
         })
     }
