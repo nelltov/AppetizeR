@@ -34,7 +34,6 @@
     gameStartButton: false
     ingManager: false
     instantiator: false
-    victoryObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -50,8 +49,6 @@
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      victoryObject: !<reference.SceneObject[]>
-        []
       enableHeadFollow: true
       chefPlateObjects: !<reference.SceneObject[]>
         []
@@ -65,6 +62,5 @@
     - // @input SceneObject gameStartButton
     - // @input SceneObject chefPlayerInfo
     - // @input SceneObject chefRecipeCheckButton
-    - "// @input SceneObject[] victoryObject"
     - // @input bool enableHeadFollow = true
     - "// @input SceneObject[] chefPlateObjects"

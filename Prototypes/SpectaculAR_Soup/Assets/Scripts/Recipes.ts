@@ -23,7 +23,13 @@ export const Recipe1 : IngredientInfo[] = [
     new IngredientInfo(5,0)     //Noodles
 ]
 
+export const DebugRecipe : IngredientInfo[] = [
+    new IngredientInfo(1,1),    //Onion
+
+]
+
 export const ourRecipes : Recipes[] = [
     ["BeefStew", Recipe0],
-    ["Chicken Noodle", Recipe1]
+    ["Chicken Noodle", Recipe1],
+    ["DebugRecipe", DebugRecipe]
 ]

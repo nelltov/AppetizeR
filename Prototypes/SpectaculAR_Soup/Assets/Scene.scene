@@ -5,6 +5,7 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 8261937e-a088-45c4-b03f-cb478bab35af
+    - !<own> 9489a85b-fdcd-47ed-aa49-9827829e9c61
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -367,7 +368,7 @@
     - ccd26cd3-39dc-453c-98b5-e08742f09c44: bd47057f-d073-47ba-5fba-cec908359692
     - efc4e3c2-f420-47ba-a10f-d50ab1fdf7e0: d9b47a6a-2ec7-4c08-5143-3f5e348cb626
   Name: ApprentinceScreen
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: -28.136274, z: -63.869522}
@@ -600,7 +601,7 @@
   ScriptInputs:
     "":
       categoryNumber: !<float> 1.000000
-      variantId: !<float> 7.000000
+      variantId: !<float> 1.000000
   ScriptTypes:
     "":
       {}
@@ -889,7 +890,7 @@
   PrefabRemaps:
     []
   Name: Plate7
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -22.000000, y: -3.000000, z: 12.000000}
@@ -1092,8 +1093,6 @@
       gameStartButton: !<reference.SceneObject> 9bf0779e-1613-4a07-b6be-a02b30aad38e
       chefPlayerInfo: !<reference.SceneObject> 8bba83b0-a334-4f8d-a51d-aa9b47c793ed
       chefRecipeCheckButton: !<reference.SceneObject> b9c585d4-27bf-4e1e-96b6-511bf966ee36
-      victoryObject: !<reference.SceneObject[]>
-        - !<reference> ae5fb84f-de2a-40d7-9c27-389723d0eaad
       enableHeadFollow: false
       chefPlateObjects: !<reference.SceneObject[]>
         - !<reference> 9489a85b-fdcd-47ed-aa49-9827829e9c61
@@ -2659,7 +2658,7 @@
   PrefabRemaps:
     []
   Name: Plate2
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -14.000000, y: -3.000000, z: 7.000000}
@@ -3411,7 +3410,7 @@
   PrefabRemaps:
     []
   Name: Render Mesh Visual
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -3984,7 +3983,7 @@
   PrefabRemaps:
     []
   Name: Plate4
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 5.000000, y: -3.000000, z: 6.000000}
@@ -4621,6 +4620,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/4d2a81e3-bce3-4b31-ad47-8d7b92bb4d1d>
+  PrefabRemaps:
+    []
+  Name: ResultHelper
+  Enabled: true
+  ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/4d3c2e52-807c-4c3e-96ce-305f2b364250>
   PrefabRemaps:
     []
@@ -5388,7 +5403,7 @@
   PrefabRemaps:
     []
   Name: Plate3
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -5.500000, y: -3.000001, z: 4.500000}
@@ -6991,32 +7006,6 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/713a50ba-9563-4262-82c8-819af58bd720>
-  PrefabRemaps:
-    []
-  Name: Billboard
-  Enabled: true
-  ScriptAsset: !<reference> 74eafc23-e98b-4073-ab18-82ca532994e3
-  ScriptInputsDefault:
-    _xAxisEnabled: true
-    _yAxisEnabled: true
-    _zAxisEnabled: true
-    _axisBufferDegrees: true
-    _axisEasing: true
-    duration: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      _xAxisEnabled: false
-      _yAxisEnabled: true
-      _zAxisEnabled: false
-      _axisBufferDegrees: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      _axisEasing: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      duration: 0.033000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/7144935a-5c72-4768-a560-33503c019b0b>
   PrefabRemaps:
     []
@@ -7266,7 +7255,7 @@
   PrefabRemaps:
     []
   Name: Plate8
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 23.000000, y: -3.000000, z: 12.000000}
@@ -8308,7 +8297,7 @@
   PrefabRemaps:
     []
   Name: Plate5
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 15.000000, y: -3.000000, z: 7.000000}
@@ -8607,7 +8596,6 @@
     - !<own> 2c5a3c37-cc74-45d7-bce3-bf6230d4b454
     - !<own> 5ad8d9bc-c520-4c88-b6ec-d4273352d470
     - !<own> 6f678e3e-a3db-4ac1-a274-517db365da21
-    - !<own> 9489a85b-fdcd-47ed-aa49-9827829e9c61
     - !<own> dcc9a628-a986-4c35-9559-ab4be865a853
     - !<own> 9bf0779e-1613-4a07-b6be-a02b30aad38e
     - !<own> 8bba83b0-a334-4f8d-a51d-aa9b47c793ed
@@ -9358,7 +9346,7 @@
   PrefabRemaps:
     []
   Name: Plate1
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -22.000000, y: -3.000000, z: 12.000000}
@@ -9486,12 +9474,12 @@
   PrefabRemaps:
     []
   Name: PlayerPlate1
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -15.000000, y: 5.000003, z: 0.000000}
+    Position: {x: -45.000000, y: 25.000008, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.416667, y: 0.416667, z: 0.416667}
+    Scale: {x: 1.250001, y: 1.250001, z: 1.250001}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> fef5a948-6440-4a32-837d-edba75f0f4f9
@@ -9806,7 +9794,7 @@
   PrefabRemaps:
     []
   Name: Plate6
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 23.000000, y: -3.000000, z: 12.000000}
@@ -10900,7 +10888,7 @@
   PrefabRemaps:
     []
   Name: Win!
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.503827, z: 0.000000}
@@ -10911,6 +10899,7 @@
     []
   Components:
     - !<own> 396ecb92-5821-472f-b2c0-2e9b27ea1d10
+    - !<own> 4d2a81e3-bce3-4b31-ad47-8d7b92bb4d1d
 - !<SceneObject/ae7879b4-c651-4382-ba13-7048bdf5999e>
   PrefabRemaps:
     []
@@ -11417,32 +11406,6 @@
     - !<own> 805bb70d-0e93-48e5-a665-76bd8c8928ce
   Components:
     []
-- !<ScriptComponent/b6e1ad03-797c-4201-b469-23f1e2412520>
-  PrefabRemaps:
-    []
-  Name: Billboard
-  Enabled: true
-  ScriptAsset: !<reference> 74eafc23-e98b-4073-ab18-82ca532994e3
-  ScriptInputsDefault:
-    _xAxisEnabled: true
-    _yAxisEnabled: true
-    _zAxisEnabled: true
-    _axisBufferDegrees: true
-    _axisEasing: true
-    duration: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      _xAxisEnabled: false
-      _yAxisEnabled: true
-      _zAxisEnabled: false
-      _axisBufferDegrees: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
-      _axisEasing: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
-      duration: 0.033000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/b7149bb6-5466-4b26-a79b-f944f51db335>
   PrefabRemaps:
     []
@@ -11577,7 +11540,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 10.233521, y: 1.605628, z: -0.000004}
+    Position: {x: 5.000000, y: 3.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -11585,7 +11548,6 @@
     []
   Components:
     - !<own> 7591a7e4-d3d0-4f21-b2ca-50610a6f64c6
-    - !<own> b6e1ad03-797c-4201-b469-23f1e2412520
 - !<RenderMeshVisual/b8c38001-c14c-47d6-92de-8c2da154097a>
   PrefabRemaps:
     []
@@ -14776,7 +14738,6 @@
     []
   Components:
     - !<own> 520d5e8b-bd53-4a7d-a6ea-48ba963c95b7
-    - !<own> 713a50ba-9563-4262-82c8-819af58bd720
 - !<ScriptComponent/e4d12fa5-f43b-4acd-ab8c-fd38e3d9195b>
   PrefabRemaps:
     []
