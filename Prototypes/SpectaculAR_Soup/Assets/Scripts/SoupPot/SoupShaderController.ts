@@ -23,6 +23,8 @@ export class SoupShaderController extends BaseScriptComponent {
         startEvent.bind(() => { this.onStart() })
     }
 
+    // ingredient_list
+
     onStart() {
         // Rotation of soup
         this.soupSurfaceMaterial = this.soupSurfaceObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
