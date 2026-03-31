@@ -40,7 +40,4 @@ export class Ingredient extends BaseScriptComponent {
     protected getVariantName(): string {
         return getEnumMemberName(this.categoryNumber, this.variantId) ?? "Unknown Ingredient"
     }
-
-    
-
 }

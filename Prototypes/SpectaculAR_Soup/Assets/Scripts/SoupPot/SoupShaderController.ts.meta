@@ -27,8 +27,9 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     debugTextPanel: false
-    ingredientShaderObject: false
     soupDebugText: false
+    soupIngredientsObject: false
+    soupSurfaceObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,11 +41,13 @@
   DefaultScriptInputs:
     - soupDebugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       debugTextPanel: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      ingredientShaderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      soupSurfaceObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      soupIngredientsObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Component.Text soupDebugText
     - // @input Component.Text debugTextPanel
-    - // @input SceneObject ingredientShaderObject
+    - // @input SceneObject soupSurfaceObject
+    - // @input SceneObject soupIngredientsObject
