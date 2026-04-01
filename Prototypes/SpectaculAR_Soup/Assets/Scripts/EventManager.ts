@@ -7,7 +7,7 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 @component
 export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
-    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo, string]>() 
+    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
 
     // Game States
     static CenterPositionSetLocal = new EventWrapper<[vec3]>()

@@ -50,7 +50,6 @@
     - 5b001f9d-dc26-4588-9835-156b1b3de879: efe55d61-3487-4fc1-9b98-95feba3705d2
     - 6205e253-b96c-42d5-9027-4e463d0c1b1d: 6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2
     - 6dea085d-0c61-48df-bc1a-35c1c00d9d93: f1c06a46-3952-4526-ac97-94155742f036
-    - b17aa823-d8bc-488f-af27-06ef0e81f5ae: 0fd038c3-a482-4c9d-b04f-da0c088d42f4
   Name: leek
   Enabled: true
   Layers: 1
@@ -67,7 +66,6 @@
     - !<own> 434cb9b7-e60d-47d4-8ab7-46790925842a
     - !<own> 1f830b7a-e1e6-4b4d-994a-ca732345adb8
     - !<own> 6dea085d-0c61-48df-bc1a-35c1c00d9d93
-    - !<own> b17aa823-d8bc-488f-af27-06ef0e81f5ae
 - !<ScriptComponent/434cb9b7-e60d-47d4-8ab7-46790925842a>
   PrefabRemaps:
     []
@@ -184,38 +182,6 @@
       showRotationProperties: false
       _rotationAxis: All
       isSynced: false
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/b17aa823-d8bc-488f-af27-06ef0e81f5ae>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
   ScriptTypes:
     "":
       {}
