@@ -32,15 +32,11 @@ export class SoupPotCollider extends BaseScriptComponent {
             Ingredient.getTypeName()
         ) as Ingredient
 
-        const ingredientSyncTransform = otherObj.getComponent(
-            SyncTransform.getTypeName()
-        ) as SyncTransform
-
-        const ingredientSyncEntity = ingredientSyncTransform?.syncEntity
-
         // Trigger one-time event for ingredient colliding with the pot, passing in the ingredient info
-        if (ingredient && ingredientSyncEntity) {
-            EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo(), ingredientSyncEntity.networkId)
+        if (ingredient) {
+            EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo())
+            otherObj.enabled = false    // Disable the ingredient object after collision
+            // TODO: add an event to actually destroy the object once the interaction ends?
         }
     }
 }

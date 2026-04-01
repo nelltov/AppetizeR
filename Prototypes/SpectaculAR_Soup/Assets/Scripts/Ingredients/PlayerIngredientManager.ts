@@ -10,7 +10,8 @@ export class PlayerIngredientManager extends BaseScriptComponent {
 
     private offset: vec3 = new vec3(0, 0, 0)
     private sceneObj: SceneObject
-    private distanceFromCenter: number = 100    // distance between plate parent transform and center of table, adjust as needed
+    private distanceFromCenter: number = 60    // distance between plate parent transform and center of table, adjust as needed
+    private verticalOffset: number = -5    // Account for pivot point being higher up than the table
 
     onAwake() {
         // Set up during Start event after all components are awake
@@ -28,6 +29,7 @@ export class PlayerIngredientManager extends BaseScriptComponent {
             let cameraPos = this.cameraObject.getTransform().getWorldPosition()
             let directionToCamera = new vec3(cameraPos.x - centerPosition.x, 0, cameraPos.z - centerPosition.z).normalize()
             this.offset = directionToCamera.uniformScale(this.distanceFromCenter) 
+            this.offset = this.offset.add(new vec3(0, this.verticalOffset, 0)) // add vertical offset
             
             this.sceneObj.getTransform().setWorldPosition(centerPosition.add(this.offset))
 

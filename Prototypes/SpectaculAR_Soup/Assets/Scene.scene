@@ -1628,11 +1628,8 @@
     - 2c00596e-fc5b-43a4-b017-9000f5e0475b: 0739ed2e-6342-4416-72c0-ab4d63203f0f
     - 3365a1e8-6f27-40e5-bc80-75183468198e: d3bf84d6-35eb-4520-53f0-60aad99bc03f
     - 63e58330-dec7-40f1-9dfa-88eaabc89e17: f0e67fd6-5517-48b4-45e8-efe4f1ba6cf5
-    - 98f76baa-399f-4f5b-a1f7-0ffcfe09b0d0: 521d7faf-e4bd-4d73-84b9-486ef1b177b9
     - a2b18007-f8a3-4bd1-9fb0-02e0c74a7e20: 4ff2ce8e-c31b-4f81-5429-cf428c63f560
-    - a8257b4e-3088-4360-b10e-4212d050f7ea: 914cc540-dc97-4072-b558-72521f831bea
     - b8f93c72-4ce8-4eaa-8abf-4a6236a78a3b: 330395e9-fc97-4461-6a47-e696154575e2
-    - c0ad68b8-954b-4998-964a-0aa9b4e2335d: 8086f81b-1df3-4ed8-69e9-4d4eebf5a7ed
     - cb2c459d-b9e0-466b-82cb-5d3591954c9e: 6bd1ce39-0119-4441-6048-37f94b310ecd
     - eee59a14-f76c-4b36-b489-8fe551c1b054: 974f2d35-81b1-47bf-6457-52e75e47d35c
   Name: onion
@@ -1652,7 +1649,6 @@
     - !<own> eee59a14-f76c-4b36-b489-8fe551c1b054
     - !<own> cb2c459d-b9e0-466b-82cb-5d3591954c9e
     - !<own> a2b18007-f8a3-4bd1-9fb0-02e0c74a7e20
-    - !<own> c0ad68b8-954b-4998-964a-0aa9b4e2335d
 - !<RenderMeshVisual/2c250e0b-cb5e-46b9-975d-8d7df770780b>
   PrefabRemaps:
     []
@@ -2168,7 +2164,6 @@
     - 35d0ec2a-ce9e-45b8-bf88-e3d0ecf2122f: 3cc25f7e-4240-4852-62d3-8150ec092b3a
     - 59bab2e8-3993-4236-8961-e958d8814935: 9d095457-ad40-4883-aa93-e10fca01f3ee
     - 6b8f1710-85bc-4ea3-88aa-065614191eba: c4d9bfe9-2af6-4ea6-adbd-72862e37af63
-    - 87bc38bf-644d-4de9-b516-3146209344f8: 0fd038c3-a482-4c9d-b04f-da0c088d42f4
     - d3fbd128-f29e-41d0-9c4b-55f2e1ad1f3e: f1c06a46-3952-4526-ac97-94155742f036
   Name: leek
   Enabled: false
@@ -2186,7 +2181,6 @@
     - !<own> 6b8f1710-85bc-4ea3-88aa-065614191eba
     - !<own> 59bab2e8-3993-4236-8961-e958d8814935
     - !<own> d3fbd128-f29e-41d0-9c4b-55f2e1ad1f3e
-    - !<own> 87bc38bf-644d-4de9-b516-3146209344f8
 - !<RenderMeshVisual/36ec9612-071a-4595-951c-0ae50c9b2497>
   PrefabRemaps:
     []
@@ -5652,38 +5646,6 @@
     - !<own> 142d82e8-0b31-4ba5-bd6f-e1d5a4ffd060
   Components:
     []
-- !<ScriptComponent/87bc38bf-644d-4de9-b516-3146209344f8>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/87d2272c-72d5-4764-bc0a-d724e3809730>
   PrefabRemaps:
     []
@@ -5724,7 +5686,6 @@
     - !<own> 0cf698ae-0db1-48af-9c4e-8707c675e94a
     - !<own> 325db22a-fcbb-4891-9c2f-5c183f43b137
     - !<own> 70ca7db7-b5c7-4d1d-94b9-685c79c021a7
-    - !<own> c27692d4-5b29-4d73-8454-96b4d90c106f
 - !<SceneObject/89260d31-3dbf-4fce-9f2f-a09b4132d6f3>
   PrefabRemaps:
     - 181c8d51-8fbc-4918-a854-f6d53edd5b34: 66b1db3b-5ccb-47bf-7896-8996e47a745e
@@ -6054,38 +6015,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/92c0c155-091d-4066-b5a6-a5ea8bf92d45>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/92e09c5d-1ed4-4859-9900-e55208f82549>
   PrefabRemaps:
     []
@@ -6489,6 +6418,7 @@
     _enableZTranslation: true
     showRotationProperties: true
     _rotationAxis: true
+    isSynced: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -6514,7 +6444,7 @@
       _enableZTranslation: true
       showRotationProperties: false
       _rotationAxis: All
-      isSynced: true
+      isSynced: false
   ScriptTypes:
     "":
       {}
@@ -7672,38 +7602,6 @@
     []
   Components:
     - !<own> a4c92302-9068-4f5d-aae2-a16a275fae14
-- !<ScriptComponent/c0ad68b8-954b-4998-964a-0aa9b4e2335d>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/c0afc2c9-ff0f-418a-a05a-83694f1ec9a8>
   PrefabRemaps:
     []
@@ -7791,7 +7689,6 @@
     - !<own> bc3b1b36-672d-4c92-b3c4-db3f7f96c9bb
     - !<own> c6561ae8-9217-4c68-9e27-740365eb94cd
     - !<own> 6991ab7f-70cc-4854-b495-57291255644f
-    - !<own> 92c0c155-091d-4066-b5a6-a5ea8bf92d45
 - !<SceneObject/c1e4cdd6-40ff-4bbf-94e2-490af58b9b1d>
   PrefabRemaps:
     []
@@ -7823,38 +7720,6 @@
     []
   Components:
     []
-- !<ScriptComponent/c27692d4-5b29-4d73-8454-96b4d90c106f>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/c287b708-bdd5-4665-bd38-e321fa5218bd>
   PrefabRemaps:
     - 6b8c39c8-b48c-4fc9-bdbb-879661de1967: 1af11b7e-1873-42d0-781c-e7c5c3fe6cf0
@@ -8322,7 +8187,6 @@
     - 6b8f1710-85bc-4ea3-88aa-065614191eba: f175783f-76ee-4526-588f-215816d482ec
     - 70ca7db7-b5c7-4d1d-94b9-685c79c021a7: 425a196e-6f70-46ad-58be-3b07c27204e6
     - 82ab796a-065e-41f2-a409-47835ee65e01: 6e31db11-6f10-4476-75b1-bffa479ac3a6
-    - 87bc38bf-644d-4de9-b516-3146209344f8: fe7527f1-e4dc-40ec-4c71-7d6f466056f4
     - 88ce0687-adee-4ebe-b369-8895d8213d9d: e023419f-9c89-420b-5a10-022dcef50537
     - 92c0c155-091d-4066-b5a6-a5ea8bf92d45: 03a46ff6-c6c2-437d-4951-6397efdd3705
     - 9578bc8b-ee47-4f9f-a314-b4885c485fcb: 210ed84b-3117-4111-66e6-92abd31d3e42
@@ -8331,7 +8195,6 @@
     - b8f93c72-4ce8-4eaa-8abf-4a6236a78a3b: c400ce5e-936b-4c0a-50d9-0bacdb42319e
     - bc3b1b36-672d-4c92-b3c4-db3f7f96c9bb: 221affed-a9e4-47a5-431a-0595131f0e6c
     - c07785c2-4021-43a3-96f0-983cf43ae413: 899dc945-eb33-4642-9744-6ba132a563e0
-    - c0ad68b8-954b-4998-964a-0aa9b4e2335d: 6639103a-81fe-467a-73ef-0d3566be0d05
     - c17dcd1d-dd32-4d9b-b41f-b2a694388036: 98acf9ba-5a50-4647-70b9-a06006559665
     - c27692d4-5b29-4d73-8454-96b4d90c106f: 7b2ec2db-d71d-41ad-4bd9-eb0cdd63c444
     - c287b708-bdd5-4665-bd38-e321fa5218bd: f8f29377-3a1f-4e8b-9e7e-52ff7b708ec6
@@ -9772,7 +9635,6 @@
     minimumScaleFactor: true
     maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -9796,7 +9658,7 @@
       minimumScaleFactor: 0.250000
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
-      enableRotation: true
+      enableRotation: false
       enableScale: false
       enableStretchZ: false
       showStretchZProperties: false
