@@ -1,43 +1,60 @@
-- !<AssetImportMetadata/e471f3fd-80e6-4b41-bb3e-166a7fd2276b>
+- !<AssetImportMetadata/8d946e8a-9031-48d0-8766-744c93c3d8a0>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 6fb0677b-cb08-4416-90a3-9ee56a7f2aa8
+    ObjectPrefab: !<reference> 2fdc9e2a-f9ff-44cc-a661-451cd5c2a08c
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 6fb0677b-cb08-4416-90a3-9ee56a7f2aa8
+  PrimaryAsset: !<reference> 2fdc9e2a-f9ff-44cc-a661-451cd5c2a08c
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 0eadf982-f1c9-46eb-b280-e6315b8a6df8
+    ObjectPrefab: !<own> 597e18a1-9c3a-41e0-bc2f-02bbc77d1dca
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ObjectPrefabAssetData/0eadf982-f1c9-46eb-b280-e6315b8a6df8>
-  Prototype: !<ObjectOwner/3e2265fb-3894-4ed2-acfa-854eb6b35699>
-    PackagePath: ""
-    objects:
-      - !<own> 6a707ab9-e0fb-4c93-6bb7-b30a9da623cf
-- !<ScriptComponent/1f923ddd-879b-4d01-4b6c-0e20065b4590>
+- !<SceneObject/2d899ee0-4fe2-4fa5-4f16-dd675bf38543>
+  PrefabRemaps:
+    []
+  Name: PotatoePrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> e0ef2086-ab13-4eda-79a6-cd759ca88186
+  Components:
+    - !<own> e8e6964e-b477-43f7-5111-964c76b9042b
+    - !<own> 424ad5ba-c6c1-4c7f-4af4-b04027b4cdbe
+    - !<own> a3446aab-2549-43e3-6f11-5fb9b2fa05e1
+    - !<own> 9362c687-b3e8-41b2-77f1-725c98e72602
+- !<ScriptComponent/424ad5ba-c6c1-4c7f-4af4-b04027b4cdbe>
   PrefabRemaps:
     []
   Name: Ingredient
   Enabled: true
   ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
   ScriptInputsDefault:
-    categoryNumber: true
     variantId: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      categoryNumber: !<float> 0.000000
+      categoryNumber: !<float> 1.000000
       variantId: !<float> 0.000000
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/505f8b8d-aa37-461e-47e2-8d28adad2b52>
+- !<ObjectPrefabAssetData/597e18a1-9c3a-41e0-bc2f-02bbc77d1dca>
+  Prototype: !<ObjectOwner/ccc6bf06-dd1d-4e77-b44e-0d02b7e77f5b>
+    PackagePath: ""
+    objects:
+      - !<own> 2d899ee0-4fe2-4fa5-4f16-dd675bf38543
+- !<ScriptComponent/9362c687-b3e8-41b2-77f1-725c98e72602>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -95,12 +112,12 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/52d41928-ace5-428e-4f7a-ac29537f058e>
+- !<ScriptComponent/a3446aab-2549-43e3-6f11-5fb9b2fa05e1>
   PrefabRemaps:
     []
   Name: Interactable
   Enabled: true
-  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
+  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
   ScriptInputsDefault:
     targetingMode: true
     targetingVisual: true
@@ -133,49 +150,22 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/6a707ab9-e0fb-4c93-6bb7-b30a9da623cf>
+- !<SceneObject/e0ef2086-ab13-4eda-79a6-cd759ca88186>
   PrefabRemaps:
     []
-  Name: CarrotPrefab
+  Name: potato
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: -0.300000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 4.000000, y: 4.000000, z: 4.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> c959950b-8e03-4792-6ca3-001046ef05c7
-  Components:
-    - !<own> 756262d7-5bbb-4689-464c-1b976b601831
-    - !<own> 1f923ddd-879b-4d01-4b6c-0e20065b4590
-    - !<own> 52d41928-ace5-428e-4f7a-ac29537f058e
-    - !<own> 505f8b8d-aa37-461e-47e2-8d28adad2b52
-- !<BodyComponent/756262d7-5bbb-4689-464c-1b976b601831>
-  PrefabRemaps:
     []
-  Name: Physics Body
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 0.150000
-    Radius: 0.020000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
-  Dynamic: true
-  BodySetting: Density
-  BodySettingValue: 0.000000
-  Damping: 0.000000
-  AngularDamping: 0.000000
-- !<RenderMeshVisual/be159a35-9d27-4a50-527a-7af9d0d8b55f>
+  Components:
+    - !<own> e10739bd-c9c4-482d-5b2f-a795adbaf2db
+- !<RenderMeshVisual/e10739bd-c9c4-482d-5b2f-a795adbaf2db>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -188,25 +178,29 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 3afb1753-b095-461a-8825-de4293002b90
-  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/c959950b-8e03-4792-6ca3-001046ef05c7>
+- !<ColliderComponent/e8e6964e-b477-43f7-5111-964c76b9042b>
   PrefabRemaps:
     []
-  Name: carrot
+  Name: Physics Collider
   Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.071765, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.010000, y: 0.010000, z: 0.010000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> be159a35-9d27-4a50-527a-7af9d0d8b55f
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 3.000000
+    Radius: 1.750000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
