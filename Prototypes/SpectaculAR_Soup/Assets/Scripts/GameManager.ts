@@ -4,7 +4,10 @@ import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController
 import { InstantiationOptions, Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
-import { ourRecipes, DebugRecipe, Recipe0, Recipe1} from "./Recipes";
+import { ourRecipes, DebugRecipe, Recipe0, Recipe1, Recipes} from "./Recipes";
+import { IngredientInfo } from "./Ingredients/Ingredient";
+import { getEnumMember, getEnumMemberName, IngredientCategory } from "./Ingredients/IngredientTypes";
+
 
 export enum RoundState{
     
@@ -17,7 +20,7 @@ export enum RoundState{
 export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
     
-    private currentRecipe = StorageProperty.manualInt("currentRecipe", 1)
+
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
     private soupIngredientsCorrect = StorageProperty.manualBool("Soup ing were correct", false);
@@ -52,7 +55,10 @@ export class GameManager extends BaseScriptComponent {
     private currentIngredientInfoPosition : number = 0
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)
-
+    
+    private unUsedRecipesArray: Recipes[]
+    private currentRecipe: Recipes | null
+    private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private nonChefPlateIndex: number = -1
 
     onReady()
@@ -68,6 +74,10 @@ export class GameManager extends BaseScriptComponent {
         {
             this.amITheChef();
         })
+
+
+        this.unUsedRecipesArray= ourRecipes;
+        
 
         // Network event for assigning non-chef plate index
         this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
@@ -125,14 +135,36 @@ export class GameManager extends BaseScriptComponent {
         //Initializing the Chef Variab;le
         this.syncEntity.addStorageProperty(this.currentChef);
         this.syncEntity.addStorageProperty(this.soupIngredientsCorrect)
-        this.syncEntity.addStorageProperty(this.currentRecipe)
         this.syncEntity.addStorageProperty(this.chefSelected)
     }
+
+    public debugRandomizeRecipe()
+    {
+        this.RandomizeRecipe(this.unUsedRecipesArray);
+    }
+    public RandomizeRecipe(recipeArray : Recipes[])
+    {
+        print(this.unUsedRecipesArray.length + " recipes in Unused Recipe List");
+        this.currentRecipe = this.getRandomElement<Recipes>(recipeArray) as Recipes;
+        for (let i = 0; i<recipeArray.length; i++)
+            {
+                if (this.currentRecipe == recipeArray[i])
+                {
+                    print("Removing " + recipeArray[i] + " from Unused Recipe List")
+                    recipeArray.splice(i, 1);
+                    print ("New Unused Recipe List contains " + this.unUsedRecipesArray.length + " recipes")
+                    this.currentRecipeIngredientInfo= this.currentRecipe[1]
+                    
+                }
+            }
         
+    }
+
     public RandomizePlayerRoles()
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
         this.followingHead = false;
+        //this.RandomizeRecipe(this.unUsedRecipesArray);
 
         // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
@@ -204,23 +236,20 @@ export class GameManager extends BaseScriptComponent {
         }
     }
 
-
     private nextChefIngredient()
     {
         
-
-        if (this.currentIngredientInfoPosition > DebugRecipe.length)
+        if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
         {
-            this.currentIngredientInfoPosition = DebugRecipe.length;
+            this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
             this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
             return;
         }
         
-        const currentIngredientDisplayed = DebugRecipe[this.currentIngredientInfoPosition].variantName;
+        const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
         this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
         this.currentIngredientInfoPosition++;
     }
-
     private isTheSoupRightDemo()
     {
         
@@ -230,9 +259,9 @@ export class GameManager extends BaseScriptComponent {
         
 
         // Quick fail: different lengths cannot match exactly
-        if (pot.length != DebugRecipe.length)
+        if (pot.length != this.currentRecipeIngredientInfo.length)
         {
-            print(pot.length + ": pot length and Recipe length is: " + DebugRecipe.length)
+            print(pot.length + ": pot length and Recipe length is: " + this.currentRecipeIngredientInfo.length)
             return false;
         }
 
@@ -241,7 +270,7 @@ export class GameManager extends BaseScriptComponent {
         for (let i = 0; i < pot.length; i++)
         {
             const potVec = pot[i];
-            const expected = DebugRecipe[i];
+            const expected = this.currentRecipeIngredientInfo[i];
 
             // Compare values
             const matches =
@@ -251,7 +280,7 @@ export class GameManager extends BaseScriptComponent {
             if (!matches)
             {
                 print(
-                    "Soup check failed for " + DebugRecipe +
+                    "Soup check failed for " + this.currentRecipeIngredientInfo +
                     " at index " + i +
                     " pot=(" + potVec.x + "," + potVec.y + ")" +
                     " expected=(" + expected.category + "," + expected.variantId + ")"
@@ -269,19 +298,6 @@ export class GameManager extends BaseScriptComponent {
         EventManager.PlayerVictoryLocalEvent.trigger(true);
 
         return true;
-    }
-
-    //spawn function from Tic Tac Toe should work well here the only issue I think we still need is to assign players and I think I might follow what tic tac toe did and just give them a value?
-    private spawn(prefab: ObjectPrefab) 
-    {
-        if (this.instantiator.isReady()) {
-            // Spawn piece using the SpectaclesSyncKit instantiator, set local start position
-            const options = new InstantiationOptions()
-            //Change to be spawned for a players position
-            options.localPosition = new vec3(0,-25,0)
-
-            this.instantiator.instantiate(prefab, options)
-        }
     }
 
     private getRandomElement<T>(array: T[]): T | undefined
