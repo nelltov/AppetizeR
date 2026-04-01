@@ -8,9 +8,14 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
     static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo, string]>() 
+
+    // Game States
+    static CenterPositionSetLocal = new EventWrapper<[vec3]>()
+    static ChefSelectedEvent = new EventWrapper<boolean[]>()
     static PlayerVictoryNetworkEvent = new EventWrapper()
     static PlayerVictoryLocalEvent = new EventWrapper()
-    static ChefSelectedEvent = new EventWrapper<boolean[]>() 
+
+    // Shader
     static UpdateSoupSwirlAmount = new EventWrapper<[number]>()
 
     // Add more events as needed, following the pattern above.

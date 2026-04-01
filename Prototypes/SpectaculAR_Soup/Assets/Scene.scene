@@ -1604,7 +1604,7 @@
     - cb2c459d-b9e0-466b-82cb-5d3591954c9e: 6bd1ce39-0119-4441-6048-37f94b310ecd
     - eee59a14-f76c-4b36-b489-8fe551c1b054: 974f2d35-81b1-47bf-6457-52e75e47d35c
   Name: onion
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -4.691974, y: 3.013741, z: -9.913332}
@@ -2139,7 +2139,7 @@
     - 87bc38bf-644d-4de9-b516-3146209344f8: 0fd038c3-a482-4c9d-b04f-da0c088d42f4
     - d3fbd128-f29e-41d0-9c4b-55f2e1ad1f3e: f1c06a46-3952-4526-ac97-94155742f036
   Name: leek
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -13.660935, y: 2.097206, z: -7.146118}
@@ -3194,6 +3194,22 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScriptComponent/52795746-ce4a-4d5a-ba51-acdb6431903a>
+  PrefabRemaps:
+    []
+  Name: PlayerIngredientManager
+  Enabled: true
+  ScriptAsset: !<reference> 517a040c-53bc-4241-a7c5-c2b56585ea27
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/527b75de-85ef-4328-ae3f-7dacec49ce28>
   PrefabRemaps:
     []
@@ -3741,7 +3757,7 @@
   PrefabRemaps:
     []
   Name: Plates
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5660,7 +5676,7 @@
     - 9578bc8b-ee47-4f9f-a314-b4885c485fcb: db24c102-8d0d-49fc-b208-a14b1856e90e
     - c27692d4-5b29-4d73-8454-96b4d90c106f: ca1007e2-a3af-46cd-8dc0-0c9f6040f7c5
   Name: potato
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 4.787211, y: 2.563471, z: -10.240090}
@@ -7696,7 +7712,7 @@
     - c6561ae8-9217-4c68-9e27-740365eb94cd: 19da87c6-d589-4f3a-7adc-8b0998da2175
     - cda7fd14-31bc-4d96-a0f6-99082aa192bc: 8c9ebf0a-72cf-4499-53c2-6c08f3c984a4
   Name: carrot
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -21.884398, y: 2.579344, z: -1.017954}
@@ -8245,7 +8261,7 @@
     - d6db9917-64e6-4957-9b3f-6c1adbbf1919: b63bcb61-86fe-48ae-7dbd-13a9aed4aafa
     - eee59a14-f76c-4b36-b489-8fe551c1b054: 29a6e66d-9f03-45c6-61bc-9e005b52e03f
   Name: ApprenticePlates
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8259,7 +8275,7 @@
     - !<own> 88ce0687-adee-4ebe-b369-8895d8213d9d
     - !<own> 59f6feb2-2128-402c-802d-73883688ab33
   Components:
-    []
+    - !<own> 52795746-ce4a-4d5a-ba51-acdb6431903a
 - !<SceneObject/d006d27c-f011-4c23-b566-d0e89af2ea50>
   PrefabRemaps:
     []

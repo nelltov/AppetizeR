@@ -1,6 +1,7 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
+import { EventManager } from "./EventManager";
 
 @component
 export class GamePositionSetter extends BaseScriptComponent
@@ -131,5 +132,8 @@ export class GamePositionSetter extends BaseScriptComponent
         }
 
         print("[GamePositionSetter] Locked: interactable/menu disabled locally.");
+
+        // placeholder for whenever the game center position is set
+        EventManager.CenterPositionSetLocal.trigger(this.gameRoot.getTransform().getWorldPosition());
     }
 }
