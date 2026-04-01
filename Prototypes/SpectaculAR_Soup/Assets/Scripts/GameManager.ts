@@ -96,11 +96,10 @@ export class GameManager extends BaseScriptComponent {
 
         //
         EventManager.PlayerVictoryLocalEvent.add(() =>
-                {
-          
-                        this.syncEntity.sendEvent('heardVictoryCondition')
-                
-                }); 
+        {
+            this.syncEntity.sendEvent('heardVictoryCondition')
+        }); 
+
         // Handle late-joiners: if chef was already selected before this player joined,
         // onAnyChange will never fire, so check the current value immediately
         this.amITheChef()
@@ -239,8 +238,7 @@ export class GameManager extends BaseScriptComponent {
 
     private nextChefIngredient()
     {
-        
-        if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
+        if (this.currentIngredientInfoPosition > DebugRecipe.length)
         {
             this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
             this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
@@ -253,12 +251,10 @@ export class GameManager extends BaseScriptComponent {
     }
     private isTheSoupRightDemo()
     {
-        
         // Get pot contents (vec2[] where x=category, y=variantId)
         const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
         //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
         
-
         // Quick fail: different lengths cannot match exactly
         if (pot.length != this.currentRecipeIngredientInfo.length)
         {
@@ -266,7 +262,6 @@ export class GameManager extends BaseScriptComponent {
             return false;
         }
 
-        
         // Compare each ingredient slot
         for (let i = 0; i < pot.length; i++)
         {
