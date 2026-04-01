@@ -4,10 +4,8 @@ import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController
 import { InstantiationOptions, Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
-import { ourRecipes, DebugRecipe, Recipe0, Recipe1, Recipes} from "./Recipes";
+import { ourRecipes, DebugRecipe, Recipe0, Recipe1, Recipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
-import { getEnumMember, getEnumMemberName, IngredientCategory } from "./Ingredients/IngredientTypes";
-
 
 export enum RoundState{
     
@@ -24,6 +22,7 @@ export class GameManager extends BaseScriptComponent {
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
     private soupIngredientsCorrect = StorageProperty.manualBool("Soup ing were correct", false);
+    private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
     private myID : string;
 
     private player: number | null = null
@@ -56,8 +55,9 @@ export class GameManager extends BaseScriptComponent {
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)
     
-    private unUsedRecipesArray: Recipes[]
-    private currentRecipe: Recipes | null
+ 
+
+    private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private nonChefPlateIndex: number = -1
 
@@ -76,8 +76,17 @@ export class GameManager extends BaseScriptComponent {
         })
 
 
-        this.unUsedRecipesArray= ourRecipes;
-        
+        this.unUsedRecipesArray= ourRecipes.map((recipe) => recipe[0]);
+
+        // for ( let i=0; i<this.unUsedRecipesArray.length; i++)
+        // {
+        //     this.networkedUnusedRecipesArray[i].setPendingValue(ourRecipes.0)
+        //     print(this.networkedUnusedRecipesArray[i].currentOrPendingValue)
+        // }
+        print(this.networkedUnusedRecipesArray.currentOrPendingValue[0]);
+
+        this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
+    
 
         // Network event for assigning non-chef plate index
         this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
@@ -135,28 +144,39 @@ export class GameManager extends BaseScriptComponent {
         this.syncEntity.addStorageProperty(this.currentChef);
         this.syncEntity.addStorageProperty(this.soupIngredientsCorrect)
         this.syncEntity.addStorageProperty(this.chefSelected)
+        this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray)
     }
 
-    public debugRandomizeRecipe()
+    public RandomizeRecipe()
     {
-        this.RandomizeRecipe(this.unUsedRecipesArray);
-    }
-    public RandomizeRecipe(recipeArray : Recipes[])
-    {
-        print(this.unUsedRecipesArray.length + " recipes in Unused Recipe List");
-        this.currentRecipe = this.getRandomElement<Recipes>(recipeArray) as Recipes;
-        for (let i = 0; i<recipeArray.length; i++)
-            {
-                if (this.currentRecipe == recipeArray[i])
-                {
-                    print("Removing " + recipeArray[i] + " from Unused Recipe List")
-                    recipeArray.splice(i, 1);
-                    print ("New Unused Recipe List contains " + this.unUsedRecipesArray.length + " recipes")
-                    this.currentRecipeIngredientInfo= this.currentRecipe[1]
-                    
-                }
-            }
-        
+        // Take a SHALLOW COPY so you're not mutating the networked array directly
+        const currentRecipes: string[] = [...this.networkedUnusedRecipesArray.currentOrPendingValue];
+
+        print("Network Recipes = " + currentRecipes.length + " and Local Recipe = " + this.unUsedRecipesArray.length);
+
+        if (currentRecipes.length === 0)
+        {
+            print("No recipes left!");
+            return;
+        }
+
+        const recipeName = this.getRandomElement<string>(currentRecipes) as string;
+        print("Selected recipe: " + recipeName);
+
+        // Find and remove the chosen recipe from the copy
+        const index = currentRecipes.indexOf(recipeName);
+        if (index !== -1)
+        {
+            currentRecipes.splice(index, 1);
+        }
+
+        // Update both local and networked state from the same source of truth
+        this.currentRecipeIngredientInfo = recipeDictionary[recipeName];
+        this.unUsedRecipesArray = currentRecipes;
+        this.networkedUnusedRecipesArray.setPendingValue(currentRecipes);
+
+        print("After splice — Local: " + this.unUsedRecipesArray.length 
+            + ", Network pending: " + this.networkedUnusedRecipesArray.currentOrPendingValue.length);
     }
 
     public RandomizePlayerRoles()
@@ -164,7 +184,8 @@ export class GameManager extends BaseScriptComponent {
         if (this.chefSelected.currentOrPendingValue == true) return;
         this.followingHead = false;
 
-        /*this.RandomizeRecipe(this.unUsedRecipesArray);
+       this.RandomizeRecipe();
+       /*
 
         So this line above can be called anywhere to shuffle through the current recipe that players are playing with.
 
@@ -238,7 +259,7 @@ export class GameManager extends BaseScriptComponent {
 
     private nextChefIngredient()
     {
-        if (this.currentIngredientInfoPosition > DebugRecipe.length)
+        if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
         {
             this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
             this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";

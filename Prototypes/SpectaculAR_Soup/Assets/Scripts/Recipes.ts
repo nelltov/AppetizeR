@@ -28,6 +28,12 @@ export const DebugRecipe : IngredientInfo[] = [
 
 ]
 
+export const recipeDictionary: Record<string, IngredientInfo[]> = {
+    "BeefStew": Recipe0,
+    "Chicken Noodle": Recipe1,
+    "DebugRecipe": DebugRecipe
+}
+
 export const ourRecipes : Recipes[] = [
     ["BeefStew", Recipe0],
     ["Chicken Noodle", Recipe1],
