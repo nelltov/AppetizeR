@@ -164,7 +164,18 @@ export class GameManager extends BaseScriptComponent {
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
         this.followingHead = false;
-        //this.RandomizeRecipe(this.unUsedRecipesArray);
+
+        /*this.RandomizeRecipe(this.unUsedRecipesArray);
+
+        So this line above can be called anywhere to shuffle through the current recipe that players are playing with.
+
+        My current concern is if it is firing on each game manager but it appears when I use the debugs it only fires once in 
+        the simulated network in Lens Studio.
+
+        Now where to actually call this I think requires a discussion. I think it best fits here but I won't know for sure
+        without some more tech savvy look from Nellie. My instinct and is this is the perfect spot. For testing I rigged
+        up a button and had it call the debugRandomRecipe(). (Since I can't add a parameter to a button press I made a temp method)
+        */
 
         // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
@@ -192,16 +203,6 @@ export class GameManager extends BaseScriptComponent {
         const prefabs = this.ingManager.ingredientPrefabList;
         const baseEach = Math.floor(prefabs.length / nonChefIds.length);
         const remainder = prefabs.length % nonChefIds.length;
-
-        let prefabIndex = 0;
-        for (let p = 0; p < nonChefIds.length; p++)
-        {
-            const countForThisPlayer = baseEach + (p < remainder ? 1 : 0);
-            for (let k = 0; k < countForThisPlayer; k++)
-            {
-                //this.spawn(prefabs[prefabIndex++]);
-            }
-        }
     }
 
     private assignChef(chefId: string, nonChefCount: number)
