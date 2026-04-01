@@ -182,24 +182,15 @@ export class GameManager extends BaseScriptComponent {
     public RandomizePlayerRoles()
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
+
         this.followingHead = false;
 
        this.RandomizeRecipe();
-       /*
-
-        So this line above can be called anywhere to shuffle through the current recipe that players are playing with.
-
-        My current concern is if it is firing on each game manager but it appears when I use the debugs it only fires once in 
-        the simulated network in Lens Studio.
-
-        Now where to actually call this I think requires a discussion. I think it best fits here but I won't know for sure
-        without some more tech savvy look from Nellie. My instinct and is this is the perfect spot. For testing I rigged
-        up a button and had it call the debugRandomRecipe(). (Since I can't add a parameter to a button press I made a temp method)
-        */
+       
 
         // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
-        const chefId = (this.getRandomElement(users) as any).connectionId as string;
+        const chefId = SessionController.getInstance().getLocalConnectionId() as string;
         const nonChefIds = users
             .map(u => (u as any).connectionId as string)
             .filter(id => id !== chefId);
@@ -249,12 +240,12 @@ export class GameManager extends BaseScriptComponent {
             this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
             print(this.myID + " Should turn on the Chef Info")
         }
-        else {  // non-chef player: try to enable corresponding plate based on assigned index
-            if (this.nonChefPlateIndex >= 0 && this.nonChefPlateIndex < this.chefPlateObjects.length) {
-                this.chefPlateObjects[this.nonChefPlateIndex].enabled = true;
-                print(this.myID + " Should turn on plate " + this.nonChefPlateIndex)
-            }
-        }
+        // else {  // non-chef player: try to enable corresponding plate based on assigned index
+        //     if (this.nonChefPlateIndex >= 0 && this.nonChefPlateIndex < this.chefPlateObjects.length) {
+        //         this.chefPlateObjects[this.nonChefPlateIndex].enabled = true;
+        //         print(this.myID + " Should turn on plate " + this.nonChefPlateIndex)
+        //     }
+        // }
     }
 
     private nextChefIngredient()
