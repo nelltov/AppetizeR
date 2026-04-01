@@ -34,6 +34,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/065e8a2e-8520-4f15-9954-22538a3e3a9a>
+  PrefabRemaps:
+    []
+  Name: TempPlaceHolder
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f48c2532-998b-4498-9ca3-f7b852f9e99b
 - !<AnimationPlayer/07d574c3-b0ac-4563-409d-5a0dfe81cce0>
   PrefabRemaps:
     []
@@ -274,13 +289,16 @@
       {}
 - !<SceneObject/2416c800-7e37-4126-4df9-8a889c2f41bd>
   PrefabRemaps:
+    - 065e8a2e-8520-4f15-9954-22538a3e3a9a: 521d7faf-e4bd-4d73-84b9-486ef1b177b9
     - 07d574c3-b0ac-4563-409d-5a0dfe81cce0: f0e67fd6-5517-48b4-45e8-efe4f1ba6cf5
     - 2416c800-7e37-4126-4df9-8a889c2f41bd: 0739ed2e-6342-4416-72c0-ab4d63203f0f
+    - 4f328c39-9e24-46cb-5507-067abbd301d9: 8086f81b-1df3-4ed8-69e9-4d4eebf5a7ed
     - 75879bd7-f48a-42be-7fc1-8be121dfad77: 974f2d35-81b1-47bf-6457-52e75e47d35c
     - b252a019-bbb3-4907-6f39-4a228d8d3e04: 330395e9-fc97-4461-6a47-e696154575e2
     - cca27409-36fa-4c13-4035-2cfb0d0bc50a: 4ff2ce8e-c31b-4f81-5429-cf428c63f560
     - e53a6ae6-625c-40f8-6165-5d9c7c2eaaa8: 6bd1ce39-0119-4441-6048-37f94b310ecd
     - edc9e141-785a-4514-6dd9-4610772e5f39: d3bf84d6-35eb-4520-53f0-60aad99bc03f
+    - f48c2532-998b-4498-9ca3-f7b852f9e99b: 914cc540-dc97-4072-b558-72521f831bea
   Name: onion
   Enabled: true
   Layers: 1
@@ -290,7 +308,7 @@
     Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 065e8a2e-8520-4f15-9954-22538a3e3a9a
   Components:
     - !<own> b252a019-bbb3-4907-6f39-4a228d8d3e04
     - !<own> 07d574c3-b0ac-4563-409d-5a0dfe81cce0
@@ -298,6 +316,7 @@
     - !<own> 75879bd7-f48a-42be-7fc1-8be121dfad77
     - !<own> e53a6ae6-625c-40f8-6165-5d9c7c2eaaa8
     - !<own> cca27409-36fa-4c13-4035-2cfb0d0bc50a
+    - !<own> 4f328c39-9e24-46cb-5507-067abbd301d9
 - !<SceneObject/300658d2-aa7d-4da9-5c19-c3968db130ad>
   PrefabRemaps:
     []
@@ -577,6 +596,38 @@
     []
   Components:
     - !<own> 110ac8e5-f717-46ca-5752-4aa8932061b9
+- !<ScriptComponent/4f328c39-9e24-46cb-5507-067abbd301d9>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/51a8290f-ad94-44e4-5532-79b81a7ed302>
   PrefabRemaps:
     []
@@ -1425,7 +1476,6 @@
     _enableZTranslation: true
     showRotationProperties: true
     _rotationAxis: true
-    isSynced: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -1451,7 +1501,7 @@
       _enableZTranslation: true
       showRotationProperties: false
       _rotationAxis: All
-      isSynced: false
+      isSynced: true
   ScriptTypes:
     "":
       {}
@@ -1851,6 +1901,87 @@
     []
   Components:
     - !<own> ea538f55-31ab-4b51-4ec5-2a67d6dc815c
+- !<Text/f48c2532-998b-4498-9ca3-f7b852f9e99b>
+  PrefabRemaps:
+    []
+  Name: Text
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Text: Onion
+  Editable: false
+  ShowEditingPreview: true
+  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
+  SizeToFit: false
+  FontSize: 10
+  Font: !<reference> 00000000-0000-0000-0000-000000000000
+  LayoutRect:
+    left: -7.500000
+    bottom: -2.250000
+    right: 7.500000
+    top: 2.250000
+  OverflowVertical: Overflow
+  OverflowHorizontal: Overflow
+  Fill: !<TextFill>
+    Mode: Solid
+    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Texture: !<reference> 00000000-0000-0000-0000-000000000000
+    ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    TileCount: 5.000000
+    TileZone: Rect
+    TextureStretch: FitWidth
+  BlendMode: PremultipliedAlpha
+  Outline: !<OutlineSettings>
+    Enabled: true
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Size: 0.250000
+  Dropshadow: !<DropshadowSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    OffsetX: 0.250000
+    OffsetY: 0.250000
+  Background: !<BackgroundSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Margins:
+      left: 0.000000
+      bottom: 0.000000
+      right: 0.000000
+      top: 0.000000
+    CornerRadius: 0.000000
+  AdvancedLayout: !<TextAdvancedLayout>
+    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+    LetterSpacing: 0.020000
+    LineSpacing: 1.000000
+    CapitalizationOverride: None
+  DepthTest: false
+  TwoSided: false
 - !<SceneObject/fcb8cbcf-b1b4-45fe-7e5b-4c0d8c4995c6>
   PrefabRemaps:
     []

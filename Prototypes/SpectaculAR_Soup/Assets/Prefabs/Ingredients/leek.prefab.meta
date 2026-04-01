@@ -14,6 +14,38 @@
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/0fd038c3-a482-4c9d-b04f-da0c088d42f4>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
+  ScriptTypes:
+    "":
+      {}
 - !<ObjectPrefabAssetData/337d62cc-4d12-465f-8384-433259d3bd36>
   Prototype: !<ObjectOwner/a069b5d3-00e0-4a9e-b0e4-3c649f2dc905>
     PackagePath: ""
@@ -38,6 +70,7 @@
     - !<own> c4d9bfe9-2af6-4ea6-adbd-72862e37af63
     - !<own> 9d095457-ad40-4883-aa93-e10fca01f3ee
     - !<own> f1c06a46-3952-4526-ac97-94155742f036
+    - !<own> 0fd038c3-a482-4c9d-b04f-da0c088d42f4
 - !<RenderMeshVisual/6205e253-b96c-42d5-6fd8-b1b9c2f3e4e2>
   PrefabRemaps:
     []
