@@ -1,4 +1,3 @@
-import { setTimeout } from "SpectaclesInteractionKit.lspkg/Utils/FunctionTimingUtils";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
