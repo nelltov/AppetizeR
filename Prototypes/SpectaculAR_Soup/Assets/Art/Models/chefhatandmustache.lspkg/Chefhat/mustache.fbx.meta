@@ -1,0 +1,120 @@
+- !<AssetImportMetadata/7782f262-12c3-4a8f-9e63-0060c8f11e02>
+  ImportedAssetIds:
+    10c131a6b6d1b31b: !<reference> 4b2dcebf-e55c-4c38-a13d-feddce15d6be
+    2028ca51e4a54211: !<reference> d11dc870-714a-428e-899d-838627bb871e
+    351a54aa7de1a455: !<reference> ac2e25b7-0ab6-482c-a195-0c88b1059fe4
+    7a0dd5cd69df73fa: !<reference> b432321e-2560-40dc-aa2d-20c3dc470bc5
+    Animations/BaseLayer: !<reference> 91d959e3-ab83-470c-99d2-442c45596cd0
+    Meshes/mustache: !<reference> 2469b110-6267-4b72-b8b2-fe6891c7cd44
+    Scene: !<reference> 5ee87c57-5355-4d9b-b6cb-71c0173fa631
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 5ee87c57-5355-4d9b-b6cb-71c0173fa631
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> ac47303b-2d00-439a-99a8-cfbc76d81975
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: false
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: false
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: false
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: false
+    ImportBlendShapeAnimation: false
+    ImportVertexAnimation: false
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+    ExtensionMappings:
+      mesh: None Compression
+    Overrides:
+      {}
+- !<RenderMeshVisual/4b2dcebf-e55c-4c38-5ec2-012231ea2941>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> 2469b110-6267-4b72-b8b2-fe6891c7cd44
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/ac2e25b7-0ab6-482c-5e6a-f3774efa601b>
+  PrefabRemaps:
+    []
+  Name: mustache
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 1.482826, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4b2dcebf-e55c-4c38-5ec2-012231ea2941
+- !<ObjectPrefabAssetData/ac47303b-2d00-439a-99a8-cfbc76d81975>
+  Prototype: !<ObjectOwner/ce183f2f-c1b4-426e-8df2-7b512ef9be72>
+    PackagePath: ""
+    objects:
+      - !<own> b432321e-2560-40dc-55d2-df3c23b8f43a
+- !<SceneObject/b432321e-2560-40dc-55d2-df3c23b8f43a>
+  PrefabRemaps:
+    []
+  Name: mustache
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ac2e25b7-0ab6-482c-5e6a-f3774efa601b
+  Components:
+    - !<own> d11dc870-714a-428e-7662-7c79d84478e1
+- !<AnimationPlayer/d11dc870-714a-428e-7662-7c79d84478e1>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 91d959e3-ab83-470c-99d2-442c45596cd0
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
