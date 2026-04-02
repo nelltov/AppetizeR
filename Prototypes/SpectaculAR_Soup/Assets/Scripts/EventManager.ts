@@ -17,6 +17,7 @@ export class EventManager extends BaseScriptComponent {
     static ChefSelectedEvent = new EventWrapper<boolean[]>()
     static PlayerVictoryNetworkEvent = new EventWrapper()
     static PlayerVictoryLocalEvent = new EventWrapper()
+    static ResetGameNetworkEvent = new EventWrapper()
 
     // Shader
     static UpdateSoupSwirlAmount = new EventWrapper<[number]>()
