@@ -33,7 +33,7 @@ export class GameManager extends BaseScriptComponent {
     ingManager: IngredientManager
 
     @input
-    gameStartButton : SceneObject
+    public gameStartButton : SceneObject
 
     @input
     chefPlayerInfo : SceneObject
@@ -88,7 +88,6 @@ export class GameManager extends BaseScriptComponent {
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
-
         // Network event for assigning non-chef plate index
         this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
             const data = messageInfo.data as { connectionId: string, plateIndex: number }
@@ -113,6 +112,17 @@ export class GameManager extends BaseScriptComponent {
             this.syncEntity.sendEvent('heardVictoryCondition')
         }); 
 
+        this.syncEntity.onEventReceived.add('heardResetCondition', () => {
+            this.gameStartButtonReset();
+        })
+
+        //
+        EventManager.ResetGameNetworkEvent.add(() =>
+        {
+            this.syncEntity.sendEvent('heardResetCondition')
+        }); 
+
+    
         // Handle late-joiners: if chef was already selected before this player joined,
         // onAnyChange will never fire, so check the current value immediately
         this.amITheChef()
@@ -252,6 +262,15 @@ export class GameManager extends BaseScriptComponent {
         // }
     }
 
+    private GameReset()
+    {
+        print("Game Resetting!")
+        EventManager.ResetGameNetworkEvent.trigger();
+    }
+
+    public gameStartButtonReset(){
+        this.gameStartButton.enabled = true;
+    }
     private nextChefIngredient()
     {
         if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)

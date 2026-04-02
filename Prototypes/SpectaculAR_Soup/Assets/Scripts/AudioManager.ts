@@ -30,8 +30,11 @@ export class AudioManager extends BaseScriptComponent {
     onReady()
     {
 
+
+
         EventManager.PlayerVictoryNetworkEvent.add(() =>
         {
+
             this.audio.audioTrack = this.audioVictoryTrack; 
             this.audio.play(1);
         }); 
@@ -39,8 +42,13 @@ export class AudioManager extends BaseScriptComponent {
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
         {
             this.audio.audioTrack = this.audioCollisionTrack; 
-            this.audio.play(1);
+
+                this.audio.play(1);
+
 
         }); 
+
     }
+
+    
 }
