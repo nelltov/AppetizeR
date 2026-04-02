@@ -43,21 +43,12 @@ export class AudioManager extends BaseScriptComponent {
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
         {
             this.audio.audioTrack = this.audioCollisionTrack; 
-            delay(0.5, () => 
-            {
-                print("ran after 0.5s");
-                
+
                 this.audio.play(1);
-            });
+
 
         }); 
 
-        function delay(seconds: number, callback: () => void): void 
-            {
-                const delayEvent = this.createEvent("DelayedCallbackEvent");
-                    delayEvent.bind(callback);
-                    delayEvent.reset(seconds);
-            }
     }
 
     
