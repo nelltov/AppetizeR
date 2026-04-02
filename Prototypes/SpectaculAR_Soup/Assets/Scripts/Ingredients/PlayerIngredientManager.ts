@@ -1,3 +1,4 @@
+import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { EventManager } from "../EventManager";
 
 @component
@@ -18,7 +19,7 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     private offset: vec3 = new vec3(0, 0, 0)
     private sceneObj: SceneObject
     private distanceFromCenter: number = 60    // distance between plate parent transform and center of table, adjust as needed
-    private verticalOffset: number = -5    // Account for pivot point being higher up than the table
+    private verticalOffset: number = -10    // Account for pivot point being higher up than the table
 
     onAwake() {
         // Set up during Start event after all components are awake
@@ -46,6 +47,12 @@ export class PlayerIngredientManager extends BaseScriptComponent {
                 let ingredientPrefab = this.ingredientPrefabList[testIdx]
                 let parentToSpawnUnder = this.ingredientPositions[0] // hard coded for now
                 ingredientPrefab.instantiate(parentToSpawnUnder)
+            }
+        })
+
+        EventManager.DisableChefPlate.add(() => {
+            if (this.platesObject) {
+                this.platesObject.enabled = false
             }
         })
     }

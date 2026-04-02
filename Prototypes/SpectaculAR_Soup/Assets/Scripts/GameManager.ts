@@ -1,7 +1,6 @@
 import {SyncEntity} from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
-import { InstantiationOptions, Instantiator } from "SpectaclesSyncKit.lspkg/Components/Instantiator";
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
 import { ourRecipes, DebugRecipe, Recipe0, Recipe1, Recipes, recipeDictionary} from "./Recipes";
@@ -29,9 +28,6 @@ export class GameManager extends BaseScriptComponent {
 
     @input
     camera: Camera
-
-    @input
-    instantiator : Instantiator
 
     @input
     ingManager: IngredientManager
@@ -68,6 +64,11 @@ export class GameManager extends BaseScriptComponent {
         {
             print("Chef subscribed");
             this.amITheChef();
+
+            // Disable the chef's plate
+            if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
+                EventManager.DisableChefPlate.trigger()
+            }
         })
 
         this.chefSelected.onAnyChange.add(() =>
