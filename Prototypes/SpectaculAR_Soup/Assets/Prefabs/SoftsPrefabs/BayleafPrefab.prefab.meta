@@ -96,7 +96,7 @@
     - !<own> 2676546c-d223-4cce-6b6a-8cc11f322068
     - !<own> 087916e4-598f-4dd5-7e5d-baf08d617693
   Components:
-    - !<own> 8a5943b4-b919-4797-40a1-1a49f40d32c1
+    - !<own> b9a0d518-5652-4f2f-b6ae-58cd351302a6
     - !<own> 2405ec56-e6f7-4cee-7276-9bd6749e858a
     - !<own> 5f92b15f-17ff-46c7-5f4f-b4638ef58e94
     - !<own> 86f2c938-e501-4db9-6271-89f58fb5b456
@@ -221,10 +221,10 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/8a5943b4-b919-4797-40a1-1a49f40d32c1>
+- !<BodyComponent/b9a0d518-5652-4f2f-b6ae-58cd351302a6>
   PrefabRemaps:
     []
-  Name: Physics Collider
+  Name: Physics Body
   Enabled: true
   Shape: !<Capsule>
     Axis: Y
@@ -240,3 +240,8 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000

@@ -14,24 +14,6 @@
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ColliderComponent/08e2875f-4502-47f7-4144-5a761aa8ec41>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 3.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<ObjectPrefabAssetData/1c700712-2747-4451-9653-55092d28973a>
   Prototype: !<ObjectOwner/6f047288-b032-427b-89e8-ab883c8825da>
     PackagePath: ""
@@ -71,7 +53,7 @@
   Children:
     - !<own> 5d237105-5af0-4dd9-49e6-2da3870f75c2
   Components:
-    - !<own> 08e2875f-4502-47f7-4144-5a761aa8ec41
+    - !<own> ab2c8857-7fc6-4770-a3b9-b80610165a25
     - !<own> 544b9bdb-65c2-4d55-56ea-acf92ca92cd8
     - !<own> 76d4fb4a-47a6-400c-7aab-5ef715154154
     - !<own> 69e81ad6-f891-4d4f-7ec6-2b76b8be3409
@@ -203,3 +185,26 @@
   ScriptTypes:
     "":
       {}
+- !<BodyComponent/ab2c8857-7fc6-4770-a3b9-b80610165a25>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 3.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000

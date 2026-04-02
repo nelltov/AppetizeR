@@ -8,7 +8,7 @@
   PrefabRemaps:
     - 177342a7-96e5-4b27-96ac-87de1eff82b0: 177342a7-96e5-4b27-6953-7821e1007d4f
     - 28aedd07-d2a6-402a-a16c-baf5d96d8575: 28aedd07-d2a6-402a-5e93-450a26927a8a
-    - 30c148af-e364-4b4f-abab-ec284b3f7b9f: 30c148af-e364-4b4f-5454-13d7b4c08460
+    - 28e14402-aafb-4c89-9d56-703a55851690: 5b65ea2a-917a-4cd7-a8e0-1987dda4609c
     - 428e5e10-44bb-4fb8-9ce3-ca1a0f09a565: 428e5e10-44bb-4fb8-631c-35e5f0f65a9a
     - 5cf81b02-1cfd-4470-9a35-c55f70d5c0a7: 5cf81b02-1cfd-4470-65ca-3aa08f2a3f58
     - ea3ac43e-811b-4288-a299-c8e5410462d0: ea3ac43e-811b-4288-5d66-371abefb9d2f
@@ -24,7 +24,7 @@
   Children:
     - !<own> 28aedd07-d2a6-402a-a16c-baf5d96d8575
   Components:
-    - !<own> 30c148af-e364-4b4f-abab-ec284b3f7b9f
+    - !<own> 28e14402-aafb-4c89-9d56-703a55851690
     - !<own> ea3ac43e-811b-4288-a299-c8e5410462d0
     - !<own> 5cf81b02-1cfd-4470-9a35-c55f70d5c0a7
     - !<own> 428e5e10-44bb-4fb8-9ce3-ca1a0f09a565
@@ -43,10 +43,10 @@
     []
   Components:
     - !<own> f37f95bc-aaa9-4f21-a2f0-09f14a34bebd
-- !<ColliderComponent/30c148af-e364-4b4f-abab-ec284b3f7b9f>
+- !<BodyComponent/28e14402-aafb-4c89-9d56-703a55851690>
   PrefabRemaps:
     []
-  Name: Physics Collider
+  Name: Physics Body
   Enabled: true
   Shape: !<Capsule>
     Axis: Y
@@ -62,6 +62,11 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<ScriptComponent/428e5e10-44bb-4fb8-9ce3-ca1a0f09a565>
   PrefabRemaps:
     []

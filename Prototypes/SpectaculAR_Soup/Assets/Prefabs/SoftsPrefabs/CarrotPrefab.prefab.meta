@@ -31,25 +31,6 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/1fa1a18a-fe40-4d02-4932-f4b79152809e>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 11.000000
-    Radius: 1.300000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<ScriptComponent/2163e955-d1b6-4c8d-5923-78175c0599bf>
   PrefabRemaps:
     []
@@ -102,7 +83,7 @@
   Children:
     - !<own> d883c10a-21dc-4011-6f14-dcbbcfe036c6
   Components:
-    - !<own> 1fa1a18a-fe40-4d02-4932-f4b79152809e
+    - !<own> ef618d4d-5359-4da9-859c-3d489b2587f1
     - !<own> 0ef63e43-0a71-4e2a-7220-594719f54a69
     - !<own> 2163e955-d1b6-4c8d-5923-78175c0599bf
     - !<own> dc21892e-c240-46e7-4872-199cdfe653ce
@@ -204,3 +185,27 @@
   ScriptTypes:
     "":
       {}
+- !<BodyComponent/ef618d4d-5359-4da9-859c-3d489b2587f1>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 11.000000
+    Radius: 1.300000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
