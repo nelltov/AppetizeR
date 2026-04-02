@@ -1,3 +1,4 @@
+import { setTimeout } from "SpectaclesInteractionKit.lspkg/Utils/FunctionTimingUtils";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
@@ -30,8 +31,11 @@ export class AudioManager extends BaseScriptComponent {
     onReady()
     {
 
+
+
         EventManager.PlayerVictoryNetworkEvent.add(() =>
         {
+
             this.audio.audioTrack = this.audioVictoryTrack; 
             this.audio.play(1);
         }); 
@@ -39,8 +43,22 @@ export class AudioManager extends BaseScriptComponent {
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
         {
             this.audio.audioTrack = this.audioCollisionTrack; 
-            this.audio.play(1);
+            delay(0.5, () => 
+            {
+                print("ran after 0.5s");
+                
+                this.audio.play(1);
+            });
 
         }); 
+
+        function delay(seconds: number, callback: () => void): void 
+            {
+                const delayEvent = this.createEvent("DelayedCallbackEvent");
+                    delayEvent.bind(callback);
+                    delayEvent.reset(seconds);
+            }
     }
+
+    
 }
