@@ -27,6 +27,8 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     cameraObject: false
+    ingredientPositionsObject: false
+    ingredientPrefabList: false
     platesObject: false
   ScriptTypesHidden:
     {}
@@ -39,9 +41,14 @@
   DefaultScriptInputs:
     - cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       platesObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      ingredientPositionsObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      ingredientPrefabList: !<reference.ObjectPrefab[]>
+        []
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject cameraObject
     - // @input SceneObject platesObject
+    - // @input SceneObject ingredientPositionsObject
+    - "// @input Asset.ObjectPrefab[] ingredientPrefabList"

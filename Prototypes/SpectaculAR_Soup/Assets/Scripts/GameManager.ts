@@ -95,6 +95,9 @@ export class GameManager extends BaseScriptComponent {
             // respond if client is the target
             if (SessionController.getInstance().getLocalUserInfo().connectionId === data.connectionId) {
                 this.nonChefPlateIndex = data.plateIndex;
+
+                // Test out instantiating ingredients on non-chef player plate
+                EventManager.SpawnPlayerIngredients.trigger([this.nonChefPlateIndex])
             }
         })
 
