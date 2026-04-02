@@ -137,15 +137,39 @@
   ScriptTypes:
     "":
       {}
+- !<BodyComponent/dc34de4c-ed4d-445c-b4b3-92b1c72b8513>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Cylinder>
+    Axis: Z
+    Length: 2.000000
+    Radius: 4.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<SceneObject/e38464ac-e9ca-404b-8d79-34cb11aada6e>
   PrefabRemaps:
     - 4008ed2d-fd44-4328-a005-00945cfe96e5: 4008ed2d-fd44-4328-5ffa-ff6ba301691a
     - 511e2acc-9663-4299-bd8d-09c1ee5bb069: 511e2acc-9663-4299-4272-f63e11a44f96
     - 6f7f1264-49a6-4f00-9d0d-e5df41aa52a6: 6f7f1264-49a6-4f00-62f2-1a20be55ad59
     - 8270db19-7953-4b98-8877-18a73b4b87ad: 8270db19-7953-4b98-7788-e758c4b47852
+    - dc34de4c-ed4d-445c-b4b3-92b1c72b8513: 23d68c58-2c8c-4406-ad0c-595b162a02c9
     - e38464ac-e9ca-404b-8d79-34cb11aada6e: e38464ac-e9ca-404b-7286-cb34ee552591
     - e6de5a06-07d2-4923-9574-769418d3f469: e6de5a06-07d2-4923-6a8b-896be72c0b96
-    - fa68f50d-809e-4b71-897c-f64abab9a9f7: fa68f50d-809e-4b71-7683-09b545465608
   Name: NoodlePrefab
   Enabled: true
   Layers: 1
@@ -157,7 +181,7 @@
   Children:
     - !<own> e6de5a06-07d2-4923-9574-769418d3f469
   Components:
-    - !<own> fa68f50d-809e-4b71-897c-f64abab9a9f7
+    - !<own> dc34de4c-ed4d-445c-b4b3-92b1c72b8513
     - !<own> 6f7f1264-49a6-4f00-9d0d-e5df41aa52a6
     - !<own> 511e2acc-9663-4299-bd8d-09c1ee5bb069
     - !<own> 8270db19-7953-4b98-8877-18a73b4b87ad
@@ -176,22 +200,3 @@
     []
   Components:
     - !<own> 4008ed2d-fd44-4328-a005-00945cfe96e5
-- !<ColliderComponent/fa68f50d-809e-4b71-897c-f64abab9a9f7>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Cylinder>
-    Axis: Z
-    Length: 2.000000
-    Radius: 4.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false

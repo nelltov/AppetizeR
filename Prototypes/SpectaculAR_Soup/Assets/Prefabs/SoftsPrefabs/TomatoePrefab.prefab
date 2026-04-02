@@ -9,9 +9,9 @@
     - 116ff0ea-fa09-4ff4-a66e-37736a35e70c: 116ff0ea-fa09-4ff4-5991-c88c95ca18f3
     - 3e2e9c75-8e8d-46e4-a807-95ec9f548773: 3e2e9c75-8e8d-46e4-57f8-6a1360ab788c
     - 6cdbaa13-8f86-4907-a19b-a7faa008fe11: 6cdbaa13-8f86-4907-5e64-58055ff701ee
-    - 81fda511-a060-4d20-8fd4-8a5eff5e255a: 81fda511-a060-4d20-702b-75a100a1daa5
     - b7a21861-8365-4b67-97af-0d8797c6228d: b7a21861-8365-4b67-6850-f2786839dd72
     - b8c06e28-7378-4b7f-8815-201fe5734a92: b8c06e28-7378-4b7f-77ea-dfe01a8cb56d
+    - ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b: 7bf19f4d-9576-4570-9581-91d4f5836c96
     - d13f03f7-03d8-45a5-99b1-7019292643f2: d13f03f7-03d8-45a5-664e-8fe6d6d9bc0d
   Name: TomatoePrefab
   Enabled: true
@@ -24,7 +24,7 @@
   Children:
     - !<own> b8c06e28-7378-4b7f-8815-201fe5734a92
   Components:
-    - !<own> 81fda511-a060-4d20-8fd4-8a5eff5e255a
+    - !<own> ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b
     - !<own> 6cdbaa13-8f86-4907-a19b-a7faa008fe11
     - !<own> b7a21861-8365-4b67-97af-0d8797c6228d
     - !<own> 3e2e9c75-8e8d-46e4-a807-95ec9f548773
@@ -103,24 +103,6 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/81fda511-a060-4d20-8fd4-8a5eff5e255a>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 3.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<ScriptComponent/b7a21861-8365-4b67-97af-0d8797c6228d>
   PrefabRemaps:
     []
@@ -174,6 +156,29 @@
     []
   Components:
     - !<own> d13f03f7-03d8-45a5-99b1-7019292643f2
+- !<BodyComponent/ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 3.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<RenderMeshVisual/d13f03f7-03d8-45a5-99b1-7019292643f2>
   PrefabRemaps:
     []

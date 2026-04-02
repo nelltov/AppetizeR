@@ -21,25 +21,6 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/1fa1a18a-fe40-4d02-b6cd-0b486ead7f61>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 11.000000
-    Radius: 1.300000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<ScriptComponent/2163e955-d1b6-4c8d-a6dc-87e8a3fa6640>
   PrefabRemaps:
     []
@@ -81,10 +62,10 @@
 - !<SceneObject/2ed85b36-0c58-41db-888b-c32cbd34da0c>
   PrefabRemaps:
     - 0ef63e43-0a71-4e2a-8ddf-a6b8e60ab596: 0ef63e43-0a71-4e2a-7220-594719f54a69
-    - 1fa1a18a-fe40-4d02-b6cd-0b486ead7f61: 1fa1a18a-fe40-4d02-4932-f4b79152809e
     - 2163e955-d1b6-4c8d-a6dc-87e8a3fa6640: 2163e955-d1b6-4c8d-5923-78175c0599bf
     - 2ed85b36-0c58-41db-888b-c32cbd34da0c: 2ed85b36-0c58-41db-7774-3cd342cb25f3
     - 91d3336c-dd8c-4295-a069-2272a71fc8e8: 91d3336c-dd8c-4295-5f96-dd8d58e03717
+    - cbcf6d32-41df-484a-ada5-72a6c3037bcb: ef618d4d-5359-4da9-859c-3d489b2587f1
     - d883c10a-21dc-4011-90eb-2344301fc939: d883c10a-21dc-4011-6f14-dcbbcfe036c6
     - dc21892e-c240-46e7-b78d-e6632019ac31: dc21892e-c240-46e7-4872-199cdfe653ce
   Name: CarrotPrefab
@@ -98,7 +79,7 @@
   Children:
     - !<own> d883c10a-21dc-4011-90eb-2344301fc939
   Components:
-    - !<own> 1fa1a18a-fe40-4d02-b6cd-0b486ead7f61
+    - !<own> cbcf6d32-41df-484a-ada5-72a6c3037bcb
     - !<own> 0ef63e43-0a71-4e2a-8ddf-a6b8e60ab596
     - !<own> 2163e955-d1b6-4c8d-a6dc-87e8a3fa6640
     - !<own> dc21892e-c240-46e7-b78d-e6632019ac31
@@ -122,6 +103,30 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<BodyComponent/cbcf6d32-41df-484a-ada5-72a6c3037bcb>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 11.000000
+    Radius: 1.300000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<SceneObject/d883c10a-21dc-4011-90eb-2344301fc939>
   PrefabRemaps:
     []

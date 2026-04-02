@@ -78,10 +78,10 @@
     - 2405ec56-e6f7-4cee-8d89-64298b617a75: 2405ec56-e6f7-4cee-7276-9bd6749e858a
     - 2676546c-d223-4cce-9495-733ee0cddf97: 2676546c-d223-4cce-6b6a-8cc11f322068
     - 41c06806-4125-4608-88b6-fdeea91d8f98: 41c06806-4125-4608-7749-021156e27067
+    - 4a687949-460e-4292-bfce-c75dbce072dc: b9a0d518-5652-4f2f-b6ae-58cd351302a6
     - 5f92b15f-17ff-46c7-a0b0-4b9c710a716b: 5f92b15f-17ff-46c7-5f4f-b4638ef58e94
     - 77c32ac6-b6e4-40b2-91f2-2d80ab896064: 77c32ac6-b6e4-40b2-6e0d-d27f54769f9b
     - 86f2c938-e501-4db9-9d8e-760a704a4ba9: 86f2c938-e501-4db9-6271-89f58fb5b456
-    - 8a5943b4-b919-4797-bf5e-e5b60bf2cd3e: 8a5943b4-b919-4797-40a1-1a49f40d32c1
   Name: BayleafPrefab
   Enabled: true
   Layers: 1
@@ -94,10 +94,34 @@
     - !<own> 2676546c-d223-4cce-9495-733ee0cddf97
     - !<own> 087916e4-598f-4dd5-81a2-450f729e896c
   Components:
-    - !<own> 8a5943b4-b919-4797-bf5e-e5b60bf2cd3e
+    - !<own> 4a687949-460e-4292-bfce-c75dbce072dc
     - !<own> 2405ec56-e6f7-4cee-8d89-64298b617a75
     - !<own> 5f92b15f-17ff-46c7-a0b0-4b9c710a716b
     - !<own> 86f2c938-e501-4db9-9d8e-760a704a4ba9
+- !<BodyComponent/4a687949-460e-4292-bfce-c75dbce072dc>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 3.000000
+    Radius: 0.750000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<ScriptComponent/5f92b15f-17ff-46c7-a0b0-4b9c710a716b>
   PrefabRemaps:
     []
@@ -214,22 +238,3 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/8a5943b4-b919-4797-bf5e-e5b60bf2cd3e>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 3.000000
-    Radius: 0.750000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false

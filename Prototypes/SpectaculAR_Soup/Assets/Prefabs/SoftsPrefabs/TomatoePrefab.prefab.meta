@@ -28,7 +28,7 @@
   Children:
     - !<own> b8c06e28-7378-4b7f-77ea-dfe01a8cb56d
   Components:
-    - !<own> 81fda511-a060-4d20-702b-75a100a1daa5
+    - !<own> 7bf19f4d-9576-4570-9581-91d4f5836c96
     - !<own> 6cdbaa13-8f86-4907-5e64-58055ff701ee
     - !<own> b7a21861-8365-4b67-6850-f2786839dd72
     - !<own> 3e2e9c75-8e8d-46e4-57f8-6a1360ab788c
@@ -112,10 +112,10 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/81fda511-a060-4d20-702b-75a100a1daa5>
+- !<BodyComponent/7bf19f4d-9576-4570-9581-91d4f5836c96>
   PrefabRemaps:
     []
-  Name: Physics Collider
+  Name: Physics Body
   Enabled: true
   Shape: !<Sphere>
     FitVisual: false
@@ -130,6 +130,11 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<ScriptComponent/b7a21861-8365-4b67-6850-f2786839dd72>
   PrefabRemaps:
     []
