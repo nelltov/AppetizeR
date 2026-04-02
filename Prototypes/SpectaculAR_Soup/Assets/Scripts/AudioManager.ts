@@ -9,6 +9,15 @@ export class AudioManager extends BaseScriptComponent {
 
     private syncEntity: SyncEntity;
     private audio: AudioComponent;
+
+    @input
+    public audioVictoryTrack: AudioTrackAsset;
+
+    @input
+    public audioLoserTrack: AudioTrackAsset;
+
+    @input
+    public audioCollisionTrack: AudioTrackAsset;
     
     onAwake()
     {
@@ -20,16 +29,18 @@ export class AudioManager extends BaseScriptComponent {
 
     onReady()
     {
-        /* Create a network event to replicate ingredient collisions across all devices
-        this.syncEntity.onEventReceived.add('ingredientCollision', (messageInfo) => {
-            EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(messageInfo.data as IngredientInfo)
-        })*/
 
-        // Handle the one-time local event, manage synced information, send out network event to all devices
+        EventManager.PlayerVictoryNetworkEvent.add(() =>
+        {
+            this.audio.audioTrack = this.audioVictoryTrack; 
+            this.audio.play(1);
+        }); 
+
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
         {
-            
-            //this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
+            this.audio.audioTrack = this.audioCollisionTrack; 
+            this.audio.play(1);
+
         }); 
     }
 }
