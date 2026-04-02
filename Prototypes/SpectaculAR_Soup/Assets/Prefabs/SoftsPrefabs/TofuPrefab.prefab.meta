@@ -69,6 +69,29 @@
   ScriptTypes:
     "":
       {}
+- !<BodyComponent/3f984f7e-5a2a-40cd-af26-a01e8a7ada49>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 2.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<ScriptComponent/432cebae-80fc-4bcc-6bcb-6f05a1a37f5a>
   PrefabRemaps:
     []
@@ -238,28 +261,10 @@
     - !<own> 58e793c1-4baa-4b6a-5c4a-9f366abe78f2
     - !<own> e0d81bd4-44c3-4a9d-6297-16a327c8a614
   Components:
-    - !<own> c6c7bab5-200b-4960-4bc0-b043a7bcef93
+    - !<own> 3f984f7e-5a2a-40cd-af26-a01e8a7ada49
     - !<own> 1705e163-9754-4306-7f0d-7c18acb5b4c8
     - !<own> 02b3bfb0-abf1-493f-6415-749eb658317f
     - !<own> 432cebae-80fc-4bcc-6bcb-6f05a1a37f5a
-- !<ColliderComponent/c6c7bab5-200b-4960-4bc0-b043a7bcef93>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 2.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<SceneObject/e0d81bd4-44c3-4a9d-6297-16a327c8a614>
   PrefabRemaps:
     []

@@ -4,24 +4,6 @@
     - !<own> 3ea54284-c812-4048-95e6-68065d668ce6
   LazyLoading: false
   RetainAssets: true
-- !<ColliderComponent/08e2875f-4502-47f7-bebb-a589e55713be>
-  PrefabRemaps:
-    []
-  Name: Physics Collider
-  Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 3.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
 - !<RenderMeshVisual/27d31ef2-e504-4fb3-a048-2cb58a5605c1>
   PrefabRemaps:
     []
@@ -42,10 +24,33 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<BodyComponent/2b705b53-fe46-4bc4-8758-ffc3c3aafc5d>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 3.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<SceneObject/3ea54284-c812-4048-95e6-68065d668ce6>
   PrefabRemaps:
-    - 08e2875f-4502-47f7-bebb-a589e55713be: 08e2875f-4502-47f7-4144-5a761aa8ec41
     - 27d31ef2-e504-4fb3-a048-2cb58a5605c1: 27d31ef2-e504-4fb3-5fb7-d34a75a9fa3e
+    - 2b705b53-fe46-4bc4-8758-ffc3c3aafc5d: ab2c8857-7fc6-4770-a3b9-b80610165a25
     - 3ea54284-c812-4048-95e6-68065d668ce6: 3ea54284-c812-4048-6a19-97f9a2997319
     - 544b9bdb-65c2-4d55-a915-5306d356d327: 544b9bdb-65c2-4d55-56ea-acf92ca92cd8
     - 5d237105-5af0-4dd9-b619-d25c78f08a3d: 5d237105-5af0-4dd9-49e6-2da3870f75c2
@@ -62,7 +67,7 @@
   Children:
     - !<own> 5d237105-5af0-4dd9-b619-d25c78f08a3d
   Components:
-    - !<own> 08e2875f-4502-47f7-bebb-a589e55713be
+    - !<own> 2b705b53-fe46-4bc4-8758-ffc3c3aafc5d
     - !<own> 544b9bdb-65c2-4d55-a915-5306d356d327
     - !<own> 76d4fb4a-47a6-400c-8554-a108eaeabeab
     - !<own> 69e81ad6-f891-4d4f-8139-d4894741cbf6
