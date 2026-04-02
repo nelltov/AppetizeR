@@ -13,6 +13,7 @@ export class GamePositionSetter extends BaseScriptComponent
     ingredientsObjects: SceneObject[]
 
     @input
+    @allowUndefined
     renderMesh: RenderMeshVisual | null = null;
 
     @input
