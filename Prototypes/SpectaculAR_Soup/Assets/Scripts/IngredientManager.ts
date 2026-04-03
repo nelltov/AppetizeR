@@ -11,9 +11,6 @@ export class IngredientManager extends BaseScriptComponent
     @input
     debugText: Text;
 
-    @input
-    ingredientPrefabList : ObjectPrefab[];
-
     private syncEntity: SyncEntity
     public currentIngredients: StorageProperty<StorageTypes.intArray>
 
@@ -55,5 +52,10 @@ export class IngredientManager extends BaseScriptComponent
         const newIngredientList: number[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
         this.currentIngredients.setPendingValue(newIngredientList)
         print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot and the current length of that list is ${this.currentIngredients.currentOrPendingValue.length}`)
+    }
+
+    public resetCurrentIngredients()
+    {
+        this.currentIngredients.setPendingValue([])
     }
 }

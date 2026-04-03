@@ -1,5 +1,4 @@
 import { EventManager } from "../EventManager";
-import { Ingredient } from "./Ingredient";
 
 @component
 export class PlayerIngredientManager extends BaseScriptComponent {
@@ -62,6 +61,10 @@ export class PlayerIngredientManager extends BaseScriptComponent {
                 this.platesObject.enabled = false
             }
         })
+
+        EventManager.ResetGameNetworkEvent.add(() => {
+            this.resetPlayerIngredientObjects()
+        })
     }
 
     private movePlatesToTable(centerPosition: vec3) {
@@ -75,5 +78,19 @@ export class PlayerIngredientManager extends BaseScriptComponent {
 
         let rotation = quat.lookAt(directionToCamera, new vec3(0, 1, 0))
         this.sceneObj.getTransform().setWorldRotation(rotation)
+    }
+
+    private resetPlayerIngredientObjects() {
+        if (this.platesObject) {
+            this.platesObject.enabled = false
+        }
+
+        // Deactivate any existing ingredient objects under the ingredient positions
+        for (let ingredientPosition of this.ingredientPositions) {
+            for (let i = 0; i < ingredientPosition.getChildrenCount(); i++) {
+                let child = ingredientPosition.getChild(i)
+                child.enabled = false
+            }
+        }
     }
 }

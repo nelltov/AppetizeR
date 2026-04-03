@@ -73,19 +73,6 @@ export class GameManager extends BaseScriptComponent {
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
-        // Network event for assigning non-chef plate index (outdated)
-        // this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
-        //     const data = messageInfo.data as { connectionId: string, plateIndex: number }
-
-        //     // respond if client is the target
-        //     if (SessionController.getInstance().getLocalUserInfo().connectionId === data.connectionId) {
-        //         this.nonChefPlateIndex = data.plateIndex;
-
-        //         // Test out instantiating ingredients on non-chef player plate
-        //         EventManager.SpawnPlayerIngredients.trigger([this.nonChefPlateIndex])
-        //     }
-        // })
-
         // Instantiate plates for each non-chef player
         this.syncEntity.onEventReceived.add("distributeNonChefIngredients", (messageInfo) => {
             const data = messageInfo.data as { connectionId: string, ingredientsList : number[] }
@@ -108,6 +95,7 @@ export class GameManager extends BaseScriptComponent {
         })
 
         this.syncEntity.onEventReceived.add('heardResetCondition', () => {
+            this.ingManager.resetCurrentIngredients();  // one-time reset of the current ingredients in the pot
             EventManager.ResetGameNetworkEvent.trigger();
         })
 

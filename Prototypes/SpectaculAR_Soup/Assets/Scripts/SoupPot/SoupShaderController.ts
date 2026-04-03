@@ -26,7 +26,14 @@ export class SoupShaderController extends BaseScriptComponent {
         startEvent.bind(() => { this.onStart() })
     }
 
-    // ingredient_list
+    private clearSoupIngredients() {
+        // Set all ingredient values to 0
+        for (let i = 0; i < this.ingredientList.length; i++) {
+            this.ingredientList[i] = 0.0
+        }
+
+        this.soupIngredientsShader.ingredient_list = this.ingredientList;
+    }
 
     onStart() {
         // Rotation of soup
@@ -43,12 +50,7 @@ export class SoupShaderController extends BaseScriptComponent {
         this.soupIngredientsShader = this.soupIngredientsMaterial.mainPass
         this.ingredientList = this.soupIngredientsShader.ingredient_list as Float32Array
         
-        // Set all ingredient values to 0
-        for (let i = 0; i < this.ingredientList.length; i++) {
-            this.ingredientList[i] = 0.0
-        }
-
-        this.soupIngredientsShader.ingredient_list = this.ingredientList;
+        this.clearSoupIngredients()
 
         EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
             print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
@@ -65,6 +67,11 @@ export class SoupShaderController extends BaseScriptComponent {
                 this.ingredientList[shaderIndex] = 1.0
                 this.soupIngredientsShader.ingredient_list = this.ingredientList; 
             }
+        })
+
+        // Game reset logic
+        EventManager.ResetGameNetworkEvent.add(() => {
+            this.clearSoupIngredients()
         })
     }
 }
