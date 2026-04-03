@@ -20,6 +20,9 @@ export class SoupShaderController extends BaseScriptComponent {
     private soupIngredientsShader: Pass
     private ingredientList: Float32Array
 
+    @input
+    private soupVFX: VFXComponent;
+
      onAwake() {
         // Set up during Start event after all components are awake
         let startEvent = this.createEvent("OnStartEvent")
@@ -61,7 +64,9 @@ export class SoupShaderController extends BaseScriptComponent {
             if (this.soupDebugText) {
                 this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
             }
-
+            if (this.soupVFX) {
+                this.soupVFX.restart();
+            }
             const shaderIndex = ingredientInfo.ingredient
             if (shaderIndex !== undefined && shaderIndex >= 0 && shaderIndex < this.ingredientList.length) {
                 this.ingredientList[shaderIndex] = 1.0
