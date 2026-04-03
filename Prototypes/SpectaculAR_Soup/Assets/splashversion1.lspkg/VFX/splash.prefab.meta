@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/a36c0c16-79f7-3f12-3a2d-32efb473c358>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> eb730c98-94f2-4ac3-bd39-107a8db3b0ed
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> eb730c98-94f2-4ac3-bd39-107a8db3b0ed
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> a49b4edd-cd03-4375-8318-738616f3bbcb
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<VFXComponent/2a68d290-88b4-4170-72a1-6dea13684828>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 96e90bbe-31c1-4546-9915-fa48f321ecc2
+- !<ObjectPrefabAssetData/a49b4edd-cd03-4375-8318-738616f3bbcb>
+  Prototype: !<ObjectOwner/c646e27d-891a-488c-9a83-306427d819d9>
+    PackagePath: ""
+    objects:
+      - !<own> d9f22d2a-598b-4265-5ddc-8456a794121b
+- !<SceneObject/d9f22d2a-598b-4265-5ddc-8456a794121b>
+  PrefabRemaps:
+    []
+  Name: splash
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 45.196617, z: -2.062229}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2a68d290-88b4-4170-72a1-6dea13684828
