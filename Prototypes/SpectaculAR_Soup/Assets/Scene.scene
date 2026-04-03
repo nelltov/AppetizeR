@@ -253,6 +253,7 @@
       debugTextPanel: !<reference.Text> fe4fd1c9-aa90-4e97-bd59-ae8a77fbef3c
       soupSurfaceObject: !<reference.SceneObject> 2ad93311-9a74-4b75-b4e4-6debdaee231a
       soupIngredientsObject: !<reference.SceneObject> f3b8aa21-c70d-45e8-b290-a18d7303af7f
+      soupVFX: !<reference.VFXComponent> 71de2925-9131-4429-959e-d8fb4aa577a3
   ScriptTypes:
     "":
       {}
@@ -1348,6 +1349,7 @@
     - !<own> e138d0c8-f110-49cd-a665-2f3a05075eb1
     - !<own> db237a94-1021-40b5-b206-916df6b412d1
     - !<own> ae5fb84f-de2a-40d7-9c27-389723d0eaad
+    - !<own> d415f7c2-37d9-4f85-ab72-88bb9041f58a
   Components:
     - !<own> 02f544fb-0633-4c49-8554-44ebf92786dc
 - !<SceneObject/287aed38-37e4-417c-b695-b3b1714839f0>
@@ -2252,7 +2254,6 @@
     _shadowPositionOffset: true
     _toggleable: true
     _defaultToOn: true
-    triggerUpCallbacks: true
     onValueChangeCallbacks: true
     onFinishedCallbacks: true
   ScriptTypesDefault:
@@ -2270,7 +2271,8 @@
       _defaultToOn: false
       addCallbacks: true
       triggerUpCallbacks:
-        []
+        - scriptComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+          functionName: ""
       triggerDownCallbacks:
         - scriptComponent: !<reference.ScriptComponent> 10ee3d38-e200-46ba-96f6-db9bfc7f89ce
           functionName: RandomizePlayerRoles
@@ -4699,6 +4701,19 @@
     []
   Components:
     - !<own> 6cac85a8-f502-4056-881b-db428723681c
+- !<VFXComponent/71de2925-9131-4429-959e-d8fb4aa577a3>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 96e90bbe-31c1-4546-9915-fa48f321ecc2
 - !<SceneObject/723ae77e-9ddf-441c-86d7-499c0bfc488e>
   PrefabRemaps:
     []
@@ -5451,8 +5466,8 @@
     - !<own> 5ad8d9bc-c520-4c88-b6ec-d4273352d470
     - !<own> 6f678e3e-a3db-4ac1-a274-517db365da21
     - !<own> 9bf0779e-1613-4a07-b6be-a02b30aad38e
-    - !<own> 2853cab0-d039-4450-815a-68a07acb7eb6
     - !<own> 8bba83b0-a334-4f8d-a51d-aa9b47c793ed
+    - !<own> 2853cab0-d039-4450-815a-68a07acb7eb6
   Components:
     - !<own> 29e9e981-4450-4cbb-9133-6b9f356c4c7e
     - !<own> 6bee50e0-d6f8-40b8-a11b-eda2e431e1e5
@@ -6123,6 +6138,7 @@
     - !<own> 5ddcece6-d19a-4f2b-b4e2-b01541827933
   Components:
     - !<own> 3ade0681-27fb-4bba-aa44-40aaea8f4e02
+    - !<own> fbe12474-9012-4932-af1f-892142625dad
 - !<SceneObject/9bfc1a28-1457-4603-9c0f-a73e631d92a1>
   PrefabRemaps:
     []
@@ -8114,6 +8130,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/d415f7c2-37d9-4f85-ab72-88bb9041f58a>
+  PrefabRemaps:
+    - 71de2925-9131-4429-959e-d8fb4aa577a3: 2a68d290-88b4-4170-72a1-6dea13684828
+    - d415f7c2-37d9-4f85-ab72-88bb9041f58a: d9f22d2a-598b-4265-5ddc-8456a794121b
+  Name: splash
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 2.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.100000, y: 0.100000, z: 0.100000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 71de2925-9131-4429-959e-d8fb4aa577a3
 - !<SceneObject/d4439000-b041-441f-9e80-e7601f248e00>
   PrefabRemaps:
     []
@@ -9895,6 +9927,32 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/fbe12474-9012-4932-af1f-892142625dad>
+  PrefabRemaps:
+    []
+  Name: Billboard
+  Enabled: true
+  ScriptAsset: !<reference> 4d08dd58-784c-491b-8fdd-439c5bff295f
+  ScriptInputsDefault:
+    _xAxisEnabled: true
+    _yAxisEnabled: true
+    _zAxisEnabled: true
+    _axisBufferDegrees: true
+    _axisEasing: true
+    duration: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      _xAxisEnabled: false
+      _yAxisEnabled: true
+      _zAxisEnabled: false
+      _axisBufferDegrees: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
+      _axisEasing: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
+      duration: 0.033000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/fc530e67-51dc-4b55-8306-a92acdd025f6>
   PrefabRemaps:
     []
