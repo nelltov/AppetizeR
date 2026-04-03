@@ -15,13 +15,13 @@ export class IngredientManager extends BaseScriptComponent
     ingredientPrefabList : ObjectPrefab[];
 
     private syncEntity: SyncEntity
-    public currentIngredients: StorageProperty<StorageTypes.vec2Array>
+    public currentIngredients: StorageProperty<StorageTypes.intArray>
 
     onAwake()
     {
         // Create SyncEntity and register currentIngredients so the pot list syncs across all players
         this.syncEntity = new SyncEntity(this);
-        this.currentIngredients = StorageProperty.manualVec2Array("currentIngredients", []);
+        this.currentIngredients = StorageProperty.manualIntArray("currentIngredients", []);
         this.syncEntity.addStorageProperty(this.currentIngredients);
 
         this.syncEntity.notifyOnReady(() => this.onReady())
@@ -51,8 +51,8 @@ export class IngredientManager extends BaseScriptComponent
    
     updateStorageProperties(newIngredient : IngredientInfo)
     {
-        const newIngredientToAdd = new vec2(newIngredient.category, newIngredient.variantId)
-        const newIngredientList: vec2[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
+        const newIngredientToAdd = newIngredient.ingredient as number
+        const newIngredientList: number[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
         this.currentIngredients.setPendingValue(newIngredientList)
         print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot and the current length of that list is ${this.currentIngredients.currentOrPendingValue.length}`)
     }

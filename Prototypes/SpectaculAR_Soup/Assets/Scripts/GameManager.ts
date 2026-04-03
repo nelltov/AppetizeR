@@ -3,15 +3,8 @@ import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
-import { ourRecipes, DebugRecipe, Recipe0, Recipe1, Recipes, recipeDictionary} from "./Recipes";
+import { ourRecipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
-
-export enum RoundState{
-    
-    PreRound, //0
-    InRound, //1
-    PostRound //2
-}
 
 @component
 export class GameManager extends BaseScriptComponent {
@@ -20,11 +13,8 @@ export class GameManager extends BaseScriptComponent {
 
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
-    private soupIngredientsCorrect = StorageProperty.manualBool("Soup ing were correct", false);
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
     private myID : string;
-
-    private player: number | null = null
 
     @input
     camera: Camera
@@ -101,26 +91,26 @@ export class GameManager extends BaseScriptComponent {
             }
         })
 
-        //ensuring all players hear the networked event
+        // Ensuring all players hear the networked event
         this.syncEntity.onEventReceived.add('heardVictoryCondition', () => {
             EventManager.PlayerVictoryNetworkEvent.trigger(true)
         })
 
-        //
+        // One person triggering local event propagates event to all other devices
         EventManager.PlayerVictoryLocalEvent.add(() =>
         {
             this.syncEntity.sendEvent('heardVictoryCondition')
-        }); 
-
-        this.syncEntity.onEventReceived.add('heardResetCondition', () => {
-            this.gameStartButtonReset();
         })
 
-        //
+        this.syncEntity.onEventReceived.add('heardResetCondition', () => {
+            EventManager.ResetGameNetworkEvent.trigger();
+        })
+
+        // Reset the chef selection button
         EventManager.ResetGameNetworkEvent.add(() =>
         {
-            this.syncEntity.sendEvent('heardResetCondition')
-        }); 
+            this.gameStartButtonReset();
+        })
 
     
         // Handle late-joiners: if chef was already selected before this player joined,
@@ -156,7 +146,6 @@ export class GameManager extends BaseScriptComponent {
 
         //Initializing the Chef Variab;le
         this.syncEntity.addStorageProperty(this.currentChef);
-        this.syncEntity.addStorageProperty(this.soupIngredientsCorrect)
         this.syncEntity.addStorageProperty(this.chefSelected)
         this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray)
     }
@@ -222,19 +211,12 @@ export class GameManager extends BaseScriptComponent {
         }
 
         this.assignChef(chefId, nonChefIds.length);
-
-        // Distribute ingredient prefabs as evenly as possible across non-chef players
-        // e.g. 9 prefabs / 4 players → 3 players get 2, 1 player gets 3
-        const prefabs = this.ingManager.ingredientPrefabList;
-        const baseEach = Math.floor(prefabs.length / nonChefIds.length);
-        const remainder = prefabs.length % nonChefIds.length;
     }
 
     private assignChef(chefId: string, nonChefCount: number)
     {
         this.chefSelected.setPendingValue(true);
         this.currentChef.setPendingValue(chefId);
-        this.player = nonChefCount;
         print("Picked chef connectionId = " + chefId);
     }
 
@@ -265,12 +247,13 @@ export class GameManager extends BaseScriptComponent {
     private GameReset()
     {
         print("Game Resetting!")
-        EventManager.ResetGameNetworkEvent.trigger();
+        this.syncEntity.sendEvent('heardResetCondition')
     }
 
-    public gameStartButtonReset(){
+    public gameStartButtonReset() {
         this.gameStartButton.enabled = true;
     }
+
     private nextChefIngredient()
     {
         if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
@@ -284,50 +267,38 @@ export class GameManager extends BaseScriptComponent {
         this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
         this.currentIngredientInfoPosition++;
     }
+
     private isTheSoupRightDemo()
     {
-        // Get pot contents (vec2[] where x=category, y=variantId)
-        const pot = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
-        //print("Pot contents (" + pot.length + "): " + pot.map(v => "(cat=" + v.x + ", var=" + v.y + ")").join(", "));
+        // Get pot contents (number[] of ingredient types)
+        const pot : number[] = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
         
         // Quick fail: different lengths cannot match exactly
         if (pot.length != this.currentRecipeIngredientInfo.length)
         {
-            print(pot.length + ": pot length and Recipe length is: " + this.currentRecipeIngredientInfo.length)
-            return false;
+            print(`${pot.length}: pot length and Recipe length is: ${this.currentRecipeIngredientInfo.length}`)
+            return false
         }
 
         // Compare each ingredient slot
         for (let i = 0; i < pot.length; i++)
         {
-            const potVec = pot[i];
-            const expected = this.currentRecipeIngredientInfo[i];
+            const potIng = pot[i]
+            const expected = this.currentRecipeIngredientInfo[i]
 
             // Compare values
-            const matches =
-                potVec.x === expected.category &&
-                potVec.y === expected.variantId;
+            const matches = expected.isSameIngredient(new IngredientInfo(potIng))
 
             if (!matches)
             {
-                print(
-                    "Soup check failed for " + this.currentRecipeIngredientInfo +
-                    " at index " + i +
-                    " pot=(" + potVec.x + "," + potVec.y + ")" +
-                    " expected=(" + expected.category + "," + expected.variantId + ")"
-                );
-                
-                return false;
+                print(`Soup check failed for ${this.currentRecipeIngredientInfo} at index ${i} pot=(${potIng}) expected=(${expected.ingredient})`)
+                return false
             }
         }
 
-        // If we never failed, it matches
-        this.soupIngredientsCorrect.setPendingValue(true);
-
-        print("Soup check passed. Setting the soupIngredientsCorrect to True");
+        print("Soup check passed.");
         
         EventManager.PlayerVictoryLocalEvent.trigger(true);
-
         return true;
     }
 

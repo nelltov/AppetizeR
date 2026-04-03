@@ -1,7 +1,5 @@
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { EventManager } from "Scripts/EventManager";
-import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
-import { StorageTypes } from "SpectaclesSyncKit.lspkg/Core/StorageTypes";
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 
 @component
@@ -29,26 +27,16 @@ export class AudioManager extends BaseScriptComponent {
 
     onReady()
     {
-
-
-
         EventManager.PlayerVictoryNetworkEvent.add(() =>
         {
-
             this.audio.audioTrack = this.audioVictoryTrack; 
             this.audio.play(1);
-        }); 
+        })
 
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
         {
             this.audio.audioTrack = this.audioCollisionTrack; 
-
-                this.audio.play(1);
-
-
-        }); 
-
+            this.audio.play(1);
+        })
     }
-
-    
 }

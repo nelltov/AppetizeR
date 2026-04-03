@@ -1,6 +1,5 @@
 import { EventManager } from "Scripts/EventManager"
 import { IngredientInfo } from "Scripts/Ingredients/Ingredient"
-import { IngredientsToShaderIndex, getEnumMemberName } from "Scripts/Ingredients/IngredientTypes"
 
 @component
 export class SoupShaderController extends BaseScriptComponent {
@@ -61,9 +60,8 @@ export class SoupShaderController extends BaseScriptComponent {
                 this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
             }
 
-            const ingredientName = getEnumMemberName(ingredientInfo.category, ingredientInfo.variantId)
-            const shaderIndex = IngredientsToShaderIndex[ingredientName]
-            if (shaderIndex !== undefined) {
+            const shaderIndex = ingredientInfo.ingredient
+            if (shaderIndex !== undefined && shaderIndex >= 0 && shaderIndex < this.ingredientList.length) {
                 this.ingredientList[shaderIndex] = 1.0
                 this.soupIngredientsShader.ingredient_list = this.ingredientList; 
             }

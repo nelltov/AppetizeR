@@ -1,4 +1,3 @@
-import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { EventManager } from "../EventManager";
 
 @component
@@ -18,8 +17,8 @@ export class PlayerIngredientManager extends BaseScriptComponent {
 
     private offset: vec3 = new vec3(0, 0, 0)
     private sceneObj: SceneObject
-    private distanceFromCenter: number = 60    // distance between plate parent transform and center of table, adjust as needed
-    private verticalOffset: number = -10    // Account for pivot point being higher up than the table
+    private distanceFromCenter: number = 55  // Distance between plate parent transform and center of table, adjust as needed
+    private verticalOffset: number = -12     // Account for pivot point being higher up than the table
 
     onAwake() {
         // Set up during Start event after all components are awake
