@@ -23,7 +23,11 @@ export const Recipe1 : IngredientInfo[] = [
 ]
 
 export const DebugRecipe : IngredientInfo[] = [
-    new IngredientInfo(IngredientType.Onion)
+    new IngredientInfo(IngredientType.Onion),
+    new IngredientInfo(IngredientType.Tofu),
+    new IngredientInfo(IngredientType.Noodles),
+    new IngredientInfo(IngredientType.Tomato)
+
 ]
 
 export const recipeDictionary: Record<string, IngredientInfo[]> = {

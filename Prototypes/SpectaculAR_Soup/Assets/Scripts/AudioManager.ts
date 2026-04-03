@@ -33,7 +33,7 @@ export class AudioManager extends BaseScriptComponent {
             this.audio.play(1);
         })
 
-        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
+        EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) =>
         {
             this.audio.audioTrack = this.audioCollisionTrack; 
             this.audio.play(1);

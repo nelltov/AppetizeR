@@ -6,6 +6,7 @@
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 59e79dbc-f6c5-43d7-bf4a-e29a6e479efb
     - !<own> 300d651d-84e7-48ca-b9f5-6b4241333c59
+    - !<own> 6cf7031c-0ce9-4a3c-81a5-39218119f000
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -253,6 +254,7 @@
       debugTextPanel: !<reference.Text> fe4fd1c9-aa90-4e97-bd59-ae8a77fbef3c
       soupSurfaceObject: !<reference.SceneObject> 2ad93311-9a74-4b75-b4e4-6debdaee231a
       soupIngredientsObject: !<reference.SceneObject> f3b8aa21-c70d-45e8-b290-a18d7303af7f
+      soupVFX: !<reference.VFXComponent> 71de2925-9131-4429-959e-d8fb4aa577a3
   ScriptTypes:
     "":
       {}
@@ -1143,7 +1145,7 @@
   Enabled: true
   AudioTrack: !<reference> 68e8f6e2-bf8b-40a3-afdd-a82dec0324d9
   EnableAutoplayLoop: false
-  Volume: 0.800000
+  Volume: 0.550000
   EnableMixToSnap: false
   RecordVolume: 1.000000
   EnableSpatialAudio: false
@@ -1348,6 +1350,7 @@
     - !<own> e138d0c8-f110-49cd-a665-2f3a05075eb1
     - !<own> db237a94-1021-40b5-b206-916df6b412d1
     - !<own> ae5fb84f-de2a-40d7-9c27-389723d0eaad
+    - !<own> d415f7c2-37d9-4f85-ab72-88bb9041f58a
   Components:
     - !<own> 02f544fb-0633-4c49-8554-44ebf92786dc
 - !<SceneObject/287aed38-37e4-417c-b695-b3b1714839f0>
@@ -3030,7 +3033,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: Confirm Table Center Version 2
+  Text: Confirm Table Position
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -4289,6 +4292,22 @@
     - !<own> 8cdd4c87-6054-4626-9717-2c37ae231599
   Components:
     []
+- !<ScriptComponent/659d52bb-46a6-434d-ad47-c736834b7dc1>
+  PrefabRemaps:
+    []
+  Name: BillboardHelper
+  Enabled: true
+  ScriptAsset: !<reference> 506e318d-02b7-46c9-8f65-5b49d6c56579
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/65ff586f-24f0-413e-b7e8-6b82b99f33eb>
   PrefabRemaps:
     []
@@ -4521,6 +4540,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/6cf7031c-0ce9-4a3c-81a5-39218119f000>
+  PrefabRemaps:
+    []
+  Name: BillboardHelper
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c5e505aa-27bc-493f-b4b2-e60b1c6ed46f
 - !<Text/6d12c842-8d60-4c4a-a607-32b59b9a4ae8>
   PrefabRemaps:
     []
@@ -4699,6 +4733,19 @@
     []
   Components:
     - !<own> 6cac85a8-f502-4056-881b-db428723681c
+- !<VFXComponent/71de2925-9131-4429-959e-d8fb4aa577a3>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 96e90bbe-31c1-4546-9915-fa48f321ecc2
 - !<SceneObject/723ae77e-9ddf-441c-86d7-499c0bfc488e>
   PrefabRemaps:
     []
@@ -5451,8 +5498,8 @@
     - !<own> 5ad8d9bc-c520-4c88-b6ec-d4273352d470
     - !<own> 6f678e3e-a3db-4ac1-a274-517db365da21
     - !<own> 9bf0779e-1613-4a07-b6be-a02b30aad38e
-    - !<own> 2853cab0-d039-4450-815a-68a07acb7eb6
     - !<own> 8bba83b0-a334-4f8d-a51d-aa9b47c793ed
+    - !<own> 2853cab0-d039-4450-815a-68a07acb7eb6
   Components:
     - !<own> 29e9e981-4450-4cbb-9133-6b9f356c4c7e
     - !<own> 6bee50e0-d6f8-40b8-a11b-eda2e431e1e5
@@ -6123,6 +6170,7 @@
     - !<own> 5ddcece6-d19a-4f2b-b4e2-b01541827933
   Components:
     - !<own> 3ade0681-27fb-4bba-aa44-40aaea8f4e02
+    - !<own> 659d52bb-46a6-434d-ad47-c736834b7dc1
 - !<SceneObject/9bfc1a28-1457-4603-9c0f-a73e631d92a1>
   PrefabRemaps:
     []
@@ -7662,6 +7710,22 @@
     []
   Components:
     - !<own> 0e71903b-4cba-4c36-a850-d740083b8bd9
+- !<ScriptComponent/c5e505aa-27bc-493f-b4b2-e60b1c6ed46f>
+  PrefabRemaps:
+    []
+  Name: BillboardHelper
+  Enabled: true
+  ScriptAsset: !<reference> 506e318d-02b7-46c9-8f65-5b49d6c56579
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/c5f1f0e9-6707-4a13-9453-fbf92b4eba12>
   PrefabRemaps:
     []
@@ -8114,6 +8178,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/d415f7c2-37d9-4f85-ab72-88bb9041f58a>
+  PrefabRemaps:
+    - 71de2925-9131-4429-959e-d8fb4aa577a3: 2a68d290-88b4-4170-72a1-6dea13684828
+    - d415f7c2-37d9-4f85-ab72-88bb9041f58a: d9f22d2a-598b-4265-5ddc-8456a794121b
+  Name: splash
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 2.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.100000, y: 0.100000, z: 0.100000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 71de2925-9131-4429-959e-d8fb4aa577a3
 - !<SceneObject/d4439000-b041-441f-9e80-e7601f248e00>
   PrefabRemaps:
     []
