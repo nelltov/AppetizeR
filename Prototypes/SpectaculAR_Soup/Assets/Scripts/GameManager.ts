@@ -248,6 +248,7 @@ export class GameManager extends BaseScriptComponent {
 
     public gameStartButtonReset() {
         this.gameStartButton.enabled = true;
+        this.chefSelected.setPendingValue(false);
     }
 
     private nextChefIngredient()
