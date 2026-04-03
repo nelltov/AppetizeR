@@ -1,58 +1,10 @@
-- !<ObjectPrefab/da393c71-02a7-46f5-b120-9ab99d96d3db>
+- !<ObjectPrefab/14bb68cb-aa52-4410-b96d-62043e3ef526>
   PackagePath: ""
   objects:
-    - !<own> 11e0c134-796e-4096-a641-eb8eaf32f281
+    - !<own> af74030f-471c-4aaf-9c5d-d5e6d989422a
   LazyLoading: false
   RetainAssets: true
-- !<SceneObject/11e0c134-796e-4096-a641-eb8eaf32f281>
-  PrefabRemaps:
-    - 11e0c134-796e-4096-a641-eb8eaf32f281: 11e0c134-796e-4096-59be-147150cd0d7e
-    - 20a7b4ed-7736-436a-921a-86169000145f: d72e5196-ef07-496f-9cd6-6b112e162c8f
-    - 58e2d48f-7b03-468b-a9c2-b59cec316bd8: 58e2d48f-7b03-468b-563d-4a6313ce9427
-    - 6d3de041-4db1-436d-b669-ea809c230a90: 6d3de041-4db1-436d-4996-157f63dcf56f
-    - 84e7988f-ebae-4e2e-9555-b05e5c89058b: 84e7988f-ebae-4e2e-6aaa-4fa1a376fa74
-    - d8f3bf69-0bdb-49bd-89aa-b996217b2215: d8f3bf69-0bdb-49bd-7655-4669de84ddea
-    - f35a6fe0-0dbf-40ee-978b-064c51a91459: f35a6fe0-0dbf-40ee-6874-f9b3ae56eba6
-  Name: LeekPrefab
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> 84e7988f-ebae-4e2e-9555-b05e5c89058b
-  Components:
-    - !<own> 6d3de041-4db1-436d-b669-ea809c230a90
-    - !<own> 58e2d48f-7b03-468b-a9c2-b59cec316bd8
-    - !<own> f35a6fe0-0dbf-40ee-978b-064c51a91459
-    - !<own> 20a7b4ed-7736-436a-921a-86169000145f
-- !<BodyComponent/20a7b4ed-7736-436a-921a-86169000145f>
-  PrefabRemaps:
-    []
-  Name: Physics Body
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 12.000000
-    Radius: 1.500000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
-  Dynamic: true
-  BodySetting: Density
-  BodySettingValue: 0.000000
-  Damping: 0.000000
-  AngularDamping: 0.000000
-- !<ScriptComponent/58e2d48f-7b03-468b-a9c2-b59cec316bd8>
+- !<ScriptComponent/115da865-703d-4c2b-931d-0f97a3e7f0fc>
   PrefabRemaps:
     []
   Name: Interactable
@@ -90,24 +42,7 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/6d3de041-4db1-436d-b669-ea809c230a90>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 12.000000
-  ScriptTypes:
-    "":
-      {}
-- !<SceneObject/84e7988f-ebae-4e2e-9555-b05e5c89058b>
+- !<SceneObject/73210a4e-0ad5-4e40-8c22-0cbd981af1ea>
   PrefabRemaps:
     []
   Name: leek
@@ -121,8 +56,8 @@
   Children:
     []
   Components:
-    - !<own> d8f3bf69-0bdb-49bd-89aa-b996217b2215
-- !<RenderMeshVisual/d8f3bf69-0bdb-49bd-89aa-b996217b2215>
+    - !<own> 8e468669-dee4-443e-bef9-7c70a0326a8c
+- !<RenderMeshVisual/8e468669-dee4-443e-bef9-7c70a0326a8c>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -142,7 +77,23 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/f35a6fe0-0dbf-40ee-978b-064c51a91459>
+- !<ScriptComponent/974729c4-de3a-43c9-944c-63440541697e>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 7.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -200,3 +151,51 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/af74030f-471c-4aaf-9c5d-d5e6d989422a>
+  PrefabRemaps:
+    - 115da865-703d-4c2b-931d-0f97a3e7f0fc: 115da865-703d-4c2b-6ce2-f0685c180f03
+    - 73210a4e-0ad5-4e40-8c22-0cbd981af1ea: 73210a4e-0ad5-4e40-73dd-f34267e50e15
+    - 8e468669-dee4-443e-bef9-7c70a0326a8c: 8e468669-dee4-443e-4106-838f5fcd9573
+    - 974729c4-de3a-43c9-944c-63440541697e: 974729c4-de3a-43c9-6bb3-9cbbfabe9681
+    - aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2: aa62c617-6ec5-4c10-7c18-6d082c2a4e1d
+    - af74030f-471c-4aaf-9c5d-d5e6d989422a: af74030f-471c-4aaf-63a2-2a192676bdd5
+    - d07ec0e7-1cf0-488c-898f-af4639b4db97: d07ec0e7-1cf0-488c-7670-50b9c64b2468
+  Name: LeekPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 73210a4e-0ad5-4e40-8c22-0cbd981af1ea
+  Components:
+    - !<own> 974729c4-de3a-43c9-944c-63440541697e
+    - !<own> 115da865-703d-4c2b-931d-0f97a3e7f0fc
+    - !<own> aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2
+    - !<own> d07ec0e7-1cf0-488c-898f-af4639b4db97
+- !<BodyComponent/d07ec0e7-1cf0-488c-898f-af4639b4db97>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 12.000000
+    Radius: 1.500000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000

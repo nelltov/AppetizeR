@@ -1,39 +1,15 @@
-- !<ObjectPrefab/75c33ed2-ac63-4fe2-a532-3e22efd2188a>
+- !<ObjectPrefab/6211ea35-c917-451b-bc83-f7b84827e6fb>
   PackagePath: ""
   objects:
-    - !<own> 116ff0ea-fa09-4ff4-a66e-37736a35e70c
+    - !<own> 4899430f-93c9-44a0-939f-9abb84eca984
   LazyLoading: false
   RetainAssets: true
-- !<SceneObject/116ff0ea-fa09-4ff4-a66e-37736a35e70c>
-  PrefabRemaps:
-    - 116ff0ea-fa09-4ff4-a66e-37736a35e70c: 116ff0ea-fa09-4ff4-5991-c88c95ca18f3
-    - 3e2e9c75-8e8d-46e4-a807-95ec9f548773: 3e2e9c75-8e8d-46e4-57f8-6a1360ab788c
-    - 6cdbaa13-8f86-4907-a19b-a7faa008fe11: 6cdbaa13-8f86-4907-5e64-58055ff701ee
-    - b7a21861-8365-4b67-97af-0d8797c6228d: b7a21861-8365-4b67-6850-f2786839dd72
-    - b8c06e28-7378-4b7f-8815-201fe5734a92: b8c06e28-7378-4b7f-77ea-dfe01a8cb56d
-    - ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b: 7bf19f4d-9576-4570-9581-91d4f5836c96
-    - d13f03f7-03d8-45a5-99b1-7019292643f2: d13f03f7-03d8-45a5-664e-8fe6d6d9bc0d
-  Name: TomatoePrefab
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> b8c06e28-7378-4b7f-8815-201fe5734a92
-  Components:
-    - !<own> ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b
-    - !<own> 6cdbaa13-8f86-4907-a19b-a7faa008fe11
-    - !<own> b7a21861-8365-4b67-97af-0d8797c6228d
-    - !<own> 3e2e9c75-8e8d-46e4-a807-95ec9f548773
-- !<ScriptComponent/3e2e9c75-8e8d-46e4-a807-95ec9f548773>
+- !<ScriptComponent/1045e8bc-cb27-4095-a0c1-4f965ddb5da5>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
+  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
@@ -86,29 +62,54 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/6cdbaa13-8f86-4907-a19b-a7faa008fe11>
+- !<ScriptComponent/2fe4c2e9-a007-4e51-88fe-fc91aad506f4>
   PrefabRemaps:
     []
   Name: Ingredient
   Enabled: true
   ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
   ScriptInputsDefault:
-    {}
+    ingredientEnumNumber: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 6.000000
+      ingredientEnumNumber: !<float> 0.000000
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/b7a21861-8365-4b67-97af-0d8797c6228d>
+- !<SceneObject/4899430f-93c9-44a0-939f-9abb84eca984>
+  PrefabRemaps:
+    - 1045e8bc-cb27-4095-a0c1-4f965ddb5da5: fdd3f9cd-69ee-4352-98b6-5b97635f5485
+    - 2fe4c2e9-a007-4e51-88fe-fc91aad506f4: b219e83f-cfdc-482b-9010-39b1d6f6bf3e
+    - 4899430f-93c9-44a0-939f-9abb84eca984: cdab1d20-637a-4a11-8053-25227186b36f
+    - 978eef40-272e-4902-9efb-34fae6078f81: b9ace335-e88d-41fb-9c0d-a5fae911f33d
+    - 9e06e936-ff47-4132-a8fb-70d3fbc3486f: 907509e4-b067-40c9-9c00-4fefc1b4d1f2
+    - d01f5983-d15c-4388-884c-eeed75b6debc: db24c102-8d0d-49fc-b208-a14b1856e90e
+    - e83a7b86-c1b4-45a5-bfa4-84d03dbda3a7: ca1007e2-a3af-46cd-8dc0-0c9f6040f7c5
+  Name: potato
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d01f5983-d15c-4388-884c-eeed75b6debc
+    - !<own> 9e06e936-ff47-4132-a8fb-70d3fbc3486f
+    - !<own> 2fe4c2e9-a007-4e51-88fe-fc91aad506f4
+    - !<own> 978eef40-272e-4902-9efb-34fae6078f81
+    - !<own> 1045e8bc-cb27-4095-a0c1-4f965ddb5da5
+    - !<own> e83a7b86-c1b4-45a5-bfa4-84d03dbda3a7
+- !<ScriptComponent/978eef40-272e-4902-9efb-34fae6078f81>
   PrefabRemaps:
     []
   Name: Interactable
   Enabled: true
-  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
   ScriptInputsDefault:
     targetingMode: true
     targetingVisual: true
@@ -141,29 +142,15 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/b8c06e28-7378-4b7f-8815-201fe5734a92>
-  PrefabRemaps:
-    []
-  Name: tomato_mesh
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.750000, y: 0.750000, z: 0.750000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> d13f03f7-03d8-45a5-99b1-7019292643f2
-- !<BodyComponent/ceac1aac-0e85-43f1-bc16-5a4fc9d66a6b>
+- !<BodyComponent/9e06e936-ff47-4132-a8fb-70d3fbc3486f>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 3.000000
+  Shape: !<Cylinder>
+    Axis: Y
+    Length: 1.500000
+    Radius: 0.500000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -179,10 +166,10 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
-- !<RenderMeshVisual/d13f03f7-03d8-45a5-99b1-7019292643f2>
+- !<RenderMeshVisual/d01f5983-d15c-4388-884c-eeed75b6debc>
   PrefabRemaps:
     []
-  Name: Render Mesh Visual
+  Name: component_0
   Enabled: true
   RenderOrder: 0
   StretchMode: Stretch
@@ -192,10 +179,42 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 0898fe87-ead2-4635-a696-aec3ff06e10e
-  Mesh: !<reference> b43367db-e9c2-4fea-bb0e-315fe558fb11
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/e83a7b86-c1b4-45a5-bfa4-84d03dbda3a7>
+  PrefabRemaps:
+    []
+  Name: SyncTransform
+  Enabled: true
+  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
+  ScriptInputsDefault:
+    networkIdTypeString: true
+    customNetworkId: true
+    positionSyncString: true
+    rotationSyncString: true
+    scaleSyncString: true
+    persistenceString: true
+    sendsPerSecondLimit: true
+    useSmoothing: true
+    interpolationTarget: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      networkIdTypeString: objectId
+      customNetworkId: enter_unique_id
+      positionSyncString: Local
+      rotationSyncString: Local
+      scaleSyncString: Local
+      persistenceString: Session
+      sendsPerSecondLimit: 10
+      useSmoothing: true
+      interpolationTarget: -0.250000
+  ScriptTypes:
+    "":
+      {}

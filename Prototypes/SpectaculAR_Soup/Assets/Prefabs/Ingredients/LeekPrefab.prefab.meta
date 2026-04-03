@@ -1,71 +1,25 @@
-- !<AssetImportMetadata/d75f69bf-ae9d-42ee-b51f-c2a1c8a73d3c>
+- !<AssetImportMetadata/31ed1e33-e653-4dd0-979b-24ac1d1afe99>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 6211ea35-c917-451b-bc83-f7b84827e6fb
+    ObjectPrefab: !<reference> 14bb68cb-aa52-4410-b96d-62043e3ef526
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 6211ea35-c917-451b-bc83-f7b84827e6fb
+  PrimaryAsset: !<reference> 14bb68cb-aa52-4410-b96d-62043e3ef526
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 47084b7d-a70f-4855-9aca-dc13f3b47a9a
+    ObjectPrefab: !<own> 751d848b-d3a8-43c9-96dc-01196f826fa0
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ObjectPrefabAssetData/47084b7d-a70f-4855-9aca-dc13f3b47a9a>
-  Prototype: !<ObjectOwner/084429dc-d57c-497a-aa7a-984f9945a9ba>
-    PackagePath: ""
-    objects:
-      - !<own> cdab1d20-637a-4a11-8053-25227186b36f
-- !<BodyComponent/907509e4-b067-40c9-9c00-4fefc1b4d1f2>
-  PrefabRemaps:
-    []
-  Name: Physics Body
-  Enabled: true
-  Shape: !<Cylinder>
-    Axis: Y
-    Length: 1.500000
-    Radius: 0.500000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
-  Dynamic: true
-  BodySetting: Density
-  BodySettingValue: 0.000000
-  Damping: 0.000000
-  AngularDamping: 0.000000
-- !<ScriptComponent/b219e83f-cfdc-482b-9010-39b1d6f6bf3e>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    variantId: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/b9ace335-e88d-41fb-9c0d-a5fae911f33d>
+- !<ScriptComponent/115da865-703d-4c2b-6ce2-f0685c180f03>
   PrefabRemaps:
     []
   Name: Interactable
   Enabled: true
-  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
+  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
   ScriptInputsDefault:
     targetingMode: true
     targetingVisual: true
@@ -98,62 +52,30 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/ca1007e2-a3af-46cd-8dc0-0c9f6040f7c5>
+- !<SceneObject/73210a4e-0ad5-4e40-73dd-f34267e50e15>
   PrefabRemaps:
     []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
-- !<SceneObject/cdab1d20-637a-4a11-8053-25227186b36f>
-  PrefabRemaps:
-    []
-  Name: potato
+  Name: leek
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
+    Scale: {x: 0.790000, y: 0.790000, z: 0.790000}
     HasSegmentScaleCompensation: false
   Children:
     []
   Components:
-    - !<own> db24c102-8d0d-49fc-b208-a14b1856e90e
-    - !<own> 907509e4-b067-40c9-9c00-4fefc1b4d1f2
-    - !<own> b219e83f-cfdc-482b-9010-39b1d6f6bf3e
-    - !<own> b9ace335-e88d-41fb-9c0d-a5fae911f33d
-    - !<own> fdd3f9cd-69ee-4352-98b6-5b97635f5485
-    - !<own> ca1007e2-a3af-46cd-8dc0-0c9f6040f7c5
-- !<RenderMeshVisual/db24c102-8d0d-49fc-b208-a14b1856e90e>
+    - !<own> 8e468669-dee4-443e-4106-838f5fcd9573
+- !<ObjectPrefabAssetData/751d848b-d3a8-43c9-96dc-01196f826fa0>
+  Prototype: !<ObjectOwner/9e2a0c29-b7ac-4587-a549-8226f4fabdd1>
+    PackagePath: ""
+    objects:
+      - !<own> af74030f-471c-4aaf-63a2-2a192676bdd5
+- !<RenderMeshVisual/8e468669-dee4-443e-4106-838f5fcd9573>
   PrefabRemaps:
     []
-  Name: component_0
+  Name: Render Mesh Visual
   Enabled: true
   RenderOrder: 0
   StretchMode: Stretch
@@ -163,19 +85,35 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
-  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
+    - !<reference> fb4b11d3-a97e-4c67-ba21-aafe2a53ab71
+  Mesh: !<reference> 73698ed4-ed15-4871-ae43-0f1f9461def8
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/fdd3f9cd-69ee-4352-98b6-5b97635f5485>
+- !<ScriptComponent/974729c4-de3a-43c9-6bb3-9cbbfabe9681>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 7.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/aa62c617-6ec5-4c10-7c18-6d082c2a4e1d>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
+  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
@@ -228,3 +166,45 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/af74030f-471c-4aaf-63a2-2a192676bdd5>
+  PrefabRemaps:
+    []
+  Name: LeekPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 73210a4e-0ad5-4e40-73dd-f34267e50e15
+  Components:
+    - !<own> 974729c4-de3a-43c9-6bb3-9cbbfabe9681
+    - !<own> 115da865-703d-4c2b-6ce2-f0685c180f03
+    - !<own> aa62c617-6ec5-4c10-7c18-6d082c2a4e1d
+    - !<own> d07ec0e7-1cf0-488c-7670-50b9c64b2468
+- !<BodyComponent/d07ec0e7-1cf0-488c-7670-50b9c64b2468>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 12.000000
+    Radius: 1.500000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000

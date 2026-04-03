@@ -1,33 +1,28 @@
-- !<AssetImportMetadata/9526f1c8-7fd1-4abe-8c36-78adfbbefc35>
+- !<AssetImportMetadata/7c1f802f-522a-4a31-886d-6a3f1b9182d6>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 08f1a4c3-7e02-478b-a7c8-d1a66a12733f
+    ObjectPrefab: !<reference> ade56458-8e08-4c84-9f8b-78a7cc6a6a57
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 08f1a4c3-7e02-478b-a7c8-d1a66a12733f
+  PrimaryAsset: !<reference> ade56458-8e08-4c84-9f8b-78a7cc6a6a57
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 17f4de39-c837-4367-82aa-49813e8d0b98
+    ObjectPrefab: !<own> 4117a707-00cb-4eb7-9366-21dc510c557f
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ObjectPrefabAssetData/17f4de39-c837-4367-82aa-49813e8d0b98>
-  Prototype: !<ObjectOwner/2e028825-981b-4a6c-a9b3-50f65ef02ceb>
-    PackagePath: ""
-    objects:
-      - !<own> e38464ac-e9ca-404b-7286-cb34ee552591
-- !<BodyComponent/23d68c58-2c8c-4406-ad0c-595b162a02c9>
+- !<BodyComponent/07cdb37a-545f-41f4-4557-c81b93609614>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Cylinder>
-    Axis: Z
-    Length: 2.000000
-    Radius: 4.000000
+  Shape: !<Capsule>
+    Axis: Y
+    Length: 11.000000
+    Radius: 1.300000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -43,27 +38,61 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
-- !<RenderMeshVisual/4008ed2d-fd44-4328-5ffa-ff6ba301691a>
+- !<SceneObject/2c7b8243-a26d-4c77-641c-36785ee6e9b0>
   PrefabRemaps:
     []
-  Name: Render Mesh Visual
+  Name: carrot
   Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 1178619a-cc0d-414a-b595-e37c6bf1c77e
-  Mesh: !<reference> 306d90d5-ea63-449f-8ea0-7363bb12cedc
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 5.500000, z: -0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f554431e-a152-4151-6841-dc7ffbabbcf8
+- !<SceneObject/30b7b451-afa3-4651-633b-a879f9f9aaea>
+  PrefabRemaps:
+    []
+  Name: CarrotPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 2c7b8243-a26d-4c77-641c-36785ee6e9b0
+  Components:
+    - !<own> 07cdb37a-545f-41f4-4557-c81b93609614
+    - !<own> 69bf8647-9017-4245-6db6-677edf2e1cd9
+    - !<own> 6a86b82b-5e01-4b89-7ff4-7aee2e857288
+    - !<own> ce4e6b91-a035-429e-6091-3972edd13a09
+- !<ObjectPrefabAssetData/4117a707-00cb-4eb7-9366-21dc510c557f>
+  Prototype: !<ObjectOwner/2d005388-44f0-4206-950c-a819bd25cd8b>
+    PackagePath: ""
+    objects:
+      - !<own> 30b7b451-afa3-4651-633b-a879f9f9aaea
+- !<ScriptComponent/69bf8647-9017-4245-6db6-677edf2e1cd9>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
     {}
-- !<ScriptComponent/511e2acc-9663-4299-4272-f63e11a44f96>
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 3.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/6a86b82b-5e01-4b89-7ff4-7aee2e857288>
   PrefabRemaps:
     []
   Name: Interactable
@@ -101,24 +130,7 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/6f7f1264-49a6-4f00-62f2-1a20be55ad59>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    variantId: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 5.000000
-      variantId: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/8270db19-7953-4b98-7788-e758c4b47852>
+- !<ScriptComponent/ce4e6b91-a035-429e-6091-3972edd13a09>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -176,36 +188,23 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/e38464ac-e9ca-404b-7286-cb34ee552591>
+- !<RenderMeshVisual/f554431e-a152-4151-6841-dc7ffbabbcf8>
   PrefabRemaps:
     []
-  Name: NoodlePrefab
+  Name: Render Mesh Visual
   Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> e6de5a06-07d2-4923-6a8b-896be72c0b96
-  Components:
-    - !<own> 23d68c58-2c8c-4406-ad0c-595b162a02c9
-    - !<own> 6f7f1264-49a6-4f00-62f2-1a20be55ad59
-    - !<own> 511e2acc-9663-4299-4272-f63e11a44f96
-    - !<own> 8270db19-7953-4b98-7788-e758c4b47852
-- !<SceneObject/e6de5a06-07d2-4923-6a8b-896be72c0b96>
-  PrefabRemaps:
-    []
-  Name: noodle
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: -1.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 4008ed2d-fd44-4328-5ffa-ff6ba301691a
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 3afb1753-b095-461a-8825-de4293002b90
+  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}

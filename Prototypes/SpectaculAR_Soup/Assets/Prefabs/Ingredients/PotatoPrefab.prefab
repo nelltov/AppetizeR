@@ -1,37 +1,10 @@
-- !<AssetImportMetadata/3ad55ba4-aa46-4332-904a-4fd745ebf06e>
-  ImportedAssetIds:
-    ObjectPrefab: !<reference> 0ef2ee75-025d-4f4b-aa68-d40199b03aa8
-  ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 0ef2ee75-025d-4f4b-aa68-d40199b03aa8
-  PackageType: NotAPackage
-  LegacyPackagePolicy: ~
-  ExtraData:
-    {}
-  AssetDataMap:
-    ObjectPrefab: !<own> 9e941de6-7943-47ae-bacd-3194e53038cd
-  DependentFiles:
-    []
-  ImporterSettings: !<AssetImporterSettings>
-    {}
-  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptComponent/0ef63e43-0a71-4e2a-7220-594719f54a69>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 2.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/2163e955-d1b6-4c8d-5923-78175c0599bf>
+- !<ObjectPrefab/67b6a5ad-6480-4ede-bc43-75dc894cec8a>
+  PackagePath: ""
+  objects:
+    - !<own> 30b75a26-6cee-435f-a540-75a9bc8bad0f
+  LazyLoading: false
+  RetainAssets: true
+- !<ScriptComponent/03c2eac4-f5d4-4189-8303-30b22fc6ac5a>
   PrefabRemaps:
     []
   Name: Interactable
@@ -69,70 +42,36 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/2ed85b36-0c58-41db-7774-3cd342cb25f3>
+- !<SceneObject/30b75a26-6cee-435f-a540-75a9bc8bad0f>
   PrefabRemaps:
-    []
-  Name: CarrotPrefab
+    - 03c2eac4-f5d4-4189-8303-30b22fc6ac5a: 03c2eac4-f5d4-4189-7cfc-cf4dd03953a5
+    - 30b75a26-6cee-435f-a540-75a9bc8bad0f: 30b75a26-6cee-435f-5abf-8a56437452f0
+    - 3a13598a-2c65-45f5-b154-1b8d3e6acfd8: 3a13598a-2c65-45f5-4eab-e472c1953027
+    - 3b9a2dc1-f1d6-4133-aebd-80d411cd6bf1: 3b9a2dc1-f1d6-4133-5142-7f2bee32940e
+    - 74e9755d-c3f3-4312-9f9d-6118e6a23428: 74e9755d-c3f3-4312-6062-9ee7195dcbd7
+    - a2a0c329-2062-48e6-926d-2a375b1f486d: a2a0c329-2062-48e6-6d92-d5c8a4e0b792
+    - b361a2bc-6c2f-46ff-b4a4-49a091946e42: b361a2bc-6c2f-46ff-4b5b-b65f6e6b91bd
+  Name: PotatoPrefab
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> d883c10a-21dc-4011-6f14-dcbbcfe036c6
+    - !<own> a2a0c329-2062-48e6-926d-2a375b1f486d
   Components:
-    - !<own> ef618d4d-5359-4da9-859c-3d489b2587f1
-    - !<own> 0ef63e43-0a71-4e2a-7220-594719f54a69
-    - !<own> 2163e955-d1b6-4c8d-5923-78175c0599bf
-    - !<own> dc21892e-c240-46e7-4872-199cdfe653ce
-- !<RenderMeshVisual/91d3336c-dd8c-4295-5f96-dd8d58e03717>
-  PrefabRemaps:
-    []
-  Name: Render Mesh Visual
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 3afb1753-b095-461a-8825-de4293002b90
-  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
-- !<ObjectPrefabAssetData/9e941de6-7943-47ae-bacd-3194e53038cd>
-  Prototype: !<ObjectOwner/4cdbc7e1-5376-471f-a788-238d4e24b6e3>
-    PackagePath: ""
-    objects:
-      - !<own> 2ed85b36-0c58-41db-7774-3cd342cb25f3
-- !<SceneObject/d883c10a-21dc-4011-6f14-dcbbcfe036c6>
-  PrefabRemaps:
-    []
-  Name: carrot
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 5.500000, z: -0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 91d3336c-dd8c-4295-5f96-dd8d58e03717
-- !<ScriptComponent/dc21892e-c240-46e7-4872-199cdfe653ce>
+    - !<own> b361a2bc-6c2f-46ff-b4a4-49a091946e42
+    - !<own> 3b9a2dc1-f1d6-4133-aebd-80d411cd6bf1
+    - !<own> 03c2eac4-f5d4-4189-8303-30b22fc6ac5a
+    - !<own> 3a13598a-2c65-45f5-b154-1b8d3e6acfd8
+- !<ScriptComponent/3a13598a-2c65-45f5-b154-1b8d3e6acfd8>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
+  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
@@ -185,15 +124,66 @@
   ScriptTypes:
     "":
       {}
-- !<BodyComponent/ef618d4d-5359-4da9-859c-3d489b2587f1>
+- !<ScriptComponent/3b9a2dc1-f1d6-4133-aebd-80d411cd6bf1>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 11.000000
+  ScriptTypes:
+    "":
+      {}
+- !<RenderMeshVisual/74e9755d-c3f3-4312-9f9d-6118e6a23428>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/a2a0c329-2062-48e6-926d-2a375b1f486d>
+  PrefabRemaps:
+    []
+  Name: potato
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -0.300000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 4.000000, y: 4.000000, z: 4.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 74e9755d-c3f3-4312-9f9d-6118e6a23428
+- !<BodyComponent/b361a2bc-6c2f-46ff-b4a4-49a091946e42>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
   Shape: !<Capsule>
     Axis: Y
-    Length: 11.000000
-    Radius: 1.300000
+    Length: 3.000000
+    Radius: 1.740000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000

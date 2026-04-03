@@ -1,43 +1,35 @@
-- !<AssetImportMetadata/87b7daa0-cc7c-418b-9e60-4997938e3486>
+- !<AssetImportMetadata/e8c6380a-c2dc-45f3-a46b-3eb90c166840>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 75c33ed2-ac63-4fe2-a532-3e22efd2188a
+    ObjectPrefab: !<reference> 1167bae9-5f1e-4e68-ac9c-89f6f00cfd51
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 75c33ed2-ac63-4fe2-a532-3e22efd2188a
+  PrimaryAsset: !<reference> 1167bae9-5f1e-4e68-ac9c-89f6f00cfd51
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 3cfd9e88-c96b-49a7-8941-d7bc5b4ccddb
+    ObjectPrefab: !<own> 90ebf891-a5d9-4b78-9e4e-95b83e75e228
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/116ff0ea-fa09-4ff4-5991-c88c95ca18f3>
+- !<SceneObject/1d402d5d-0795-40be-4d10-cf2590e903cd>
   PrefabRemaps:
     []
-  Name: TomatoePrefab
+  Name: noodle
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Position: {x: 0.000000, y: 0.000000, z: -1.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> b8c06e28-7378-4b7f-77ea-dfe01a8cb56d
+    []
   Components:
-    - !<own> 7bf19f4d-9576-4570-9581-91d4f5836c96
-    - !<own> 6cdbaa13-8f86-4907-5e64-58055ff701ee
-    - !<own> b7a21861-8365-4b67-6850-f2786839dd72
-    - !<own> 3e2e9c75-8e8d-46e4-57f8-6a1360ab788c
-- !<ObjectPrefabAssetData/3cfd9e88-c96b-49a7-8941-d7bc5b4ccddb>
-  Prototype: !<ObjectOwner/28abb3ca-8174-4aa8-bb86-c549b96ad7e4>
-    PackagePath: ""
-    objects:
-      - !<own> 116ff0ea-fa09-4ff4-5991-c88c95ca18f3
-- !<ScriptComponent/3e2e9c75-8e8d-46e4-57f8-6a1360ab788c>
+    - !<own> fd34d613-888f-4e14-69fe-711b570bee90
+- !<ScriptComponent/1f633d52-faf2-4ff3-6087-347101abdd43>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -95,31 +87,15 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/6cdbaa13-8f86-4907-5e64-58055ff701ee>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 6.000000
-  ScriptTypes:
-    "":
-      {}
-- !<BodyComponent/7bf19f4d-9576-4570-9581-91d4f5836c96>
+- !<BodyComponent/51507f35-4473-46d9-4b68-f603c488477c>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Sphere>
-    FitVisual: false
-    Radius: 3.000000
+  Shape: !<Cylinder>
+    Axis: Z
+    Length: 2.000000
+    Radius: 4.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -135,7 +111,28 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
-- !<ScriptComponent/b7a21861-8365-4b67-6850-f2786839dd72>
+- !<ObjectPrefabAssetData/90ebf891-a5d9-4b78-9e4e-95b83e75e228>
+  Prototype: !<ObjectOwner/f106230a-e035-4c45-af48-96cb22ba5497>
+    PackagePath: ""
+    objects:
+      - !<own> c23b14d1-3916-4572-432d-2a4b62752b97
+- !<ScriptComponent/aae391c8-b063-4008-4264-23898ab37001>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 9.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/b7f94de4-154f-40dc-716a-f92b7f7c28ec>
   PrefabRemaps:
     []
   Name: Interactable
@@ -173,22 +170,25 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/b8c06e28-7378-4b7f-77ea-dfe01a8cb56d>
+- !<SceneObject/c23b14d1-3916-4572-432d-2a4b62752b97>
   PrefabRemaps:
     []
-  Name: tomato_mesh
+  Name: NoodlePrefab
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.750000, y: 0.750000, z: 0.750000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 1d402d5d-0795-40be-4d10-cf2590e903cd
   Components:
-    - !<own> d13f03f7-03d8-45a5-664e-8fe6d6d9bc0d
-- !<RenderMeshVisual/d13f03f7-03d8-45a5-664e-8fe6d6d9bc0d>
+    - !<own> 51507f35-4473-46d9-4b68-f603c488477c
+    - !<own> aae391c8-b063-4008-4264-23898ab37001
+    - !<own> b7f94de4-154f-40dc-716a-f92b7f7c28ec
+    - !<own> 1f633d52-faf2-4ff3-6087-347101abdd43
+- !<RenderMeshVisual/fd34d613-888f-4e14-69fe-711b570bee90>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -201,8 +201,8 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 0898fe87-ead2-4635-a696-aec3ff06e10e
-  Mesh: !<reference> b43367db-e9c2-4fea-bb0e-315fe558fb11
+    - !<reference> 1178619a-cc0d-414a-b595-e37c6bf1c77e
+  Mesh: !<reference> 306d90d5-ea63-449f-8ea0-7363bb12cedc
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false

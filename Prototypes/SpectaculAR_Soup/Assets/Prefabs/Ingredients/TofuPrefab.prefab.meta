@@ -1,35 +1,35 @@
-- !<AssetImportMetadata/bb61e83d-4d85-4b25-b37c-21ca47f321f9>
+- !<AssetImportMetadata/a24ef531-3804-4582-a972-5585a252bba5>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> eed9fbe3-6e5a-42a9-90f2-b616f0062e65
+    ObjectPrefab: !<reference> 93a168e5-1777-4148-bd36-d85ba67ceb19
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> eed9fbe3-6e5a-42a9-90f2-b616f0062e65
+  PrimaryAsset: !<reference> 93a168e5-1777-4148-bd36-d85ba67ceb19
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> f28b4ccc-9439-4110-b380-a2db587d65d6
+    ObjectPrefab: !<own> 3ba36d76-06eb-41ef-8bc6-9de3ac8dd3de
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/2aa2cd7b-bdfc-45e7-4ffc-69f6341feb5e>
+- !<SceneObject/19d795c6-9c58-402a-49b9-989697ca8929>
   PrefabRemaps:
     []
-  Name: celery
+  Name: tofu 2
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.187553, y: -1.201386, z: 0.000000}
+    Rotation: {x: 92.341301, y: -1.078336, z: 22.651888}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
   Components:
-    - !<own> 66c386b1-ef85-4e06-7e96-c9b827b9209c
-- !<ScriptComponent/44f00e38-47d4-486e-4bc1-4417f50ae5fd>
+    - !<own> ddc46f57-2b27-45c1-6276-8e1755c1cebf
+- !<ScriptComponent/21a2f825-a9e3-4c49-613b-9cdc026c6111>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -87,15 +87,34 @@
   ScriptTypes:
     "":
       {}
-- !<BodyComponent/469c4942-d2fd-4e3d-8458-2654bf2f6328>
+- !<RenderMeshVisual/239385c2-43d9-4879-5348-557d87fe331d>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<BodyComponent/3488017a-b00a-4eb7-4522-81e77a9c3a80>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 10.000000
-    Radius: 1.000000
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 2.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -111,7 +130,43 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
-- !<RenderMeshVisual/66c386b1-ef85-4e06-7e96-c9b827b9209c>
+- !<ObjectPrefabAssetData/3ba36d76-06eb-41ef-8bc6-9de3ac8dd3de>
+  Prototype: !<ObjectOwner/f5b433a0-0c80-4ed5-91a7-c39afb37ba67>
+    PackagePath: ""
+    objects:
+      - !<own> d778bd3c-52f1-4113-6a6e-13064bf98e0a
+- !<SceneObject/924d9af7-513b-440c-5436-5905f02c5209>
+  PrefabRemaps:
+    []
+  Name: tofu
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.854296, y: 0.245463, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b803308a-cb45-4ea9-7ce4-9ca929816fdf
+- !<ScriptComponent/a7f3a483-9fff-47f7-5b74-a03125e16991>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 14.000000
+  ScriptTypes:
+    "":
+      {}
+- !<RenderMeshVisual/b803308a-cb45-4ea9-7ce4-9ca929816fdf>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -124,36 +179,59 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 7bd10464-1cad-437a-9be6-0654fbb3db11
-  Mesh: !<reference> d22354e7-e09f-4877-9a40-aef7eb6ab594
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/7ca1518e-5a14-4c2f-40f3-efaed2c21edf>
+- !<SceneObject/d778bd3c-52f1-4113-6a6e-13064bf98e0a>
   PrefabRemaps:
     []
-  Name: Ingredient
+  Name: TofuPrefab
   Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 924d9af7-513b-440c-5436-5905f02c5209
+    - !<own> f9086412-df26-4557-79a3-f87dd41448c5
+    - !<own> 19d795c6-9c58-402a-49b9-989697ca8929
+  Components:
+    - !<own> 3488017a-b00a-4eb7-4522-81e77a9c3a80
+    - !<own> a7f3a483-9fff-47f7-5b74-a03125e16991
+    - !<own> e2795643-44de-4bdd-53c2-3b29ecfec631
+    - !<own> 21a2f825-a9e3-4c49-613b-9cdc026c6111
+- !<RenderMeshVisual/ddc46f57-2b27-45c1-6276-8e1755c1cebf>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
     {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 7.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/ad041f2a-6168-462d-4921-3b3aa4fbac7f>
+- !<ScriptComponent/e2795643-44de-4bdd-53c2-3b29ecfec631>
   PrefabRemaps:
     []
   Name: Interactable
   Enabled: true
-  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
   ScriptInputsDefault:
     targetingMode: true
     targetingVisual: true
@@ -186,26 +264,18 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/ae7c330a-8060-4daa-5302-55e008439212>
+- !<SceneObject/f9086412-df26-4557-79a3-f87dd41448c5>
   PrefabRemaps:
     []
-  Name: CeleryPrefab
+  Name: tofu 1
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Position: {x: 0.585941, y: 0.245463, z: 0.000000}
+    Rotation: {x: -28.583771, y: -0.000000, z: -21.655464}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 2aa2cd7b-bdfc-45e7-4ffc-69f6341feb5e
+    []
   Components:
-    - !<own> 469c4942-d2fd-4e3d-8458-2654bf2f6328
-    - !<own> 7ca1518e-5a14-4c2f-40f3-efaed2c21edf
-    - !<own> ad041f2a-6168-462d-4921-3b3aa4fbac7f
-    - !<own> 44f00e38-47d4-486e-4bc1-4417f50ae5fd
-- !<ObjectPrefabAssetData/f28b4ccc-9439-4110-b380-a2db587d65d6>
-  Prototype: !<ObjectOwner/f5b8fa40-9885-4787-ac06-69c6ab3e898d>
-    PackagePath: ""
-    objects:
-      - !<own> ae7c330a-8060-4daa-5302-55e008439212
+    - !<own> 239385c2-43d9-4879-5348-557d87fe331d

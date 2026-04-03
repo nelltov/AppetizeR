@@ -1,0 +1,276 @@
+- !<ObjectPrefab/93a168e5-1777-4148-bd36-d85ba67ceb19>
+  PackagePath: ""
+  objects:
+    - !<own> d778bd3c-52f1-4113-9591-ecf9b40671f5
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/19d795c6-9c58-402a-b646-6769683576d6>
+  PrefabRemaps:
+    []
+  Name: tofu 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.187553, y: -1.201386, z: 0.000000}
+    Rotation: {x: 92.341301, y: -1.078336, z: 22.651888}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ddc46f57-2b27-45c1-9d89-71e8aa3e3140
+- !<ScriptComponent/21a2f825-a9e3-4c49-9ec4-6323fd939eee>
+  PrefabRemaps:
+    []
+  Name: InteractableManipulation
+  Enabled: true
+  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
+  ScriptInputsDefault:
+    manipulateRootSceneObject: true
+    minimumScaleFactor: true
+    maximumScaleFactor: true
+    enableTranslation: true
+    enableRotation: true
+    enableScale: true
+    enableStretchZ: true
+    showStretchZProperties: true
+    zStretchFactorMin: true
+    zStretchFactorMax: true
+    useFilter: true
+    showFilterProperties: true
+    minCutoff: true
+    beta: true
+    dcutoff: true
+    showTranslationProperties: true
+    _enableXTranslation: true
+    _enableYTranslation: true
+    _enableZTranslation: true
+    showRotationProperties: true
+    _rotationAxis: true
+    isSynced: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      manipulateRootSceneObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      minimumScaleFactor: 0.250000
+      maximumScaleFactor: !<float> 20.000000
+      enableTranslation: true
+      enableRotation: true
+      enableScale: true
+      enableStretchZ: true
+      showStretchZProperties: false
+      zStretchFactorMin: !<float> 1.000000
+      zStretchFactorMax: !<float> 12.000000
+      useFilter: true
+      showFilterProperties: false
+      minCutoff: !<float> 2.000000
+      beta: 0.015000
+      dcutoff: !<float> 1.000000
+      showTranslationProperties: false
+      _enableXTranslation: true
+      _enableYTranslation: true
+      _enableZTranslation: true
+      showRotationProperties: false
+      _rotationAxis: All
+      isSynced: false
+  ScriptTypes:
+    "":
+      {}
+- !<RenderMeshVisual/239385c2-43d9-4879-acb7-aa827801cce2>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<BodyComponent/3488017a-b00a-4eb7-badd-7e188563c57f>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Sphere>
+    FitVisual: false
+    Radius: 2.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
+- !<SceneObject/924d9af7-513b-440c-abc9-a6fa0fd3adf6>
+  PrefabRemaps:
+    []
+  Name: tofu
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.854296, y: 0.245463, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b803308a-cb45-4ea9-831b-6356d67e9020
+- !<ScriptComponent/a7f3a483-9fff-47f7-a48b-5fceda1e966e>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 14.000000
+  ScriptTypes:
+    "":
+      {}
+- !<RenderMeshVisual/b803308a-cb45-4ea9-831b-6356d67e9020>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/d778bd3c-52f1-4113-9591-ecf9b40671f5>
+  PrefabRemaps:
+    - 19d795c6-9c58-402a-b646-6769683576d6: 19d795c6-9c58-402a-49b9-989697ca8929
+    - 21a2f825-a9e3-4c49-9ec4-6323fd939eee: 21a2f825-a9e3-4c49-613b-9cdc026c6111
+    - 239385c2-43d9-4879-acb7-aa827801cce2: 239385c2-43d9-4879-5348-557d87fe331d
+    - 3488017a-b00a-4eb7-badd-7e188563c57f: 3488017a-b00a-4eb7-4522-81e77a9c3a80
+    - 924d9af7-513b-440c-abc9-a6fa0fd3adf6: 924d9af7-513b-440c-5436-5905f02c5209
+    - a7f3a483-9fff-47f7-a48b-5fceda1e966e: a7f3a483-9fff-47f7-5b74-a03125e16991
+    - b803308a-cb45-4ea9-831b-6356d67e9020: b803308a-cb45-4ea9-7ce4-9ca929816fdf
+    - d778bd3c-52f1-4113-9591-ecf9b40671f5: d778bd3c-52f1-4113-6a6e-13064bf98e0a
+    - ddc46f57-2b27-45c1-9d89-71e8aa3e3140: ddc46f57-2b27-45c1-6276-8e1755c1cebf
+    - e2795643-44de-4bdd-ac3d-c4d6130139ce: e2795643-44de-4bdd-53c2-3b29ecfec631
+    - f9086412-df26-4557-865c-07822bebb73a: f9086412-df26-4557-79a3-f87dd41448c5
+  Name: TofuPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 924d9af7-513b-440c-abc9-a6fa0fd3adf6
+    - !<own> f9086412-df26-4557-865c-07822bebb73a
+    - !<own> 19d795c6-9c58-402a-b646-6769683576d6
+  Components:
+    - !<own> 3488017a-b00a-4eb7-badd-7e188563c57f
+    - !<own> a7f3a483-9fff-47f7-a48b-5fceda1e966e
+    - !<own> e2795643-44de-4bdd-ac3d-c4d6130139ce
+    - !<own> 21a2f825-a9e3-4c49-9ec4-6323fd939eee
+- !<RenderMeshVisual/ddc46f57-2b27-45c1-9d89-71e8aa3e3140>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ScriptComponent/e2795643-44de-4bdd-ac3d-c4d6130139ce>
+  PrefabRemaps:
+    []
+  Name: Interactable
+  Enabled: true
+  ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
+  ScriptInputsDefault:
+    targetingMode: true
+    targetingVisual: true
+    ignoreInteractionPlane: true
+    keepHoverOnTrigger: true
+    enableInstantDrag: true
+    isScrollable: true
+    allowMultipleInteractors: true
+    enablePokeDirectionality: true
+    acceptableXDirections: true
+    acceptableYDirections: true
+    acceptableZDirections: true
+    useFilteredPinch: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 3.000000
+      targetingVisual: !<float> 1.000000
+      ignoreInteractionPlane: false
+      keepHoverOnTrigger: false
+      enableInstantDrag: false
+      isScrollable: false
+      allowMultipleInteractors: true
+      enablePokeDirectionality: false
+      acceptableXDirections: !<float> 0.000000
+      acceptableYDirections: !<float> 0.000000
+      acceptableZDirections: !<float> 1.000000
+      useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/f9086412-df26-4557-865c-07822bebb73a>
+  PrefabRemaps:
+    []
+  Name: tofu 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.585941, y: 0.245463, z: 0.000000}
+    Rotation: {x: -28.583771, y: -0.000000, z: -21.655464}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 239385c2-43d9-4879-acb7-aa827801cce2

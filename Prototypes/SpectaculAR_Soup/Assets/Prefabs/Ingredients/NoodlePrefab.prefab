@@ -1,80 +1,30 @@
-- !<ObjectPrefab/2fdc9e2a-f9ff-44cc-a661-451cd5c2a08c>
+- !<ObjectPrefab/1167bae9-5f1e-4e68-ac9c-89f6f00cfd51>
   PackagePath: ""
   objects:
-    - !<own> 2d899ee0-4fe2-4fa5-b0e9-2298a40c7abc
+    - !<own> c23b14d1-3916-4572-bcd2-d5b49d8ad468
   LazyLoading: false
   RetainAssets: true
-- !<BodyComponent/073d2666-663d-4c2e-ade9-758495569938>
+- !<SceneObject/1d402d5d-0795-40be-b2ef-30da6f16fc32>
   PrefabRemaps:
     []
-  Name: Physics Body
-  Enabled: true
-  Shape: !<Capsule>
-    Axis: Y
-    Length: 3.000000
-    Radius: 1.740000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: false
-  Dynamic: true
-  BodySetting: Density
-  BodySettingValue: 0.000000
-  Damping: 0.000000
-  AngularDamping: 0.000000
-- !<SceneObject/2d899ee0-4fe2-4fa5-b0e9-2298a40c7abc>
-  PrefabRemaps:
-    - 073d2666-663d-4c2e-ade9-758495569938: 83774047-1c0c-419d-9c3f-4cf3907517cf
-    - 2d899ee0-4fe2-4fa5-b0e9-2298a40c7abc: 2d899ee0-4fe2-4fa5-4f16-dd675bf38543
-    - 424ad5ba-c6c1-4c7f-b50b-4fbfd84b3241: 424ad5ba-c6c1-4c7f-4af4-b04027b4cdbe
-    - 9362c687-b3e8-41b2-880e-8da36718d9fd: 9362c687-b3e8-41b2-77f1-725c98e72602
-    - a3446aab-2549-43e3-90ee-a0464d05fa1e: a3446aab-2549-43e3-6f11-5fb9b2fa05e1
-    - e0ef2086-ab13-4eda-8659-328a63577e79: e0ef2086-ab13-4eda-79a6-cd759ca88186
-    - e10739bd-c9c4-482d-a4d0-586a52450d24: e10739bd-c9c4-482d-5b2f-a795adbaf2db
-  Name: PotatoePrefab
+  Name: noodle
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: -1.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> e0ef2086-ab13-4eda-8659-328a63577e79
-  Components:
-    - !<own> 073d2666-663d-4c2e-ade9-758495569938
-    - !<own> 424ad5ba-c6c1-4c7f-b50b-4fbfd84b3241
-    - !<own> a3446aab-2549-43e3-90ee-a0464d05fa1e
-    - !<own> 9362c687-b3e8-41b2-880e-8da36718d9fd
-- !<ScriptComponent/424ad5ba-c6c1-4c7f-b50b-4fbfd84b3241>
-  PrefabRemaps:
     []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    variantId: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/9362c687-b3e8-41b2-880e-8da36718d9fd>
+  Components:
+    - !<own> fd34d613-888f-4e14-9601-8ee4a8f4116f
+- !<ScriptComponent/1f633d52-faf2-4ff3-9f78-cb8efe5422bc>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
+  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
@@ -127,7 +77,47 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/a3446aab-2549-43e3-90ee-a0464d05fa1e>
+- !<BodyComponent/51507f35-4473-46d9-b497-09fc3b77b883>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Cylinder>
+    Axis: Z
+    Length: 2.000000
+    Radius: 4.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: true
+  BodySetting: Density
+  BodySettingValue: 0.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
+- !<ScriptComponent/aae391c8-b063-4008-bd9b-dc76754c8ffe>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 9.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/b7f94de4-154f-40dc-8e95-06d48083d713>
   PrefabRemaps:
     []
   Name: Interactable
@@ -165,22 +155,31 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/e0ef2086-ab13-4eda-8659-328a63577e79>
+- !<SceneObject/c23b14d1-3916-4572-bcd2-d5b49d8ad468>
   PrefabRemaps:
-    []
-  Name: potato
+    - 1d402d5d-0795-40be-b2ef-30da6f16fc32: 1d402d5d-0795-40be-4d10-cf2590e903cd
+    - 1f633d52-faf2-4ff3-9f78-cb8efe5422bc: 1f633d52-faf2-4ff3-6087-347101abdd43
+    - 51507f35-4473-46d9-b497-09fc3b77b883: 51507f35-4473-46d9-4b68-f603c488477c
+    - aae391c8-b063-4008-bd9b-dc76754c8ffe: aae391c8-b063-4008-4264-23898ab37001
+    - b7f94de4-154f-40dc-8e95-06d48083d713: b7f94de4-154f-40dc-716a-f92b7f7c28ec
+    - c23b14d1-3916-4572-bcd2-d5b49d8ad468: c23b14d1-3916-4572-432d-2a4b62752b97
+    - fd34d613-888f-4e14-9601-8ee4a8f4116f: fd34d613-888f-4e14-69fe-711b570bee90
+  Name: NoodlePrefab
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -0.300000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 4.000000, y: 4.000000, z: 4.000000}
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 1d402d5d-0795-40be-b2ef-30da6f16fc32
   Components:
-    - !<own> e10739bd-c9c4-482d-a4d0-586a52450d24
-- !<RenderMeshVisual/e10739bd-c9c4-482d-a4d0-586a52450d24>
+    - !<own> 51507f35-4473-46d9-b497-09fc3b77b883
+    - !<own> aae391c8-b063-4008-bd9b-dc76754c8ffe
+    - !<own> b7f94de4-154f-40dc-8e95-06d48083d713
+    - !<own> 1f633d52-faf2-4ff3-9f78-cb8efe5422bc
+- !<RenderMeshVisual/fd34d613-888f-4e14-9601-8ee4a8f4116f>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -193,8 +192,8 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
-  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
+    - !<reference> 1178619a-cc0d-414a-b595-e37c6bf1c77e
+  Mesh: !<reference> 306d90d5-ea63-449f-8ea0-7363bb12cedc
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false

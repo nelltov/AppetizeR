@@ -34,9 +34,6 @@ export class GameManager extends BaseScriptComponent {
     @input
     enableHeadFollow: boolean = true
 
-    @input
-    chefPlateObjects: SceneObject[]
-
     private currentIngredientInfoPosition : number = 0
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)

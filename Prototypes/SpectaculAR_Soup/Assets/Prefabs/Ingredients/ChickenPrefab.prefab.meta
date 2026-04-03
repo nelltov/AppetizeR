@@ -1,35 +1,20 @@
-- !<AssetImportMetadata/5e52c9e7-adc1-4f93-8832-0ef40ff3184c>
+- !<AssetImportMetadata/ccea6e40-1168-4471-a388-6a4da77daaed>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> f79f81dd-b355-40b4-9bf4-d1d088a279fd
+    ObjectPrefab: !<reference> 39755a46-dbfe-4b69-b2f7-58755efadfd6
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> f79f81dd-b355-40b4-9bf4-d1d088a279fd
+  PrimaryAsset: !<reference> 39755a46-dbfe-4b69-b2f7-58755efadfd6
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 4d248ae2-326d-4fa0-bce6-7601221c3a38
+    ObjectPrefab: !<own> b9e2e29e-87e3-4046-b510-46574dc34281
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<SceneObject/087916e4-598f-4dd5-7e5d-baf08d617693>
-  PrefabRemaps:
-    []
-  Name: bay_leaf 1
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: -1.000000, y: -1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 16e3464f-4604-461e-6c97-1bf86d095c4c
-- !<RenderMeshVisual/16e3464f-4604-461e-6c97-1bf86d095c4c>
+- !<RenderMeshVisual/0f2febda-3858-43d3-6514-a34db5c8fe02>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -42,70 +27,14 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 56d4ac8d-2111-4efd-bca3-2072d98e0d2e
-  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
+    - !<reference> d6a397ef-54e9-4d45-add2-fb648236bfc0
+  Mesh: !<reference> 011df40e-c898-47c2-9ac9-96deaf3ad009
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/2405ec56-e6f7-4cee-7276-9bd6749e858a>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      categoryNumber: !<float> 4.000000
-      variantId: !<float> 6.000000
-  ScriptTypes:
-    "":
-      {}
-- !<SceneObject/2676546c-d223-4cce-6b6a-8cc11f322068>
-  PrefabRemaps:
-    []
-  Name: bay_leaf
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 77c32ac6-b6e4-40b2-6e0d-d27f54769f9b
-- !<SceneObject/41c06806-4125-4608-7749-021156e27067>
-  PrefabRemaps:
-    []
-  Name: BayleafPrefab
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> 2676546c-d223-4cce-6b6a-8cc11f322068
-    - !<own> 087916e4-598f-4dd5-7e5d-baf08d617693
-  Components:
-    - !<own> b9a0d518-5652-4f2f-b6ae-58cd351302a6
-    - !<own> 2405ec56-e6f7-4cee-7276-9bd6749e858a
-    - !<own> 5f92b15f-17ff-46c7-5f4f-b4638ef58e94
-    - !<own> 86f2c938-e501-4db9-6271-89f58fb5b456
-- !<ObjectPrefabAssetData/4d248ae2-326d-4fa0-bce6-7601221c3a38>
-  Prototype: !<ObjectOwner/a32b5cd5-a41f-4622-90e6-013e9983ed35>
-    PackagePath: ""
-    objects:
-      - !<own> 41c06806-4125-4608-7749-021156e27067
-- !<ScriptComponent/5f92b15f-17ff-46c7-5f4f-b4638ef58e94>
+- !<ScriptComponent/41fb2ca6-b383-45de-4dd7-da610207cd6f>
   PrefabRemaps:
     []
   Name: Interactable
@@ -143,32 +72,12 @@
   ScriptTypes:
     "":
       {}
-- !<RenderMeshVisual/77c32ac6-b6e4-40b2-6e0d-d27f54769f9b>
-  PrefabRemaps:
-    []
-  Name: Render Mesh Visual
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 56d4ac8d-2111-4efd-bca3-2072d98e0d2e
-  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
-- !<ScriptComponent/86f2c938-e501-4db9-6271-89f58fb5b456>
+- !<ScriptComponent/51b843e6-069e-44ec-5b67-b2705f48f56b>
   PrefabRemaps:
     []
   Name: InteractableManipulation
   Enabled: true
-  ScriptAsset: !<reference> 664b556b-1946-4c2c-866a-e675b4e86006
+  ScriptAsset: !<reference> 570a2d26-c278-48ce-a5d6-a44df7ac2797
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
@@ -221,15 +130,15 @@
   ScriptTypes:
     "":
       {}
-- !<BodyComponent/b9a0d518-5652-4f2f-b6ae-58cd351302a6>
+- !<BodyComponent/5386cbbd-4ab6-42f8-4a98-2644fa344717>
   PrefabRemaps:
     []
   Name: Physics Body
   Enabled: true
   Shape: !<Capsule>
     Axis: Y
-    Length: 3.000000
-    Radius: 0.750000
+    Length: 5.000000
+    Radius: 1.500000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -245,3 +154,57 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<ScriptComponent/a490243c-3ec5-4946-715c-d09e212af754>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 5.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ObjectPrefabAssetData/b9e2e29e-87e3-4046-b510-46574dc34281>
+  Prototype: !<ObjectOwner/c6283088-429d-437b-9bd7-4044050fdbfb>
+    PackagePath: ""
+    objects:
+      - !<own> cd9a3175-eba1-41b6-66e2-61efa736ed08
+- !<SceneObject/cd9a3175-eba1-41b6-66e2-61efa736ed08>
+  PrefabRemaps:
+    []
+  Name: ChickenPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d8fa6ed3-0afe-449d-45b5-ea6cf3ec35aa
+  Components:
+    - !<own> 5386cbbd-4ab6-42f8-4a98-2644fa344717
+    - !<own> a490243c-3ec5-4946-715c-d09e212af754
+    - !<own> 41fb2ca6-b383-45de-4dd7-da610207cd6f
+    - !<own> 51b843e6-069e-44ec-5b67-b2705f48f56b
+- !<SceneObject/d8fa6ed3-0afe-449d-45b5-ea6cf3ec35aa>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -0.000000, z: -1.750000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0f2febda-3858-43d3-6514-a34db5c8fe02
