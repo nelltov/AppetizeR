@@ -1,4 +1,5 @@
 import { EventManager } from "../EventManager";
+import { Ingredient } from "./Ingredient";
 
 @component
 export class PlayerIngredientManager extends BaseScriptComponent {
@@ -40,12 +41,19 @@ export class PlayerIngredientManager extends BaseScriptComponent {
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
-            let testIdx = ingredientIndices[0] ?? 0
-            if (testIdx < this.ingredientPrefabList.length) {
-                print(`Spawning ingredient with index ${testIdx}`)
-                let ingredientPrefab = this.ingredientPrefabList[testIdx]
-                let parentToSpawnUnder = this.ingredientPositions[0] // hard coded for now
-                ingredientPrefab.instantiate(parentToSpawnUnder)
+            for (let i = 0; i < this.ingredientPositions.length; i++) {
+                if (i >= ingredientIndices.length) {
+                    break // No more ingredients provided
+                }
+
+                let ingredientIdx = ingredientIndices[i]
+                if (ingredientIdx < this.ingredientPrefabList.length) {
+                    let ingredientPrefab = this.ingredientPrefabList[ingredientIdx]
+                    let parentToSpawnUnder = this.ingredientPositions[i]
+                    if (ingredientPrefab && parentToSpawnUnder) {
+                        ingredientPrefab.instantiate(parentToSpawnUnder)
+                    }
+                }
             }
         })
 

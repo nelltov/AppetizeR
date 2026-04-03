@@ -1,16 +1,16 @@
-import {SyncEntity} from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
-import {StorageProperty} from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
-import {SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
+import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
+import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
+import { SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
 import { ourRecipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
+import { distributeIngredients } from "./Ingredients/IngredientDistribution";
 
 @component
 export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
     
-
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
@@ -38,8 +38,6 @@ export class GameManager extends BaseScriptComponent {
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)
     
- 
-
     private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private nonChefPlateIndex: number = -1
@@ -64,7 +62,7 @@ export class GameManager extends BaseScriptComponent {
         })
 
 
-        this.unUsedRecipesArray= ourRecipes.map((recipe) => recipe[0]);
+        this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
 
         // for ( let i=0; i<this.unUsedRecipesArray.length; i++)
         // {
@@ -75,16 +73,26 @@ export class GameManager extends BaseScriptComponent {
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
-        // Network event for assigning non-chef plate index
-        this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
-            const data = messageInfo.data as { connectionId: string, plateIndex: number }
+        // Network event for assigning non-chef plate index (outdated)
+        // this.syncEntity.onEventReceived.add("assignNonChefPlateIndex", (messageInfo) => {
+        //     const data = messageInfo.data as { connectionId: string, plateIndex: number }
+
+        //     // respond if client is the target
+        //     if (SessionController.getInstance().getLocalUserInfo().connectionId === data.connectionId) {
+        //         this.nonChefPlateIndex = data.plateIndex;
+
+        //         // Test out instantiating ingredients on non-chef player plate
+        //         EventManager.SpawnPlayerIngredients.trigger([this.nonChefPlateIndex])
+        //     }
+        // })
+
+        // Instantiate plates for each non-chef player
+        this.syncEntity.onEventReceived.add("distributeNonChefIngredients", (messageInfo) => {
+            const data = messageInfo.data as { connectionId: string, ingredientsList : number[] }
 
             // respond if client is the target
             if (SessionController.getInstance().getLocalUserInfo().connectionId === data.connectionId) {
-                this.nonChefPlateIndex = data.plateIndex;
-
-                // Test out instantiating ingredients on non-chef player plate
-                EventManager.SpawnPlayerIngredients.trigger([this.nonChefPlateIndex])
+                EventManager.SpawnPlayerIngredients.trigger(data.ingredientsList)
             }
         })
 
@@ -201,16 +209,19 @@ export class GameManager extends BaseScriptComponent {
             return;
         }
 
+        // Get ingredient lists for each non-chef player based on the current recipe
+        const ingredientsDistribution = distributeIngredients(this.currentRecipeIngredientInfo as IngredientInfo[], nonChefIds.length)
+
         // Assign index for plate to spawn for each of the non-chef players
         for (let i = 0; i < nonChefIds.length; i++)
         {
-            this.syncEntity.sendEvent("assignNonChefPlateIndex", { connectionId: nonChefIds[i], plateIndex: i });
+            this.syncEntity.sendEvent("distributeNonChefIngredients", { connectionId: nonChefIds[i], ingredientsList: ingredientsDistribution[i] })
         }
 
-        this.assignChef(chefId, nonChefIds.length);
+        this.assignChef(chefId)
     }
 
-    private assignChef(chefId: string, nonChefCount: number)
+    private assignChef(chefId: string)
     {
         this.chefSelected.setPendingValue(true);
         this.currentChef.setPendingValue(chefId);

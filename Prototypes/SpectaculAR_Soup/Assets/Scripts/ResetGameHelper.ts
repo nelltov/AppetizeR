@@ -5,10 +5,10 @@ export class ResetGameHelper extends BaseScriptComponent {
   
   onAwake(): void {
       let startEvent = this.createEvent("OnStartEvent")
-      startEvent.bind(() => { this.onReady() })
+      startEvent.bind(() => { this.onStart() })
   }
 
-  onReady(): void {
+  onStart(): void {
       const chefChooserButton = this.sceneObject.getComponent("Component.RenderMeshVisual");
       if(chefChooserButton == null) print("didntfindRenderMatForResultObject");
       EventManager.ResetGameNetworkEvent.add(() => {

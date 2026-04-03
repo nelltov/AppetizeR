@@ -1,5 +1,4 @@
-import { IngredientType } from "./Ingredients/IngredientTypes";
-import { IngredientInfo } from "./Ingredients/Ingredient";
+import { IngredientInfo, IngredientType } from "./Ingredients/Ingredient";
 
 export type Recipes = [string, IngredientInfo[]] 
 
