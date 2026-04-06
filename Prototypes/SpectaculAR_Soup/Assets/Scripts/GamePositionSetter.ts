@@ -1,6 +1,7 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
+import { EventManager } from "./EventManager";
 
 @component
 export class GamePositionSetter extends BaseScriptComponent
@@ -12,9 +13,21 @@ export class GamePositionSetter extends BaseScriptComponent
     ingredientsObjects: SceneObject[]
 
     @input
+    @allowUndefined
     renderMesh: RenderMeshVisual | null = null;
-   
+
+    @input
+    lockGameRoot: boolean = false;
+
+    @input
+    gameRoot: SceneObject;
+
+    @input
+    confirmButtonText: Text | null = null;
+
+    private awaitingConfirmation: boolean = false;
     private interactableComponent: InteractableManipulation | null = null;
+    private gameRootInteractable: InteractableManipulation | null = null;
 
     private syncEntity: SyncEntity | null = null;
 
@@ -23,12 +36,22 @@ export class GamePositionSetter extends BaseScriptComponent
 
     onAwake()
     {
-        // Programmatic SyncEntity (matches the AirHockey sample pattern)
         this.syncEntity = new SyncEntity(this);
-    
+
+        // Register storage property BEFORE notifyOnReady so it syncs correctly
+        this.isLockedProp = StorageProperty.manualBool("isLocked", false);
+        this.syncEntity.addStorageProperty(this.isLockedProp);
+
         this.interactableComponent = this.getSceneObject().getComponent(
             InteractableManipulation.getTypeName()
         ) as InteractableManipulation;
+
+        if (this.lockGameRoot && this.gameRoot)
+        {
+            this.gameRootInteractable = this.gameRoot.getComponent(
+                InteractableManipulation.getTypeName()
+            ) as InteractableManipulation;
+        }
 
         if (this.renderMesh == null)
         {
@@ -37,11 +60,7 @@ export class GamePositionSetter extends BaseScriptComponent
 
         this.syncEntity.notifyOnReady(() =>
         {
-            // 1) Create + register synced state
-            this.isLockedProp = StorageProperty.manualBool("isLocked", false);
-            this.syncEntity!.addStorageProperty(this.isLockedProp);
-
-            // 2) Subscribe to changes (THIS is what syncs behavior across players)
+            // Subscribe to changes (THIS is what syncs behavior across players)
             this.isLockedProp.onAnyChange.add((newVal: boolean) =>
             {
                 if (newVal)
@@ -50,7 +69,7 @@ export class GamePositionSetter extends BaseScriptComponent
                 }
             });
 
-            // 3) Apply initial state for late-joiners
+            // Apply initial state for late-joiners
             if (this.isLockedProp.currentValue === true)
             {
                 this.applyLockedState();
@@ -63,8 +82,15 @@ export class GamePositionSetter extends BaseScriptComponent
     {
         if (!this.syncEntity || !this.isLockedProp) return;
 
+        if (!this.awaitingConfirmation)
+        {
+            this.awaitingConfirmation = true;
+            if (this.confirmButtonText) this.confirmButtonText.text = "Finalize position?";
+            return;
+        }
+
         this.isLockedProp!.setPendingValue(true);
-        this.applyLockedState(); // do it immediately locally too
+        this.applyLockedState();
     }
 
     // This runs locally on EVERY player when isLocked becomes true
@@ -79,11 +105,10 @@ export class GamePositionSetter extends BaseScriptComponent
             ) as InteractableManipulation;*/
         }
 
-        this.interactableComponent.setCanTranslate(false);
-        this.interactableComponent.setCanRotate(false);
-        this.interactableComponent.setCanScale(false);
-        print(this.interactableComponent.canTranslate + " This is the Translate Value.")
-            
+        print("[GamePositionSetter] BEFORE — interactableComponent.enabled=" + this.interactableComponent.enabled);
+        this.interactableComponent.enabled = false;
+        print("[GamePositionSetter] AFTER — interactableComponent.enabled=" + this.interactableComponent.enabled);
+
         for (let i = 0; i < this.ingredientsObjects.length; i++)
         {
             if (isNull(this.ingredientsObjects[i])) continue;
@@ -102,6 +127,14 @@ export class GamePositionSetter extends BaseScriptComponent
             this.menuObject.enabled = false;
         }
 
+        if (this.lockGameRoot && this.gameRootInteractable)
+        {
+            this.gameRootInteractable.enabled = false;
+        }
+
         print("[GamePositionSetter] Locked: interactable/menu disabled locally.");
+
+        // placeholder for whenever the game center position is set
+        EventManager.CenterPositionSetLocal.trigger(this.gameRoot.getTransform().getWorldPosition());
     }
 }

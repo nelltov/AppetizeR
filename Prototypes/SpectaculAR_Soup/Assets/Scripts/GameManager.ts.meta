@@ -27,14 +27,11 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     camera: false
-    chefPlateObjects: false
     chefPlayerInfo: false
     chefRecipeCheckButton: false
     enableHeadFollow: false
     gameStartButton: false
     ingManager: false
-    instantiator: false
-    victoryObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -45,26 +42,18 @@
     []
   DefaultScriptInputs:
     - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
-      instantiator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
-      ingManager: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      victoryObject: !<reference.SceneObject[]>
-        []
       enableHeadFollow: true
-      chefPlateObjects: !<reference.SceneObject[]>
-        []
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Component.Camera camera
-    - // @input AssignableType instantiator
-    - // @input AssignableType_1 ingManager
+    - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
     - // @input SceneObject chefPlayerInfo
     - // @input SceneObject chefRecipeCheckButton
-    - "// @input SceneObject[] victoryObject"
     - // @input bool enableHeadFollow = true
-    - "// @input SceneObject[] chefPlateObjects"

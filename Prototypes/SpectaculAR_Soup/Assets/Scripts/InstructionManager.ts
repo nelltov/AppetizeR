@@ -1,5 +1,6 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
+import { GameManager } from "./GameManager";
 
 @component
 export class InstructionManager extends BaseScriptComponent {
@@ -8,7 +9,11 @@ export class InstructionManager extends BaseScriptComponent {
     public instructionArray : string[];
 
     @input
-    public instructionHolderObject : SceneObject;
+    public instructionImageHolderObject : SceneObject;
+
+     @input
+    public instructionStringHolderObject : SceneObject;
+
 
     @input
     public saltShakerObject : SceneObject;
@@ -16,7 +21,12 @@ export class InstructionManager extends BaseScriptComponent {
     @input
     public gameRootObject : SceneObject;
 
+    @input
+    public instructionImages : Texture[];
+
+
     private syncEntity : SyncEntity
+
     private currentInstruction = StorageProperty.manualInt("currentInstruction", 0)
 
     onAwake() {
@@ -25,13 +35,16 @@ export class InstructionManager extends BaseScriptComponent {
 
         // Update UI on all clients whenever the instruction index changes
         this.currentInstruction.onAnyChange.add((value) => {
-            if (value >= this.instructionArray.length)
+            if (value >= this.instructionImages.length)
             {
                 this.saltShakerObject.enabled = false;
                 this.gameRootObject.enabled = true;
                 return;
             }
-            this.instructionHolderObject.getComponent("Text").text = this.instructionArray[value];
+            
+            this.instructionImageHolderObject.getComponent("Image").mainPass.baseTex = this.instructionImages[value];
+            this.instructionStringHolderObject.getComponent("Text").text= this.instructionArray[value]
+            
         })
     }
 

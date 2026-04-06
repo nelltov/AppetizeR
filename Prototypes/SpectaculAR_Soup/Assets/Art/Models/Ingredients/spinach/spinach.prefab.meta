@@ -1,0 +1,92 @@
+- !<AssetImportMetadata/ff559be7-2143-ca21-0356-eac3d83ae456>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> b4ff0e5b-9dc9-4690-afc4-9ab97cff39e0
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> b4ff0e5b-9dc9-4690-afc4-9ab97cff39e0
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 012fa1ea-94fb-45ce-a5c6-ceab1bc465f2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/012fa1ea-94fb-45ce-a5c6-ceab1bc465f2>
+  Prototype: !<ObjectOwner/d286f498-8d5b-422b-bf75-ae579f9a9000>
+    PackagePath: ""
+    objects:
+      - !<own> fdf07f12-7aae-444e-7507-cc074018c5d4
+- !<AnimationPlayer/5cad50fe-d4d5-4707-7921-95b3d47bc9d8>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 7c91bb46-77c9-481a-bd84-a1a39b3044f7
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/66f2c22c-93c9-44d8-5c6e-670699b98db1>
+  PrefabRemaps:
+    []
+  Name: spinach
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9f29785c-cf75-4a50-6cb9-a4040e0d7686
+- !<RenderMeshVisual/9f29785c-cf75-4a50-6cb9-a4040e0d7686>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6b57cc92-7999-4651-87d1-2e0099311cd1
+  Mesh: !<reference> 2b7e625a-dd21-4dbf-aed3-88d92d26f22d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/fdf07f12-7aae-444e-7507-cc074018c5d4>
+  PrefabRemaps:
+    []
+  Name: spinach
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 66f2c22c-93c9-44d8-5c6e-670699b98db1
+  Components:
+    - !<own> 5cad50fe-d4d5-4707-7921-95b3d47bc9d8

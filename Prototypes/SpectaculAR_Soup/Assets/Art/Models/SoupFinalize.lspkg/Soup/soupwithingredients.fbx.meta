@@ -1,0 +1,175 @@
+- !<AssetImportMetadata/36cb6a8e-9546-0ce8-8c37-6726dbc22e88>
+  ImportedAssetIds:
+    01e641891a7000c5: !<reference> 09e164f6-b559-40b7-9239-ec0c2a82780d
+    1f2dca1c520e9fb4: !<reference> 02c1dbfd-3502-4952-b45a-444297fbc8f3
+    2028ca51e4a54211: !<reference> cf80fda5-f840-4893-b366-2ba33dd713e5
+    7a0dd5cd69df73fa: !<reference> 0f1c1c05-f3a2-4b71-9f28-41e25d626ece
+    98fcd4e77d8a3d68: !<reference> 5b0d0b7b-6c64-4e16-9591-631d79e06ca8
+    9f351d3c0c3ae958: !<reference> 0183eba2-773b-49c0-8b53-30a779e3f074
+    Animations/BaseLayer: !<reference> dbc92e23-b45a-4f72-9930-7b31050ca781
+    Meshes/Ingredients: !<reference> efa620f4-fdbd-465b-aa32-44af52d50a00
+    Meshes/SoupSurface: !<reference> 0e654ee5-e325-4350-8e98-2508db9a134b
+    Scene: !<reference> dfc1ac53-e52d-4f9a-aaac-95e81a52a13e
+    cb73b6b6bb0a96e0: !<reference> 419fc524-5e1a-4ff7-9114-283872d97097
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> dfc1ac53-e52d-4f9a-aaac-95e81a52a13e
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 92c13b22-0804-4f33-9a52-26ee61188b57
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: false
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: false
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: false
+    ImportTangentsAndBinormals: false
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: false
+    ImportBlendShapeAnimation: false
+    ImportVertexAnimation: false
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+    ExtensionMappings:
+      mesh: None Compression
+    Overrides:
+      {}
+- !<SceneObject/0183eba2-773b-49c0-74ac-cf58861c0f8b>
+  PrefabRemaps:
+    []
+  Name: SoupNew
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 419fc524-5e1a-4ff7-6eeb-d7c78d268f68
+    - !<own> 02c1dbfd-3502-4952-4ba5-bbbd6804370c
+  Components:
+    []
+- !<SceneObject/02c1dbfd-3502-4952-4ba5-bbbd6804370c>
+  PrefabRemaps:
+    []
+  Name: Ingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5b0d0b7b-6c64-4e16-6a6e-9ce2861f9357
+- !<RenderMeshVisual/09e164f6-b559-40b7-6dc6-13f3d57d87f2>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> 0e654ee5-e325-4350-8e98-2508db9a134b
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/0f1c1c05-f3a2-4b71-60d7-be1da29d9131>
+  PrefabRemaps:
+    []
+  Name: soupwithingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 0183eba2-773b-49c0-74ac-cf58861c0f8b
+  Components:
+    - !<own> cf80fda5-f840-4893-4c99-d45cc228ec1a
+- !<SceneObject/419fc524-5e1a-4ff7-6eeb-d7c78d268f68>
+  PrefabRemaps:
+    []
+  Name: SoupSurface
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 09e164f6-b559-40b7-6dc6-13f3d57d87f2
+- !<RenderMeshVisual/5b0d0b7b-6c64-4e16-6a6e-9ce2861f9357>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> efa620f4-fdbd-465b-aa32-44af52d50a00
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/92c13b22-0804-4f33-9a52-26ee61188b57>
+  Prototype: !<ObjectOwner/54f86e30-c93e-403e-a731-23104c0049ca>
+    PackagePath: ""
+    objects:
+      - !<own> 0f1c1c05-f3a2-4b71-60d7-be1da29d9131
+- !<AnimationPlayer/cf80fda5-f840-4893-4c99-d45cc228ec1a>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> dbc92e23-b45a-4f72-9930-7b31050ca781
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop

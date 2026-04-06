@@ -276,7 +276,6 @@
   PrefabRemaps:
     - 07d574c3-b0ac-4563-409d-5a0dfe81cce0: f0e67fd6-5517-48b4-45e8-efe4f1ba6cf5
     - 2416c800-7e37-4126-4df9-8a889c2f41bd: 0739ed2e-6342-4416-72c0-ab4d63203f0f
-    - 4f328c39-9e24-46cb-5507-067abbd301d9: 8086f81b-1df3-4ed8-69e9-4d4eebf5a7ed
     - 75879bd7-f48a-42be-7fc1-8be121dfad77: 974f2d35-81b1-47bf-6457-52e75e47d35c
     - b252a019-bbb3-4907-6f39-4a228d8d3e04: 330395e9-fc97-4461-6a47-e696154575e2
     - cca27409-36fa-4c13-4035-2cfb0d0bc50a: 4ff2ce8e-c31b-4f81-5429-cf428c63f560
@@ -299,7 +298,6 @@
     - !<own> 75879bd7-f48a-42be-7fc1-8be121dfad77
     - !<own> e53a6ae6-625c-40f8-6165-5d9c7c2eaaa8
     - !<own> cca27409-36fa-4c13-4035-2cfb0d0bc50a
-    - !<own> 4f328c39-9e24-46cb-5507-067abbd301d9
 - !<SceneObject/300658d2-aa7d-4da9-5c19-c3968db130ad>
   PrefabRemaps:
     []
@@ -329,7 +327,7 @@
   Children:
     []
   Components:
-    - !<own> 3adf071e-f964-4e20-736a-09001444234b
+    []
 - !<SceneObject/3269379c-9ddc-4b6f-7753-8eab10a1b6d9>
   PrefabRemaps:
     []
@@ -395,31 +393,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/3adf071e-f964-4e20-736a-09001444234b>
-  PrefabRemaps:
-    []
-  Name: InstructionManager
-  Enabled: true
-  ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      instructionArray: !<string[]>
-        - You are the Main Chef
-        - You are making XYZ soup with your apprentinces
-        - Explain ingredients to help your apprentinces choose the right ones
-        - "But, here are some instructions to follow"
-        - You can only give one word clue
-        - "No colors, no animal names"
-        - "Let's begin with the first ingredient"
-        - "Describe 'Carrot' "
-      instructionHolderObject: !<reference.SceneObject> fcb8cbcf-b1b4-45fe-7e5b-4c0d8c4995c6
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/3b2fbe24-4d7e-40bc-70e8-fbff9a9e997c>
   PrefabRemaps:
     []
@@ -576,38 +549,6 @@
     []
   Components:
     - !<own> 110ac8e5-f717-46ca-5752-4aa8932061b9
-- !<ScriptComponent/4f328c39-9e24-46cb-5507-067abbd301d9>
-  PrefabRemaps:
-    []
-  Name: SyncTransform
-  Enabled: true
-  ScriptAsset: !<reference> f3c20594-375f-43d8-a93f-a8e75bd6a61d
-  ScriptInputsDefault:
-    networkIdTypeString: true
-    customNetworkId: true
-    positionSyncString: true
-    rotationSyncString: true
-    scaleSyncString: true
-    persistenceString: true
-    sendsPerSecondLimit: true
-    useSmoothing: true
-    interpolationTarget: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      networkIdTypeString: objectId
-      customNetworkId: enter_unique_id
-      positionSyncString: Local
-      rotationSyncString: Local
-      scaleSyncString: Local
-      persistenceString: Session
-      sendsPerSecondLimit: 10
-      useSmoothing: true
-      interpolationTarget: -0.250000
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/51a8290f-ad94-44e4-5532-79b81a7ed302>
   PrefabRemaps:
     []
@@ -853,13 +794,12 @@
   Enabled: true
   ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
   ScriptInputsDefault:
-    {}
+    ingredientEnumNumber: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      categoryNumber: !<float> 1.000000
-      variantId: !<float> 1.000000
+      ingredientEnumNumber: !<float> 0.000000
   ScriptTypes:
     "":
       {}
@@ -896,7 +836,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 3adf071e-f964-4e20-736a-09001444234b
+        - scriptComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
           functionName: nextInstruction
       onValueChangeCallbacks:
         []
@@ -1440,10 +1380,7 @@
   ScriptInputsDefault:
     manipulateRootSceneObject: true
     minimumScaleFactor: true
-    maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
-    enableScale: true
     enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
@@ -1466,10 +1403,10 @@
     "":
       manipulateRootSceneObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       minimumScaleFactor: 0.250000
-      maximumScaleFactor: !<float> 20.000000
+      maximumScaleFactor: 1.500000
       enableTranslation: true
-      enableRotation: true
-      enableScale: true
+      enableRotation: false
+      enableScale: false
       enableStretchZ: true
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
