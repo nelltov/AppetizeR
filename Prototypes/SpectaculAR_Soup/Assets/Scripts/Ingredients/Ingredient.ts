@@ -7,7 +7,7 @@ export enum IngredientType {
     Chicken = 5,
     // Corn = 6,
     Leek = 7,
-    // Mushroom = 8,
+    Mushroom = 8,
     Noodles = 9,
     Onion = 10,
     Potato = 11,
