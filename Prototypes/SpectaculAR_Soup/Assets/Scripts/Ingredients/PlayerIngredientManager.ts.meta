@@ -29,7 +29,8 @@
     cameraObject: false
     ingredientPositionsObject: false
     ingredientPrefabList: false
-    platesObject: false
+    instructionObject: false
+    visibleObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,7 +41,8 @@
     []
   DefaultScriptInputs:
     - cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      platesObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      visibleObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPositionsObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPrefabList: !<reference.ObjectPrefab[]>
         []
@@ -49,6 +51,7 @@
       {}
   InputLines:
     - // @input SceneObject cameraObject
-    - // @input SceneObject platesObject
+    - // @input SceneObject visibleObject
+    - // @input SceneObject instructionObject
     - // @input SceneObject ingredientPositionsObject
     - "// @input Asset.ObjectPrefab[] ingredientPrefabList"

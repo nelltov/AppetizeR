@@ -27,7 +27,6 @@ export const DebugRecipe : IngredientInfo[] = [
     new IngredientInfo(IngredientType.Tofu),
     new IngredientInfo(IngredientType.Noodles),
     new IngredientInfo(IngredientType.Tomato)
-
 ]
 
 export const recipeDictionary: Record<string, IngredientInfo[]> = {

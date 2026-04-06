@@ -1,6 +1,5 @@
 import { EventManager } from "Scripts/EventManager";
 import { Ingredient } from "Scripts/Ingredients/Ingredient";
-import { SyncTransform } from "SpectaclesSyncKit.lspkg/Components/SyncTransform";
 
 @component
 export class SoupPotCollider extends BaseScriptComponent {
