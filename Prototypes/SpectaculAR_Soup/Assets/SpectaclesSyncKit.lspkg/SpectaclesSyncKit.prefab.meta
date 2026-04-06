@@ -3005,7 +3005,9 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    {}
+    instructionImageHolderObject: true
+    instructionStringHolderObject: true
+    instructionImages: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -3017,9 +3019,12 @@
         - Move me to the middle of the table!
         - "Did you move me?"
         - "Awesome! Help me make a soup for my fiance?"
-      instructionHolderObject: !<reference.SceneObject> 6218c473-5cbd-487f-9814-4ac5bafa316f
+      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       saltShakerObject: !<reference.SceneObject> 8a7ef6f2-46c3-4fb1-a653-e45af09d5706
       gameRootObject: !<reference.SceneObject> b207a769-bb88-4a31-b092-6ae332a3462f
+      instructionImages: !<reference.Texture[]>
+        []
   ScriptTypes:
     "":
       {}

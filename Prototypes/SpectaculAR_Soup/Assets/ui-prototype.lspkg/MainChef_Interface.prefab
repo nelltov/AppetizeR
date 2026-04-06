@@ -390,8 +390,11 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
+    instructionImageHolderObject: true
+    instructionStringHolderObject: true
     saltShakerObject: true
     gameRootObject: true
+    instructionImages: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -405,9 +408,12 @@
         - "No colors, no animal names"
         - "Let's begin with the first ingredient"
         - "Describe 'Carrot' "
-      instructionHolderObject: !<reference.SceneObject> fcb8cbcf-b1b4-45fe-81a4-b3f273b66a39
+      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionImages: !<reference.Texture[]>
+        []
   ScriptTypes:
     "":
       {}

@@ -1,0 +1,129 @@
+- !<AssetImportMetadata/dda0f87a-49b2-163b-9f43-9e4f06d622ff>
+  ImportedAssetIds:
+    2028ca51e4a54211: !<reference> 19ba8c8c-9804-410e-a880-ec8a6fd6508c
+    339b1f7a1eeb6d5b: !<reference> f36880a6-5b84-46bf-baa9-81ef0f8a9f8b
+    7a0dd5cd69df73fa: !<reference> 5b66ca7c-2225-41f3-86d2-ee37ccbc49d6
+    Animations/BaseLayer: !<reference> 7c91bb46-77c9-481a-bd84-a1a39b3044f7
+    Meshes/spinach: !<reference> 2b7e625a-dd21-4dbf-aed3-88d92d26f22d
+    Scene: !<reference> 7e3bfd10-95a4-4590-a151-6c74befe9e7a
+    Textures/spinach_openPBR_shader1_base: !<reference> 775b6269-6bd9-4554-b373-c21696cabbb3
+    Textures/spinach_openPBR_shader1_normal: !<reference> 900dc50d-40f7-4f95-b858-57281e2690ec
+    bc4ee1c39180a332: !<reference> 16d54ec6-2db1-4267-abe0-0dfcc7221e7f
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 7e3bfd10-95a4-4590-a151-6c74befe9e7a
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> f0e4c754-8147-4839-8081-9a0dd226e0b8
+  DependentFiles:
+    - spinach_openPBR_shader1_base.png
+    - spinach_openPBR_shader1_normal.png
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: false
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: false
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: false
+    ImportTangentsAndBinormals: false
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: false
+    ImportBlendShapeAnimation: false
+    ImportVertexAnimation: false
+    GeneratePivots: false
+    TriangulateNURBS: false
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      png: Performance Compression
+    Overrides:
+      {}
+- !<SceneObject/16d54ec6-2db1-4267-541f-f20338dde180>
+  PrefabRemaps:
+    []
+  Name: spinach
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f36880a6-5b84-46bf-4556-7e10f0756074
+- !<AnimationPlayer/19ba8c8c-9804-410e-577f-13759029af73>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 7c91bb46-77c9-481a-bd84-a1a39b3044f7
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/5b66ca7c-2225-41f3-792d-11c83343b629>
+  PrefabRemaps:
+    []
+  Name: spinach
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 16d54ec6-2db1-4267-541f-f20338dde180
+  Components:
+    - !<own> 19ba8c8c-9804-410e-577f-13759029af73
+- !<ObjectPrefabAssetData/f0e4c754-8147-4839-8081-9a0dd226e0b8>
+  Prototype: !<ObjectOwner/2a4429f3-7f67-4669-97a2-bef46a920123>
+    PackagePath: ""
+    objects:
+      - !<own> 5b66ca7c-2225-41f3-792d-11c83343b629
+- !<RenderMeshVisual/f36880a6-5b84-46bf-4556-7e10f0756074>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> 2b7e625a-dd21-4dbf-aed3-88d92d26f22d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}

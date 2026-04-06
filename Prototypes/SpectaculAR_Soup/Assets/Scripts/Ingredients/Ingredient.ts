@@ -12,7 +12,7 @@ export enum IngredientType {
     Onion = 10,
     Potato = 11,
     // Ramen = 12,
-    // Spinach = 13,
+    Spinach = 13,
     Tofu = 14,
     Tomato = 15,
 }

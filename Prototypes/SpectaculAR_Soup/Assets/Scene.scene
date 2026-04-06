@@ -2581,7 +2581,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: Pinch here with your Cursor!
+  Text: ""
   Editable: false
   ShowEditingPreview: false
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -2785,6 +2785,25 @@
     - !<own> 5f74ce4d-9aab-4645-8bda-5a4e7901427a
   Components:
     []
+- !<Image/47e1a250-a9b1-4ae5-bf64-a930ca4b75a4>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 0f4fc2f2-a6ef-47f0-ab32-a32c178c92a8
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<RenderMeshVisual/48039c86-31b6-433b-bfad-7cd2334fad1c>
   PrefabRemaps:
     []
@@ -3987,21 +4006,22 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    {}
+    instructionImageHolderObject: true
+    instructionStringHolderObject: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       instructionArray: !<string[]>
-        - Pinch here with your Cursor!
-        - "Hi I'm Mr. Shaker"
-        - You can move me by pinching!
-        - Move me to the middle of the table!
-        - "Did you move me?"
-        - "Awesome! Help me make a soup for my fiance?"
-      instructionHolderObject: !<reference.SceneObject> d74fc15b-62d8-47cc-ad6f-71fda610bf2b
+        - Marker 1
+        - Marker2
+      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       saltShakerObject: !<reference.SceneObject> ba1aad55-3137-49ec-aa96-75b36fc7115b
       gameRootObject: !<reference.SceneObject> 8530f7d5-3975-4d69-bb60-19aa63886601
+      instructionImages: !<reference.Texture[]>
+        - !<reference> 74dd1d91-b493-4de2-b493-a105fa30d5f7
+        - !<reference> 052de9ba-f1aa-4918-93df-48ca4e5fb5e0
   ScriptTypes:
     "":
       {}
@@ -4135,6 +4155,7 @@
   Children:
     - !<own> 3c7bbfaa-2516-40f0-8d1b-d06b7ecc43e4
     - !<own> 27aa449d-a32e-4282-a12d-2d772a0611b3
+    - !<own> eb98679e-9c51-4ddd-aa2f-feba2673311f
   Components:
     []
 - !<RenderMeshVisual/5fa37268-1896-49a0-b157-2ecff0a9c18d>
@@ -8399,7 +8420,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 0.000000, z: 1.140659}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -8407,6 +8428,7 @@
     []
   Components:
     - !<own> 443744fa-32cf-442b-9f3b-beeaac5c0d75
+    - !<own> ed2eeb5e-edf7-4c3e-9ff3-a92fb9ce4dff
 - !<ScriptComponent/d7953276-1243-4a01-a2f4-2804d434c184>
   PrefabRemaps:
     []
@@ -9319,6 +9341,21 @@
   Components:
     - !<own> d4a11849-0676-452e-8b10-e49f077bce3f
     - !<own> 202da8ba-dcd3-40da-914d-19cba0f68130
+- !<SceneObject/eb98679e-9c51-4ddd-aa2f-feba2673311f>
+  PrefabRemaps:
+    []
+  Name: InstructionHolderImageObject
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 200.000000, y: 199.999985, z: 200.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 47e1a250-a9b1-4ae5-bf64-a930ca4b75a4
 - !<ScriptComponent/ebb51807-2388-4ba0-888f-c2f96497a9a4>
   PrefabRemaps:
     []
@@ -9516,6 +9553,16 @@
   ScriptTypes:
     "":
       {}
+- !<LookAtComponent/ed2eeb5e-edf7-4c3e-9ff3-a92fb9ce4dff>
+  PrefabRemaps:
+    []
+  Name: Look At
+  Enabled: true
+  LookAtMode: LookAtDirection
+  AimVectors: ZAimYUp
+  WorldUpVector: ObjectY
+  Target: !<reference> 00000000-0000-0065-0000-000000000064
+  OffsetRotation: {x: 0.000000, y: 0.000000, z: 0.000000}
 - !<SceneObject/ed7074f4-802d-4336-9588-237c5c48f33e>
   PrefabRemaps:
     []
@@ -9747,8 +9794,8 @@
     Scale: {x: 20.000000, y: 30.000000, z: 20.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> ba1aad55-3137-49ec-aa96-75b36fc7115b
     - !<own> 8530f7d5-3975-4d69-bb60-19aa63886601
+    - !<own> ba1aad55-3137-49ec-aa96-75b36fc7115b
   Components:
     - !<own> 03a44afa-760c-4c2f-9efb-c90cd851d730
     - !<own> d967b11d-06a4-4a7c-8526-ab481e242406
