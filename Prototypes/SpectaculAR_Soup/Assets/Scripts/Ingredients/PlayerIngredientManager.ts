@@ -6,7 +6,10 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     cameraObject: SceneObject
 
     @input
-    platesObject: SceneObject
+    visibleObject: SceneObject
+
+    @input
+    instructionObject: SceneObject
 
     @input
     ingredientPositionsObject: SceneObject
@@ -15,9 +18,10 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     @input
     ingredientPrefabList : ObjectPrefab[]
 
+    /* Positioning the entire interface relative to the center of the table */ 
     private offset: vec3 = new vec3(0, 0, 0)
     private sceneObj: SceneObject
-    private distanceFromCenter: number = 55  // Distance between plate parent transform and center of table, adjust as needed
+    private distanceFromCenter: number = 50  // Distance between plate parent transform and center of table, adjust as needed
     private verticalOffset: number = -12     // Account for pivot point being higher up than the table
 
     onAwake() {
@@ -27,19 +31,20 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     }
 
     onStart() {
+        // Initialize object
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
+        this.resetPlayerIngredientObjects()
 
+        // Bind events
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {
             print(`Received center position: ${centerPosition.toString()}`)
             this.movePlatesToTable(centerPosition)
-
-            if (this.platesObject) {
-                this.platesObject.enabled = true
-            }
+            this.setObjectVisibility(this.visibleObject, true)
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
+            // Spawn ingredients
             for (let i = 0; i < this.ingredientPositions.length; i++) {
                 if (i >= ingredientIndices.length) {
                     break // No more ingredients provided
@@ -54,12 +59,13 @@ export class PlayerIngredientManager extends BaseScriptComponent {
                     }
                 }
             }
+
+            // Show instructions
+            this.setObjectVisibility(this.instructionObject, true)
         })
 
         EventManager.DisableChefPlate.add(() => {
-            if (this.platesObject) {
-                this.platesObject.enabled = false
-            }
+            this.setObjectVisibility(this.visibleObject, false)
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
@@ -81,16 +87,20 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     }
 
     private resetPlayerIngredientObjects() {
-        if (this.platesObject) {
-            this.platesObject.enabled = false
-        }
+        this.setObjectVisibility(this.visibleObject, false) 
+        this.setObjectVisibility(this.instructionObject, false)
 
         // Deactivate any existing ingredient objects under the ingredient positions
         for (let ingredientPosition of this.ingredientPositions) {
-            for (let i = 0; i < ingredientPosition.getChildrenCount(); i++) {
-                let child = ingredientPosition.getChild(i)
-                child.enabled = false
+            for (let child of ingredientPosition.children) {
+                this.setObjectVisibility(child, false)
             }
+        }
+    }
+
+    private setObjectVisibility(object: SceneObject, isVisible: boolean) {
+        if (object) {
+            object.enabled = isVisible
         }
     }
 }

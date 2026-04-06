@@ -327,7 +327,7 @@
   Children:
     []
   Components:
-    - !<own> 3adf071e-f964-4e20-736a-09001444234b
+    []
 - !<SceneObject/3269379c-9ddc-4b6f-7753-8eab10a1b6d9>
   PrefabRemaps:
     []
@@ -393,40 +393,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/3adf071e-f964-4e20-736a-09001444234b>
-  PrefabRemaps:
-    []
-  Name: InstructionManager
-  Enabled: true
-  ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
-  ScriptInputsDefault:
-    instructionImageHolderObject: true
-    instructionStringHolderObject: true
-    saltShakerObject: true
-    gameRootObject: true
-    instructionImages: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      instructionArray: !<string[]>
-        - You are the Main Chef
-        - You are making XYZ soup with your apprentinces
-        - Explain ingredients to help your apprentinces choose the right ones
-        - "But, here are some instructions to follow"
-        - You can only give one word clue
-        - "No colors, no animal names"
-        - "Let's begin with the first ingredient"
-        - "Describe 'Carrot' "
-      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionImages: !<reference.Texture[]>
-        []
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/3b2fbe24-4d7e-40bc-70e8-fbff9a9e997c>
   PrefabRemaps:
     []
@@ -870,7 +836,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 3adf071e-f964-4e20-736a-09001444234b
+        - scriptComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
           functionName: nextInstruction
       onValueChangeCallbacks:
         []

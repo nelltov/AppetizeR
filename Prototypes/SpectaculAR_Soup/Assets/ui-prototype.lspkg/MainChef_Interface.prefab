@@ -317,7 +317,7 @@
   Children:
     []
   Components:
-    - !<own> 3adf071e-f964-4e20-8c95-f6ffebbbdcb4
+    []
 - !<SceneObject/3269379c-9ddc-4b6f-88ac-7154ef5e4926>
   PrefabRemaps:
     []
@@ -383,40 +383,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/3adf071e-f964-4e20-8c95-f6ffebbbdcb4>
-  PrefabRemaps:
-    []
-  Name: InstructionManager
-  Enabled: true
-  ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
-  ScriptInputsDefault:
-    instructionImageHolderObject: true
-    instructionStringHolderObject: true
-    saltShakerObject: true
-    gameRootObject: true
-    instructionImages: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      instructionArray: !<string[]>
-        - You are the Main Chef
-        - You are making XYZ soup with your apprentinces
-        - Explain ingredients to help your apprentinces choose the right ones
-        - "But, here are some instructions to follow"
-        - You can only give one word clue
-        - "No colors, no animal names"
-        - "Let's begin with the first ingredient"
-        - "Describe 'Carrot' "
-      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionImages: !<reference.Texture[]>
-        []
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/3b2fbe24-4d7e-40bc-8f17-040065616683>
   PrefabRemaps:
     []
@@ -726,7 +692,6 @@
     - 342ff991-65dc-4918-832c-46700c1f2429: 342ff991-65dc-4918-7cd3-b98ff3e0dbd6
     - 344022a1-c050-4dad-9827-a4eacac4a7e7: 344022a1-c050-4dad-67d8-5b15353b5818
     - 391b6efe-7a4e-4906-8f19-9bb137286363: 391b6efe-7a4e-4906-70e6-644ec8d79c9c
-    - 3adf071e-f964-4e20-8c95-f6ffebbbdcb4: 3adf071e-f964-4e20-736a-09001444234b
     - 3b2fbe24-4d7e-40bc-8f17-040065616683: 3b2fbe24-4d7e-40bc-70e8-fbff9a9e997c
     - 3d37a1e7-2248-493b-a8f9-d4a6ed7986ee: 3d37a1e7-2248-493b-5706-2b5912867911
     - 3f71ae03-ad2c-4315-9469-11bca555b31a: 3f71ae03-ad2c-4315-6b96-ee435aaa4ce5
@@ -941,7 +906,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 3adf071e-f964-4e20-8c95-f6ffebbbdcb4
+        - scriptComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
           functionName: nextInstruction
       onValueChangeCallbacks:
         []
