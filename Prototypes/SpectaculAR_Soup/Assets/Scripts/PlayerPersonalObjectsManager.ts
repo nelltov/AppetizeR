@@ -1,12 +1,15 @@
-import { EventManager } from "../EventManager";
+import { EventManager } from "./EventManager";
 
 @component
-export class PlayerIngredientManager extends BaseScriptComponent {
+export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     @input
     cameraObject: SceneObject
 
     @input
-    visibleObject: SceneObject
+    nonChefDecorObjects: SceneObject
+
+    @input
+    chefDecorObjects: SceneObject
 
     @input
     instructionObject: SceneObject
@@ -35,12 +38,12 @@ export class PlayerIngredientManager extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
+        this.setObjectVisibility(this.chefDecorObjects, false)  // specifically hide on start, otherwise resetting should make them visible
 
         // Bind events
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {
-            print(`Received center position: ${centerPosition.toString()}`)
             this.movePlatesToTable(centerPosition)
-            this.setObjectVisibility(this.visibleObject, true)
+            this.setObjectVisibility(this.nonChefDecorObjects, true)
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
@@ -64,8 +67,10 @@ export class PlayerIngredientManager extends BaseScriptComponent {
             this.setObjectVisibility(this.instructionObject, true)
         })
 
-        EventManager.DisableChefPlate.add(() => {
-            this.setObjectVisibility(this.visibleObject, false)
+        EventManager.SpawnChefInstructions.add((_) => {
+            this.setObjectVisibility(this.instructionObject, true)
+            this.setObjectVisibility(this.nonChefDecorObjects, false) 
+            this.setObjectVisibility(this.chefDecorObjects, true)
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
@@ -74,7 +79,7 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     }
 
     private movePlatesToTable(centerPosition: vec3) {
-        // Calculate offset to be a 20 units away from the center position towards the camera (ignoring y axis)
+        // Calculate offset to be {distanceFromCenter} units away from the center position towards the camera (ignoring y axis)
         let cameraPos = this.cameraObject.getTransform().getWorldPosition()
         let directionToCamera = new vec3(cameraPos.x - centerPosition.x, 0, cameraPos.z - centerPosition.z).normalize()
         this.offset = directionToCamera.uniformScale(this.distanceFromCenter) 
@@ -87,7 +92,8 @@ export class PlayerIngredientManager extends BaseScriptComponent {
     }
 
     private resetPlayerIngredientObjects() {
-        this.setObjectVisibility(this.visibleObject, false) 
+        this.setObjectVisibility(this.nonChefDecorObjects, true)    // empty plates
+        this.setObjectVisibility(this.chefDecorObjects, false) 
         this.setObjectVisibility(this.instructionObject, false)
 
         // Deactivate any existing ingredient objects under the ingredient positions

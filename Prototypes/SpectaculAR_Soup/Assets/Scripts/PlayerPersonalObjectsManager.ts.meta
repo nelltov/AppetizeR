@@ -27,10 +27,11 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     cameraObject: false
+    chefDecorObjects: false
     ingredientPositionsObject: false
     ingredientPrefabList: false
     instructionObject: false
-    visibleObject: false
+    nonChefDecorObjects: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -41,7 +42,8 @@
     []
   DefaultScriptInputs:
     - cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      visibleObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      nonChefDecorObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chefDecorObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       instructionObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPositionsObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPrefabList: !<reference.ObjectPrefab[]>
@@ -51,7 +53,8 @@
       {}
   InputLines:
     - // @input SceneObject cameraObject
-    - // @input SceneObject visibleObject
+    - // @input SceneObject nonChefDecorObjects
+    - // @input SceneObject chefDecorObjects
     - // @input SceneObject instructionObject
     - // @input SceneObject ingredientPositionsObject
     - "// @input Asset.ObjectPrefab[] ingredientPrefabList"

@@ -1,7 +1,7 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation";
-import { EventManager } from "./EventManager";
+import { EventManager } from "../EventManager";
 
 @component
 export class GamePositionSetter extends BaseScriptComponent

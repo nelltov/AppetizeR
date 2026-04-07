@@ -40,7 +40,6 @@ export class GameManager extends BaseScriptComponent {
     
     private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
-    private nonChefPlateIndex: number = -1
 
     onReady()
     {
@@ -50,9 +49,9 @@ export class GameManager extends BaseScriptComponent {
             print("Chef subscribed");
             this.amITheChef();
 
-            // Disable the chef's plate
+            // Spawn chef instructions with the recipe info
             if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
-                EventManager.DisableChefPlate.trigger()
+                EventManager.SpawnChefInstructions.trigger(this.currentRecipeIngredientInfo || [])
             }
         })
 
@@ -64,11 +63,6 @@ export class GameManager extends BaseScriptComponent {
 
         this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
 
-        // for ( let i=0; i<this.unUsedRecipesArray.length; i++)
-        // {
-        //     this.networkedUnusedRecipesArray[i].setPendingValue(ourRecipes.0)
-        //     print(this.networkedUnusedRecipesArray[i].currentOrPendingValue)
-        // }
         print(this.networkedUnusedRecipesArray.currentOrPendingValue[0]);
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
@@ -226,17 +220,11 @@ export class GameManager extends BaseScriptComponent {
         this.gameStartButton.enabled = false;
 
         // If myID is same as chef I am the chef so I should turn on this local object
-        if (this.myID === this.currentChef.currentOrPendingValue) {
-            this.chefPlayerInfo.enabled = true;
-            this.chefRecipeCheckButton.enabled = true;
-            this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
-            print(this.myID + " Should turn on the Chef Info")
-        }
-        // else {  // non-chef player: try to enable corresponding plate based on assigned index
-        //     if (this.nonChefPlateIndex >= 0 && this.nonChefPlateIndex < this.chefPlateObjects.length) {
-        //         this.chefPlateObjects[this.nonChefPlateIndex].enabled = true;
-        //         print(this.myID + " Should turn on plate " + this.nonChefPlateIndex)
-        //     }
+        // if (this.myID === this.currentChef.currentOrPendingValue) {
+        //     this.chefPlayerInfo.enabled = true;
+        //     this.chefRecipeCheckButton.enabled = true;
+        //     this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
+        //     print(this.myID + " Should turn on the Chef Info")
         // }
     }
 
@@ -253,16 +241,18 @@ export class GameManager extends BaseScriptComponent {
 
     private nextChefIngredient()
     {
-        if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
-        {
-            this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
-            this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
-            return;
-        }
+
+        // Old implementation
+        // if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
+        // {
+        //     this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
+        //     this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
+        //     return;
+        // }
         
-        const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
-        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
-        this.currentIngredientInfoPosition++;
+        // const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
+        // this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
+        // this.currentIngredientInfoPosition++;
     }
 
     private isTheSoupRightDemo()

@@ -10,7 +10,7 @@ export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
     static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
     static SpawnPlayerIngredients = new EventWrapper<[number[]]>()
-    static DisableChefPlate = new EventWrapper()
+    static SpawnChefInstructions = new EventWrapper<[IngredientInfo[]]>()
 
     // Game States
     static CenterPositionSetLocal = new EventWrapper<[vec3]>()
