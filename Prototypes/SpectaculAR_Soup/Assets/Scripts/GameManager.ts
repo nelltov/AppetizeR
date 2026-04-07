@@ -14,7 +14,6 @@ export class GameManager extends BaseScriptComponent {
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
-    private myID : string;
 
     @input
     camera: Camera
@@ -26,15 +25,11 @@ export class GameManager extends BaseScriptComponent {
     public gameStartButton : SceneObject
 
     @input
-    chefPlayerInfo : SceneObject
-
-    @input
     chefRecipeCheckButton : SceneObject
 
     @input
     enableHeadFollow: boolean = true
 
-    private currentIngredientInfoPosition : number = 0
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)
     
@@ -210,10 +205,12 @@ export class GameManager extends BaseScriptComponent {
         print("Picked chef connectionId = " + chefId);
     }
 
+
+    // Phasing this out, won't be needed for the refactored game start
     private amITheChef()
     {   
         // Get my own ID
-        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+        // this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
 
         // Turn off game start locally
         if (this.chefSelected.currentOrPendingValue !== true) return;

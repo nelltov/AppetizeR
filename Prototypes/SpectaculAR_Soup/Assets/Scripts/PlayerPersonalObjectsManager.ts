@@ -19,7 +19,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     private ingredientPositions: SceneObject[]
 
     @input
-    ingredientPrefabList : ObjectPrefab[]
+    ingredientPrefabList: ObjectPrefab[]
 
     /* Positioning the entire interface relative to the center of the table */ 
     private offset: vec3 = new vec3(0, 0, 0)

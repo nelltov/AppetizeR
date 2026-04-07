@@ -26,7 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    {}
+    ingredientMaterials: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -36,10 +36,10 @@
   Attachments:
     []
   DefaultScriptInputs:
-    -
-      {}
+    - ingredientMaterials: !<reference.Material[]>
+        []
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - "// @input Asset.Material[] ingredientMaterials"

@@ -27,7 +27,6 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     camera: false
-    chefPlayerInfo: false
     chefRecipeCheckButton: false
     enableHeadFollow: false
     gameStartButton: false
@@ -44,7 +43,6 @@
     - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
       ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      chefPlayerInfo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefRecipeCheckButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       enableHeadFollow: true
   ScriptTypes:
@@ -54,6 +52,5 @@
     - // @input Component.Camera camera
     - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
-    - // @input SceneObject chefPlayerInfo
     - // @input SceneObject chefRecipeCheckButton
     - // @input bool enableHeadFollow = true
