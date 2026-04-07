@@ -42,9 +42,10 @@ export class GameManager extends BaseScriptComponent {
         {
             print("Chef subscribed");
             this.amITheChef();
-
+            print("Current Chef will change")
             // Spawn chef instructions with the recipe info
             if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
+                print("Nellie wants print statements that say i am the chef as she stands here and tells me everything to type")
                 EventManager.SpawnChefInstructions.trigger(this.currentRecipeIngredientInfo || [])
             }
         })
@@ -180,7 +181,7 @@ export class GameManager extends BaseScriptComponent {
         
         if (this.starterRecipeComplete.currentOrPendingValue == false) {
             recipeName = "StarterRecipe";
-            this.starterRecipeComplete.setPendingValue(true);
+            
         }
         print("Selected recipe: " + recipeName);
 
@@ -270,6 +271,7 @@ export class GameManager extends BaseScriptComponent {
     public gameStartButtonReset() {
         this.gameStartButton.enabled = true;
         this.chefSelected.setPendingValue(false);
+        this.currentChef.setPendingValue("");
     }
 
     private isTheSoupRightDemo()
@@ -280,7 +282,7 @@ export class GameManager extends BaseScriptComponent {
         // Quick fail: different lengths cannot match exactly
         if (pot.length != this.currentRecipeIngredientInfo.length)
         {
-            print(`${pot.length}: pot length and Recipe length is: ${this.currentRecipeIngredientInfo.length}`)
+            
             EventManager.PlayerVictoryLocalEvent.trigger(false)
             return false
         }
@@ -303,7 +305,7 @@ export class GameManager extends BaseScriptComponent {
         }
 
         print("Soup check passed.");
-        
+        this.starterRecipeComplete.setPendingValue(true);
         EventManager.PlayerVictoryLocalEvent.trigger(true)
         return true;
     }
