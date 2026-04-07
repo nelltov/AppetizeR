@@ -6,6 +6,7 @@ import { EventManager } from "./EventManager";
 import { ourRecipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { distributeIngredients } from "./Ingredients/IngredientDistribution";
+import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 
 @component
 export class GameManager extends BaseScriptComponent {
@@ -14,7 +15,6 @@ export class GameManager extends BaseScriptComponent {
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
-    private myID : string;
 
     @input
     camera: Camera
@@ -26,21 +26,13 @@ export class GameManager extends BaseScriptComponent {
     public gameStartButton : SceneObject
 
     @input
-    chefPlayerInfo : SceneObject
-
-    @input
-    chefRecipeCheckButton : SceneObject
-
-    @input
     enableHeadFollow: boolean = true
 
-    private currentIngredientInfoPosition : number = 0
     private followingHead : boolean = true
     private readonly headOffset : vec3 = new vec3(0, 0, -60)
     
     private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
-    private nonChefPlateIndex: number = -1
 
     onReady()
     {
@@ -50,9 +42,9 @@ export class GameManager extends BaseScriptComponent {
             print("Chef subscribed");
             this.amITheChef();
 
-            // Disable the chef's plate
+            // Spawn chef instructions with the recipe info
             if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
-                EventManager.DisableChefPlate.trigger()
+                EventManager.SpawnChefInstructions.trigger(this.currentRecipeIngredientInfo || [])
             }
         })
 
@@ -64,15 +56,11 @@ export class GameManager extends BaseScriptComponent {
 
         this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
 
-        // for ( let i=0; i<this.unUsedRecipesArray.length; i++)
-        // {
-        //     this.networkedUnusedRecipesArray[i].setPendingValue(ourRecipes.0)
-        //     print(this.networkedUnusedRecipesArray[i].currentOrPendingValue)
-        // }
         print(this.networkedUnusedRecipesArray.currentOrPendingValue[0]);
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
+        // TODO: make these event bindings into helper functions
         // Instantiate plates for each non-chef player
         this.syncEntity.onEventReceived.add("distributeNonChefIngredients", (messageInfo) => {
             const data = messageInfo.data as { connectionId: string, ingredientsList : number[] }
@@ -83,15 +71,35 @@ export class GameManager extends BaseScriptComponent {
             }
         })
 
+        /* Sync events for recipe UI progression */
+        EventManager.NextInstructionLocalEvent.add(() => {
+            this.syncEntity.sendEvent("nextInstruction", {})
+        })
+
+        this.syncEntity.onEventReceived.add("nextInstruction", () => {
+            EventManager.NextInstructionNetworkEvent.trigger()
+        })
+
+        EventManager.CheckSoupLocalEvent.add(() => {
+            // TODO: actually check the soup on this event too (after removing placeholder buttons)
+            this.syncEntity.sendEvent("checkSoup", {})
+        })
+
+        this.syncEntity.onEventReceived.add("checkSoup", () => {
+            EventManager.CheckSoupNetworkEvent.trigger()
+        })
+
+        /* End of game events */
         // Ensuring all players hear the networked event
-        this.syncEntity.onEventReceived.add('heardVictoryCondition', () => {
-            EventManager.PlayerVictoryNetworkEvent.trigger(true)
+        this.syncEntity.onEventReceived.add('heardVictoryCondition', (messageInfo) => {
+            const data = messageInfo.data as { isVictory: boolean }
+            EventManager.PlayerVictoryNetworkEvent.trigger(data.isVictory)
         })
 
         // One person triggering local event propagates event to all other devices
-        EventManager.PlayerVictoryLocalEvent.add(() =>
+        EventManager.PlayerVictoryLocalEvent.add((isVictory: boolean) =>
         {
-            this.syncEntity.sendEvent('heardVictoryCondition')
+            this.syncEntity.sendEvent('heardVictoryCondition', { isVictory: isVictory })
         })
 
         this.syncEntity.onEventReceived.add('heardResetCondition', () => {
@@ -216,27 +224,23 @@ export class GameManager extends BaseScriptComponent {
         print("Picked chef connectionId = " + chefId);
     }
 
+
+    // Phasing this out, won't be needed for the refactored game start
     private amITheChef()
     {   
         // Get my own ID
-        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+        // this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
 
         // Turn off game start locally
         if (this.chefSelected.currentOrPendingValue !== true) return;
         this.gameStartButton.enabled = false;
 
         // If myID is same as chef I am the chef so I should turn on this local object
-        if (this.myID === this.currentChef.currentOrPendingValue) {
-            this.chefPlayerInfo.enabled = true;
-            this.chefRecipeCheckButton.enabled = true;
-            this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
-            print(this.myID + " Should turn on the Chef Info")
-        }
-        // else {  // non-chef player: try to enable corresponding plate based on assigned index
-        //     if (this.nonChefPlateIndex >= 0 && this.nonChefPlateIndex < this.chefPlateObjects.length) {
-        //         this.chefPlateObjects[this.nonChefPlateIndex].enabled = true;
-        //         print(this.myID + " Should turn on plate " + this.nonChefPlateIndex)
-        //     }
+        // if (this.myID === this.currentChef.currentOrPendingValue) {
+        //     this.chefPlayerInfo.enabled = true;
+        //     this.chefRecipeCheckButton.enabled = true;
+        //     this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
+        //     print(this.myID + " Should turn on the Chef Info")
         // }
     }
 
@@ -253,16 +257,18 @@ export class GameManager extends BaseScriptComponent {
 
     private nextChefIngredient()
     {
-        if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
-        {
-            this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
-            this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
-            return;
-        }
+
+        // Old implementation
+        // if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
+        // {
+        //     this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
+        //     this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
+        //     return;
+        // }
         
-        const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
-        this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
-        this.currentIngredientInfoPosition++;
+        // const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
+        // this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
+        // this.currentIngredientInfoPosition++;
     }
 
     private isTheSoupRightDemo()
@@ -274,6 +280,7 @@ export class GameManager extends BaseScriptComponent {
         if (pot.length != this.currentRecipeIngredientInfo.length)
         {
             print(`${pot.length}: pot length and Recipe length is: ${this.currentRecipeIngredientInfo.length}`)
+            EventManager.PlayerVictoryLocalEvent.trigger(false)
             return false
         }
 
@@ -289,13 +296,14 @@ export class GameManager extends BaseScriptComponent {
             if (!matches)
             {
                 print(`Soup check failed for ${this.currentRecipeIngredientInfo} at index ${i} pot=(${potIng}) expected=(${expected.ingredient})`)
+                EventManager.PlayerVictoryLocalEvent.trigger(false)
                 return false
             }
         }
 
         print("Soup check passed.");
         
-        EventManager.PlayerVictoryLocalEvent.trigger(true);
+        EventManager.PlayerVictoryLocalEvent.trigger(true)
         return true;
     }
 

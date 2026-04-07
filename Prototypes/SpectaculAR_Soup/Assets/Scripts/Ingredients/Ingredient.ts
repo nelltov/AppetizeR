@@ -11,7 +11,7 @@ export enum IngredientType {
     Noodles = 9,
     Onion = 10,
     Potato = 11,
-    // Ramen = 12,
+    // Pasta = 12,
     Spinach = 13,
     Tofu = 14,
     Tomato = 15,
@@ -30,6 +30,14 @@ export class IngredientInfo {
     public isSameIngredient(other: IngredientInfo): boolean {
         return this.ingredient === other.ingredient
     }
+
+    public getIngredientType(): IngredientType {
+        return this.ingredient
+    }
+
+    public getIngredientName(): string {
+        return this.variantName
+    }
 }
 
 @component
@@ -46,9 +54,5 @@ export class Ingredient extends BaseScriptComponent {
     // Returns the ingredientInfo object (initializing it if not yet created)
     public getIngredientInfo(): IngredientInfo {
         return this.ingredientInfo
-    }
-
-    protected getVariantName(): string {
-        return this.getIngredientInfo().variantName
     }
 }

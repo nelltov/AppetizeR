@@ -1,10 +1,20 @@
-- !<ObjectPrefab/2d468a27-154f-4e12-8fcf-ed41af6cf164>
-  PackagePath: ""
-  objects:
-    - !<own> ee8ef98d-aa9b-45db-8933-3575ed46cbaf
-  LazyLoading: false
-  RetainAssets: true
-- !<Text/018d9025-6264-4ec0-ab72-af7015becabf>
+- !<AssetImportMetadata/13c5a012-30ab-40f4-9e14-ac61721ca450>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 2d468a27-154f-4e12-8fcf-ed41af6cf164
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 2d468a27-154f-4e12-8fcf-ed41af6cf164
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> b1a0706d-ace4-4e8d-8a16-6d51b1abb4d9
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<Text/018d9025-6264-4ec0-548d-508fea413540>
   PrefabRemaps:
     []
   Name: Text
@@ -85,7 +95,7 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<SceneObject/047a61b3-301f-4258-b107-efde08b6c86f>
+- !<SceneObject/047a61b3-301f-4258-4ef8-1021f7493790>
   PrefabRemaps:
     []
   Name: SoloButton 1
@@ -97,10 +107,10 @@
     Scale: {x: 0.250000, y: 0.250000, z: 0.250000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> d2a6e1ec-cd42-4818-9161-eae492ff735a
+    - !<own> d2a6e1ec-cd42-4818-6e9e-151b6d008ca5
   Components:
-    - !<own> 2034fd58-66a2-43c1-a51d-8b4881447273
-- !<SceneObject/1b494da3-4802-4afc-afd3-203f493fc242>
+    - !<own> 2034fd58-66a2-43c1-5ae2-74b77ebb8d8c
+- !<SceneObject/1b494da3-4802-4afc-502c-dfc0b6c03dbd>
   PrefabRemaps:
     []
   Name: HalvesGameManager
@@ -114,8 +124,8 @@
   Children:
     []
   Components:
-    - !<own> a169f0e5-40a7-49a6-b1fc-7052dfe00796
-- !<ScriptComponent/2034fd58-66a2-43c1-a51d-8b4881447273>
+    - !<own> a169f0e5-40a7-49a6-4e03-8fad201ff869
+- !<ScriptComponent/2034fd58-66a2-43c1-5ae2-74b77ebb8d8c>
   PrefabRemaps:
     []
   Name: RectangleButton
@@ -149,7 +159,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-af8b-534081e2ea2a
+        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-5074-acbf7e1d15d5
           functionName: isTheSoupRightDemo
       onValueChangeCallbacks:
         []
@@ -158,7 +168,7 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/206aabee-1ef6-4407-8d4b-7cfdbbaac323>
+- !<SceneObject/206aabee-1ef6-4407-72b4-830244553cdc>
   PrefabRemaps:
     []
   Name: ChefChooser
@@ -170,10 +180,10 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 29c42c58-0d2f-4b8c-8470-a5518ee7f664
+    - !<own> 29c42c58-0d2f-4b8c-7b8f-5aae7118099b
   Components:
-    - !<own> b023f812-d49f-4147-a1fb-62ad9f830c54
-- !<ScriptComponent/20c3048b-7042-4ebb-9883-f93d782477cd>
+    - !<own> b023f812-d49f-4147-5e04-9d52607cf3ab
+- !<ScriptComponent/20c3048b-7042-4ebb-677c-06c287db8832>
   PrefabRemaps:
     []
   Name: Instantiator
@@ -205,7 +215,7 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/29c42c58-0d2f-4b8c-8470-a5518ee7f664>
+- !<SceneObject/29c42c58-0d2f-4b8c-7b8f-5aae7118099b>
   PrefabRemaps:
     []
   Name: ButtonLabel
@@ -219,8 +229,8 @@
   Children:
     []
   Components:
-    - !<own> 6666421c-7eba-44b1-93c9-78307272ef8e
-- !<ScriptComponent/3bdd233b-e2fc-4d55-9bb6-156838b86d59>
+    - !<own> 6666421c-7eba-44b1-6c36-87cf8d8d1071
+- !<ScriptComponent/3bdd233b-e2fc-4d55-6449-ea97c74792a6>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -278,7 +288,7 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/46c52081-a19e-4817-9543-383b0cba826d>
+- !<ScriptComponent/46c52081-a19e-4817-6abc-c7c4f3457d92>
   PrefabRemaps:
     []
   Name: Interactable
@@ -316,7 +326,7 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/48cfbadb-062d-446c-95b1-7cca1be70013>
+- !<SceneObject/48cfbadb-062d-446c-6a4e-8335e418ffec>
   PrefabRemaps:
     []
   Name: ButtonLabel
@@ -330,8 +340,8 @@
   Children:
     []
   Components:
-    - !<own> 018d9025-6264-4ec0-ab72-af7015becabf
-- !<ScriptComponent/4bb8c180-d270-4122-a3ae-2687ca3bd1d1>
+    - !<own> 018d9025-6264-4ec0-548d-508fea413540
+- !<ScriptComponent/4bb8c180-d270-4122-5c51-d97835c42e2e>
   PrefabRemaps:
     []
   Name: FairPrefabAssigner
@@ -343,7 +353,7 @@
     {}
   ScriptInputs:
     "":
-      instantiator: !<MappingBased.AssignableType> 20c3048b-7042-4ebb-9883-f93d782477cd
+      instantiator: !<MappingBased.AssignableType> 20c3048b-7042-4ebb-677c-06c287db8832
       prefabPool: !<reference.ObjectPrefab[]>
         - !<reference> 04ebf69d-91d9-4a8c-9573-3516f8d3bda4
         - !<reference> b9cae5d5-f147-42aa-8e1e-31d0af7ffc03
@@ -351,7 +361,7 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/50c54d79-6fb8-405a-a87f-4b1e3e379324>
+- !<ScriptComponent/50c54d79-6fb8-405a-5780-b4e1c1c86cdb>
   PrefabRemaps:
     []
   Name: RectangleButton
@@ -385,7 +395,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-af8b-534081e2ea2a
+        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-5074-acbf7e1d15d5
           functionName: nextChefIngredient
       onValueChangeCallbacks:
         []
@@ -394,7 +404,7 @@
   ScriptTypes:
     "":
       {}
-- !<Text/6666421c-7eba-44b1-93c9-78307272ef8e>
+- !<Text/6666421c-7eba-44b1-6c36-87cf8d8d1071>
   PrefabRemaps:
     []
   Name: Text
@@ -475,7 +485,7 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<Text/6cad94e8-8fa8-43d6-82db-12e66455414d>
+- !<Text/6cad94e8-8fa8-43d6-7d24-ed199baabeb2>
   PrefabRemaps:
     []
   Name: Text
@@ -556,7 +566,7 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<SceneObject/6e2ecd86-f40d-455d-8b06-98b7ce27a547>
+- !<SceneObject/6e2ecd86-f40d-455d-74f9-674831d85ab8>
   PrefabRemaps:
     []
   Name: Box
@@ -570,8 +580,8 @@
   Children:
     []
   Components:
-    - !<own> dea3fb84-30d6-4d92-9c6e-2ab2e9e9d5a7
-- !<SceneObject/6fe5cdbf-076a-48b8-8082-33044e0c4307>
+    - !<own> dea3fb84-30d6-4d92-6391-d54d16162a58
+- !<SceneObject/6fe5cdbf-076a-48b8-7f7d-ccfbb1f3bcf8>
   PrefabRemaps:
     []
   Name: ChefInstruction
@@ -583,14 +593,14 @@
     Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 047a61b3-301f-4258-b107-efde08b6c86f
-    - !<own> df279153-58e3-4f84-a0eb-79dc0fbf2d8a
-    - !<own> 6e2ecd86-f40d-455d-8b06-98b7ce27a547
+    - !<own> 047a61b3-301f-4258-4ef8-1021f7493790
+    - !<own> df279153-58e3-4f84-5f14-8623f040d275
+    - !<own> 6e2ecd86-f40d-455d-74f9-674831d85ab8
   Components:
-    - !<own> d690d853-45b9-4346-967b-ec8e684d55e8
-    - !<own> 46c52081-a19e-4817-9543-383b0cba826d
-    - !<own> 3bdd233b-e2fc-4d55-9bb6-156838b86d59
-- !<ScriptComponent/789937d6-af55-453c-af8b-534081e2ea2a>
+    - !<own> d690d853-45b9-4346-6984-137197b2aa17
+    - !<own> 46c52081-a19e-4817-6abc-c7c4f3457d92
+    - !<own> 3bdd233b-e2fc-4d55-6449-ea97c74792a6
+- !<ScriptComponent/789937d6-af55-453c-5074-acbf7e1d15d5>
   PrefabRemaps:
     []
   Name: GameManager
@@ -603,15 +613,13 @@
   ScriptInputs:
     "":
       camera: !<reference.Camera> 00000000-0000-0065-0000-000000000065
-      ingManager: !<MappingBased.AssignableType> f4fbcb27-a02a-40b6-9f25-8e4d71eb0f2a
-      gameStartButton: !<reference.SceneObject> 206aabee-1ef6-4407-8d4b-7cfdbbaac323
-      chefPlayerInfo: !<reference.SceneObject> 6fe5cdbf-076a-48b8-8082-33044e0c4307
-      chefRecipeCheckButton: !<reference.SceneObject> 047a61b3-301f-4258-b107-efde08b6c86f
+      ingManager: !<MappingBased.AssignableType> f4fbcb27-a02a-40b6-60da-71b28e14f0d5
+      gameStartButton: !<reference.SceneObject> 206aabee-1ef6-4407-72b4-830244553cdc
       enableHeadFollow: true
   ScriptTypes:
     "":
       {}
-- !<SceneObject/83357809-9362-4f79-9b2c-f6b45e17b1bf>
+- !<SceneObject/83357809-9362-4f79-64d3-094ba1e84e40>
   PrefabRemaps:
     []
   Name: FairPrefabAssigner
@@ -625,8 +633,8 @@
   Children:
     []
   Components:
-    - !<own> 4bb8c180-d270-4122-a3ae-2687ca3bd1d1
-- !<SceneObject/8aa85bcf-6259-4da2-a9fb-ce8f2cf6bf68>
+    - !<own> 4bb8c180-d270-4122-5c51-d97835c42e2e
+- !<SceneObject/8aa85bcf-6259-4da2-5604-3170d3094097>
   PrefabRemaps:
     []
   Name: IngredientManager
@@ -640,8 +648,8 @@
   Children:
     []
   Components:
-    - !<own> f4fbcb27-a02a-40b6-9f25-8e4d71eb0f2a
-- !<SceneObject/8f91e933-4240-44ca-a305-b2839d809ca4>
+    - !<own> f4fbcb27-a02a-40b6-60da-71b28e14f0d5
+- !<SceneObject/8f91e933-4240-44ca-5cfa-4d7c627f635b>
   PrefabRemaps:
     []
   Name: GameManager
@@ -655,8 +663,8 @@
   Children:
     []
   Components:
-    - !<own> 789937d6-af55-453c-af8b-534081e2ea2a
-- !<SceneObject/9a276c6b-e31b-4522-ba39-0a8a2b055963>
+    - !<own> 789937d6-af55-453c-5074-acbf7e1d15d5
+- !<SceneObject/9a276c6b-e31b-4522-45c6-f575d4faa69c>
   PrefabRemaps:
     []
   Name: Instantiator
@@ -670,8 +678,8 @@
   Children:
     []
   Components:
-    - !<own> 20c3048b-7042-4ebb-9883-f93d782477cd
-- !<ScriptComponent/a169f0e5-40a7-49a6-b1fc-7052dfe00796>
+    - !<own> 20c3048b-7042-4ebb-677c-06c287db8832
+- !<ScriptComponent/a169f0e5-40a7-49a6-4e03-8fad201ff869>
   PrefabRemaps:
     []
   Name: HalvesGameManager
@@ -683,14 +691,14 @@
     {}
   ScriptInputs:
     "":
-      instantiator: !<MappingBased.AssignableType> 20c3048b-7042-4ebb-9883-f93d782477cd
+      instantiator: !<MappingBased.AssignableType> 20c3048b-7042-4ebb-677c-06c287db8832
       ingredientsPrefab: !<reference.ObjectPrefab[]>
         - !<reference> 04ebf69d-91d9-4a8c-9573-3516f8d3bda4
         - !<reference> b9cae5d5-f147-42aa-8e1e-31d0af7ffc03
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/b023f812-d49f-4147-a1fb-62ad9f830c54>
+- !<ScriptComponent/b023f812-d49f-4147-5e04-9d52607cf3ab>
   PrefabRemaps:
     []
   Name: RectangleButton
@@ -724,7 +732,7 @@
       triggerUpCallbacks:
         []
       triggerDownCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-af8b-534081e2ea2a
+        - scriptComponent: !<reference.ScriptComponent> 789937d6-af55-453c-5074-acbf7e1d15d5
           functionName: RandomizePlayerRoles
       onValueChangeCallbacks:
         []
@@ -733,7 +741,12 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/d2a6e1ec-cd42-4818-9161-eae492ff735a>
+- !<ObjectPrefabAssetData/b1a0706d-ace4-4e8d-8a16-6d51b1abb4d9>
+  Prototype: !<ObjectOwner/9678d7c1-5e61-4a50-b267-781f199dbd8c>
+    PackagePath: ""
+    objects:
+      - !<own> ee8ef98d-aa9b-45db-76cc-ca8a12b93450
+- !<SceneObject/d2a6e1ec-cd42-4818-6e9e-151b6d008ca5>
   PrefabRemaps:
     []
   Name: ButtonLabel
@@ -747,8 +760,8 @@
   Children:
     []
   Components:
-    - !<own> 6cad94e8-8fa8-43d6-82db-12e66455414d
-- !<Text/d690d853-45b9-4346-967b-ec8e684d55e8>
+    - !<own> 6cad94e8-8fa8-43d6-7d24-ed199baabeb2
+- !<Text/d690d853-45b9-4346-6984-137197b2aa17>
   PrefabRemaps:
     []
   Name: Text
@@ -835,7 +848,7 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<RenderMeshVisual/dea3fb84-30d6-4d92-9c6e-2ab2e9e9d5a7>
+- !<RenderMeshVisual/dea3fb84-30d6-4d92-6391-d54d16162a58>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -855,7 +868,7 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/df279153-58e3-4f84-a0eb-79dc0fbf2d8a>
+- !<SceneObject/df279153-58e3-4f84-5f14-8623f040d275>
   PrefabRemaps:
     []
   Name: SoloButton 2
@@ -867,40 +880,12 @@
     Scale: {x: 0.250000, y: 0.250000, z: 0.250000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 48cfbadb-062d-446c-95b1-7cca1be70013
+    - !<own> 48cfbadb-062d-446c-6a4e-8335e418ffec
   Components:
-    - !<own> 50c54d79-6fb8-405a-a87f-4b1e3e379324
-- !<SceneObject/ee8ef98d-aa9b-45db-8933-3575ed46cbaf>
+    - !<own> 50c54d79-6fb8-405a-5780-b4e1c1c86cdb
+- !<SceneObject/ee8ef98d-aa9b-45db-76cc-ca8a12b93450>
   PrefabRemaps:
-    - 018d9025-6264-4ec0-ab72-af7015becabf: 018d9025-6264-4ec0-548d-508fea413540
-    - 047a61b3-301f-4258-b107-efde08b6c86f: 047a61b3-301f-4258-4ef8-1021f7493790
-    - 1b494da3-4802-4afc-afd3-203f493fc242: 1b494da3-4802-4afc-502c-dfc0b6c03dbd
-    - 2034fd58-66a2-43c1-a51d-8b4881447273: 2034fd58-66a2-43c1-5ae2-74b77ebb8d8c
-    - 206aabee-1ef6-4407-8d4b-7cfdbbaac323: 206aabee-1ef6-4407-72b4-830244553cdc
-    - 20c3048b-7042-4ebb-9883-f93d782477cd: 20c3048b-7042-4ebb-677c-06c287db8832
-    - 29c42c58-0d2f-4b8c-8470-a5518ee7f664: 29c42c58-0d2f-4b8c-7b8f-5aae7118099b
-    - 3bdd233b-e2fc-4d55-9bb6-156838b86d59: 3bdd233b-e2fc-4d55-6449-ea97c74792a6
-    - 46c52081-a19e-4817-9543-383b0cba826d: 46c52081-a19e-4817-6abc-c7c4f3457d92
-    - 48cfbadb-062d-446c-95b1-7cca1be70013: 48cfbadb-062d-446c-6a4e-8335e418ffec
-    - 4bb8c180-d270-4122-a3ae-2687ca3bd1d1: 4bb8c180-d270-4122-5c51-d97835c42e2e
-    - 50c54d79-6fb8-405a-a87f-4b1e3e379324: 50c54d79-6fb8-405a-5780-b4e1c1c86cdb
-    - 6666421c-7eba-44b1-93c9-78307272ef8e: 6666421c-7eba-44b1-6c36-87cf8d8d1071
-    - 6cad94e8-8fa8-43d6-82db-12e66455414d: 6cad94e8-8fa8-43d6-7d24-ed199baabeb2
-    - 6e2ecd86-f40d-455d-8b06-98b7ce27a547: 6e2ecd86-f40d-455d-74f9-674831d85ab8
-    - 6fe5cdbf-076a-48b8-8082-33044e0c4307: 6fe5cdbf-076a-48b8-7f7d-ccfbb1f3bcf8
-    - 789937d6-af55-453c-af8b-534081e2ea2a: 789937d6-af55-453c-5074-acbf7e1d15d5
-    - 83357809-9362-4f79-9b2c-f6b45e17b1bf: 83357809-9362-4f79-64d3-094ba1e84e40
-    - 8aa85bcf-6259-4da2-a9fb-ce8f2cf6bf68: 8aa85bcf-6259-4da2-5604-3170d3094097
-    - 8f91e933-4240-44ca-a305-b2839d809ca4: 8f91e933-4240-44ca-5cfa-4d7c627f635b
-    - 9a276c6b-e31b-4522-ba39-0a8a2b055963: 9a276c6b-e31b-4522-45c6-f575d4faa69c
-    - a169f0e5-40a7-49a6-b1fc-7052dfe00796: a169f0e5-40a7-49a6-4e03-8fad201ff869
-    - b023f812-d49f-4147-a1fb-62ad9f830c54: b023f812-d49f-4147-5e04-9d52607cf3ab
-    - d2a6e1ec-cd42-4818-9161-eae492ff735a: d2a6e1ec-cd42-4818-6e9e-151b6d008ca5
-    - d690d853-45b9-4346-967b-ec8e684d55e8: d690d853-45b9-4346-6984-137197b2aa17
-    - dea3fb84-30d6-4d92-9c6e-2ab2e9e9d5a7: dea3fb84-30d6-4d92-6391-d54d16162a58
-    - df279153-58e3-4f84-a0eb-79dc0fbf2d8a: df279153-58e3-4f84-5f14-8623f040d275
-    - ee8ef98d-aa9b-45db-8933-3575ed46cbaf: ee8ef98d-aa9b-45db-76cc-ca8a12b93450
-    - f4fbcb27-a02a-40b6-9f25-8e4d71eb0f2a: f4fbcb27-a02a-40b6-60da-71b28e14f0d5
+    []
   Name: InstantiatorAttempt
   Enabled: true
   Layers: 1
@@ -910,16 +895,16 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 1b494da3-4802-4afc-afd3-203f493fc242
-    - !<own> 8f91e933-4240-44ca-a305-b2839d809ca4
-    - !<own> 83357809-9362-4f79-9b2c-f6b45e17b1bf
-    - !<own> 9a276c6b-e31b-4522-ba39-0a8a2b055963
-    - !<own> 8aa85bcf-6259-4da2-a9fb-ce8f2cf6bf68
-    - !<own> 6fe5cdbf-076a-48b8-8082-33044e0c4307
-    - !<own> 206aabee-1ef6-4407-8d4b-7cfdbbaac323
+    - !<own> 1b494da3-4802-4afc-502c-dfc0b6c03dbd
+    - !<own> 8f91e933-4240-44ca-5cfa-4d7c627f635b
+    - !<own> 83357809-9362-4f79-64d3-094ba1e84e40
+    - !<own> 9a276c6b-e31b-4522-45c6-f575d4faa69c
+    - !<own> 8aa85bcf-6259-4da2-5604-3170d3094097
+    - !<own> 6fe5cdbf-076a-48b8-7f7d-ccfbb1f3bcf8
+    - !<own> 206aabee-1ef6-4407-72b4-830244553cdc
   Components:
     []
-- !<ScriptComponent/f4fbcb27-a02a-40b6-9f25-8e4d71eb0f2a>
+- !<ScriptComponent/f4fbcb27-a02a-40b6-60da-71b28e14f0d5>
   PrefabRemaps:
     []
   Name: IngredientManager

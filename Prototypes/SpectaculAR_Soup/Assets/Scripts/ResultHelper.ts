@@ -12,9 +12,14 @@ export class ResultHelper extends BaseScriptComponent {
         const visualEffect = this.sceneObject.getComponent("Component.RenderMeshVisual");
         if(visualEffect == null) print("didntfindRenderMatForResultObject");
 
-        EventManager.PlayerVictoryNetworkEvent.add(() => {
-            print("GM heard the Event Manager call for a victory");
-            visualEffect.enabled = true;
+        EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
+            if (isVictory) {
+                print("GM heard the Event Manager call for a victory");
+                visualEffect.enabled = true;
+            } else {
+                print("GM heard the Event Manager call for a loss");
+                // TODO: loss object
+            }
         })
     }
 }

@@ -101,17 +101,19 @@
 - !<ScriptComponent/2dde428a-2828-4f7e-91fb-4cc252b2f306>
   PrefabRemaps:
     []
-  Name: PlayerIngredientManager
+  Name: PlayerPersonalObjectsManager
   Enabled: true
   ScriptAsset: !<reference> 517a040c-53bc-4241-a7c5-c2b56585ea27
   ScriptInputsDefault:
-    {}
+    nonChefDecorObjects: true
+    chefDecorObjects: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
-      visibleObject: !<reference.SceneObject> 9e568c77-bdc2-4b01-80c0-eea0cab9fd42
+      nonChefDecorObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      chefDecorObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       instructionObject: !<reference.SceneObject> 824b0eb0-1ec1-4e8e-b87b-f77de62e1c78
       ingredientPositionsObject: !<reference.SceneObject> bd1677c6-e8f5-47fa-857f-e12c9f17e5d5
       ingredientPrefabList: !<reference.ObjectPrefab[]>
