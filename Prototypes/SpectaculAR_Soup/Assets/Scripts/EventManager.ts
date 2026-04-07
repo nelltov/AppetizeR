@@ -14,9 +14,8 @@ export class EventManager extends BaseScriptComponent {
 
     // Game States
     static CenterPositionSetLocal = new EventWrapper<[vec3]>()
-    static ChefSelectedEvent = new EventWrapper<boolean[]>()
-    static PlayerVictoryNetworkEvent = new EventWrapper()
-    static PlayerVictoryLocalEvent = new EventWrapper()
+    static PlayerVictoryNetworkEvent = new EventWrapper<[boolean]>()
+    static PlayerVictoryLocalEvent = new EventWrapper<[boolean]>()
     static ResetGameNetworkEvent = new EventWrapper()
 
     // Shader

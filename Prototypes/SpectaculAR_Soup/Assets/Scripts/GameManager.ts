@@ -73,14 +73,15 @@ export class GameManager extends BaseScriptComponent {
         })
 
         // Ensuring all players hear the networked event
-        this.syncEntity.onEventReceived.add('heardVictoryCondition', () => {
-            EventManager.PlayerVictoryNetworkEvent.trigger(true)
+        this.syncEntity.onEventReceived.add('heardVictoryCondition', (messageInfo) => {
+            const data = messageInfo.data as { isVictory: boolean }
+            EventManager.PlayerVictoryNetworkEvent.trigger(data.isVictory)
         })
 
         // One person triggering local event propagates event to all other devices
-        EventManager.PlayerVictoryLocalEvent.add(() =>
+        EventManager.PlayerVictoryLocalEvent.add((isVictory: boolean) =>
         {
-            this.syncEntity.sendEvent('heardVictoryCondition')
+            this.syncEntity.sendEvent('heardVictoryCondition', { isVictory: isVictory })
         })
 
         this.syncEntity.onEventReceived.add('heardResetCondition', () => {
@@ -261,6 +262,7 @@ export class GameManager extends BaseScriptComponent {
         if (pot.length != this.currentRecipeIngredientInfo.length)
         {
             print(`${pot.length}: pot length and Recipe length is: ${this.currentRecipeIngredientInfo.length}`)
+            EventManager.PlayerVictoryLocalEvent.trigger(false)
             return false
         }
 
@@ -276,13 +278,14 @@ export class GameManager extends BaseScriptComponent {
             if (!matches)
             {
                 print(`Soup check failed for ${this.currentRecipeIngredientInfo} at index ${i} pot=(${potIng}) expected=(${expected.ingredient})`)
+                EventManager.PlayerVictoryLocalEvent.trigger(false)
                 return false
             }
         }
 
         print("Soup check passed.");
         
-        EventManager.PlayerVictoryLocalEvent.trigger(true);
+        EventManager.PlayerVictoryLocalEvent.trigger(true)
         return true;
     }
 

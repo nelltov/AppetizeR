@@ -442,6 +442,25 @@
     - !<own> fe60ba3e-de96-4ff0-a6cc-e5a5a4e10d9e
   Components:
     []
+- !<Image/2994b15c-734f-4ff6-9614-784729a755e2>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fill
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> e080727b-2790-47b8-82c4-7263c36f8fc0
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<RenderMeshVisual/2d9a74fa-2851-4e50-a353-bd4193c41d9b>
   PrefabRemaps:
     []
@@ -586,7 +605,7 @@
   PrefabRemaps:
     []
   Name: Ingredients
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -594,11 +613,8 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> ac28943d-ce66-43d6-b295-69c9bb643a3a
-    - !<own> 17a3a1f5-9b1f-4c11-b310-9f8617b095f7
-    - !<own> 1f520f86-45c0-47ea-a955-fc83219f4127
-    - !<own> 1681571b-5951-4396-85f9-187bafe892b9
-    - !<own> ada81696-a3f0-4bb6-b848-a1cef0272ed7
+    - !<own> c96e2284-1dc7-49a6-9276-903295dd4059
+    - !<own> b55b46a5-1995-474b-a76d-f745a34cc5e9
   Components:
     []
 - !<SceneObject/486e2170-25c9-48e6-9092-02d8b48298ad>
@@ -620,7 +636,7 @@
   PrefabRemaps:
     []
   Name: SoupCheck
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -752,7 +768,7 @@
   PrefabRemaps:
     []
   Name: soup_check
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1037,6 +1053,21 @@
     - !<own> c7c534db-8a08-4bc1-877a-4d0fd35a5906
   Components:
     []
+- !<SceneObject/80005cd8-8721-474f-891d-d873c53de9e6>
+  PrefabRemaps:
+    []
+  Name: apprentice_instructions
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 22.799999, y: 12.479999, z: 12.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 2994b15c-734f-4ff6-9614-784729a755e2
 - !<SceneObject/8034200a-4f08-4790-bd5c-6139755b12bf>
   PrefabRemaps:
     []
@@ -1716,6 +1747,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/b55b46a5-1995-474b-a76d-f745a34cc5e9>
+  PrefabRemaps:
+    []
+  Name: CurrentIngredient
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ac28943d-ce66-43d6-b295-69c9bb643a3a
+    - !<own> 17a3a1f5-9b1f-4c11-b310-9f8617b095f7
+    - !<own> 1f520f86-45c0-47ea-a955-fc83219f4127
+    - !<own> 1681571b-5951-4396-85f9-187bafe892b9
+    - !<own> ada81696-a3f0-4bb6-b848-a1cef0272ed7
+  Components:
+    []
 - !<SceneObject/b726ed97-6e6e-4196-a3a4-8b3ea48e57fa>
   PrefabRemaps:
     []
@@ -1923,6 +1973,21 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/c96e2284-1dc7-49a6-9276-903295dd4059>
+  PrefabRemaps:
+    []
+  Name: ApprenticeInstructions
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 80005cd8-8721-474f-891d-d873c53de9e6
+  Components:
+    []
 - !<SceneObject/c9d71b79-0261-4198-b71b-d478ca103669>
   PrefabRemaps:
     []
@@ -2132,6 +2197,7 @@
     - 264763cb-cb04-46da-9cbb-8453d252d762: 264763cb-cb04-46da-6344-7bac2dad289d
     - 27c9f0ed-7980-4560-94f6-202e8e14b579: 27c9f0ed-7980-4560-6b09-dfd171eb4a86
     - 28a905c1-b2c3-4619-8229-9c6256a4db5e: 28a905c1-b2c3-4619-7dd6-639da95b24a1
+    - 2994b15c-734f-4ff6-9614-784729a755e2: a6b624de-a0db-46c0-b64b-01b295b1c1b5
     - 2d9a74fa-2851-4e50-a353-bd4193c41d9b: 2d9a74fa-2851-4e50-5cac-42be6c3be264
     - 3100c43b-da25-4800-8c89-fe466462e1ec: 3100c43b-da25-4800-7376-01b99b9d1e13
     - 3194e1c1-b549-475f-b1da-7abe8eb246d1: be96c0c3-ee2f-4973-bdbe-b6d17ac83a5e
@@ -2164,6 +2230,7 @@
     - 78bb68d2-5560-4c12-be01-1acdaebdd8b8: 78bb68d2-5560-4c12-41fe-e53251422747
     - 7f862e4e-512e-4e41-a024-4b073cd82c64: 7f862e4e-512e-4e41-5fdb-b4f8c327d39b
     - 7fe77e98-6f6c-42cf-a566-2bba16e5ef03: 2edccbf7-4e08-40a9-af14-f8de9935e912
+    - 80005cd8-8721-474f-891d-d873c53de9e6: b47f991f-b3cb-4fc3-8b3b-f06559a31fb0
     - 8034200a-4f08-4790-bd5c-6139755b12bf: 8034200a-4f08-4790-42a3-9ec68aa4ed40
     - 8057101c-6365-49da-9160-d3250b1ddae4: 8057101c-6365-49da-6e9f-2cdaf4e2251b
     - 80ed3adf-4f29-4b18-8863-90b441487d8a: 80ed3adf-4f29-4b18-779c-6f4bbeb78275
@@ -2194,6 +2261,7 @@
     - ada81696-a3f0-4bb6-b848-a1cef0272ed7: 0589d49d-67c1-4afe-b6f5-8afb5b9cee2c
     - b41bc3c1-87e7-4942-9454-c071a811f5f0: b41bc3c1-87e7-4942-6bab-3f8e57ee0a0f
     - b49b765e-dd2a-43c9-8e1c-ff2d6ed4abc0: b49b765e-dd2a-43c9-71e3-00d2912b543f
+    - b55b46a5-1995-474b-a76d-f745a34cc5e9: c99be7e1-7425-4f67-a4e2-de94bda50161
     - b726ed97-6e6e-4196-a3a4-8b3ea48e57fa: b726ed97-6e6e-4196-5c5b-74c15b71a805
     - b9d4808a-cb10-418c-88fb-cb5388b29c96: b9d4808a-cb10-418c-7704-34ac774d6369
     - ba627759-7bb4-446f-9867-f9d6ff6006a0: ba627759-7bb4-446f-6798-0629009ff95f
@@ -2201,6 +2269,7 @@
     - c5ef8218-25d8-4664-9fb7-d75976113ea8: c5ef8218-25d8-4664-6048-28a689eec157
     - c7c534db-8a08-4bc1-877a-4d0fd35a5906: fd5d349a-f60a-4b6f-8eed-a7b93f7c49b3
     - c85e5480-e392-4459-879c-b072956d07f4: a2461fd4-2687-42d0-a37b-fbeddf17a916
+    - c96e2284-1dc7-49a6-9276-903295dd4059: a413b569-d876-4a73-ac16-7344fd5cc89a
     - c9d71b79-0261-4198-b71b-d478ca103669: c9d71b79-0261-4198-48e4-2b8735efc996
     - d0c9907c-b80f-4c59-a155-aaaa46dccf86: 0d332d14-4933-41ee-8816-013e7bf2a302
     - d58dba15-f3f6-4931-8cc9-8ffbcd17460e: d58dba15-f3f6-4931-7336-700432e8b9f1
