@@ -2,7 +2,9 @@ import { EventManager } from "./EventManager";
 
 @component
 export class ResultHelper extends BaseScriptComponent {
-  
+  @input
+  winObject!: SceneObject | null;
+
     onAwake(): void {
         let startEvent = this.createEvent("OnStartEvent")
         startEvent.bind(() => { this.onStart() })
@@ -15,6 +17,9 @@ export class ResultHelper extends BaseScriptComponent {
         EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
             if (isVictory) {
                 print("GM heard the Event Manager call for a victory");
+                if (this.winObject?.enabled == false){
+                    this.winObject.enabled = true;
+                }
                 visualEffect.enabled = true;
             } else {
                 print("GM heard the Event Manager call for a loss");
@@ -24,6 +29,7 @@ export class ResultHelper extends BaseScriptComponent {
 
         EventManager.ResetGameNetworkEvent.add(() => {
             visualEffect.enabled = false;
+            this.winObject.enabled = false;
         })
     }
 }
