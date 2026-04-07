@@ -35,15 +35,27 @@ export class InstructionManager extends BaseScriptComponent {
 
         // Update UI on all clients whenever the instruction index changes
         this.currentInstruction.onAnyChange.add((value) => {
-            if (value >= this.instructionImages.length)
+            if (value >= this.instructionArray.length)
             {
                 this.saltShakerObject.enabled = false;
                 this.gameRootObject.enabled = true;
                 return;
             }
             
-            this.instructionImageHolderObject.getComponent("Image").mainPass.baseTex = this.instructionImages[value];
-            this.instructionStringHolderObject.getComponent("Text").text= this.instructionArray[value]
+            if (value < this.instructionArray.length)
+            {
+                
+                this.instructionStringHolderObject.getComponent("Text").text= this.instructionArray[value]
+                return;
+            }
+
+            if (value < this.instructionImages.length)
+            {
+                this.instructionImageHolderObject.getComponent("Image").mainPass.baseTex = this.instructionImages[value];
+                
+                return;
+            }
+            
             
         })
     }

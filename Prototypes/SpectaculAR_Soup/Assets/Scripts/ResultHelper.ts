@@ -21,5 +21,9 @@ export class ResultHelper extends BaseScriptComponent {
                 // TODO: loss object
             }
         })
+
+                EventManager.ResetGameNetworkEvent.add(() => {
+            visualEffect.enabled = false;
+        })
     }
 }
