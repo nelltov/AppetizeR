@@ -25,9 +25,6 @@ export class GameManager extends BaseScriptComponent {
     public gameStartButton : SceneObject
 
     @input
-    chefRecipeCheckButton : SceneObject
-
-    @input
     enableHeadFollow: boolean = true
 
     private followingHead : boolean = true

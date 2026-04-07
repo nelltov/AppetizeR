@@ -38,7 +38,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
-        this.setObjectVisibility(this.chefDecorObjects, false)  // specifically hide on start, otherwise resetting should make them visible
+        this.setObjectVisibility(this.nonChefDecorObjects, false)  // specifically hide on start, otherwise resetting should make them visible
 
         // Bind events
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {

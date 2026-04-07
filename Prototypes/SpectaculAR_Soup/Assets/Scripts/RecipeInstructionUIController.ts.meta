@@ -26,7 +26,17 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    apprenticeInstructions: false
+    chefCheckSoupObject: false
+    chefCoverObject: false
+    ingredientIcon: false
     ingredientMaterials: false
+    ingredientNameTextPanel: false
+    ingredientParentObject: false
+    lossObject: false
+    nonChefCoverObject: false
+    topInstructionTextPanel: false
+    victoryObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,8 +48,28 @@
   DefaultScriptInputs:
     - ingredientMaterials: !<reference.Material[]>
         []
+      chefCoverObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      nonChefCoverObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      apprenticeInstructions: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      ingredientParentObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      topInstructionTextPanel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      ingredientNameTextPanel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      ingredientIcon: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      chefCheckSoupObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      victoryObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      lossObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - "// @input Asset.Material[] ingredientMaterials"
+    - // @input SceneObject chefCoverObject
+    - // @input SceneObject nonChefCoverObject
+    - // @input SceneObject apprenticeInstructions
+    - // @input SceneObject ingredientParentObject
+    - // @input Component.Text topInstructionTextPanel
+    - // @input Component.Text ingredientNameTextPanel
+    - // @input Component.Image ingredientIcon
+    - // @input SceneObject chefCheckSoupObject
+    - // @input SceneObject victoryObject
+    - // @input SceneObject lossObject

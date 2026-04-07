@@ -59,7 +59,7 @@
   PrefabRemaps:
     []
   Name: PlayerPersonalObjectsManager
-  Enabled: false
+  Enabled: true
   ScriptAsset: !<reference> 517a040c-53bc-4241-a7c5-c2b56585ea27
   ScriptInputsDefault:
     {}
@@ -219,7 +219,7 @@
     - !<own> 25126a72-fd65-4b5b-be53-631dca6f3948
     - !<own> c9d71b79-0261-4198-b71b-d478ca103669
   Components:
-    - !<own> 36066344-ee3a-4bf9-a4ed-1eeabc502dfa
+    []
 - !<SceneObject/1681571b-5951-4396-85f9-187bafe892b9>
   PrefabRemaps:
     []
@@ -515,38 +515,6 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
-- !<ScriptComponent/36066344-ee3a-4bf9-a4ed-1eeabc502dfa>
-  PrefabRemaps:
-    []
-  Name: RecipeInstructionUIController
-  Enabled: true
-  ScriptAsset: !<reference> d7721515-2687-4333-bffd-03814c7456fd
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      ingredientMaterials: !<reference.Material[]>
-        - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
-        - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> a928c279-7abc-439b-a11c-a61aa5138436
-        - !<reference> 215f2f3e-b718-4676-a75e-7a10cbc4b4ca
-        - !<reference> a3995cad-b365-4db7-89ff-242b603b25c5
-        - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> 83e79de3-40e6-4d95-859d-bd0469bf7f71
-        - !<reference> 9fb03b56-572f-49fe-916a-23742527f0b8
-        - !<reference> 094b3f16-0431-41bb-987b-77901f33d059
-        - !<reference> c11fe2a0-fb3a-48d5-8b66-3cf61c1a2c17
-        - !<reference> de042c23-6d68-451a-afdd-869cae5975d0
-        - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> 9d17e2c1-87e4-4661-946f-5f19028da80c
-        - !<reference> c5449ffc-21b7-4caa-a258-4ad63c931bab
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/37c5a188-3280-43ce-bbf3-e199383c39f3>
   PrefabRemaps:
     []
@@ -982,6 +950,48 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/750c7206-ff8c-4214-950f-88dea2e46151>
+  PrefabRemaps:
+    []
+  Name: RecipeInstructionUIController
+  Enabled: true
+  ScriptAsset: !<reference> d7721515-2687-4333-bffd-03814c7456fd
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientMaterials: !<reference.Material[]>
+        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
+        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> a928c279-7abc-439b-a11c-a61aa5138436
+        - !<reference> 215f2f3e-b718-4676-a75e-7a10cbc4b4ca
+        - !<reference> a3995cad-b365-4db7-89ff-242b603b25c5
+        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> 83e79de3-40e6-4d95-859d-bd0469bf7f71
+        - !<reference> 9fb03b56-572f-49fe-916a-23742527f0b8
+        - !<reference> 094b3f16-0431-41bb-987b-77901f33d059
+        - !<reference> c11fe2a0-fb3a-48d5-8b66-3cf61c1a2c17
+        - !<reference> de042c23-6d68-451a-afdd-869cae5975d0
+        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> 9d17e2c1-87e4-4661-946f-5f19028da80c
+        - !<reference> c5449ffc-21b7-4caa-a258-4ad63c931bab
+      chefCoverObject: !<reference.SceneObject> d950d279-78c3-4be3-820b-768c43d3b68d
+      nonChefCoverObject: !<reference.SceneObject> 37c5a188-3280-43ce-bbf3-e199383c39f3
+      apprenticeInstructions: !<reference.SceneObject> c96e2284-1dc7-49a6-9276-903295dd4059
+      ingredientParentObject: !<reference.SceneObject> b55b46a5-1995-474b-a76d-f745a34cc5e9
+      topInstructionTextPanel: !<reference.Text> d0c9907c-b80f-4c59-a155-aaaa46dccf86
+      ingredientNameTextPanel: !<reference.Text> 85fc205e-1a49-4f32-8a7b-03728397b9be
+      ingredientIcon: !<reference.Image> 82fdd4e2-901d-45f3-9370-2b7bd7b8affe
+      chefCheckSoupObject: !<reference.SceneObject> 4cdfed0c-6451-43f5-b236-f0d08c876941
+      victoryObject: !<reference.SceneObject> 9b8f19b5-1ab3-4a59-b2f0-04c38426ab05
+      lossObject: !<reference.SceneObject> 7fe77e98-6f6c-42cf-a566-2bba16e5ef03
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/7596482e-9efb-49bb-9903-0ed3f57db3e0>
   PrefabRemaps:
     []
@@ -2201,7 +2211,6 @@
     - 2d9a74fa-2851-4e50-a353-bd4193c41d9b: 2d9a74fa-2851-4e50-5cac-42be6c3be264
     - 3100c43b-da25-4800-8c89-fe466462e1ec: 3100c43b-da25-4800-7376-01b99b9d1e13
     - 3194e1c1-b549-475f-b1da-7abe8eb246d1: be96c0c3-ee2f-4973-bdbe-b6d17ac83a5e
-    - 36066344-ee3a-4bf9-a4ed-1eeabc502dfa: 368d8625-61aa-4446-a05b-65d9fa0e10e4
     - 37c5a188-3280-43ce-bbf3-e199383c39f3: d3e9093a-9be9-47c0-9f08-bdef8f110328
     - 3a8c6048-684e-48cc-be4e-d49eed33eb8e: 3a8c6048-684e-48cc-41b1-2b6112cc1471
     - 3b278820-673c-43ea-ab62-2e9a79454614: 47312bac-0a21-4635-9e00-920279b6bb94
@@ -2226,6 +2235,7 @@
     - 6e871140-faf8-46c6-ad07-d97670ba7a51: 870c23a8-201c-4592-8b69-2ff71577d0e4
     - 72305a0c-8727-44ab-8d41-1a4aa4387b9d: 72305a0c-8727-44ab-72be-e5b55bc78462
     - 741ebb50-d13e-4a73-ac15-940532f97201: 741ebb50-d13e-4a73-53ea-6bfacd068dfe
+    - 750c7206-ff8c-4214-950f-88dea2e46151: bd8c4cab-0197-4d4e-a717-0aa5da4fe37d
     - 7596482e-9efb-49bb-9903-0ed3f57db3e0: 7596482e-9efb-49bb-66fc-f12c0a824c1f
     - 78bb68d2-5560-4c12-be01-1acdaebdd8b8: 78bb68d2-5560-4c12-41fe-e53251422747
     - 7f862e4e-512e-4e41-a024-4b073cd82c64: 7f862e4e-512e-4e41-5fdb-b4f8c327d39b
@@ -2313,6 +2323,7 @@
     - !<own> 15cee72a-8aeb-4d02-9020-4f9047368456
   Components:
     - !<own> 09f6ef4d-384c-4552-a036-e1494e9d9c68
+    - !<own> 750c7206-ff8c-4214-950f-88dea2e46151
 - !<RenderMeshVisual/de3f9ab3-9add-494c-adfa-fca59f2e76fc>
   PrefabRemaps:
     []
