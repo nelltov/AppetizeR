@@ -7,13 +7,17 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 @component
 export class EventManager extends BaseScriptComponent {
     // Game Events
-    static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
-    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
+    static CenterPositionSetLocal = new EventWrapper<[vec3]>()
     static SpawnPlayerIngredients = new EventWrapper<[number[]]>()
     static SpawnChefInstructions = new EventWrapper<[IngredientInfo[]]>()
+    static NextInstructionNetworkEvent = new EventWrapper()
+    static NextInstructionLocalEvent = new EventWrapper()
+    static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 
+    static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
+    static CheckSoupLocalEvent = new EventWrapper()
+    static CheckSoupNetworkEvent = new EventWrapper()
 
     // Game States
-    static CenterPositionSetLocal = new EventWrapper<[vec3]>()
     static PlayerVictoryNetworkEvent = new EventWrapper<[boolean]>()
     static PlayerVictoryLocalEvent = new EventWrapper<[boolean]>()
     static ResetGameNetworkEvent = new EventWrapper()

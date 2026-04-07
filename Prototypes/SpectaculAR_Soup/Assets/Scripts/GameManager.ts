@@ -6,6 +6,7 @@ import { EventManager } from "./EventManager";
 import { ourRecipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { distributeIngredients } from "./Ingredients/IngredientDistribution";
+import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 
 @component
 export class GameManager extends BaseScriptComponent {
@@ -59,6 +60,7 @@ export class GameManager extends BaseScriptComponent {
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
+        // TODO: make these event bindings into helper functions
         // Instantiate plates for each non-chef player
         this.syncEntity.onEventReceived.add("distributeNonChefIngredients", (messageInfo) => {
             const data = messageInfo.data as { connectionId: string, ingredientsList : number[] }
@@ -69,6 +71,25 @@ export class GameManager extends BaseScriptComponent {
             }
         })
 
+        /* Sync events for recipe UI progression */
+        EventManager.NextInstructionLocalEvent.add(() => {
+            this.syncEntity.sendEvent("nextInstruction", {})
+        })
+
+        this.syncEntity.onEventReceived.add("nextInstruction", () => {
+            EventManager.NextInstructionNetworkEvent.trigger()
+        })
+
+        EventManager.CheckSoupLocalEvent.add(() => {
+            // TODO: actually check the soup on this event too (after removing placeholder buttons)
+            this.syncEntity.sendEvent("checkSoup", {})
+        })
+
+        this.syncEntity.onEventReceived.add("checkSoup", () => {
+            EventManager.CheckSoupNetworkEvent.trigger()
+        })
+
+        /* End of game events */
         // Ensuring all players hear the networked event
         this.syncEntity.onEventReceived.add('heardVictoryCondition', (messageInfo) => {
             const data = messageInfo.data as { isVictory: boolean }
