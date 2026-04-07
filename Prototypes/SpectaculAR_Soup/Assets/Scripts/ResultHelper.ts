@@ -22,7 +22,7 @@ export class ResultHelper extends BaseScriptComponent {
             }
         })
 
-                EventManager.ResetGameNetworkEvent.add(() => {
+        EventManager.ResetGameNetworkEvent.add(() => {
             visualEffect.enabled = false;
         })
     }

@@ -21,6 +21,7 @@ export class EventManager extends BaseScriptComponent {
     // Transition to the stage of checking the soup
     static CheckSoupLocalEvent = new EventWrapper()
     static CheckSoupNetworkEvent = new EventWrapper()
+    static CheckRecipeLocalEvent = new EventWrapper()
 
     // Ending and resetting the game
     static PlayerVictoryNetworkEvent = new EventWrapper<[boolean]>()

@@ -6,7 +6,6 @@ import { EventManager } from "./EventManager";
 import { ourRecipes, recipeDictionary} from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { distributeIngredients } from "./Ingredients/IngredientDistribution";
-import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 
 @component
 export class GameManager extends BaseScriptComponent {
@@ -33,6 +32,7 @@ export class GameManager extends BaseScriptComponent {
     
     private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
+    private myID: string = ""
 
     onReady()
     {
@@ -87,6 +87,18 @@ export class GameManager extends BaseScriptComponent {
 
         this.syncEntity.onEventReceived.add("checkSoup", () => {
             EventManager.CheckSoupNetworkEvent.trigger()
+        })
+
+        EventManager.CheckRecipeLocalEvent.add(() => {
+            this.syncEntity.sendEvent("checkRecipe", { connectionId: this.myID })
+        })
+
+        this.syncEntity.onEventReceived.add("checkRecipe", (messageInfo) => {
+            // Have the chef specifically call the soup checking function
+            const data = messageInfo.data as { connectionId: string }
+            if (this.myID === data.connectionId) {
+                this.isTheSoupRightDemo()
+            }
         })
 
         /* End of game events */
@@ -229,7 +241,7 @@ export class GameManager extends BaseScriptComponent {
     private amITheChef()
     {   
         // Get my own ID
-        // this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
 
         // Turn off game start locally
         if (this.chefSelected.currentOrPendingValue !== true) return;
@@ -253,22 +265,6 @@ export class GameManager extends BaseScriptComponent {
     public gameStartButtonReset() {
         this.gameStartButton.enabled = true;
         this.chefSelected.setPendingValue(false);
-    }
-
-    private nextChefIngredient()
-    {
-
-        // Old implementation
-        // if (this.currentIngredientInfoPosition > this.currentRecipeIngredientInfo.length)
-        // {
-        //     this.currentIngredientInfoPosition = this.currentRecipeIngredientInfo.length;
-        //     this.chefPlayerInfo.getComponent("Text").text = "No more ingredients should be added!";
-        //     return;
-        // }
-        
-        // const currentIngredientDisplayed = this.currentRecipeIngredientInfo[this.currentIngredientInfoPosition].variantName;
-        // this.chefPlayerInfo.getComponent("Text").text = "Current Ingredient to put in soup is: " + currentIngredientDisplayed;
-        // this.currentIngredientInfoPosition++;
     }
 
     private isTheSoupRightDemo()

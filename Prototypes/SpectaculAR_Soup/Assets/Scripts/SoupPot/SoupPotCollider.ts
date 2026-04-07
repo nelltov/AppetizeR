@@ -1,5 +1,5 @@
-import { EventManager } from "Scripts/EventManager";
-import { Ingredient } from "Scripts/Ingredients/Ingredient";
+import { EventManager } from "../EventManager";
+import { Ingredient } from "../Ingredients/Ingredient";
 
 @component
 export class SoupPotCollider extends BaseScriptComponent {

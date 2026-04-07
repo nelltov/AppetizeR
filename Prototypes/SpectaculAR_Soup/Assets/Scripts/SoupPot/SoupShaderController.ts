@@ -1,5 +1,5 @@
-import { EventManager } from "Scripts/EventManager"
-import { IngredientInfo } from "Scripts/Ingredients/Ingredient"
+import { EventManager } from "../EventManager"
+import { IngredientInfo } from "../Ingredients/Ingredient"
 
 @component
 export class SoupShaderController extends BaseScriptComponent {
