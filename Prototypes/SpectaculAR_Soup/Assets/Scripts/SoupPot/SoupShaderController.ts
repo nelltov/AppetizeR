@@ -4,12 +4,6 @@ import { IngredientInfo } from "../Ingredients/Ingredient"
 @component
 export class SoupShaderController extends BaseScriptComponent {
     @input
-    private soupDebugText: Text
-
-    @input
-    private debugTextPanel: Text
-
-    @input
     private soupSurfaceObject: SceneObject
     private soupSurfaceMaterial: Material
     private soupSurfaceShader: Pass
@@ -57,14 +51,6 @@ export class SoupShaderController extends BaseScriptComponent {
         this.clearSoupIngredients()
 
         EventManager.SoupPotIngredientCollisionNetworkEvent.add((ingredientInfo: IngredientInfo) => {
-            print(`Ingredient collided with pot: ${ingredientInfo.variantName}`)
-            
-            if (this.debugTextPanel) {
-                this.debugTextPanel.text = this.debugTextPanel.text + `\nNetwork Event: ${ingredientInfo.variantName} collided with pot`
-            }
-            if (this.soupDebugText) {
-                this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
-            }
             if (this.soupVFX) {
                 this.soupVFX.enabled = true;
                 this.soupVFX.restart();

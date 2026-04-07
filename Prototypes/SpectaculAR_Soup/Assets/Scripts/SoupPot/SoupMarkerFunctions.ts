@@ -23,10 +23,10 @@ export class SoupMarkerFunctions extends BaseScriptComponent {
 
         EventManager.UpdateSoupSwirlAmount.add((swirlAmount: number) => {
             if (this.inSoupCheckPhase && !this.hasCheckedSoupThisRound) {
-                if (swirlAmount >= this.swirlAmountThreshold) {
+                if (Math.abs(swirlAmount) >= this.swirlAmountThreshold) {
                     EventManager.CheckRecipeLocalEvent.trigger()
+                    this.hasCheckedSoupThisRound = true
                 } 
-                this.hasCheckedSoupThisRound = true
             }
         })
     }
