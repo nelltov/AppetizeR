@@ -13,6 +13,7 @@ export class GameManager extends BaseScriptComponent {
     
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
+    private starterRecipeComplete = StorageProperty.manualBool("Has Starter Recipe Been Finished?", false);
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
 
     @input
@@ -55,8 +56,6 @@ export class GameManager extends BaseScriptComponent {
 
 
         this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
-
-        print(this.networkedUnusedRecipesArray.currentOrPendingValue[0]);
 
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
     
@@ -160,7 +159,8 @@ export class GameManager extends BaseScriptComponent {
         //Initializing the Chef Variab;le
         this.syncEntity.addStorageProperty(this.currentChef);
         this.syncEntity.addStorageProperty(this.chefSelected)
-        this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray)
+        this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray);
+        this.syncEntity.addStorageProperty(this.starterRecipeComplete);
     }
 
     public RandomizeRecipe()
@@ -176,7 +176,12 @@ export class GameManager extends BaseScriptComponent {
             return;
         }
 
-        const recipeName = this.getRandomElement<string>(currentRecipes) as string;
+        var recipeName = this.getRandomElement<string>(currentRecipes) as string;
+        
+        if (this.starterRecipeComplete.currentOrPendingValue == false) {
+            recipeName = "StarterRecipe";
+            this.starterRecipeComplete.setPendingValue(true);
+        }
         print("Selected recipe: " + recipeName);
 
         // Find and remove the chosen recipe from the copy

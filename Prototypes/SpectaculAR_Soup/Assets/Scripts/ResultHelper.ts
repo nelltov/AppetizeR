@@ -3,7 +3,8 @@ import { EventManager } from "./EventManager";
 @component
 export class ResultHelper extends BaseScriptComponent {
   @input
-  winObject: SceneObject | null;
+  winObject!: SceneObject | null;
+
     onAwake(): void {
         let startEvent = this.createEvent("OnStartEvent")
         startEvent.bind(() => { this.onStart() })
@@ -28,6 +29,7 @@ export class ResultHelper extends BaseScriptComponent {
 
         EventManager.ResetGameNetworkEvent.add(() => {
             visualEffect.enabled = false;
+            this.winObject.enabled = false;
         })
     }
 }
