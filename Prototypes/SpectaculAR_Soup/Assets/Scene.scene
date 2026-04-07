@@ -9,7 +9,11 @@
     - !<own> 6cf7031c-0ce9-4a3c-81a5-39218119f000
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
-      []
+      - |
+        id: 1
+        name: PotLAyer
+        color: 0
+
     HasOrtho: true
   RenderOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   RenderPreviewOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
@@ -30,6 +34,7 @@
     - !<own> 4d937bab-9b31-4b98-9bd5-4310203a6631
     - !<own> 80b1d20d-43da-43ff-8f92-0e5ed5455760
     - !<own> ad350037-e7cd-4c7d-89f1-b3db6a5f3b6b
+    - !<own> 7c648544-19d7-44a2-affb-1dca4475f00e
   Components:
     - !<own> 00000000-0000-0065-0000-000000000065
     - !<own> e5553c8a-0b7e-4ef4-92d9-3e1318fb82c1
@@ -1597,7 +1602,7 @@
     - fd229c0b-5f22-40f8-a6bb-7b722bf8e873: e8d017a4-86fa-4fa3-a316-7722fccce90d
   Name: PotSet
   Enabled: true
-  Layers: 1
+  Layers: 2
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2957,6 +2962,37 @@
     - !<own> b9209fec-b989-4422-a397-b0b560812e8e
   Components:
     []
+- !<Camera/4310ff0f-1a46-4769-9263-dfbdf75cd129>
+  PrefabRemaps:
+    []
+  Name: Camera
+  Enabled: true
+  renderLayer: 2
+  MipmapLevel: 0
+  RenderOrder: -1
+  Size: 20.000000
+  Near: 1.000000
+  Far: 1000.000000
+  Fov: 63.541019
+  ClearColor: !<CameraClearColor>
+    Mode: None
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  ClearDepth: !<CameraClearDepth>
+    Mode: Value
+    Value: 1.000000
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  Aspect: 1.000000
+  CameraType: Perspective
+  DepthMode: Regular
+  DeviceProperty: All
+  AspectPreset: Custom
+  OitLayers: NoOit
+  RenderTarget: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
+  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
+  DevicePropertiesSource: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/440d9903-0516-47eb-a79f-3764e57df5b3>
   PrefabRemaps:
     []
@@ -2984,7 +3020,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: ""
+  Text: Hi Everyone! Click this text to chat!
   Editable: false
   ShowEditingPreview: false
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -4373,14 +4409,21 @@
   ScriptInputs:
     "":
       instructionArray: !<string[]>
-        - Marker 1
-        - Marker2
+        - Hi Everyone! Click this text to chat!
+        - "I'm Mr.Salt!"
+        - You can move me around by pinching and holding me!
+        - "Would you please move me to the middle of the table?"
+        - "Am I there?"
+        - "Awesome! Can you help me make a secret soup for my partner?"
+        - "Cool! There is a catch... don't say the ingredient names!"
+        - Lets Start!
       instructionImageHolderObject: !<reference.SceneObject> eb98679e-9c51-4ddd-aa2f-feba2673311f
       instructionStringHolderObject: !<reference.SceneObject> d74fc15b-62d8-47cc-ad6f-71fda610bf2b
       saltShakerObject: !<reference.SceneObject> ba1aad55-3137-49ec-aa96-75b36fc7115b
       gameRootObject: !<reference.SceneObject> 8530f7d5-3975-4d69-bb60-19aa63886601
       instructionImages: !<reference.Texture[]>
         - !<reference> 74dd1d91-b493-4de2-b493-a105fa30d5f7
+        - !<reference> 052de9ba-f1aa-4918-93df-48ca4e5fb5e0
         - !<reference> 052de9ba-f1aa-4918-93df-48ca4e5fb5e0
   ScriptTypes:
     "":
@@ -4993,7 +5036,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -5140,7 +5183,7 @@
   PrefabRemaps:
     []
   Name: VFX Component
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -5581,6 +5624,21 @@
     - !<own> f3b8aa21-c70d-45e8-b290-a18d7303af7f
   Components:
     []
+- !<SceneObject/7c648544-19d7-44a2-affb-1dca4475f00e>
+  PrefabRemaps:
+    []
+  Name: SoupCamera
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4310ff0f-1a46-4769-9263-dfbdf75cd129
 - !<RenderMeshVisual/7c96b21d-7fcd-42a6-8780-e682c9c5b20c>
   PrefabRemaps:
     []
@@ -5887,7 +5945,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Fill
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6941,7 +6999,7 @@
     []
   Name: component_1
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7329,7 +7387,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: -1
+  RenderOrder: 0
   StretchMode: Fill
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7713,7 +7771,7 @@
   PrefabRemaps:
     []
   Name: debugText
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 3.000000, z: 0.000000}
@@ -8520,7 +8578,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9166,7 +9224,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Fill
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9797,7 +9855,7 @@
   PrefabRemaps:
     []
   Name: InstructionHolderImageObject
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
