@@ -43,6 +43,7 @@ export class SoupShaderController extends BaseScriptComponent {
         this.soupSurfaceMaterial = this.soupSurfaceObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
         this.soupSurfaceShader = this.soupSurfaceMaterial.mainPass
         this.soupSurfaceShader.swirlAmount = 0
+        
 
         EventManager.UpdateSoupSwirlAmount.add((swirlAmount: number) => {
             this.soupSurfaceShader.swirlAmount = swirlAmount
@@ -65,6 +66,7 @@ export class SoupShaderController extends BaseScriptComponent {
                 this.soupDebugText.text = `${ingredientInfo.variantName} has been added to the soup`
             }
             if (this.soupVFX) {
+                this.soupVFX.enabled = true;
                 this.soupVFX.restart();
             }
             const shaderIndex = ingredientInfo.ingredient
