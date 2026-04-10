@@ -30,6 +30,7 @@
     _playAudio: false
     _renderOrder: false
     _size: false
+    cooldownDuration: false
     triggerStartCallbacks: false
   ScriptTypesHidden:
     {}
@@ -46,6 +47,7 @@
       _playAudio: false
       triggerStartCallbacks:
         []
+      cooldownDuration: 0.500000
   ScriptTypes:
     -
       {}
@@ -60,3 +62,4 @@
     - "@property {string} functionName"
     - "*/"
     - '// @input Callback[] triggerStartCallbacks = {} {"label":"On Trigger Start Callbacks"}'
+    - '// @input float cooldownDuration = 0.5 {"hint":"Minimum time between button triggers (in seconds)"}'
