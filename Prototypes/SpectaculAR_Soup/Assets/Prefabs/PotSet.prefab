@@ -1204,12 +1204,15 @@
   Enabled: true
   ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
   ScriptInputsDefault:
-    {}
+    winTextObject: true
+    gm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       winObject: !<reference.SceneObject> c7b47a35-e94e-4e9a-b627-c9ce0c9c4ab7
+      winTextObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      gm: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

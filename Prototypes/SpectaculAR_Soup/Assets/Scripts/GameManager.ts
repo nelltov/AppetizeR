@@ -13,7 +13,7 @@ export class GameManager extends BaseScriptComponent {
     
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
-    private starterRecipeComplete = StorageProperty.manualBool("Has Starter Recipe Been Finished?", false);
+    public starterRecipeComplete = StorageProperty.manualBool("Has Starter Recipe Been Finished?", false);
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
 
     @input
