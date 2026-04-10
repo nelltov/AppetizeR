@@ -1,5 +1,5 @@
-import { EventManager } from "./EventManager"
-import { IngredientInfo } from "./Ingredients/Ingredient"
+import { EventManager } from "../EventManager"
+import { IngredientInfo } from "../Ingredients/Ingredient"
 
 @component
 export class RecipeInstructionUIController extends BaseScriptComponent {
