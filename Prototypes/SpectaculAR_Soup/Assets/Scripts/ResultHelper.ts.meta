@@ -26,7 +26,9 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    gm: false
     winObject: false
+    winTextObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -37,8 +39,12 @@
     []
   DefaultScriptInputs:
     - winObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      winTextObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      gm: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject winObject
+    - // @input SceneObject winTextObject
+    - // @input AssignableType gm
