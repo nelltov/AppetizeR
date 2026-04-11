@@ -6,10 +6,10 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     cameraObject: SceneObject
 
     @input
-    nonChefDecorObjects: SceneObject
+    nonChefObjects: SceneObject
 
     @input
-    chefDecorObjects: SceneObject
+    chefObjects: SceneObject
 
     @input
     instructionObject: SceneObject
@@ -38,12 +38,12 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
-        this.setObjectVisibility(this.nonChefDecorObjects, false)  // specifically hide on start, otherwise resetting should make them visible
+        this.setObjectVisibility(this.nonChefObjects, false)  // specifically hide on start, otherwise resetting should make them visible
 
         // Bind events
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {
             this.movePlatesToTable(centerPosition)
-            this.setObjectVisibility(this.nonChefDecorObjects, true)
+            this.setObjectVisibility(this.nonChefObjects, true)
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
@@ -69,8 +69,8 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
 
         EventManager.SpawnChefInstructions.add((_) => {
             this.setObjectVisibility(this.instructionObject, true)
-            this.setObjectVisibility(this.nonChefDecorObjects, false) 
-            this.setObjectVisibility(this.chefDecorObjects, true)
+            this.setObjectVisibility(this.nonChefObjects, false) 
+            this.setObjectVisibility(this.chefObjects, true)
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
@@ -92,8 +92,8 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     }
 
     private resetPlayerIngredientObjects() {
-        this.setObjectVisibility(this.nonChefDecorObjects, true)    // empty plates
-        this.setObjectVisibility(this.chefDecorObjects, false) 
+        this.setObjectVisibility(this.nonChefObjects, true)    // empty plates
+        this.setObjectVisibility(this.chefObjects, false) 
         this.setObjectVisibility(this.instructionObject, false)
 
         // Deactivate any existing ingredient objects under the ingredient positions

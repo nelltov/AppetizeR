@@ -14,6 +14,13 @@ export class CustomButton extends Element {
 
     private lastTriggerTime: number = 0
 
+    protected onEnabled() {
+        super.onEnabled()
+        
+        // Preventing button from being triggered immediately when enabled (e.g. switching Start to Next Ingredient button)
+        this.lastTriggerTime = getTime()
+    }
+
     // Handle button cooldown and custom callback functions
     protected onTriggerDownHandler(event: InteractorEvent) {
         const currentTime = getTime()
