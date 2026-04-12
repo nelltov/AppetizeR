@@ -28,12 +28,14 @@
   ScriptInputsHidden:
     apprenticeInstructions: false
     chefCheckSoupObject: false
+    coverInstructions: false
     coverObject: false
     ingredientIcon: false
     ingredientMaterials: false
     ingredientNameTextPanel: false
     ingredientParentObject: false
     lossObject: false
+    recipeName: false
     topInstructionTextPanel: false
     victoryObject: false
   ScriptTypesHidden:
@@ -48,6 +50,8 @@
     - ingredientMaterials: !<reference.Material[]>
         []
       coverObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      recipeName: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      coverInstructions: !<reference.Text> 00000000-0000-0000-0000-000000000000
       apprenticeInstructions: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientParentObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       topInstructionTextPanel: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -62,6 +66,8 @@
   InputLines:
     - "// @input Asset.Material[] ingredientMaterials"
     - // @input SceneObject coverObject
+    - // @input Component.Text recipeName
+    - // @input Component.Text coverInstructions
     - // @input SceneObject apprenticeInstructions
     - // @input SceneObject ingredientParentObject
     - // @input Component.Text topInstructionTextPanel

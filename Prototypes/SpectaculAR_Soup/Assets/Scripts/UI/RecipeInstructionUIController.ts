@@ -9,6 +9,10 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     // Cover portion
     @input
     coverObject: SceneObject
+    @input
+    recipeName: Text
+    @input
+    coverInstructions: Text
 
     // Ingredient portion
     @input
