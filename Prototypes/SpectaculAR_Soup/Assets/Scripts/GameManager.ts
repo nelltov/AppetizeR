@@ -207,8 +207,9 @@ export class GameManager extends BaseScriptComponent {
 
         this.followingHead = false;
 
-        this.RandomizeRecipe();
+       this.RandomizeRecipe();
        
+
         // Pick a random chef and collect all non-chef players
         const users = SessionController.getInstance().getUsers();
         const chefId = SessionController.getInstance().getLocalConnectionId() as string;

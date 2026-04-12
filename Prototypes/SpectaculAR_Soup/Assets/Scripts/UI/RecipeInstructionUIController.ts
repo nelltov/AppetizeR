@@ -8,11 +8,9 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
 
     // Cover portion
     @input
-    coverObject: SceneObject
+    chefCoverObject: SceneObject
     @input
-    recipeName: Text
-    @input
-    coverInstructions: Text
+    nonChefCoverObject: SceneObject
 
     // Ingredient portion
     @input
@@ -105,7 +103,7 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
 
     private showChefCover(recipeIngredients: IngredientInfo[]) {
         this.clearOutIngredientUI()
-        this.setObjectVisibility(this.coverObject, true)
+        this.setObjectVisibility(this.chefCoverObject, true)
         this.currentRecipeIngredients = recipeIngredients
     }
 
@@ -163,7 +161,8 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     }
 
     private clearOutIngredientUI() {
-        this.setObjectVisibility(this.coverObject, false)
+        this.setObjectVisibility(this.nonChefCoverObject, false)
+        this.setObjectVisibility(this.chefCoverObject, false)
         this.setObjectVisibility(this.apprenticeInstructions, false)
         this.setObjectVisibility(this.ingredientParentObject, false)
         this.setObjectVisibility(this.chefCheckSoupObject, false)
