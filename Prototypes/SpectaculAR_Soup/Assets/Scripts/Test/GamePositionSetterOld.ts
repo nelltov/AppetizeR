@@ -4,7 +4,7 @@ import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Compone
 import { EventManager } from "../EventManager";
 
 @component
-export class GamePositionSetter extends BaseScriptComponent
+export class GamePositionSetterOld extends BaseScriptComponent
 {
     @input
     menuObject: SceneObject;

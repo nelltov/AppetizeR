@@ -23,7 +23,11 @@ export class SpawnPosition extends BaseScriptComponent {
         const localOffset = cameraRot.multiplyVec3(this.spawnOffset)
         transform.setWorldPosition(cameraPos.add(localOffset))
 
-        // Rotate object to face the camera
-        transform.setWorldRotation(quat.lookAt(localOffset.uniformScale(-1) , new vec3(0, 1, 0)))
+        // Rotate object to face the camera (only around the y-axis)
+        const direction = localOffset.uniformScale(-1)
+        const horizontalDirection = new vec3(direction.x, 0, direction.z)
+        if (horizontalDirection.length > 0) {
+            transform.setWorldRotation(quat.lookAt(horizontalDirection, new vec3(0, 1, 0)))
+        }
     }
 }
