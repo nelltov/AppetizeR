@@ -3,6 +3,9 @@ import { EventManager } from "./EventManager";
 @component
 export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     @input
+    saltShaker: SceneObject
+
+    @input
     cameraObject: SceneObject
 
     @input
@@ -38,12 +41,16 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
-        this.setObjectVisibility(this.nonChefObjects, false)  // specifically hide on start, otherwise resetting should make them visible
+
+        // specifically hide on start, otherwise resetting should make them visible
+        this.setObjectVisibility(this.nonChefObjects, false)  
+        this.setObjectVisibility(this.saltShaker, false)  
 
         // Bind events
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {
             this.movePlatesToTable(centerPosition)
             this.setObjectVisibility(this.nonChefObjects, true)
+            this.setObjectVisibility(this.saltShaker, true)  
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
@@ -93,6 +100,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
 
     private resetPlayerIngredientObjects() {
         this.setObjectVisibility(this.nonChefObjects, true)    // empty plates
+        this.setObjectVisibility(this.saltShaker, true)        // saltie model
         this.setObjectVisibility(this.chefObjects, false) 
         this.setObjectVisibility(this.instructionObject, false)
 

@@ -15,7 +15,7 @@ export function distributeIngredients(recipe: IngredientInfo[], numPlayers: numb
 
     // If there are extra empty plates, keep adding ingredients (including duplicates) until all plates are filled
     while (ingredientsToDistribute.length < platesToPopulate) {
-        ingredientsToDistribute = ingredientsToDistribute.concat(allIngredientOptions).slice(0, platesToPopulate)
+        ingredientsToDistribute = ingredientsToDistribute.concat(shuffle(allIngredientOptions)).slice(0, platesToPopulate)
     }
 
     // Give out ingredients in round-robin fashion
@@ -25,7 +25,7 @@ export function distributeIngredients(recipe: IngredientInfo[], numPlayers: numb
         for (let j = 0; j < numPlates; j++) {
             playerIngredients.push(ingredientsToDistribute[j * numPlayers + i])
         }
-        result.push(playerIngredients)
+        result.push(shuffle(playerIngredients)) // reorder the ingredients so it's not just required ones first
     }
 
     print("Distribution Result: " + JSON.stringify(result))

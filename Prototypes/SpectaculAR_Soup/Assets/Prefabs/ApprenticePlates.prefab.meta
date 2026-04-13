@@ -639,12 +639,14 @@
   Enabled: true
   ScriptAsset: !<reference> 517a040c-53bc-4241-a7c5-c2b56585ea27
   ScriptInputsDefault:
+    saltShaker: true
     nonChefObjects: true
     chefObjects: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
+      saltShaker: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
       nonChefObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
