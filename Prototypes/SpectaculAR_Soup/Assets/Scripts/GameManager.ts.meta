@@ -27,7 +27,6 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     camera: false
-    enableHeadFollow: false
     gameStartButton: false
     ingManager: false
   ScriptTypesHidden:
@@ -42,7 +41,6 @@
     - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
       ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      enableHeadFollow: true
   ScriptTypes:
     -
       {}
@@ -50,4 +48,3 @@
     - // @input Component.Camera camera
     - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
-    - // @input bool enableHeadFollow = true

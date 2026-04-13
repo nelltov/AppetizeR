@@ -51,6 +51,11 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     onStart() {
         this.resetUIForNewRound()
 
+        // Change recipe name based on selected recipe
+        EventManager.RecipeSelected.add((selectedRecipeName: string) => {
+            this.recipeName.text = selectedRecipeName
+        })
+
         EventManager.SpawnChefInstructions.add((recipeIngredients: IngredientInfo[]) => {
             this.showChefCover(recipeIngredients)
             this.isChef = true
@@ -144,17 +149,20 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.setObjectVisibility(this.ingredientParentObject, true)
     }
 
+    /* Screen instructing players to spin the lazy susan */
     private showCheckSoup() {
         this.clearOutIngredientUI()
         this.setObjectVisibility(this.chefCheckSoupObject, true)
     }
 
+    /* Either soup victory or loss screen */
     private showResults(isVictory: boolean) {
         this.clearOutIngredientUI()
         this.setObjectVisibility(this.victoryObject, isVictory)
         this.setObjectVisibility(this.lossObject, !isVictory)
     }
 
+    /* Functions for resetting UI */
     private resetUIForNewRound() {
         this.clearOutIngredientUI()
         this.isChef = null
@@ -171,6 +179,7 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.setObjectVisibility(this.lossObject, false)
     }
 
+    /* Utility function for turning objects on and off */
     private setObjectVisibility(object: SceneObject, isVisible: boolean) {
         if (object) {
             object.enabled = isVisible
