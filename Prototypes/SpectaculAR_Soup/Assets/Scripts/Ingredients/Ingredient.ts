@@ -27,8 +27,8 @@ export class IngredientInfo {
         this.variantName = IngredientType[ingredientType] ?? "Unknown Ingredient"
     }
 
-    public isSameIngredient(other: IngredientInfo): boolean {
-        return this.ingredient === other.ingredient
+    public isEqual(other: number): boolean {
+        return this.ingredient as number === other
     }
 
     public getIngredientType(): IngredientType {

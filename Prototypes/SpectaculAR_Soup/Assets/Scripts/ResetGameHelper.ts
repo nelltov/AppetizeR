@@ -10,7 +10,7 @@ export class ResetGameHelper extends BaseScriptComponent {
 
   onStart(): void {
       const chefChooserButton = this.sceneObject.getComponent("Component.RenderMeshVisual");
-      if(chefChooserButton == null) print("didntfindRenderMatForResultObject");
+      if (chefChooserButton == null) print("didntfindRenderMatForResultObject");
       EventManager.ResetGameNetworkEvent.add(() => {
             print("Game Should be Reset");
           chefChooserButton.enabled = true;

@@ -24,35 +24,12 @@ export class GameManager extends BaseScriptComponent {
 
     @input
     public gameStartButton : SceneObject
-
-    // @input
-    // enableHeadFollow: boolean = true
-
-    // private followingHead : boolean = true
-    // private readonly headOffset : vec3 = new vec3(0, 0, -60)
     
     private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private myID: string = ""
 
     onAwake() {
-        // Keep gameStartButton in front of the headset until the game starts
-        // const update = this.createEvent("UpdateEvent")
-
-        // update.bind(() =>
-        // {
-        //     if (!this.followingHead) {
-        //         update.enabled = false;
-        //         return;
-        //     }
-        //     if (!this.enableHeadFollow || !this.camera || !this.gameStartButton) return;
-        //     if (!SessionController.getInstance().isHost()) return;
-        //     const t = this.camera.getTransform();
-        //     const worldOffset = t.getWorldRotation().multiplyVec3(this.headOffset);
-        //     this.gameStartButton.getTransform().setWorldPosition(t.getWorldPosition().add(worldOffset));
-        //     this.gameStartButton.getTransform().setWorldRotation(t.getWorldRotation());
-        // })
-
         // Setting Sync Entity
         this.syncEntity = new SyncEntity(this);
     
@@ -156,7 +133,7 @@ export class GameManager extends BaseScriptComponent {
             // Have the chef specifically call the soup checking function
             const data = messageInfo.data as { connectionId: string }
             if (this.myID === data.connectionId) {
-                this.isTheSoupRightDemo()
+                this.checkSoupCorrectness()
             }
         })
 
@@ -223,12 +200,9 @@ export class GameManager extends BaseScriptComponent {
     {
         if (this.chefSelected.currentOrPendingValue == true) return;
 
-        // this.followingHead = false;
-
         this.RandomizeRecipe();
-       
 
-        // Pick a random chef and collect all non-chef players
+        // Assign player who clicked the button to be the chef
         const users = SessionController.getInstance().getUsers();
         const chefId = SessionController.getInstance().getLocalConnectionId() as string;
         const nonChefIds = users
@@ -270,14 +244,6 @@ export class GameManager extends BaseScriptComponent {
         // Turn off game start locally
         if (this.chefSelected.currentOrPendingValue !== true) return;
         this.gameStartButton.enabled = false;
-
-        // If myID is same as chef I am the chef so I should turn on this local object
-        // if (this.myID === this.currentChef.currentOrPendingValue) {
-        //     this.chefPlayerInfo.enabled = true;
-        //     this.chefRecipeCheckButton.enabled = true;
-        //     this.chefPlayerInfo.getTransform().setWorldPosition(this.gameStartButton.getTransform().getWorldPosition());
-        //     print(this.myID + " Should turn on the Chef Info")
-        // }
     }
 
     private GameReset()
@@ -292,40 +258,31 @@ export class GameManager extends BaseScriptComponent {
         this.currentChef.setPendingValue("");
     }
 
-    private isTheSoupRightDemo()
+    private checkSoupCorrectness()
     {
         // Get pot contents (number[] of ingredient types)
-        const pot : number[] = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
+        const pot: number[] = this.ingManager.getCurrentIngredientsInPot().currentOrPendingValue;
         
         // Quick fail: different lengths cannot match exactly
-        if (pot.length != this.currentRecipeIngredientInfo.length)
-        {
-            
+        if (pot.length != this.currentRecipeIngredientInfo.length) {
             EventManager.PlayerVictoryLocalEvent.trigger(false)
-            return false
+            return
         }
 
-        // Compare each ingredient slot
-        for (let i = 0; i < pot.length; i++)
-        {
+        // Compare each ingredient slot in order
+        for (let i = 0; i < pot.length; i++) {
             const potIng = pot[i]
             const expected = this.currentRecipeIngredientInfo[i]
 
-            // Compare values
-            const matches = expected.isSameIngredient(new IngredientInfo(potIng))
-
-            if (!matches)
-            {
-                print(`Soup check failed for ${this.currentRecipeIngredientInfo} at index ${i} pot=(${potIng}) expected=(${expected.ingredient})`)
+            if (!expected.isEqual(potIng)) {
                 EventManager.PlayerVictoryLocalEvent.trigger(false)
-                return false
+                return
             }
         }
 
-        print("Soup check passed.");
-        this.starterRecipeComplete.setPendingValue(true);
+        // Soup check passed
+        this.starterRecipeComplete.setPendingValue(true)
         EventManager.PlayerVictoryLocalEvent.trigger(true)
-        return true;
     }
 
     private getRandomElement<T>(array: T[]): T | undefined

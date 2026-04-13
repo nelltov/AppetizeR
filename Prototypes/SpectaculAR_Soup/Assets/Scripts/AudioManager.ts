@@ -17,24 +17,20 @@ export class AudioManager extends BaseScriptComponent {
     @input
     public audioCollisionTrack: AudioTrackAsset;
     
-    onAwake()
-    {
+    onAwake() {
         // Create SyncEntity and register currentIngredients so the pot list syncs across all players
         this.syncEntity = new SyncEntity(this);
         this.audio = this.sceneObject.getComponent("Component.AudioComponent");
         this.syncEntity.notifyOnReady(() => this.onReady())
     }
 
-    onReady()
-    {
-        EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) =>
-        {
+    onReady() {
+        EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
             this.audio.audioTrack = isVictory ? this.audioVictoryTrack : this.audioLoserTrack;
             this.audio.play(1);
         })
 
-        EventManager.SoupPotIngredientCollisionNetworkEvent.add((_: IngredientInfo) =>
-        {
+        EventManager.SoupPotIngredientCollisionNetworkEvent.add((_: IngredientInfo) => {
             this.audio.audioTrack = this.audioCollisionTrack; 
             this.audio.play(1);
         })

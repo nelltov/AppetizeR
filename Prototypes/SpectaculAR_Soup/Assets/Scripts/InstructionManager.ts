@@ -1,6 +1,5 @@
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
-import { GameManager } from "./GameManager";
 
 @component
 export class InstructionManager extends BaseScriptComponent {
