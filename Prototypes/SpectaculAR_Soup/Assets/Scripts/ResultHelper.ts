@@ -23,7 +23,6 @@ export class ResultHelper extends BaseScriptComponent {
 
         EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
             if (isVictory) {
-                print("GM heard the Event Manager call for a victory");
                 if (!this.winObject?.enabled) {
                     this.winObject.enabled = true;
                     if (this.gm?.starterRecipeComplete.currentValue) {
@@ -33,7 +32,7 @@ export class ResultHelper extends BaseScriptComponent {
                         winText.text = "To PLAY AGAIN hit restart, OR if you want to see Peppi's response to our soup FLIP OVER YOUR PLACEMAT!";
                     }
                 }
-                visualEffect.enabled = true;
+                //visualEffect.enabled = true;
             } else {
                 print("GM heard the Event Manager call for a loss");
                 // TODO: loss object
