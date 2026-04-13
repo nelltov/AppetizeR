@@ -1,0 +1,65 @@
+- !<AssetImportMetadata/e418596e-4c8d-48ab-882f-d1241970ad29>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 08b0abf8-6d22-4a41-b8b9-2a92f2310e23
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 08b0abf8-6d22-4a41-b8b9-2a92f2310e23
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> a32db3dd-5160-4a1f-a7da-beb38a6c43b3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/a32db3dd-5160-4a1f-a7da-beb38a6c43b3>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 7cd9d58a-b70d-4c0f-8453-39470e85d5ec
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    _inactive: false
+    _playAudio: false
+    _renderOrder: false
+    _size: false
+    cooldownDuration: false
+    triggerStartCallbacks: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - _renderOrder: 0
+      _size: !<Vec3> {x: 6.000000, y: 3.000000, z: 3.000000}
+      _inactive: false
+      _playAudio: false
+      triggerStartCallbacks:
+        []
+      cooldownDuration: 0.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input int _renderOrder
+    - '// @input vec3 _size = {6,3,3} {"hint":"Size of the element in centimeters"}'
+    - '// @input bool _inactive {"hint":"Inactive Mode: set the element to ignore inputs"}'
+    - '// @input bool _playAudio {"label":"Play Audio", "hint":"Play audio on interaction"}'
+    - /*
+    - "@typedef Callback"
+    - "@property {Component.ScriptComponent} scriptComponent"
+    - "@property {string} functionName"
+    - "*/"
+    - '// @input Callback[] triggerStartCallbacks = {} {"label":"On Trigger Start Callbacks"}'
+    - '// @input float cooldownDuration = 0.5 {"hint":"Minimum time between button triggers (in seconds)"}'

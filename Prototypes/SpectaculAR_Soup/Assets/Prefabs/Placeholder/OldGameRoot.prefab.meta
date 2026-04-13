@@ -934,7 +934,7 @@
 - !<ScriptComponent/2d6b60d7-6660-49ae-4d77-7b04e2c1d0f8>
   PrefabRemaps:
     []
-  Name: GamePositionSetter
+  Name: GamePositionSetterOld
   Enabled: true
   ScriptAsset: !<reference> 9be78003-e182-442e-88d7-a704c3e57ce6
   ScriptInputsDefault:
@@ -1632,7 +1632,7 @@
 - !<ScriptComponent/3ae17c7f-9ae6-45df-64f7-5a2e35a30719>
   PrefabRemaps:
     []
-  Name: GamePositionSetter
+  Name: GamePositionSetterOld
   Enabled: true
   ScriptAsset: !<reference> 9be78003-e182-442e-88d7-a704c3e57ce6
   ScriptInputsDefault:
@@ -4296,7 +4296,7 @@
 - !<ScriptComponent/b51e2cd4-1a4f-4b73-6f3b-72d402910efa>
   PrefabRemaps:
     []
-  Name: GamePositionSetter
+  Name: GamePositionSetterOld
   Enabled: true
   ScriptAsset: !<reference> 9be78003-e182-442e-88d7-a704c3e57ce6
   ScriptInputsDefault:
@@ -4518,7 +4518,6 @@
   ScriptInputsDefault:
     camera: true
     ingManager: true
-    enableHeadFollow: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -4526,7 +4525,6 @@
       camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
       ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 0ad9498c-2c60-42fe-5d9e-9a9299f5877c
-      enableHeadFollow: true
   ScriptTypes:
     "":
       {}
@@ -5605,12 +5603,12 @@
   Enabled: true
   ScriptAsset: !<reference> c9d95565-a2df-4a9f-b8a4-55b626a94e06
   ScriptInputsDefault:
-    debugText: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      {}
   ScriptTypes:
     "":
       {}

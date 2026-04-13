@@ -165,11 +165,9 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    instructionImageHolderObject: true
     instructionStringHolderObject: true
     saltShakerObject: true
     gameRootObject: true
-    instructionImages: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -181,12 +179,9 @@
         - No Colors!
         - No Animal Names!
         - Now make the Appetizer Soup!
-      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionStringHolderObject: !<reference.Text> 00000000-0000-0000-0000-000000000000
       saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      instructionImages: !<reference.Texture[]>
-        []
   ScriptTypes:
     "":
       {}

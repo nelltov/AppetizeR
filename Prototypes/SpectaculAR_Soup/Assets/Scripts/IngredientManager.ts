@@ -1,5 +1,5 @@
 import { IngredientInfo } from "./Ingredients/Ingredient";
-import { EventManager } from "Scripts/EventManager";
+import { EventManager } from "./EventManager";
 import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty";
 import { StorageTypes } from "SpectaclesSyncKit.lspkg/Core/StorageTypes";
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
@@ -8,54 +8,42 @@ import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 @component
 export class IngredientManager extends BaseScriptComponent
 {
-    @input
-    debugText: Text;
-
     private syncEntity: SyncEntity
     public currentIngredients: StorageProperty<StorageTypes.intArray>
 
-    onAwake()
-    {
+    onAwake() {
         // Create SyncEntity and register currentIngredients so the pot list syncs across all players
-        this.syncEntity = new SyncEntity(this);
-        this.currentIngredients = StorageProperty.manualIntArray("currentIngredients", []);
-        this.syncEntity.addStorageProperty(this.currentIngredients);
+        this.syncEntity = new SyncEntity(this)
+        this.currentIngredients = StorageProperty.manualIntArray("currentIngredients", [])
+        this.syncEntity.addStorageProperty(this.currentIngredients)
 
         this.syncEntity.notifyOnReady(() => this.onReady())
     }
 
-    onReady()
-    {
+    onReady() {
         // Create a network event to replicate ingredient collisions across all devices
         this.syncEntity.onEventReceived.add('ingredientCollision', (messageInfo) => {
             EventManager.SoupPotIngredientCollisionNetworkEvent.trigger(messageInfo.data as IngredientInfo)
         })
 
         // Handle the one-time local event, manage synced information, send out network event to all devices
-        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) =>
-        {
-            this.debugText.text = this.debugText.text + `\nIngredientManager: ${ingredientInfo.variantName} collided with the pot!`
-
+        EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) => {
             this.updateStorageProperties(ingredientInfo);
             this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
-        }); 
+        })
     }
 
-    public getCurrentIngredientsInPot()
-    {
-        return this.currentIngredients;
+    public getCurrentIngredientsInPot() {
+        return this.currentIngredients
     }
    
-    updateStorageProperties(newIngredient : IngredientInfo)
-    {
+    updateStorageProperties(newIngredient: IngredientInfo) {
         const newIngredientToAdd = newIngredient.ingredient as number
-        const newIngredientList: number[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd];
+        const newIngredientList: number[] = [...this.currentIngredients.currentOrPendingValue, newIngredientToAdd]
         this.currentIngredients.setPendingValue(newIngredientList)
-        print(`Ingredient Manager heard that a ${newIngredient.variantName} collided with the pot and the current length of that list is ${this.currentIngredients.currentOrPendingValue.length}`)
     }
 
-    public resetCurrentIngredients()
-    {
+    public resetCurrentIngredients() {
         this.currentIngredients.setPendingValue([])
     }
 }

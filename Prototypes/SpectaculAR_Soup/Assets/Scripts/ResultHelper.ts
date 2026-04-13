@@ -19,21 +19,19 @@ export class ResultHelper extends BaseScriptComponent {
 
     onStart(): void {
         const visualEffect = this.sceneObject.getComponent("Component.RenderMeshVisual");
-        if(visualEffect == null) print("didntfindRenderMatForResultObject");
+        if (visualEffect == null) print("didntfindRenderMatForResultObject");
 
         EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
             if (isVictory) {
                 print("GM heard the Event Manager call for a victory");
-                if (this.winObject?.enabled == false){
+                if (!this.winObject?.enabled) {
                     this.winObject.enabled = true;
-                    if(this.gm?.starterRecipeComplete.currentValue == true)
-                        {
-                            const winText = this.winTextObject.getComponent("Text");
-                            winText.sizeToFit == false;
-                            winText.size = 40;
-                            winText.text = "To PLAY AGAIN hit restart, OR if you want to see Peppi's response to our soup FLIP OVER YOUR PLACEMAT!";
-                            
-                        }
+                    if (this.gm?.starterRecipeComplete.currentValue) {
+                        const winText = this.winTextObject.getComponent("Text");
+                        winText.sizeToFit == false;
+                        winText.size = 40;
+                        winText.text = "To PLAY AGAIN hit restart, OR if you want to see Peppi's response to our soup FLIP OVER YOUR PLACEMAT!";
+                    }
                 }
                 visualEffect.enabled = true;
             } else {
