@@ -302,32 +302,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/b74850fb-0e49-4604-88af-0c13dc22e74f>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> ee5289e3-fa71-4c72-6d03-c56e9a94a4d7
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> e3802390-8b3f-4f49-7163-1794116b2acc
-      pour_out_speed: 0.100000
-      name_is_amount: amount
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/bd2ce582-8b83-427f-bd66-74133c6090e8>
   PrefabRemaps:
     []
@@ -376,6 +350,32 @@
       advanced: true
       minParticles: 0
       maxParticles: 500
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/c539ef59-3053-44e2-96fe-48fcf778d985>
+  PrefabRemaps:
+    []
+  Name: PourSalt 3.0
+  Enabled: true
+  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      initial_amount: !<float> 1.000000
+      whole_prefab: !<reference.SceneObject> ee5289e3-fa71-4c72-6d03-c56e9a94a4d7
+      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
+      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
+      surfacelevel: surfacelevel
+      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
+      ahh_string: ahh
+      pour_threshold: -0.100000
+      VFX: !<reference.SceneObject> e3802390-8b3f-4f49-7163-1794116b2acc
+      pour_out_speed: 0.100000
+      name_is_amount: amount
   ScriptTypes:
     "":
       {}
@@ -523,7 +523,7 @@
     - !<own> e3802390-8b3f-4f49-7163-1794116b2acc
     - !<own> 960b855a-92c4-47cc-85f3-8605634bfeb4
   Components:
-    - !<own> b74850fb-0e49-4604-88af-0c13dc22e74f
+    - !<own> c539ef59-3053-44e2-96fe-48fcf778d985
 - !<RenderMeshVisual/f003716e-d709-45ef-a28d-84da188f6e67>
   PrefabRemaps:
     []

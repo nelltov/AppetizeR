@@ -285,32 +285,6 @@
     []
   Components:
     - !<own> 4fb2f28b-b3cc-4f5e-b732-8fe5a2520e47
-- !<ScriptComponent/8dd50058-b2c4-4dc7-b5e8-3aa3842bd546>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> ee5289e3-fa71-4c72-92fc-3a91656b5b28
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> e3802390-8b3f-4f49-8e9c-e86bee94d533
-      pour_out_speed: 0.100000
-      name_is_amount: amount
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/93dbd696-0373-4a00-b3e7-65a3062818cd>
   PrefabRemaps:
     []
@@ -495,7 +469,6 @@
     - 6721413e-edb3-48b8-9fdd-07b0d9a33794: 197abc9a-e993-4e8a-8f5b-b9ebbdb1f55e
     - 89b20272-91dd-4c1e-9231-ece76b71bc2b: 960b855a-92c4-47cc-85f3-8605634bfeb4
     - 8b854461-b184-42da-84b1-a9449cd32d97: bd7a0419-24c9-4058-8b3f-236a5b84433b
-    - 8dd50058-b2c4-4dc7-b5e8-3aa3842bd546: b74850fb-0e49-4604-88af-0c13dc22e74f
     - 93dbd696-0373-4a00-b3e7-65a3062818cd: af04f231-bab2-42c3-9971-4d7a5ad3930d
     - a73bf99b-bcb8-429a-8ad9-c49e2e0851a3: 176b59eb-93f5-4372-969a-94c687b53439
     - abcf3557-e521-49ec-a436-96fbac38d61c: abcf3557-e521-49ec-5bc9-690453c729e3
@@ -509,6 +482,7 @@
     - f6cb45ff-c753-41ee-83fb-af6dd8caefc1: ca7c936c-89f1-4cef-b324-6e4b9a37dba6
     - f94cd6e1-7719-402e-a548-e3b8b1709298: 789a38c0-f4e0-4092-9ce4-bf8a86093bcb
     - fd9f1bc9-124f-4fa4-b664-56bee8873664: ab829d1a-0a0d-4f9f-a909-05fcfdf76fc6
+    - ff4f96f4-ea0e-41da-832a-6c5fc406f9b2: c539ef59-3053-44e2-96fe-48fcf778d985
   Name: Salt Shaker Model Prefab
   Enabled: true
   Layers: 1
@@ -521,7 +495,7 @@
     - !<own> e3802390-8b3f-4f49-8e9c-e86bee94d533
     - !<own> 89b20272-91dd-4c1e-9231-ece76b71bc2b
   Components:
-    - !<own> 8dd50058-b2c4-4dc7-b5e8-3aa3842bd546
+    - !<own> ff4f96f4-ea0e-41da-832a-6c5fc406f9b2
 - !<SceneObject/f6cb45ff-c753-41ee-83fb-af6dd8caefc1>
   PrefabRemaps:
     []
@@ -577,3 +551,29 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/ff4f96f4-ea0e-41da-832a-6c5fc406f9b2>
+  PrefabRemaps:
+    []
+  Name: PourSalt 3.0
+  Enabled: true
+  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      initial_amount: !<float> 1.000000
+      whole_prefab: !<reference.SceneObject> ee5289e3-fa71-4c72-92fc-3a91656b5b28
+      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
+      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
+      surfacelevel: surfacelevel
+      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
+      ahh_string: ahh
+      pour_threshold: -0.100000
+      VFX: !<reference.SceneObject> e3802390-8b3f-4f49-8e9c-e86bee94d533
+      pour_out_speed: 0.100000
+      name_is_amount: amount
+  ScriptTypes:
+    "":
+      {}

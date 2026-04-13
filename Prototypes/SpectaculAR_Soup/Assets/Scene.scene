@@ -8,7 +8,7 @@
     - !<own> 300d651d-84e7-48ca-b9f5-6b4241333c59
     - !<own> ecf5fbb1-9ae5-4d71-86c5-e1a988946523
     - !<own> 865fcee3-b0b8-43e0-8b75-fa11f19b2385
-    - !<own> a497caea-45b2-4b8f-a3f9-bdafd95a5f41
+    - !<own> 03fb8e4c-4dc4-48fe-8919-0358e122fa8a
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -381,6 +381,21 @@
     - !<own> 8fc69f7c-21cd-452c-b89c-c15a57cd914c
   Components:
     - !<own> 70f371c0-fcb4-4aff-805c-bcc8d7d5849e
+- !<SceneObject/03fb8e4c-4dc4-48fe-8919-0358e122fa8a>
+  PrefabRemaps:
+    []
+  Name: CenterTableObjects
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 29.932331}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 48a7ba4b-cdc4-4976-9bc8-265cc39b00aa
+  Components:
+    []
 - !<SceneObject/043b72d1-b810-4a9a-af04-3f3b7cf9434f>
   PrefabRemaps:
     []
@@ -4810,6 +4825,21 @@
     - !<own> 33e524fb-43a9-4cd7-a877-bc305eca547c
   Components:
     []
+- !<SceneObject/48a7ba4b-cdc4-4976-9bc8-265cc39b00aa>
+  PrefabRemaps:
+    []
+  Name: Salt Shaker
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> a497caea-45b2-4b8f-a3f9-bdafd95a5f41
+  Components:
+    - !<own> 666864dc-67bf-4dad-8a78-dc25f3b4a994
 - !<ScriptComponent/4a8758ca-89a3-44e0-b208-09a96c72bb31>
   PrefabRemaps:
     []
@@ -6838,6 +6868,23 @@
     []
   Components:
     - !<own> 13babcea-912e-4e89-b60a-1b003f0c6dd8
+- !<ScriptComponent/666864dc-67bf-4dad-8a78-dc25f3b4a994>
+  PrefabRemaps:
+    []
+  Name: SpawnPosition
+  Enabled: true
+  ScriptAsset: !<reference> d04876af-b6ab-4b24-ac53-82ad2443394b
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+      spawnOffset: !<Vec3> {x: 0.000000, y: 0.000000, z: -50.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/66a10a82-c29e-4675-97a2-b37bc1a70c92>
   PrefabRemaps:
     []
@@ -9221,6 +9268,32 @@
     []
   Components:
     - !<own> 1b804f32-059b-4255-aa1c-f729a43f4ded
+- !<ScriptComponent/88516f3c-1527-4491-96fd-1d46b0bfb8c1>
+  PrefabRemaps:
+    []
+  Name: PourSalt 3.0
+  Enabled: true
+  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      initial_amount: !<float> 1.000000
+      whole_prefab: !<reference.SceneObject> a497caea-45b2-4b8f-a3f9-bdafd95a5f41
+      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
+      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
+      surfacelevel: surfacelevel
+      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
+      ahh_string: ahh
+      pour_threshold: -0.100000
+      VFX: !<reference.SceneObject> 4b9baf37-9b8b-4fbc-aad8-3378bd741352
+      pour_out_speed: 0.100000
+      name_is_amount: amount
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/888b3ea7-25ce-4b4c-9e7c-de04142d4f0a>
   PrefabRemaps:
     []
@@ -10459,13 +10532,13 @@
     - 6c40d656-528a-4d43-b812-0023e5c33b58: f26144c7-f4ef-4fa8-8ab4-4ea0e848ad37
     - 7139dfe0-133d-473e-9d8e-fba262ed34b3: c0a2514c-1292-4b0d-48c0-197dfe347f19
     - 7b73db4c-5fcd-4c34-a085-9ed0e0bae5ba: cdba1e69-d374-4496-87eb-7609ccac01ea
+    - 88516f3c-1527-4491-96fd-1d46b0bfb8c1: c539ef59-3053-44e2-96fe-48fcf778d985
     - 93495add-04d3-4739-b54a-f0c5434fc544: ab829d1a-0a0d-4f9f-a909-05fcfdf76fc6
     - 96713e81-566a-4f2e-8821-c1277e4b3854: d0f26596-4cef-46e7-81d4-20a4c357723b
     - 9d26b25b-a5b3-4366-9feb-be0ade9c48c3: bd2ce582-8b83-427f-bd66-74133c6090e8
     - a497caea-45b2-4b8f-a3f9-bdafd95a5f41: ee5289e3-fa71-4c72-6d03-c56e9a94a4d7
     - b5014aa6-b384-4a02-8bf4-31c96ba365a7: f003716e-d709-45ef-a28d-84da188f6e67
     - bfb2389b-3fbb-4b47-9e29-a8eb6c7d4e60: 3f08979b-9f5a-4b7d-a849-324e4bea5598
-    - c7c478cd-2915-4489-bccf-962e67c213b7: b74850fb-0e49-4604-88af-0c13dc22e74f
     - cc7787c7-7306-4956-a7a7-274b64b16713: 0821883b-8fd9-457d-969f-066f432d857a
     - cf89053a-1e2a-498c-9c98-dfb0550308dd: 789a38c0-f4e0-4092-9ce4-bf8a86093bcb
     - d15d0cc3-a560-4404-b8d8-f1cdedada2d3: e8c905f7-c0d8-4da2-a688-82230ba58354
@@ -10479,7 +10552,7 @@
     - f67c2154-afe3-4ed9-b33f-a65880fb2d83: 96901107-c76c-48df-84b1-bc1ca04bbaff
     - f682b0c1-9453-41fa-a9cb-4fe2047bcaab: 706ecfcd-36bf-48d0-bf42-894451d16873
   Name: Salt Shaker Model Prefab
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10490,7 +10563,7 @@
     - !<own> 4b9baf37-9b8b-4fbc-aad8-3378bd741352
     - !<own> f0b26ba6-47a3-465c-a49c-b3fb926845b0
   Components:
-    - !<own> c7c478cd-2915-4489-bccf-962e67c213b7
+    - !<own> 88516f3c-1527-4491-96fd-1d46b0bfb8c1
 - !<SceneObject/a4be667c-356e-4cf4-81ef-21e3e55cb1c2>
   PrefabRemaps:
     []
@@ -12893,32 +12966,6 @@
     ring-3_end_end_end: !<reference> b6967747-d54d-4fdf-b8cc-652d7e6080ba
     thumb-3_end_end_end_end: !<reference> 1a90888e-d4d2-4c81-b8cb-9e2370b94e8a
     pinky-3_end_end: !<reference> 319c29db-cd9c-448c-8028-20ef49b55a70
-- !<ScriptComponent/c7c478cd-2915-4489-bccf-962e67c213b7>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> a497caea-45b2-4b8f-a3f9-bdafd95a5f41
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> 4b9baf37-9b8b-4fbc-aad8-3378bd741352
-      pour_out_speed: 0.100000
-      name_is_amount: amount
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/c89d7e48-75a6-414e-a253-874f80bfe792>
   PrefabRemaps:
     []
