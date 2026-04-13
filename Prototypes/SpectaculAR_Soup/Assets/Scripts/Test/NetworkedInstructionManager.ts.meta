@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/e7954eb7-1850-4eec-b111-0d169a0fb276>
+- !<AssetImportMetadata/003a49d2-29d3-4674-944f-884b5fb17d38>
   ImportedAssetIds:
-    TypeScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
+    TypeScriptAsset: !<reference> ff49356b-25ac-4d12-98e3-e1122304dc29
   ImporterName: TypeScriptAssetImporter
-  PrimaryAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
+  PrimaryAsset: !<reference> ff49356b-25ac-4d12-98e3-e1122304dc29
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    TypeScriptAsset: !<own> 00fa2e5d-cf10-4828-b00e-0006252fe196
+    TypeScriptAsset: !<own> eaac0c3f-e289-4c8b-a3fe-efaca8c240c6
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<TypeScriptAssetData/00fa2e5d-cf10-4828-b00e-0006252fe196>
+- !<TypeScriptAssetData/eaac0c3f-e289-4c8b-a3fe-efaca8c240c6>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -28,6 +28,8 @@
   ScriptInputsHidden:
     gameRootObject: false
     instructionArray: false
+    instructionImageHolderObject: false
+    instructionImages: false
     instructionStringHolderObject: false
     saltShakerObject: false
   ScriptTypesHidden:
@@ -41,14 +43,19 @@
   DefaultScriptInputs:
     - instructionArray: !<string[]>
         []
-      instructionStringHolderObject: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      instructionImageHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionStringHolderObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructionImages: !<reference.Texture[]>
+        []
   ScriptTypes:
     -
       {}
   InputLines:
     - "// @input string[] instructionArray"
-    - // @input Component.Text instructionStringHolderObject
+    - // @input SceneObject instructionImageHolderObject
+    - // @input SceneObject instructionStringHolderObject
     - // @input SceneObject saltShakerObject
     - // @input SceneObject gameRootObject
+    - "// @input Asset.Texture[] instructionImages"
