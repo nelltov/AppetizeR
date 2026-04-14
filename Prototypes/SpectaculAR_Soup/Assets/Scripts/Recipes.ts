@@ -19,13 +19,13 @@ export const Recipe1: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Carrot),
     new IngredientInfo(IngredientType.Potato),
     new IngredientInfo(IngredientType.Bayleaf),
-    new IngredientInfo(IngredientType.Noodles)
+    new IngredientInfo(IngredientType.Pasta)
 ]
 
 export const StarterRecipe: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Carrot),
     new IngredientInfo(IngredientType.Chicken),
-    new IngredientInfo(IngredientType.Noodles),
+    new IngredientInfo(IngredientType.Pasta),
 ]
 
 export const recipeDictionary: Record<string, IngredientInfo[]> = {
