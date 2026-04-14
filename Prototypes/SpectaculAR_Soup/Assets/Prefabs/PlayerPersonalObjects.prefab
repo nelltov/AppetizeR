@@ -35,6 +35,26 @@
     []
   Components:
     - !<own> 04b8de82-e42c-4474-a624-da76cf2b4ee6
+- !<ScriptComponent/03871f95-2d3f-4d18-b310-93cb4d2fea72>
+  PrefabRemaps:
+    []
+  Name: SaltShaderController
+  Enabled: true
+  ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
+  ScriptInputsDefault:
+    saltObject: true
+    faceObject: true
+    saltVFX: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      saltObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      faceObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      saltVFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/04b8de82-e42c-4474-a624-da76cf2b4ee6>
   PrefabRemaps:
     []
@@ -791,7 +811,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.990000, y: 0.990000, z: 0.990000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1113,6 +1133,24 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/36b583f1-9452-4b1d-a335-9c8a8719b18f>
+  PrefabRemaps:
+    []
+  Name: SaltShaderController
+  Enabled: true
+  ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      saltObject: !<reference.SceneObject> 2a38e3b8-0a04-4def-8d99-f86c0a35e03c
+      faceObject: !<reference.SceneObject> 00b75e3c-d132-4330-9699-9a7f5f09d389
+      saltVFX: !<reference.SceneObject> 44ce73fa-2ade-4a20-9c4f-b1a67c9b13ba
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/3a8c6048-684e-48cc-be4e-d49eed33eb8e>
   PrefabRemaps:
     []
@@ -1373,6 +1411,7 @@
     - !<own> a910d446-0988-47f5-b7fd-968a7f52d30f
   Components:
     - !<own> dcac3863-435f-4340-b045-9bbd62003a31
+    - !<own> 03871f95-2d3f-4d18-b310-93cb4d2fea72
     - !<own> b65335e4-3812-4930-a25d-c12ffeb333ac
     - !<own> da91113c-930f-45ae-9d17-91fd98b3df0a
     - !<own> ccbaeced-280a-494f-99ab-5d191215fbc8
@@ -1602,42 +1641,6 @@
     []
   Components:
     - !<own> 6e871140-faf8-46c6-ad07-d97670ba7a51
-- !<ScriptComponent/59ae24e2-3b6b-47a1-a6f7-a5f581692ad6>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    initial_amount: true
-    whole_prefab: true
-    width_and_height: true
-    salt_material: true
-    surfacelevel: true
-    face_material: true
-    ahh_string: true
-    pour_threshold: true
-    VFX: true
-    pour_out_speed: true
-    name_is_amount: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 0.000000
-      whole_prefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      width_and_height: !<Vec2> {x: 0.000000, y: 0.000000}
-      salt_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      surfacelevel: ""
-      face_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      ahh_string: ""
-      pour_threshold: !<float> 0.000000
-      VFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      pour_out_speed: !<float> 0.000000
-      name_is_amount: ""
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/5a34d57c-385b-4ca6-a625-477a281dc6e0>
   PrefabRemaps:
     []
@@ -3004,7 +3007,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 97a5f393-4403-4033-a9df-6c7a5f7f4c77
+    - !<reference> 00000000-0000-0000-0000-000000000000
   Mesh: !<reference> 44838bed-5701-49b6-924b-cb1a984e3d34
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -4582,38 +4585,19 @@
   Enabled: true
   ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
   ScriptInputsDefault:
-    initial_amount: true
-    whole_prefab: true
-    width_and_height: true
-    salt_material: true
-    surfacelevel: true
-    face_material: true
-    ahh_string: true
-    pour_threshold: true
-    VFX: true
-    pour_out_speed: true
-    name_is_amount: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      initial_amount: !<float> 0.000000
-      whole_prefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      width_and_height: !<Vec2> {x: 0.000000, y: 0.000000}
-      salt_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      surfacelevel: ""
-      face_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      ahh_string: ""
-      pour_threshold: !<float> 0.000000
-      VFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      pour_out_speed: !<float> 0.000000
-      name_is_amount: ""
+      {}
   ScriptTypes:
     "":
       {}
 - !<SceneObject/dd37c295-dcac-4bfd-bd2c-a28bb37f7056>
   PrefabRemaps:
     - 030cab63-b0a4-44fd-ad1a-5127ff1ca4ed: 030cab63-b0a4-44fd-52e5-aed800e35b12
+    - 03871f95-2d3f-4d18-b310-93cb4d2fea72: c93fea29-ba28-4de5-9e52-272285986189
     - 04b8de82-e42c-4474-a624-da76cf2b4ee6: 04b8de82-e42c-4474-59db-258930d4b119
     - 051cb966-f106-4a2c-b8e3-cc7446de3f4d: 051cb966-f106-4a2c-471c-338bb921c0b2
     - 08b22c4b-caa5-4743-91a0-0cc9c25c8e87: 53d69e24-1850-4207-8b59-823558fab574
@@ -5483,11 +5467,11 @@
     - 2a38e3b8-0a04-4def-8d99-f86c0a35e03c: 072f5f2c-2845-417d-5e67-87b64209c7da
     - 34b1db08-d5ba-478c-9509-0847bce2139a: cbd3cb7f-8870-4336-75c0-84d809c1bc37
     - 35b4d7de-531f-47a3-a203-06e3c05f5380: f842d1d3-74f5-4759-7c3f-8fd99a69369f
+    - 36b583f1-9452-4b1d-a335-9c8a8719b18f: 2139074d-c5fd-4aef-bcae-4919be366e40
     - 3e46e8b3-63ad-478b-914f-756fcf24f9ea: 9f1fb7cc-2b4f-4c1a-51d3-8e4fc4ba6499
     - 44ce73fa-2ade-4a20-9c4f-b1a67c9b13ba: f3df23da-3813-456a-7c2e-fd84f2d90d80
     - 51a5684f-9d21-4284-bc12-82758d11f816: 2f9e90aa-e9be-454b-7863-49a18178aa95
     - 51bb8014-4558-4a54-8d72-53e36e8547b1: cae0116a-bc00-4af5-5409-e41367494419
-    - 59ae24e2-3b6b-47a1-a6f7-a5f581692ad6: 105c5db6-c6fb-49c0-6c2a-4e6816a1a3ee
     - 5db6e9d8-ea3f-47c4-9d51-93d0c927e1be: 72eac661-9569-494c-53e5-1eba5e04ebd4
     - 7cbc9f40-cfd9-47ab-bc94-a8aa5c77d9e3: 027d4a8e-48ca-489c-6a47-7ab1a4c637a6
     - 7e90da82-6411-47d0-bb78-55f33d62e034: d6d3e563-3e3b-422d-52a8-0df47ecb5d56
@@ -5518,7 +5502,7 @@
     - !<own> 44ce73fa-2ade-4a20-9c4f-b1a67c9b13ba
     - !<own> 5db6e9d8-ea3f-47c4-9d51-93d0c927e1be
   Components:
-    - !<own> 59ae24e2-3b6b-47a1-a6f7-a5f581692ad6
+    - !<own> 36b583f1-9452-4b1d-a335-9c8a8719b18f
     - !<own> 42383c4b-9e42-4fee-b210-3291bce4b150
     - !<own> 346e2584-1263-4799-a92e-a1ed743c17e7
     - !<own> 99da5368-3055-48b8-b07e-773830b78c12

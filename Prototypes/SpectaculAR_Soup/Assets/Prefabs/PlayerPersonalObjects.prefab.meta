@@ -533,6 +533,7 @@
     - !<own> 30231a6c-cb24-4877-af6d-0b58bf979c02
   Components:
     - !<own> a9f811ed-9e1a-461f-a068-7a458738f2d8
+    - !<own> c93fea29-ba28-4de5-9e52-272285986189
     - !<own> 1e3ba058-8614-469d-8e88-5f4c53415688
     - !<own> 49ba7077-d224-4131-916d-2fa332d1fa35
     - !<own> 14eca31f-9a7e-465b-9de1-b77b64277a98
@@ -2978,32 +2979,12 @@
   Enabled: true
   ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
   ScriptInputsDefault:
-    initial_amount: true
-    whole_prefab: true
-    width_and_height: true
-    salt_material: true
-    surfacelevel: true
-    face_material: true
-    ahh_string: true
-    pour_threshold: true
-    VFX: true
-    pour_out_speed: true
-    name_is_amount: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      initial_amount: !<float> 0.000000
-      whole_prefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      width_and_height: !<Vec2> {x: 0.000000, y: 0.000000}
-      salt_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      surfacelevel: ""
-      face_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
-      ahh_string: ""
-      pour_threshold: !<float> 0.000000
-      VFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      pour_out_speed: !<float> 0.000000
-      name_is_amount: ""
+      {}
   ScriptTypes:
     "":
       {}
@@ -3744,6 +3725,26 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/c93fea29-ba28-4de5-9e52-272285986189>
+  PrefabRemaps:
+    []
+  Name: SaltShaderController
+  Enabled: true
+  ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
+  ScriptInputsDefault:
+    saltObject: true
+    faceObject: true
+    saltVFX: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      saltObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      faceObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      saltVFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/c99be7e1-7425-4f67-a4e2-de94bda50161>
   PrefabRemaps:
     []

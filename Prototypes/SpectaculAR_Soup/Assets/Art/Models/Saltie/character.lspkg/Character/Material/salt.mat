@@ -319,6 +319,12 @@
     - Port_PrevWorldPosition_N004:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
+    - Port_RangeMaxA_N009:
+        typeIdx: 1
+        value: 1.000000
+    - Port_RangeMaxA_N026:
+        typeIdx: 1
+        value: 1.000000
     - Port_RangeMaxA_N065:
         typeIdx: 1
         value: 1.000000
@@ -326,6 +332,9 @@
         typeIdx: 1
         value: 1.000000
     - Port_RangeMaxA_N114:
+        typeIdx: 1
+        value: 1.000000
+    - Port_RangeMaxB_N009:
         typeIdx: 1
         value: 1.000000
     - Port_RangeMaxB_N026:
@@ -340,6 +349,12 @@
     - Port_RangeMaxB_N114:
         typeIdx: 1
         value: 1.000000
+    - Port_RangeMinA_N009:
+        typeIdx: 1
+        value: 0.000000
+    - Port_RangeMinA_N026:
+        typeIdx: 1
+        value: 0.000000
     - Port_RangeMinA_N065:
         typeIdx: 1
         value: -1.000000
@@ -347,6 +362,9 @@
         typeIdx: 1
         value: -1.000000
     - Port_RangeMinA_N114:
+        typeIdx: 1
+        value: -1.000000
+    - Port_RangeMinB_N009:
         typeIdx: 1
         value: -1.000000
     - Port_RangeMinB_N026:
@@ -547,6 +565,15 @@
     - Port_Value_N073:
         typeIdx: 4
         value: {x: 0.000000, y: 1.000000, z: 0.000000}
+    - Port_Value_N105:
+        typeIdx: 4
+        value: {x: 0.000000, y: 1.000000, z: 0.000000}
+    - Port_Value_N106:
+        typeIdx: 4
+        value: {x: 0.000000, y: 1.000000, z: 0.000000}
+    - Port_Value_N112:
+        typeIdx: 4
+        value: {x: 0.000000, y: 0.000000, z: 0.000000}
     - Port_VectorIn_N022:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -586,12 +613,21 @@
           0: {x: 1.000000, y: 0.000000, z: 0.000000}
           1: {x: 0.000000, y: 1.000000, z: 0.000000}
           2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    - Tweak_N11:
+        typeIdx: 1
+        value: 9.500000
+    - Tweak_N21:
+        typeIdx: 1
+        value: 0.460000
     - Tweak_N57:
         typeIdx: 1
         value: 4.000000
     - Tweak_N7:
         typeIdx: 1
         value: 0.250000
+    - amount:
+        typeIdx: 1
+        value: 0.710000
     - baseTex:
         typeIdx: 9
         value:
@@ -649,9 +685,6 @@
           0: {x: 1.000000, y: 0.000000, z: 0.000000}
           1: {x: 0.000000, y: 1.000000, z: 0.000000}
           2: {x: 0.000000, y: 0.000000, z: 1.000000}
-    - surfacelevel:
-        typeIdx: 1
-        value: 10.000000
     - uvScale:
         typeIdx: 1
         value: 1.000000
@@ -666,7 +699,7 @@
   FrustumCullPad: 0.000000
   InstanceCount: 1
   Defines:
-    []
+    - Tweak_N59
   BlendMode: AlphaTest
   Properties:
     Port_AO_N006:
@@ -717,24 +750,6 @@
     Port_Opacity_N006:
       typeIdx: 1
       value: 1.000000
-    Port_RangeMaxA_N009:
-      typeIdx: 1
-      value: 1.000000
-    Port_RangeMaxA_N026:
-      typeIdx: 1
-      value: 1.000000
-    Port_RangeMaxB_N009:
-      typeIdx: 1
-      value: 1.000000
-    Port_RangeMinA_N009:
-      typeIdx: 1
-      value: 0.000000
-    Port_RangeMinA_N026:
-      typeIdx: 1
-      value: 0.000000
-    Port_RangeMinB_N009:
-      typeIdx: 1
-      value: -1.000000
     Port_Roughness_N006:
       typeIdx: 1
       value: 0.750000
@@ -744,24 +759,9 @@
     Port_Threshold_N008:
       typeIdx: 1
       value: 0.290000
-    Port_Value_N105:
-      typeIdx: 4
-      value: {x: 0.000000, y: 1.000000, z: 0.000000}
-    Port_Value_N106:
-      typeIdx: 4
-      value: {x: 0.000000, y: 1.000000, z: 0.000000}
-    Port_Value_N112:
-      typeIdx: 4
-      value: {x: 0.000000, y: 0.000000, z: 0.000000}
     PreviewEnabled:
       typeIdx: 0
       value: 0
-    Tweak_N11:
-      typeIdx: 1
-      value: 9.500000
-    Tweak_N21:
-      typeIdx: 1
-      value: 0.460000
     Tweak_N38:
       typeIdx: 1
       value: 0.100000
@@ -780,7 +780,7 @@
     alphaTestThreshold:
       typeIdx: 1
       value: 0.411000
-    amount:
+    surfacelevel:
       typeIdx: 1
-      value: 0.710000
+      value: 10.000000
   Pass: !<reference> 2325ea1f-f339-4056-9940-06b2f1760882
