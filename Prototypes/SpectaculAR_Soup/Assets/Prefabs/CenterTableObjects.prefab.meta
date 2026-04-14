@@ -1110,7 +1110,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: Hi Everyone! Click this text to chat!
+  Text: Hi Everyone! CLICK HERE!
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -1536,7 +1536,7 @@
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: -0.000000, z: 1.796854}
+    Rotation: {x: 1.299444, y: 13.042457, z: 21.840412}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
@@ -2803,7 +2803,7 @@
   Enabled: true
   ScriptAsset: !<reference> 770c1f7f-581a-4de2-9675-a07489be53d7
   ScriptInputsDefault:
-    {}
+    debugText: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2812,6 +2812,7 @@
       confirmButton: !<reference.SceneObject> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
       chefSelectionButton: !<reference.SceneObject> 467f2e89-4e64-46a6-8e45-d718c497a35c
       gameRoot: !<reference.SceneObject> 369715e4-02f9-462d-694f-6dd665ce8aa4
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}
@@ -3284,4 +3285,3 @@
   Components:
     - !<own> aa66543f-20c1-4423-72bf-417824e12142
     - !<own> d24a299f-341f-46d0-4f64-ce47e131e3c0
-- !<ScriptComponent/ff68fe1a-19ae-4cc1-47ad-ac0ebf40edf0> ~

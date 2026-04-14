@@ -23,6 +23,9 @@ export class ConfirmPosition extends BaseScriptComponent {
     gameRoot: SceneObject
     private gameRootInteractableManipulation: InteractableManipulation
 
+    @input
+    debugText: Text
+
     onAwake() {
         this.syncEntity = new SyncEntity(this);
         this.syncEntity.notifyOnReady(() => this.onReady())
@@ -32,9 +35,11 @@ export class ConfirmPosition extends BaseScriptComponent {
 
     onReady() {
         this.totalPlayers = SessionController.getInstance().getUsers().length
+        if (this.debugText) this.debugText.text = this.debugText.text + `\nExpected Total Players: ${this.totalPlayers}`
         this.gameRootInteractableManipulation = this.gameRoot.getComponent(InteractableManipulation.getTypeName()) as InteractableManipulation
         
         this.playersReady.onAnyChange.add((newVal: number) => {
+            if (this.debugText) this.debugText.text = this.debugText.text + `\nPlayers Ready: ${newVal}`
             if (newVal === this.totalPlayers) {
                 // all players confirmed game positions
                 this.chefSelectionButton.enabled = true
