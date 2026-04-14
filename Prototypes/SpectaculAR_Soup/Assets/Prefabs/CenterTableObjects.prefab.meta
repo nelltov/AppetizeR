@@ -286,10 +286,9 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> d82fc12f-06ec-4f27-a125-33ddc4712123
-    - !<own> 6d6ec0ff-7fbb-45a6-ac26-abfa0db84340
+    - !<own> 6550f6f4-0bed-466c-5be6-798fdc1e37b8
+    - !<own> 467f2e89-4e64-46a6-8e45-d718c497a35c
     - !<own> 2df69494-fb12-47fb-802e-77155ec00dcd
-    - !<own> 4f2c5a1e-37fb-48a1-7d6a-b90f1a1fc453
   Components:
     []
 - !<RenderMeshVisual/10887cdc-6734-4ac3-6502-3d2ba0570bc1>
@@ -425,6 +424,29 @@
     []
   Components:
     - !<own> 8102521c-d0c9-4f1a-437f-1419220e65f2
+- !<ScriptComponent/194e496d-c29f-488e-8535-72b28a1ba235>
+  PrefabRemaps:
+    []
+  Name: ConfirmPosition
+  Enabled: true
+  ScriptAsset: !<reference> 770c1f7f-581a-4de2-9675-a07489be53d7
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      confirmButton: !<reference.SceneObject> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
+      startingObject: !<reference.SceneObject> 369715e4-02f9-462d-694f-6dd665ce8aa4
+      gameRoot: !<reference.SceneObject> 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> 6550f6f4-0bed-466c-5be6-798fdc1e37b8
+      objectsToEnable: !<reference.SceneObject[]>
+        - !<reference> 467f2e89-4e64-46a6-8e45-d718c497a35c
+        - !<reference> 2df69494-fb12-47fb-802e-77155ec00dcd
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/1ba98682-c703-42cc-63af-95df1e46fe9e>
   PrefabRemaps:
     []
@@ -698,9 +720,9 @@
     []
   Name: Physics Collider
   Enabled: true
-  Shape: !<Box>
+  Shape: !<Sphere>
     FitVisual: false
-    Size: {x: 15.000000, y: 20.000000, z: 15.000000}
+    Radius: 20.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -810,7 +832,7 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 6550f6f4-0bed-466c-5be6-798fdc1e37b8
+    - !<own> 6953241b-0f62-474b-99ff-d1a15deb8c77
     - !<own> 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
   Components:
     - !<own> c2cd8825-50ee-480d-945e-acfd7ba5453f
@@ -1307,7 +1329,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 4.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 6.000000, y: 6.000000, z: 6.000000}
+    Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 6985cead-bcab-4e54-4d34-98247b032d98
@@ -1536,7 +1558,7 @@
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 1.299444, y: 13.042457, z: 21.840412}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
@@ -1551,9 +1573,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 17.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    Scale: {x: 0.750000, y: 0.750000, z: 0.750000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 63af8bef-ff97-4a84-440d-6c8dd4d00943
@@ -1597,6 +1619,22 @@
     - !<own> 25e7c793-9407-4a32-487d-9f9e171caf67
   Components:
     - !<own> c74150b7-3de7-43c0-7a7f-096f447fa4d4
+- !<SceneObject/6953241b-0f62-474b-99ff-d1a15deb8c77>
+  PrefabRemaps:
+    []
+  Name: StartingObject
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
+    - !<own> 4f2c5a1e-37fb-48a1-7d6a-b90f1a1fc453
+  Components:
+    []
 - !<SceneObject/6985cead-bcab-4e54-4d34-98247b032d98>
   PrefabRemaps:
     []
@@ -1657,22 +1695,6 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
-- !<SceneObject/6d6ec0ff-7fbb-45a6-ac26-abfa0db84340>
-  PrefabRemaps:
-    []
-  Name: Buttons
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
-    - !<own> 467f2e89-4e64-46a6-8e45-d718c497a35c
-  Components:
-    []
 - !<RenderMeshVisual/6d8659f4-44ba-4736-40b7-93efcb562879>
   PrefabRemaps:
     []
@@ -1713,7 +1735,7 @@
       _inactive: false
       _playAudio: true
       triggerStartCallbacks:
-        - scriptComponent: !<reference.ScriptComponent> d2d1e6b9-6abd-4950-b1fd-84524f9e7351
+        - scriptComponent: !<reference.ScriptComponent> 194e496d-c29f-488e-8535-72b28a1ba235
           functionName: confirmGamePosition
       cooldownDuration: 0.500000
   ScriptTypes:
@@ -2043,7 +2065,7 @@
   Children:
     - !<own> 5bb934a5-07db-4dd9-bcdc-fe36033a8522
   Components:
-    []
+    - !<own> 194e496d-c29f-488e-8535-72b28a1ba235
 - !<ScriptComponent/8f646a8b-a7c0-412a-8b41-f4ef19f15eb0>
   PrefabRemaps:
     []
@@ -2512,22 +2534,21 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    {}
+    objectsToEnable: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       instructionArray: !<string[]>
         - Hi Everyone! Click this text to chat!
-        - "I'm Saltie!"
-        - I need to get to the middle of the table!
-        - You can move me by pinching and holding me!
-        - "Awesome! Can you help me make a secret soup for my partner, Peppi?"
+        - "Can you help me make the special soup of the day?"
         - "There is a catch... DON'T SAY THE INGREDIENT NAMES!"
-        - "Alright, let's suprise Peppi!"
       instructionStringHolderObject: !<reference.Text> 4742fb3b-8782-4489-66dd-1964c9358483
-      saltShakerObject: !<reference.SceneObject> 6550f6f4-0bed-466c-5be6-798fdc1e37b8
-      gameRootObject: !<reference.SceneObject> 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> 6550f6f4-0bed-466c-5be6-798fdc1e37b8
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
   ScriptTypes:
     "":
       {}
@@ -2796,26 +2817,6 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/d2d1e6b9-6abd-4950-b1fd-84524f9e7351>
-  PrefabRemaps:
-    []
-  Name: ConfirmPosition
-  Enabled: true
-  ScriptAsset: !<reference> 770c1f7f-581a-4de2-9675-a07489be53d7
-  ScriptInputsDefault:
-    debugText: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      gameManagersToEnable: !<reference.SceneObject> 2df69494-fb12-47fb-802e-77155ec00dcd
-      confirmButton: !<reference.SceneObject> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
-      chefSelectionButton: !<reference.SceneObject> 467f2e89-4e64-46a6-8e45-d718c497a35c
-      gameRoot: !<reference.SceneObject> 369715e4-02f9-462d-694f-6dd665ce8aa4
-      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/d32461e4-cd93-4421-657f-2cafd3a129f0>
   PrefabRemaps:
     []
@@ -2951,21 +2952,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/d82fc12f-06ec-4f27-a125-33ddc4712123>
-  PrefabRemaps:
-    []
-  Name: ConfirmPosition
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> d2d1e6b9-6abd-4950-b1fd-84524f9e7351
 - !<SceneObject/d9c20c37-5713-4b83-6f68-f733290f4eef>
   PrefabRemaps:
     []

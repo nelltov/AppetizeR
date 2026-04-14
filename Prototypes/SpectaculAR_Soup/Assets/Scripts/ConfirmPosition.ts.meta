@@ -26,11 +26,11 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    chefSelectionButton: false
     confirmButton: false
-    debugText: false
-    gameManagersToEnable: false
     gameRoot: false
+    objectsToDisable: false
+    objectsToEnable: false
+    startingObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,17 +40,19 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - gameManagersToEnable: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      chefSelectionButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      startingObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      objectsToDisable: !<reference.SceneObject[]>
+        []
+      objectsToEnable: !<reference.SceneObject[]>
+        []
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input SceneObject gameManagersToEnable
     - // @input SceneObject confirmButton
-    - // @input SceneObject chefSelectionButton
+    - // @input SceneObject startingObject
     - // @input SceneObject gameRoot
-    - // @input Component.Text debugText
+    - "// @input SceneObject[] objectsToDisable"
+    - "// @input SceneObject[] objectsToEnable"

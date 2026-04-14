@@ -156,8 +156,9 @@
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
     instructionStringHolderObject: true
-    saltShakerObject: true
-    gameRootObject: true
+    objectsToDisable: true
+    objectsToEnable: true
+    confirmPositionObject: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -170,8 +171,11 @@
         - No Animal Names!
         - Now make the Appetizer Soup!
       instructionStringHolderObject: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      objectsToDisable: !<reference.SceneObject[]>
+        []
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

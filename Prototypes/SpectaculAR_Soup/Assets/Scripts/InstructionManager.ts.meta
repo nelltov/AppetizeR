@@ -26,10 +26,11 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    gameRootObject: false
+    confirmPositionObject: false
     instructionArray: false
     instructionStringHolderObject: false
-    saltShakerObject: false
+    objectsToDisable: false
+    objectsToEnable: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -42,13 +43,17 @@
     - instructionArray: !<string[]>
         []
       instructionStringHolderObject: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      saltShakerObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      gameRootObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      objectsToDisable: !<reference.SceneObject[]>
+        []
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - "// @input string[] instructionArray"
     - // @input Component.Text instructionStringHolderObject
-    - // @input SceneObject saltShakerObject
-    - // @input SceneObject gameRootObject
+    - "// @input SceneObject[] objectsToDisable"
+    - "// @input SceneObject[] objectsToEnable"
+    - // @input SceneObject confirmPositionObject
