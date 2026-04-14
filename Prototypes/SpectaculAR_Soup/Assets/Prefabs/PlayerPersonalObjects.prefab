@@ -42,16 +42,14 @@
   Enabled: true
   ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
   ScriptInputsDefault:
-    saltObject: true
-    faceObject: true
-    saltVFX: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      saltObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      faceObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      saltVFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      saltObject: !<reference.SceneObject> 6da8599c-dea4-4834-9881-31c65e0627b6
+      faceObject: !<reference.SceneObject> 1acf573a-b3f3-42b6-a587-400e0ef3ff4c
+      saltVFX: !<reference.SceneObject> 8ef12b93-82cb-4eb2-8eb2-66e3d381b8df
   ScriptTypes:
     "":
       {}
@@ -202,7 +200,7 @@
         - !<reference> 1167bae9-5f1e-4e68-ac9c-89f6f00cfd51
         - !<reference> 06061f84-2301-47eb-99ca-ae43b2ab1193
         - !<reference> 67b6a5ad-6480-4ede-bc43-75dc894cec8a
-        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> d635d5b8-31dc-44ff-87e7-ddf1fefe1718
         - !<reference> e99dc75f-37df-4ebd-8f60-ee8d554dce40
         - !<reference> 93a168e5-1777-4148-bd36-d85ba67ceb19
         - !<reference> a9ec6148-da47-4ce8-954e-3b4a5dbb9f97
@@ -655,7 +653,7 @@
   PrefabRemaps:
     []
   Name: CheckSoupButton
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -19.240791, y: 19.590046, z: -19.820526}
@@ -1410,7 +1408,6 @@
     - !<own> 8ef12b93-82cb-4eb2-8eb2-66e3d381b8df
     - !<own> a910d446-0988-47f5-b7fd-968a7f52d30f
   Components:
-    - !<own> dcac3863-435f-4340-b045-9bbd62003a31
     - !<own> 03871f95-2d3f-4d18-b310-93cb4d2fea72
     - !<own> b65335e4-3812-4930-a25d-c12ffeb333ac
     - !<own> da91113c-930f-45ae-9d17-91fd98b3df0a
@@ -2144,7 +2141,7 @@
     "":
       ingredientMaterials: !<reference.Material[]>
         - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
+        - !<reference> ac2685f8-756e-438c-8fab-a4ca165bca69
         - !<reference> 00000000-0000-0000-0000-000000000000
         - !<reference> a928c279-7abc-439b-a11c-a61aa5138436
         - !<reference> 215f2f3e-b718-4676-a75e-7a10cbc4b4ca
@@ -2155,7 +2152,7 @@
         - !<reference> 094b3f16-0431-41bb-987b-77901f33d059
         - !<reference> c11fe2a0-fb3a-48d5-8b66-3cf61c1a2c17
         - !<reference> de042c23-6d68-451a-afdd-869cae5975d0
-        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
         - !<reference> b24608ff-9b12-4faa-b5ea-fdc2fed0cce9
         - !<reference> 9d17e2c1-87e4-4661-946f-5f19028da80c
         - !<reference> c5449ffc-21b7-4caa-a258-4ad63c931bab
@@ -4578,22 +4575,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/dcac3863-435f-4340-b045-9bbd62003a31>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/dd37c295-dcac-4bfd-bd2c-a28bb37f7056>
   PrefabRemaps:
     - 030cab63-b0a4-44fd-ad1a-5127ff1ca4ed: 030cab63-b0a4-44fd-52e5-aed800e35b12
@@ -4767,7 +4748,6 @@
     - d90a9f23-64e4-4cec-a434-1753ad3f7a72: d90a9f23-64e4-4cec-5bcb-e8ac52c0858d
     - da91113c-930f-45ae-9d17-91fd98b3df0a: 49ba7077-d224-4131-916d-2fa332d1fa35
     - daf2f5e1-5c76-4aa1-8545-9f1b67e353ed: daf2f5e1-5c76-4aa1-7aba-60e4981cac12
-    - dcac3863-435f-4340-b045-9bbd62003a31: a9f811ed-9e1a-461f-a068-7a458738f2d8
     - dd37c295-dcac-4bfd-bd2c-a28bb37f7056: dd37c295-dcac-4bfd-42d3-5d744c808fa9
     - de3f9ab3-9add-494c-adfa-fca59f2e76fc: de3f9ab3-9add-494c-5205-035a60d18903
     - e05e5e7d-9413-4ac8-ac96-f583e48af8d3: e05e5e7d-9413-4ac8-5369-0a7c1b75072c

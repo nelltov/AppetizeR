@@ -243,7 +243,7 @@
         - !<reference> 1167bae9-5f1e-4e68-ac9c-89f6f00cfd51
         - !<reference> 06061f84-2301-47eb-99ca-ae43b2ab1193
         - !<reference> 67b6a5ad-6480-4ede-bc43-75dc894cec8a
-        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> d635d5b8-31dc-44ff-87e7-ddf1fefe1718
         - !<reference> e99dc75f-37df-4ebd-8f60-ee8d554dce40
         - !<reference> 93a168e5-1777-4148-bd36-d85ba67ceb19
         - !<reference> a9ec6148-da47-4ce8-954e-3b4a5dbb9f97
@@ -532,7 +532,6 @@
     - !<own> 3eb4a6d0-1149-403f-bb4e-ecde4ce9bbb4
     - !<own> 30231a6c-cb24-4877-af6d-0b58bf979c02
   Components:
-    - !<own> a9f811ed-9e1a-461f-a068-7a458738f2d8
     - !<own> c93fea29-ba28-4de5-9e52-272285986189
     - !<own> 1e3ba058-8614-469d-8e88-5f4c53415688
     - !<own> 49ba7077-d224-4131-916d-2fa332d1fa35
@@ -847,7 +846,7 @@
   PrefabRemaps:
     []
   Name: CheckSoupButton
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -19.240791, y: 19.590046, z: -19.820526}
@@ -2972,22 +2971,6 @@
     []
   Components:
     - !<own> 9307e8b5-2c3f-4016-719e-3db64a58516f
-- !<ScriptComponent/a9f811ed-9e1a-461f-a068-7a458738f2d8>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<Text/ab588040-fe9f-44a7-8646-c8f4ec4777b7>
   PrefabRemaps:
     []
@@ -3397,7 +3380,7 @@
     "":
       ingredientMaterials: !<reference.Material[]>
         - !<reference> 00000000-0000-0000-0000-000000000000
-        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
+        - !<reference> ac2685f8-756e-438c-8fab-a4ca165bca69
         - !<reference> 00000000-0000-0000-0000-000000000000
         - !<reference> a928c279-7abc-439b-a11c-a61aa5138436
         - !<reference> 215f2f3e-b718-4676-a75e-7a10cbc4b4ca
@@ -3408,7 +3391,7 @@
         - !<reference> 094b3f16-0431-41bb-987b-77901f33d059
         - !<reference> c11fe2a0-fb3a-48d5-8b66-3cf61c1a2c17
         - !<reference> de042c23-6d68-451a-afdd-869cae5975d0
-        - !<reference> 00000000-0000-0000-0000-000000000000
+        - !<reference> ff3a1c6f-bc1e-40a7-b155-de7741b9a3b9
         - !<reference> b24608ff-9b12-4faa-b5ea-fdc2fed0cce9
         - !<reference> 9d17e2c1-87e4-4661-946f-5f19028da80c
         - !<reference> c5449ffc-21b7-4caa-a258-4ad63c931bab
@@ -3732,16 +3715,14 @@
   Enabled: true
   ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
   ScriptInputsDefault:
-    saltObject: true
-    faceObject: true
-    saltVFX: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      saltObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      faceObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      saltVFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      saltObject: !<reference.SceneObject> 0392057a-054a-4a53-b6b1-b348e5baa35c
+      faceObject: !<reference.SceneObject> a4df8c7d-1680-48b5-9e40-7694366264fb
+      saltVFX: !<reference.SceneObject> 3eb4a6d0-1149-403f-bb4e-ecde4ce9bbb4
   ScriptTypes:
     "":
       {}
