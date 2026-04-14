@@ -11,7 +11,7 @@ export enum IngredientType {
     Noodles = 9,
     Onion = 10,
     Potato = 11,
-    // Pasta = 12,
+    Pasta = 12,
     Spinach = 13,
     Tofu = 14,
     Tomato = 15,
