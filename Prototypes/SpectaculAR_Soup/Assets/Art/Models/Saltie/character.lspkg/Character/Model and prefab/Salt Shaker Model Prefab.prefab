@@ -76,22 +76,32 @@
   Enabled: true
   ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
   ScriptInputsDefault:
-    {}
+    initial_amount: true
+    whole_prefab: true
+    width_and_height: true
+    salt_material: true
+    surfacelevel: true
+    face_material: true
+    ahh_string: true
+    pour_threshold: true
+    VFX: true
+    pour_out_speed: true
+    name_is_amount: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> 1dbfc884-9eee-4fec-98dd-dd7c49c1caa0
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> f3df23da-3813-456a-83d1-027b0d26f27f
-      pour_out_speed: 0.100000
-      name_is_amount: amount
+      initial_amount: !<float> 0.000000
+      whole_prefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      width_and_height: !<Vec2> {x: 0.000000, y: 0.000000}
+      salt_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      surfacelevel: ""
+      face_material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      ahh_string: ""
+      pour_threshold: !<float> 0.000000
+      VFX: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pour_out_speed: !<float> 0.000000
+      name_is_amount: ""
   ScriptTypes:
     "":
       {}
