@@ -5,12 +5,10 @@ import { IngredientInfo } from "../Ingredients/Ingredient"
 export class SoupShaderController extends BaseScriptComponent {
     @input
     private soupSurfaceObject: SceneObject
-    private soupSurfaceMaterial: Material
     private soupSurfaceShader: Pass
 
     @input
     private soupIngredientsObject: SceneObject
-    private soupIngredientsMaterial: Material
     private soupIngredientsShader: Pass
     private ingredientList: Float32Array
 
@@ -34,8 +32,8 @@ export class SoupShaderController extends BaseScriptComponent {
 
     onStart() {
         // Rotation of soup
-        this.soupSurfaceMaterial = this.soupSurfaceObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
-        this.soupSurfaceShader = this.soupSurfaceMaterial.mainPass
+        const soupSurfaceMaterial = this.soupSurfaceObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
+        this.soupSurfaceShader = soupSurfaceMaterial.mainPass
         this.soupSurfaceShader.swirlAmount = 0
         
 
@@ -44,8 +42,8 @@ export class SoupShaderController extends BaseScriptComponent {
         })
 
         // Ingredients being added to the soup
-        this.soupIngredientsMaterial = this.soupIngredientsObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
-        this.soupIngredientsShader = this.soupIngredientsMaterial.mainPass
+        const soupIngredientsMaterial = this.soupIngredientsObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
+        this.soupIngredientsShader = soupIngredientsMaterial.mainPass
         this.ingredientList = this.soupIngredientsShader.ingredient_list as Float32Array
         
         this.clearSoupIngredients()

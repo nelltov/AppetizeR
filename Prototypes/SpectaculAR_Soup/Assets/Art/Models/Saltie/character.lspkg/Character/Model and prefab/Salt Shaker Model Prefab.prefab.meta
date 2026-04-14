@@ -73,38 +73,12 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.990000, y: 0.990000, z: 0.990000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
   Components:
     - !<own> cbd3cb7f-8870-4336-75c0-84d809c1bc37
-- !<ScriptComponent/105c5db6-c6fb-49c0-6c2a-4e6816a1a3ee>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> 1dbfc884-9eee-4fec-6722-2283b63e355f
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> f3df23da-3813-456a-7c2e-fd84f2d90d80
-      pour_out_speed: 0.100000
-      name_is_amount: amount
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/1dbfc884-9eee-4fec-6722-2283b63e355f>
   PrefabRemaps:
     []
@@ -120,7 +94,25 @@
     - !<own> f3df23da-3813-456a-7c2e-fd84f2d90d80
     - !<own> 72eac661-9569-494c-53e5-1eba5e04ebd4
   Components:
-    - !<own> 105c5db6-c6fb-49c0-6c2a-4e6816a1a3ee
+    - !<own> 2139074d-c5fd-4aef-bcae-4919be366e40
+- !<ScriptComponent/2139074d-c5fd-4aef-bcae-4919be366e40>
+  PrefabRemaps:
+    []
+  Name: SaltShaderController
+  Enabled: true
+  ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      saltObject: !<reference.SceneObject> 072f5f2c-2845-417d-5e67-87b64209c7da
+      faceObject: !<reference.SceneObject> 3cec5f8d-ace2-4885-44af-ed9bdad8e962
+      saltVFX: !<reference.SceneObject> f3df23da-3813-456a-7c2e-fd84f2d90d80
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/2e51e61f-f759-459c-5c9c-f955df64601f>
   PrefabRemaps:
     []
@@ -134,7 +126,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 97a5f393-4403-4033-a9df-6c7a5f7f4c77
+    - !<reference> 00000000-0000-0000-0000-000000000000
   Mesh: !<reference> 44838bed-5701-49b6-924b-cb1a984e3d34
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true

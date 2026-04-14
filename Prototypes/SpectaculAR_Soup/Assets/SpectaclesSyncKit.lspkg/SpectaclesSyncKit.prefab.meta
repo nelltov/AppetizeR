@@ -2452,7 +2452,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 97a5f393-4403-4033-a9df-6c7a5f7f4c77
+    - !<reference> 00000000-0000-0000-0000-000000000000
   Mesh: !<reference> 44838bed-5701-49b6-924b-cb1a984e3d34
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -3062,10 +3062,10 @@
     - 6f4a3141-891b-42ef-908d-478ccdafff4e: 72eac661-9569-494c-53e5-1eba5e04ebd4
     - 8b03a07c-35da-4192-aba2-e7b944fe5912: 8a907c61-d085-42fe-5101-7dd7f320745f
     - 8e7e0769-7b45-4578-bc96-0f602242ba2b: 072f5f2c-2845-417d-5e67-87b64209c7da
-    - 90bdcc79-0c20-488b-b8cd-196a256039c5: 105c5db6-c6fb-49c0-6c2a-4e6816a1a3ee
     - 9a359c99-d692-4bb6-b725-f17460946dff: 027d4a8e-48ca-489c-6a47-7ab1a4c637a6
     - a1068aca-edf0-4697-b167-ace78eaac833: cbd3cb7f-8870-4336-75c0-84d809c1bc37
     - ad84bae0-dcf4-4d74-875a-3c9cb575dedd: f842d1d3-74f5-4759-7c3f-8fd99a69369f
+    - b402ad0c-1679-465d-ab1b-7f82e25051b1: 2139074d-c5fd-4aef-bcae-4919be366e40
     - b788bc20-07e4-4afc-b88c-0300ce3f918e: a0f8fd42-ab20-4696-5047-1db9716544dd
     - c4e3babc-94d1-410c-a481-96c92a31c433: d6d3e563-3e3b-422d-52a8-0df47ecb5d56
     - c908af14-0e9d-4a21-8dc9-5c37c2884c18: 05d8d9a4-6bc1-47ae-7266-853177022fc4
@@ -3086,7 +3086,7 @@
     - !<own> 438ccad1-b4b8-4285-a215-c7d002d9b972
     - !<own> 6f4a3141-891b-42ef-908d-478ccdafff4e
   Components:
-    - !<own> 90bdcc79-0c20-488b-b8cd-196a256039c5
+    - !<own> b402ad0c-1679-465d-ab1b-7f82e25051b1
 - !<SceneObject/6ef05754-3bd8-42d8-b01e-5cf47d898200>
   PrefabRemaps:
     []
@@ -4180,7 +4180,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.990000, y: 0.990000, z: 0.990000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -4201,32 +4201,6 @@
     []
   Components:
     - !<own> 811b930a-fbe4-496f-8e98-abe8330508ad
-- !<ScriptComponent/90bdcc79-0c20-488b-b8cd-196a256039c5>
-  PrefabRemaps:
-    []
-  Name: PourSalt 3.0
-  Enabled: true
-  ScriptAsset: !<reference> 5d8170b2-be65-492a-bda9-35d20d816780
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      initial_amount: !<float> 1.000000
-      whole_prefab: !<reference.SceneObject> 6e0c6fc0-d4a8-400f-b41f-400cc199826d
-      width_and_height: !<Vec2> {x: 10.000000, y: 15.000000}
-      salt_material: !<reference.Material> 4913c750-0b31-4f1c-ba9c-047cf4cffb04
-      surfacelevel: surfacelevel
-      face_material: !<reference.Material> c12c7d8f-c023-439b-baba-a176febff293
-      ahh_string: ahh
-      pour_threshold: -0.100000
-      VFX: !<reference.SceneObject> 438ccad1-b4b8-4285-a215-c7d002d9b972
-      pour_out_speed: 0.100000
-      name_is_amount: amount
-  ScriptTypes:
-    "":
-      {}
 - !<ColliderComponent/90cc9174-e60c-4eda-aeca-8f181fb95965>
   PrefabRemaps:
     []
@@ -5411,7 +5385,6 @@
     - 8c26840f-7a99-42bc-bb55-a481c92a6d47: a5621e1f-af46-4b21-6305-18a56e10a121
     - 8e7dbb44-f9c4-44e0-8364-fe4bd8fb3be1: d2d1e6b9-6abd-4950-b1fd-84524f9e7351
     - 8e7e0769-7b45-4578-bc96-0f602242ba2b: dec092f8-68cf-4bc8-67af-4e93c0edaf9e
-    - 90bdcc79-0c20-488b-b8cd-196a256039c5: ff68fe1a-19ae-4cc1-47ad-ac0ebf40edf0
     - 91cf21ec-3e22-4924-9018-eb157767ab10: 6550f6f4-0bed-466c-5be6-798fdc1e37b8
     - 92d7132f-9298-47af-9057-b9e8e69a7afd: f5c92831-8626-4d29-ae64-8b973d10895e
     - 93f723e1-7ab4-4530-850f-029a53eccf42: 10887cdc-6734-4ac3-6502-3d2ba0570bc1
@@ -5437,6 +5410,7 @@
     - ad84bae0-dcf4-4d74-875a-3c9cb575dedd: 0a410ad6-8ce6-422a-54a3-798562cb70b0
     - ae95ca8c-f1ed-4d3f-86c5-2b48e2b6ce2b: 0d8e3166-b33a-4e16-69a3-073e7d76135a
     - b1b64e57-ec0e-4470-8743-db81c0bdf707: 1ba98682-c703-42cc-63af-95df1e46fe9e
+    - b402ad0c-1679-465d-ab1b-7f82e25051b1: b1b2fbad-600a-4cdd-8602-ad6fd9b438dd
     - b63a24b5-f721-4430-9c0f-1d7610f0d356: aa66543f-20c1-4423-72bf-417824e12142
     - b679e87a-7098-4950-8f02-6485ab6c9f7c: 5bb934a5-07db-4dd9-bcdc-fe36033a8522
     - b6fad65d-9d05-443c-a143-83d9a6a51b9d: 0067b4aa-c4d9-40bf-5dce-b27a1be33d51
@@ -5782,6 +5756,24 @@
     []
   Components:
     - !<own> 358f3fcb-6d1a-47f9-a4ff-febd0d38e9ff
+- !<ScriptComponent/b402ad0c-1679-465d-ab1b-7f82e25051b1>
+  PrefabRemaps:
+    []
+  Name: SaltShaderController
+  Enabled: true
+  ScriptAsset: !<reference> 9c804456-3bb2-4464-97da-ad6777f12d2d
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      saltObject: !<reference.SceneObject> 8e7e0769-7b45-4578-bc96-0f602242ba2b
+      faceObject: !<reference.SceneObject> e86f9ecd-242f-4fa5-86f1-14360dcb651d
+      saltVFX: !<reference.SceneObject> 438ccad1-b4b8-4285-a215-c7d002d9b972
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/b55b6d5e-231b-4595-bbfc-fee3003a9e4b>
   PrefabRemaps:
     []
