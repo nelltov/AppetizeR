@@ -27,9 +27,11 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     confirmButton: false
+    disableOnAllReady: false
+    disableOnConfirm: false
+    enableOnAllReady: false
+    enableOnConfirm: false
     gameRoot: false
-    objectsToDisable: false
-    objectsToEnable: false
     startingObject: false
   ScriptTypesHidden:
     {}
@@ -43,9 +45,13 @@
     - confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       startingObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      objectsToDisable: !<reference.SceneObject[]>
+      disableOnConfirm: !<reference.SceneObject[]>
         []
-      objectsToEnable: !<reference.SceneObject[]>
+      enableOnConfirm: !<reference.SceneObject[]>
+        []
+      disableOnAllReady: !<reference.SceneObject[]>
+        []
+      enableOnAllReady: !<reference.SceneObject[]>
         []
   ScriptTypes:
     -
@@ -54,5 +60,7 @@
     - // @input SceneObject confirmButton
     - // @input SceneObject startingObject
     - // @input SceneObject gameRoot
-    - "// @input SceneObject[] objectsToDisable"
-    - "// @input SceneObject[] objectsToEnable"
+    - "// @input SceneObject[] disableOnConfirm"
+    - "// @input SceneObject[] enableOnConfirm"
+    - "// @input SceneObject[] disableOnAllReady"
+    - "// @input SceneObject[] enableOnAllReady"

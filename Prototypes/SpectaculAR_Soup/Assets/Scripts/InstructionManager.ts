@@ -1,6 +1,3 @@
-import { SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
-import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
-import { ConfirmPosition } from "./ConfirmPosition"
 import { EventManager } from "./EventManager"
 
 @component
@@ -21,7 +18,7 @@ export class InstructionManager extends BaseScriptComponent {
             // Send events indicating that a player is ready
             EventManager.PlayerReadyEvent.trigger()
         } else {
-            this.instructionStringHolderObject.text= this.instructionArray[this.currentInstruction]
+            this.instructionStringHolderObject.text = this.instructionArray[this.currentInstruction]
         }
     }
 }
