@@ -2203,7 +2203,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 12.500000, z: 0.137169}
+    Position: {x: 0.000000, y: 14.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -3591,9 +3591,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 11.750000, z: 0.000000}
+    Position: {x: 0.000000, y: 12.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 16.000000, y: 16.000000, z: 16.000000}
+    Scale: {x: 25.000000, y: 25.000000, z: 25.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -3625,7 +3625,7 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    objectsToEnable: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -3635,11 +3635,6 @@
         - "Can you help me make the special soup of the day?"
         - "There is a catch... DON'T SAY THE INGREDIENT NAMES!"
       instructionStringHolderObject: !<reference.Text> bfc71c81-4eed-4d5a-8c8c-55693a20a942
-      objectsToDisable: !<reference.SceneObject[]>
-        - !<reference> 91cf21ec-3e22-4924-9018-eb157767ab10
-      objectsToEnable: !<reference.SceneObject[]>
-        []
-      confirmPositionObject: !<reference.SceneObject> 361798b5-2936-46c2-b649-74ab81e596e3
   ScriptTypes:
     "":
       {}
@@ -4218,7 +4213,7 @@
     - !<own> 6e0c6fc0-d4a8-400f-b41f-400cc199826d
     - !<own> 6d88262a-c7df-4ba8-9204-df655a1076f9
   Components:
-    []
+    - !<own> ee41cafb-f637-4e8f-825c-71ad6639d5bc
 - !<SceneObject/925cb148-81d8-4fa1-b107-dfc7436e0322>
   PrefabRemaps:
     []
@@ -5427,6 +5422,7 @@
     - e842bdbf-63e3-4b05-90f8-6d954bfded2c: 0289abb3-bbbf-41c1-441f-80d4c3dfa3b5
     - e86f9ecd-242f-4fa5-86f1-14360dcb651d: 4637c9e4-efe8-4b82-6614-0619d8f81cfb
     - e96b8eeb-5225-4510-937d-935624783dca: df960029-0a4e-4fc9-4f7a-724e69592c27
+    - ee41cafb-f637-4e8f-825c-71ad6639d5bc: aceb3f3e-27d7-49c6-aa68-4c20639a0058
     - eed3b5a0-4442-4392-ba1b-6fc913274519: f08c316e-7f63-4c7b-6315-285e0ffc37bc
     - f055dab5-80a9-49ec-ab9d-80363765e660: cc668a60-18c0-460f-6af4-841468e18d47
     - f1ba982c-3581-40ca-bb26-bf06710c75a4: 4f2c5a1e-37fb-48a1-7d6a-b90f1a1fc453
@@ -6180,13 +6176,13 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 48
+  FontSize: 54
   Font: !<reference> b325f1f8-4614-49a0-ac84-f898bac84158
   LayoutRect:
-    left: -7.000000
-    bottom: -2.250000
-    right: 7.000000
-    top: 2.250000
+    left: -10.000000
+    bottom: -2.500000
+    right: 10.000000
+    top: 2.500000
   OverflowVertical: Overflow
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
@@ -7336,7 +7332,7 @@
   Enabled: true
   Shape: !<Box>
     FitVisual: false
-    Size: {x: 1.100000, y: 0.400000, z: 0.100000}
+    Size: {x: 1.100000, y: 0.500000, z: 0.100000}
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -7382,6 +7378,26 @@
     []
   Components:
     - !<own> fcf28a61-8929-486e-a816-43f53c831a33
+- !<ScriptComponent/ee41cafb-f637-4e8f-825c-71ad6639d5bc>
+  PrefabRemaps:
+    []
+  Name: PlayersReady
+  Enabled: true
+  ScriptAsset: !<reference> 2b37ec4f-f02c-4561-b291-7390fb293548
+  ScriptInputsDefault:
+    objectsToEnable: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> 91cf21ec-3e22-4924-9018-eb157767ab10
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 361798b5-2936-46c2-b649-74ab81e596e3
+  ScriptTypes:
+    "":
+      {}
 - !<Text/ee619aef-88c6-424a-abcc-ba36a58fd8dd>
   PrefabRemaps:
     []

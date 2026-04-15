@@ -7,6 +7,8 @@ import { IngredientInfo } from "./Ingredients/Ingredient";
 @component
 export class EventManager extends BaseScriptComponent {
     // Game Events
+    static PlayerReadyEvent = new EventWrapper()
+
     // Put chef and apprentice objects around the table
     static CenterPositionSetLocal = new EventWrapper<[vec3]>()
     static RecipeSelected = new EventWrapper<[string]>()  

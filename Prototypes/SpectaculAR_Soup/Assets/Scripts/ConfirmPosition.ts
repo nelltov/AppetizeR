@@ -39,6 +39,8 @@ export class ConfirmPosition extends BaseScriptComponent {
         })
     }
 
+
+    /* This function is attached to sync event by PlayersReady script */
     public checkAllPlayersReady() {
         if (this.playersReady === this.totalPlayers) {
             this.objectsToEnable.forEach((obj) => obj.enabled = true)

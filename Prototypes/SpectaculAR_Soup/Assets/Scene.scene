@@ -6,6 +6,7 @@
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
     - !<own> 59e79dbc-f6c5-43d7-bf4a-e29a6e479efb
     - !<own> 300d651d-84e7-48ca-b9f5-6b4241333c59
+    - !<own> 6d43a84c-a73f-41df-9fb4-fd0fede9c047
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       - |
@@ -360,6 +361,7 @@
     - 8f42129e-4f44-4cc1-b5d3-dbb7d0b21727: f08c316e-7f63-4c7b-6315-285e0ffc37bc
     - 8fe098dc-ab30-423f-8ca1-d1edafff1fc7: 4742fb3b-8782-4489-66dd-1964c9358483
     - 903267fb-9946-4c5e-bf19-afd410e317dc: 454cf22e-2050-4ee6-8aa7-d76b9af775a2
+    - 90604f47-978c-41a3-a223-5f7ced6d4194: aceb3f3e-27d7-49c6-aa68-4c20639a0058
     - 90b4d676-56b8-419e-a7c5-260152e5f806: b1cff8bb-5603-4cbe-56c1-2fea73b8ff88
     - 91cf0286-2502-40cf-8fbb-30272885e3e8: 8bbecdf0-f429-4b44-5cde-12b7fdb8f34f
     - 93a6a97e-c836-4228-ac22-6f58db73328f: 131187f1-7718-4ca8-7e7a-84a10d04f83c
@@ -1756,7 +1758,7 @@
   PrefabRemaps:
     []
   Name: Saltie
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2683,7 +2685,7 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    objectsToEnable: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2693,11 +2695,6 @@
         - "Can you help me make the special soup of the day?"
         - "There is a catch... DON'T SAY THE INGREDIENT NAMES!"
       instructionStringHolderObject: !<reference.Text> 8fe098dc-ab30-423f-8ca1-d1edafff1fc7
-      objectsToDisable: !<reference.SceneObject[]>
-        - !<reference> 48a7ba4b-cdc4-4976-9bc8-265cc39b00aa
-      objectsToEnable: !<reference.SceneObject[]>
-        []
-      confirmPositionObject: !<reference.SceneObject> be5b3d42-088f-412c-95d8-6cd8e9ca8cb7
   ScriptTypes:
     "":
       {}
@@ -3518,9 +3515,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 11.750000, z: 0.000000}
+    Position: {x: 0.000000, y: 12.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 16.000000, y: 16.000000, z: 16.000000}
+    Scale: {x: 25.000000, y: 25.000000, z: 25.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -4034,7 +4031,7 @@
     - !<own> 46c769d3-b498-4ec0-a1e8-ee261b59348b
     - !<own> a3b4f25b-d1bd-47eb-9d76-1ac3ff2b3607
   Components:
-    []
+    - !<own> 90604f47-978c-41a3-a223-5f7ced6d4194
 - !<SceneObject/48d6bc20-5b40-4ee0-a46d-d48bff938ebf>
   PrefabRemaps:
     - 0b2c11d2-fd9e-4b96-ae09-0d12b9ef3c36: 8c27daa5-1f2f-46a9-68b9-79979b74ec16
@@ -5800,6 +5797,21 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/6d43a84c-a73f-41df-9fb4-fd0fede9c047>
+  PrefabRemaps:
+    []
+  Name: PastaUIPNG
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d4b5df21-3ee3-4fc6-bfb5-89d44ceaefbe
 - !<SceneObject/6dc5dd7a-4726-4cb6-b42f-a12f4b6416c3>
   PrefabRemaps:
     []
@@ -7515,13 +7527,13 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 48
+  FontSize: 54
   Font: !<reference> b325f1f8-4614-49a0-ac84-f898bac84158
   LayoutRect:
-    left: -7.000000
-    bottom: -2.250000
-    right: 7.000000
-    top: 2.250000
+    left: -10.000000
+    bottom: -2.500000
+    right: 10.000000
+    top: 2.500000
   OverflowVertical: Overflow
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
@@ -7615,6 +7627,26 @@
     []
   Components:
     - !<own> b03a1794-dee5-4650-81d1-1d3f4f947660
+- !<ScriptComponent/90604f47-978c-41a3-a223-5f7ced6d4194>
+  PrefabRemaps:
+    []
+  Name: PlayersReady
+  Enabled: true
+  ScriptAsset: !<reference> 2b37ec4f-f02c-4561-b291-7390fb293548
+  ScriptInputsDefault:
+    objectsToEnable: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> 48a7ba4b-cdc4-4976-9bc8-265cc39b00aa
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> be5b3d42-088f-412c-95d8-6cd8e9ca8cb7
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/90b4d676-56b8-419e-a7c5-260152e5f806>
   PrefabRemaps:
     []
@@ -8516,7 +8548,7 @@
   Enabled: true
   Shape: !<Box>
     FitVisual: false
-    Size: {x: 1.100000, y: 0.400000, z: 0.100000}
+    Size: {x: 1.100000, y: 0.500000, z: 0.100000}
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -11056,6 +11088,25 @@
   ScriptTypes:
     "":
       {}
+- !<Image/d4b5df21-3ee3-4fc6-bfb5-89d44ceaefbe>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 46e1c37e-65c3-47df-bb01-8d3f86effc43
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 1.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/d4c9aa65-9789-4034-be0f-820e6299dbf3>
   PrefabRemaps:
     - 311fca96-a558-47ac-8ff6-361a06135038: 1af11b7e-1873-42d0-781c-e7c5c3fe6cf0
@@ -11129,7 +11180,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 12.500000, z: 0.137169}
+    Position: {x: 0.000000, y: 14.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false

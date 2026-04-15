@@ -946,6 +946,7 @@
     - 56b65aec-c241-44e1-b83d-9bd6165bc5e8: f210943e-c2b4-4eaa-8883-1529df8e9836
     - 58a48034-f143-470d-b742-83aad59e02b0: 965feaf8-f428-4b8b-9d40-669703f4cc48
     - 58aa8196-4ecb-41c6-b637-be3434025fcd: 58aa8196-4ecb-41c6-49c8-41cbcbfda032
+    - 59f725b7-ab18-40a7-9678-68f65e31fc59: ee41cafb-f637-4e8f-825c-71ad6639d5bc
     - 5b1029e1-b683-4d7e-bdbf-6c9325f64dbb: 707810b1-fd7e-4ab5-80ed-f582f1e5e904
     - 5b9f14a8-56b4-4217-b18b-9f4e71b2e627: bf430ab7-ebfa-4f8e-9bef-7b41fbdf8984
     - 5d687e15-bc21-4018-bd45-2e7cb5e5bbf8: f88375e8-bb0a-4320-9dbf-d436bd41872f
@@ -3115,6 +3116,26 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/59f725b7-ab18-40a7-9678-68f65e31fc59>
+  PrefabRemaps:
+    []
+  Name: PlayersReady
+  Enabled: true
+  ScriptAsset: !<reference> 2b37ec4f-f02c-4561-b291-7390fb293548
+  ScriptInputsDefault:
+    objectsToEnable: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> c3d77128-8cb0-47ee-b50e-11cc18355a5f
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 512ba7e3-bf2a-4fc8-b730-15a1bf1a8301
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/5b1029e1-b683-4d7e-bdbf-6c9325f64dbb>
   PrefabRemaps:
     []
@@ -4617,9 +4638,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 11.750000, z: 0.000000}
+    Position: {x: 0.000000, y: 12.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 16.000000, y: 16.000000, z: 16.000000}
+    Scale: {x: 25.000000, y: 25.000000, z: 25.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -5162,7 +5183,7 @@
   Enabled: true
   Shape: !<Box>
     FitVisual: false
-    Size: {x: 1.100000, y: 0.400000, z: 0.100000}
+    Size: {x: 1.100000, y: 0.500000, z: 0.100000}
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -5198,7 +5219,7 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    objectsToEnable: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -5208,11 +5229,6 @@
         - "Can you help me make the special soup of the day?"
         - "There is a catch... DON'T SAY THE INGREDIENT NAMES!"
       instructionStringHolderObject: !<reference.Text> bbc3e3a5-7622-433f-b77d-2d457fac3b73
-      objectsToDisable: !<reference.SceneObject[]>
-        - !<reference> c3d77128-8cb0-47ee-b50e-11cc18355a5f
-      objectsToEnable: !<reference.SceneObject[]>
-        []
-      confirmPositionObject: !<reference.SceneObject> 512ba7e3-bf2a-4fc8-b730-15a1bf1a8301
   ScriptTypes:
     "":
       {}
@@ -5275,7 +5291,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 12.500000, z: 0.137169}
+    Position: {x: 0.000000, y: 14.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -6061,13 +6077,13 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 48
+  FontSize: 54
   Font: !<reference> b325f1f8-4614-49a0-ac84-f898bac84158
   LayoutRect:
-    left: -7.000000
-    bottom: -2.250000
-    right: 7.000000
-    top: 2.250000
+    left: -10.000000
+    bottom: -2.500000
+    right: 10.000000
+    top: 2.500000
   OverflowVertical: Overflow
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
@@ -6349,7 +6365,7 @@
     - !<own> 40634411-da4b-4014-9a7c-6ec597d239a2
     - !<own> 01995b05-afbc-4c3a-a370-17baee1dccb2
   Components:
-    []
+    - !<own> 59f725b7-ab18-40a7-9678-68f65e31fc59
 - !<ScriptComponent/c441c653-6a65-4485-99f4-79c0ec8d9603>
   PrefabRemaps:
     []
@@ -7125,6 +7141,7 @@
     - 52352f9c-c940-4301-b0e2-618b86729049: a0e426fe-5637-4077-4dc5-d89ca7ec1d35
     - 52d3579d-c7ae-4b4e-945b-e17828607b28: ccf16b42-41a8-44cd-50ca-3a3a934806ae
     - 53ee2942-1f38-4cd8-85a1-f0bf7610a7c9: 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
+    - 59f725b7-ab18-40a7-9678-68f65e31fc59: aceb3f3e-27d7-49c6-aa68-4c20639a0058
     - 5b1029e1-b683-4d7e-bdbf-6c9325f64dbb: 421b7484-ef89-42eb-5be1-3a0a4228e5f2
     - 5b9f14a8-56b4-4217-b18b-9f4e71b2e627: 179f1e62-f70a-4a50-5a62-fdb2e8a8f279
     - 5db48b96-862e-4a08-b29c-f212a8fdebb0: d9c20c37-5713-4b83-6f68-f733290f4eef
