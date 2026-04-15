@@ -1,0 +1,92 @@
+- !<AssetImportMetadata/025ab88d-9f52-4a58-ba39-ba34a1886020>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> c2b90f52-d7a5-4bdc-a304-2cca657a063e
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> c2b90f52-d7a5-4bdc-a304-2cca657a063e
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 802977ba-d989-4f1e-b120-24ae80e4516e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/0c04f6db-15d1-4e99-724c-383153e18d07>
+  PrefabRemaps:
+    []
+  Name: drumstick
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 1afb419d-0809-426f-7a30-f05f8c1630b9
+  Components:
+    - !<own> 9c012c21-e6b9-4003-677c-38c3199bd438
+- !<SceneObject/1afb419d-0809-426f-7a30-f05f8c1630b9>
+  PrefabRemaps:
+    []
+  Name: drumstick
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ccb81139-e651-4d8c-45e3-6de9a8d207bb
+- !<ObjectPrefabAssetData/802977ba-d989-4f1e-b120-24ae80e4516e>
+  Prototype: !<ObjectOwner/19308027-1ed6-4019-a1de-75cc4c667f33>
+    PackagePath: ""
+    objects:
+      - !<own> 0c04f6db-15d1-4e99-724c-383153e18d07
+- !<AnimationPlayer/9c012c21-e6b9-4003-677c-38c3199bd438>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 75c89937-d8f0-4de0-98c2-a64771400aab
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<RenderMeshVisual/ccb81139-e651-4d8c-45e3-6de9a8d207bb>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> db588edd-6d00-4a98-941b-231b691e3e14
+  Mesh: !<reference> e3b4ac64-1b9d-4023-b401-f9494cb73b05
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
