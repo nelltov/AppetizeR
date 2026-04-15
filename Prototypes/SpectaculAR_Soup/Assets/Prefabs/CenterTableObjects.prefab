@@ -277,7 +277,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 12.500000, z: 0.137169}
+    Position: {x: 0.000000, y: 14.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -783,9 +783,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 11.750000, z: 0.000000}
+    Position: {x: 0.000000, y: 12.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 16.000000, y: 16.000000, z: 16.000000}
+    Scale: {x: 25.000000, y: 25.000000, z: 25.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1022,6 +1022,7 @@
     - f08c316e-7f63-4c7b-9cea-d7a1f003c843: f08c316e-7f63-4c7b-6315-285e0ffc37bc
     - f3159f9a-8b48-46f4-b0f0-93a2c39024d1: b49181b5-cef2-4959-95f5-5a0753398a04
     - f70e319f-55a5-47de-a42f-b21a9ba5370b: 454cf22e-2050-4ee6-8aa7-d76b9af775a2
+    - faaf2313-9d6c-495c-b340-248d5c98d9e5: aceb3f3e-27d7-49c6-aa68-4c20639a0058
     - fd35b975-1889-470b-8488-17dde8245b32: fd35b975-1889-470b-7b77-e82217dba4cd
   Name: CenterTableObjects
   Enabled: true
@@ -1268,13 +1269,13 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 48
+  FontSize: 54
   Font: !<reference> b325f1f8-4614-49a0-ac84-f898bac84158
   LayoutRect:
-    left: -7.000000
-    bottom: -2.250000
-    right: 7.000000
-    top: 2.250000
+    left: -10.000000
+    bottom: -2.500000
+    right: 10.000000
+    top: 2.500000
   OverflowVertical: Overflow
   OverflowHorizontal: Wrap
   Fill: !<TextFill>
@@ -1689,7 +1690,7 @@
     - !<own> 63af8bef-ff97-4a84-bbf2-93722b2ff6bc
     - !<own> ddeaa88c-3d9f-482e-a01f-874ab570cfea
   Components:
-    []
+    - !<own> faaf2313-9d6c-495c-b340-248d5c98d9e5
 - !<SceneObject/674a36b3-5fef-4c20-86af-c487b5933096>
   PrefabRemaps:
     []
@@ -2654,7 +2655,7 @@
   Enabled: true
   ScriptAsset: !<reference> b3c40ac9-a555-4f46-b306-61f4a3fd8a99
   ScriptInputsDefault:
-    objectsToEnable: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2664,11 +2665,6 @@
         - "Can you help me make the special soup of the day?"
         - "There is a catch... DON'T SAY THE INGREDIENT NAMES!"
       instructionStringHolderObject: !<reference.Text> 4742fb3b-8782-4489-9922-e69b36ca7b7c
-      objectsToDisable: !<reference.SceneObject[]>
-        - !<reference> 6550f6f4-0bed-466c-a419-867023e1c847
-      objectsToEnable: !<reference.SceneObject[]>
-        []
-      confirmPositionObject: !<reference.SceneObject> 7bfd9d9d-1bcb-4ead-992b-883f46130377
   ScriptTypes:
     "":
       {}
@@ -3156,7 +3152,7 @@
   Enabled: true
   Shape: !<Box>
     FitVisual: false
-    Size: {x: 1.100000, y: 0.400000, z: 0.100000}
+    Size: {x: 1.100000, y: 0.500000, z: 0.100000}
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -3396,6 +3392,26 @@
     []
   Components:
     - !<own> a784f45f-842b-4967-af0b-56d26c2eac41
+- !<ScriptComponent/faaf2313-9d6c-495c-b340-248d5c98d9e5>
+  PrefabRemaps:
+    []
+  Name: PlayersReady
+  Enabled: true
+  ScriptAsset: !<reference> 2b37ec4f-f02c-4561-b291-7390fb293548
+  ScriptInputsDefault:
+    objectsToEnable: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      objectsToDisable: !<reference.SceneObject[]>
+        - !<reference> 6550f6f4-0bed-466c-a419-867023e1c847
+      objectsToEnable: !<reference.SceneObject[]>
+        []
+      confirmPositionObject: !<reference.SceneObject> 7bfd9d9d-1bcb-4ead-992b-883f46130377
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/fd35b975-1889-470b-8488-17dde8245b32>
   PrefabRemaps:
     []
