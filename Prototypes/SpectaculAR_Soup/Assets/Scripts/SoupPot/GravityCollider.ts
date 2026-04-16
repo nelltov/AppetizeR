@@ -35,7 +35,6 @@ export class GravityCollider extends BaseScriptComponent {
             const physicsBody = other.overlap.collider as BodyComponent
             if (physicsBody) {
                 physicsBody.intangible = true
-                print("trying to apply gravity!")
                 physicsBody.mass = 1.0
             }
         }

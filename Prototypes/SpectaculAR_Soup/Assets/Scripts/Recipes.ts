@@ -29,13 +29,13 @@ export const StarterRecipe: IngredientInfo[] = [
 ]
 
 export const recipeDictionary: Record<string, IngredientInfo[]> = {
-    "Aunties Spicy Bisque": Recipe0,
+    "Auntie's Spicy Bisque": Recipe0,
     "Grandma's Secret Soup": Recipe1,
     "Starter Recipe": StarterRecipe
 }
 
 export const ourRecipes : Recipes[] = [
-    ["Aunties Spicy Bisque", Recipe0],
+    ["Auntie's Spicy Bisque", Recipe0],
     ["Grandma's Secret Soup", Recipe1],
     ["Starter Recipe", StarterRecipe]
 ]

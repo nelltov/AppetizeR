@@ -1,0 +1,41 @@
+- !<ObjectPrefab/f1caf6ff-281e-4839-b4f0-79c017695134>
+  PackagePath: ""
+  objects:
+    - !<own> c9e11083-e5f0-4702-a2cd-8311f674665f
+  LazyLoading: false
+  RetainAssets: true
+- !<Image/0a417742-9344-46ef-9c31-15e2d33284ce>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fill
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 82dee0bf-8d30-49fe-a436-e876bea6e048
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/c9e11083-e5f0-4702-a2cd-8311f674665f>
+  PrefabRemaps:
+    - 0a417742-9344-46ef-9c31-15e2d33284ce: 0a417742-9344-46ef-63ce-ea1d2ccd7b31
+    - c9e11083-e5f0-4702-a2cd-8311f674665f: c9e11083-e5f0-4702-5d32-7cee098b99a0
+  Name: SpoonsImage
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 0.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0a417742-9344-46ef-9c31-15e2d33284ce

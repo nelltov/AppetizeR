@@ -1,0 +1,55 @@
+- !<AssetImportMetadata/8acde08d-5512-411e-a9e4-651f3e334139>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> f1caf6ff-281e-4839-b4f0-79c017695134
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> f1caf6ff-281e-4839-b4f0-79c017695134
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 5c069c7c-72ac-43e7-9b60-b6136e438b48
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<Image/0a417742-9344-46ef-63ce-ea1d2ccd7b31>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fill
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 82dee0bf-8d30-49fe-a436-e876bea6e048
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/5c069c7c-72ac-43e7-9b60-b6136e438b48>
+  Prototype: !<ObjectOwner/dcee1beb-5ca7-41da-b1dc-4bfee2a44391>
+    PackagePath: ""
+    objects:
+      - !<own> c9e11083-e5f0-4702-5d32-7cee098b99a0
+- !<SceneObject/c9e11083-e5f0-4702-5d32-7cee098b99a0>
+  PrefabRemaps:
+    []
+  Name: SpoonsImage
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 0.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0a417742-9344-46ef-63ce-ea1d2ccd7b31

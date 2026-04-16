@@ -29,6 +29,7 @@ export class IngredientManager extends BaseScriptComponent
         // Handle the one-time local event, manage synced information, send out network event to all devices
         EventManager.SoupPotIngredientCollisionLocalEvent.add((ingredientInfo: IngredientInfo) => {
             this.updateStorageProperties(ingredientInfo);
+            print(`Adding this ingredient: ${ingredientInfo.variantName}`)
             this.syncEntity.sendEvent('ingredientCollision', ingredientInfo)
         })
     }

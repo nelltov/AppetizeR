@@ -33,6 +33,7 @@ export class SoupPotCollider extends BaseScriptComponent {
 
         // Trigger one-time event for ingredient colliding with the pot, passing in the ingredient info
         if (ingredient) {
+            print("soup collider")
             EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo())
             otherObj.enabled = false    // Disable the ingredient object after collision
         }

@@ -29,7 +29,7 @@ export class IngredientTrigger extends BaseScriptComponent {
         if (isNull(otherObj)) return
 
         if (otherObj && otherObj.name === "SoupCollider" && this.ingredient) {
-            print("Soup collider!!")
+            print("ingredient trigger!!")
             EventManager.SoupPotIngredientCollisionLocalEvent.trigger(this.ingredient.getIngredientInfo())
             this.sceneObj.enabled = false    // Disable the ingredient object after collision
         }
