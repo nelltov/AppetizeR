@@ -7,6 +7,9 @@ export class ResultHelper extends BaseScriptComponent {
   winObject!: SceneObject | null;
 
   @input
+  winSFXObject! : SceneObject | null;
+
+  @input
   winTextObject!: SceneObject | null;
 
   @input
