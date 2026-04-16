@@ -39,7 +39,7 @@ export class SaltShaderController extends BaseScriptComponent {
         this.saltAmount = 0.8
         this.pourThreshold = -0.1
         this.pourSpeed = 0.1
-        this.wh = new vec2(2.5, 4.5)
+        this.wh = new vec2(3, 5.25)
         this.tilt = 1.0
         this.pour = false
 
