@@ -3816,6 +3816,8 @@
       triggerStartCallbacks:
         - scriptComponent: !<reference.ScriptComponent> 9bd3f7e1-c23b-47f5-8885-c0ee87689816
           functionName: confirmGamePosition
+        - scriptComponent: !<reference.ScriptComponent> 9bd3f7e1-c23b-47f5-8885-c0ee87689816
+          functionName: stopBillboard
       cooldownDuration: 0.500000
   ScriptTypes:
     "":
@@ -4550,6 +4552,7 @@
       confirmButton: !<reference.SceneObject> 361798b5-2936-46c2-b649-74ab81e596e3
       startingObject: !<reference.SceneObject> aabda1e9-13d8-4a16-a455-0a3892bcbabe
       gameRoot: !<reference.SceneObject> 02b7c652-e662-4a1a-85af-7580baf23e1f
+      billboardScript: !<MappingBased.AssignableType> ae77dae3-ee71-4423-ad34-e4484a470b1c
       disableOnConfirm: !<reference.SceneObject[]>
         - !<reference> b679e87a-7098-4950-8f02-6485ab6c9f7c
         - !<reference> dcd5472b-fa45-4c98-8a70-b0022d6edcba
@@ -5312,6 +5315,7 @@
     - aabda1e9-13d8-4a16-a455-0a3892bcbabe: 369715e4-02f9-462d-694f-6dd665ce8aa4
     - ad1cfa53-ba66-4975-bda7-cdd2e4907e6f: a0e426fe-5637-4077-4dc5-d89ca7ec1d35
     - ad84bae0-dcf4-4d74-875a-3c9cb575dedd: 0a410ad6-8ce6-422a-54a3-798562cb70b0
+    - ae77dae3-ee71-4423-ad34-e4484a470b1c: 5b946702-b602-414d-83d3-d1816e082a0f
     - b1b64e57-ec0e-4470-8743-db81c0bdf707: 1ba98682-c703-42cc-63af-95df1e46fe9e
     - b402ad0c-1679-465d-ab1b-7f82e25051b1: b1b2fbad-600a-4cdd-8602-ad6fd9b438dd
     - b63a24b5-f721-4430-9c0f-1d7610f0d356: aa66543f-20c1-4423-72bf-417824e12142
@@ -5364,6 +5368,7 @@
     - !<own> 02b7c652-e662-4a1a-85af-7580baf23e1f
   Components:
     - !<own> 16475bab-1cee-4101-8c62-713321d7fc22
+    - !<own> ae77dae3-ee71-4423-ad34-e4484a470b1c
     - !<own> 160b7bb8-2634-4054-a229-4ed3927e434f
     - !<own> 531f309e-d665-49e3-9e3e-5c074ebb1442
     - !<own> e0d66e68-a36e-47ed-88ab-c542df28cc51
@@ -5481,6 +5486,22 @@
       showRotationProperties: false
       _rotationAxis: All
       isSynced: true
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/ae77dae3-ee71-4423-ad34-e4484a470b1c>
+  PrefabRemaps:
+    []
+  Name: BillboardToCamera
+  Enabled: true
+  ScriptAsset: !<reference> e49d4d66-e9fa-4a16-b9dc-b925fd2e7580
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
   ScriptTypes:
     "":
       {}
@@ -6879,7 +6900,6 @@
     minimumScaleFactor: true
     maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -6903,7 +6923,7 @@
       minimumScaleFactor: 0.250000
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
-      enableRotation: true
+      enableRotation: false
       enableScale: false
       enableStretchZ: false
       showStretchZProperties: false

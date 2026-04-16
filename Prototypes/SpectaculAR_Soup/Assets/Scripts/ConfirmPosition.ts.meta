@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    billboardScript: false
     confirmButton: false
     disableOnAllReady: false
     disableOnConfirm: false
@@ -45,6 +46,7 @@
     - confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       startingObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       gameRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      billboardScript: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       disableOnConfirm: !<reference.SceneObject[]>
         []
       enableOnConfirm: !<reference.SceneObject[]>
@@ -60,6 +62,7 @@
     - // @input SceneObject confirmButton
     - // @input SceneObject startingObject
     - // @input SceneObject gameRoot
+    - // @input AssignableType billboardScript
     - "// @input SceneObject[] disableOnConfirm"
     - "// @input SceneObject[] enableOnConfirm"
     - "// @input SceneObject[] disableOnAllReady"

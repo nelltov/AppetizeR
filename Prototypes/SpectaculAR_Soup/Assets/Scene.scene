@@ -507,6 +507,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/0882c501-48cc-42a5-ac69-09e0c021760a>
+  PrefabRemaps:
+    []
+  Name: BillboardToCamera
+  Enabled: true
+  ScriptAsset: !<reference> e49d4d66-e9fa-4a16-b9dc-b925fd2e7580
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/0a280fee-d8d6-4569-829f-89cccba1e450>
   PrefabRemaps:
     []
@@ -679,7 +695,6 @@
     minimumScaleFactor: true
     maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -703,7 +718,7 @@
       minimumScaleFactor: 0.250000
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
-      enableRotation: true
+      enableRotation: false
       enableScale: false
       enableStretchZ: false
       showStretchZProperties: false
@@ -3023,6 +3038,8 @@
       triggerStartCallbacks:
         - scriptComponent: !<reference.ScriptComponent> 72709f51-b7c3-4532-ac25-7db6a70031bc
           functionName: confirmGamePosition
+        - scriptComponent: !<reference.ScriptComponent> 72709f51-b7c3-4532-ac25-7db6a70031bc
+          functionName: stopBillboard
       cooldownDuration: 0.500000
   ScriptTypes:
     "":
@@ -6056,6 +6073,7 @@
       confirmButton: !<reference.SceneObject> dd71796e-ed8d-4f4d-9c92-d50ad84c8e9d
       startingObject: !<reference.SceneObject> dba4be32-b44d-4441-9457-6d032a672e3f
       gameRoot: !<reference.SceneObject> 283739c4-bc4a-4da3-aaac-33c6473a7927
+      billboardScript: !<MappingBased.AssignableType> 0882c501-48cc-42a5-ac69-09e0c021760a
       disableOnConfirm: !<reference.SceneObject[]>
         - !<reference> 80f0111c-238c-448a-a5ef-aa79f0e6ce65
         - !<reference> a0836148-4173-4913-a4fe-3599b9dceeb5
@@ -11210,6 +11228,7 @@
     - 0562b8b5-6272-44aa-85bd-2a36f66a03f2: 87d7eb71-dff2-4588-6e16-5be70ead9fe6
     - 05e5f7c7-6e78-4fec-8ce1-724ac12366bd: 27898ca8-8e02-48a3-5c88-57009189a33e
     - 077660df-9257-4f71-8ad7-e2948237f87d: d5cc690f-c970-46bb-8388-3e70426b266d
+    - 0882c501-48cc-42a5-ac69-09e0c021760a: 5b946702-b602-414d-83d3-d1816e082a0f
     - 0a280fee-d8d6-4569-829f-89cccba1e450: 6550f6f4-0bed-466c-5be6-798fdc1e37b8
     - 0b4aad40-8876-4409-b908-53f5501a57b6: 19008fe5-354c-4f86-4b48-c37b3f6aaa85
     - 0bed3c18-fc85-431e-8025-b48bbf366055: a5621e1f-af46-4b21-6305-18a56e10a121
@@ -11370,6 +11389,7 @@
     - !<own> 283739c4-bc4a-4da3-aaac-33c6473a7927
   Components:
     - !<own> e4a10399-2bea-42ac-b058-5b961555baa0
+    - !<own> 0882c501-48cc-42a5-ac69-09e0c021760a
     - !<own> 4d4b8060-f5a3-49ee-8382-4fd10922875a
     - !<own> bdc2b7e4-3d1c-4ff0-b975-9505542a08b5
     - !<own> 0ee1b0ed-8880-4a6e-b83f-6af7b20628cf

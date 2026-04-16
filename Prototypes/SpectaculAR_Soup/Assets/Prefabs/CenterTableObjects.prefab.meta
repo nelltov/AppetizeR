@@ -373,6 +373,7 @@
       confirmButton: !<reference.SceneObject> 8ecbf967-6201-46b6-ab77-0eb17cf44dcc
       startingObject: !<reference.SceneObject> 369715e4-02f9-462d-694f-6dd665ce8aa4
       gameRoot: !<reference.SceneObject> 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
+      billboardScript: !<MappingBased.AssignableType> 5b946702-b602-414d-83d3-d1816e082a0f
       disableOnConfirm: !<reference.SceneObject[]>
         - !<reference> 5bb934a5-07db-4dd9-bcdc-fe36033a8522
         - !<reference> 838897fa-8e38-407c-baf5-fc55cfa1b2ca
@@ -776,6 +777,7 @@
     - !<own> 0f7ba201-9d36-42cf-74c5-8041a4f2ecd3
   Components:
     - !<own> c2cd8825-50ee-480d-945e-acfd7ba5453f
+    - !<own> 5b946702-b602-414d-83d3-d1816e082a0f
     - !<own> 29f14c92-333a-441d-8102-342f66d181f8
     - !<own> d5c3c17f-1256-40d2-bd77-875330cb7ea1
     - !<own> 3c7ec5a7-85f7-4a0a-acea-1e3a5d51fd34
@@ -851,7 +853,6 @@
     minimumScaleFactor: true
     maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -875,7 +876,7 @@
       minimumScaleFactor: 0.250000
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
-      enableRotation: true
+      enableRotation: false
       enableScale: false
       enableStretchZ: false
       showStretchZProperties: false
@@ -1346,6 +1347,22 @@
     []
   Components:
     - !<own> cc668a60-18c0-460f-6af4-841468e18d47
+- !<ScriptComponent/5b946702-b602-414d-83d3-d1816e082a0f>
+  PrefabRemaps:
+    []
+  Name: BillboardToCamera
+  Enabled: true
+  ScriptAsset: !<reference> e49d4d66-e9fa-4a16-b9dc-b925fd2e7580
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/5ba39768-04f1-474d-43f8-73b8bb75e765>
   PrefabRemaps:
     []
@@ -1657,6 +1674,8 @@
       triggerStartCallbacks:
         - scriptComponent: !<reference.ScriptComponent> 194e496d-c29f-488e-8535-72b28a1ba235
           functionName: confirmGamePosition
+        - scriptComponent: !<reference.ScriptComponent> 194e496d-c29f-488e-8535-72b28a1ba235
+          functionName: stopBillboard
       cooldownDuration: 0.500000
   ScriptTypes:
     "":

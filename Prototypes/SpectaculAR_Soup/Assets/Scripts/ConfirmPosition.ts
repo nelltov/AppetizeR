@@ -1,3 +1,4 @@
+import { BillboardToCamera } from "./BillboardToCamera"
 import { EventManager } from "./EventManager"
 import { InteractableManipulation } from "SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation"
 import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity"
@@ -17,6 +18,9 @@ export class ConfirmPosition extends BaseScriptComponent {
 
     @input
     gameRoot: SceneObject
+
+    @input
+    billboardScript: BillboardToCamera
 
     // Objects to enable when player clicks the confirm button
     @input
@@ -61,5 +65,10 @@ export class ConfirmPosition extends BaseScriptComponent {
         this.startObjectInteractableManipulation.enabled = false
         this.enableOnConfirm.forEach((obj) => obj.enabled = true)
         this.disableOnConfirm.forEach((obj) => obj.enabled = false)
+    }
+
+    /* Stop automatic rotation of the starting objects */
+    public stopBillboard() {
+        if (this.billboardScript) this.billboardScript.enabled = false
     }
 }

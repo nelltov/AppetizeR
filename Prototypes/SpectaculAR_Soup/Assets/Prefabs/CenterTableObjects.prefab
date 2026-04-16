@@ -99,7 +99,6 @@
     minimumScaleFactor: true
     maximumScaleFactor: true
     enableTranslation: true
-    enableRotation: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -123,7 +122,7 @@
       minimumScaleFactor: 0.250000
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
-      enableRotation: true
+      enableRotation: false
       enableScale: false
       enableStretchZ: false
       showStretchZProperties: false
@@ -998,6 +997,7 @@
     - f3159f9a-8b48-46f4-b0f0-93a2c39024d1: b49181b5-cef2-4959-95f5-5a0753398a04
     - f3ff74bf-e485-4611-8a5c-25fdb0bbebb4: d64b1b17-27f4-4635-aeaa-0b887ee19ba7
     - f70e319f-55a5-47de-a42f-b21a9ba5370b: 454cf22e-2050-4ee6-8aa7-d76b9af775a2
+    - f8c8d8f9-2c46-4fa6-86f0-7956d5b25f79: 5b946702-b602-414d-83d3-d1816e082a0f
     - faaf2313-9d6c-495c-b340-248d5c98d9e5: aceb3f3e-27d7-49c6-aa68-4c20639a0058
     - fd35b975-1889-470b-8488-17dde8245b32: fd35b975-1889-470b-7b77-e82217dba4cd
   Name: CenterTableObjects
@@ -1013,6 +1013,7 @@
     - !<own> 0f7ba201-9d36-42cf-8b3a-7fbe5b0d132c
   Components:
     - !<own> d05cf189-3627-4f2b-86ce-6c7fa00d544e
+    - !<own> f8c8d8f9-2c46-4fa6-86f0-7956d5b25f79
     - !<own> b5accf8f-2b55-44e1-8269-8d8faf34ef38
     - !<own> 710ca2ca-563d-425f-8ea7-2fc1a34543e6
     - !<own> 0347defe-3684-4d53-ac47-d5eb4edf7bac
@@ -2194,6 +2195,8 @@
       triggerStartCallbacks:
         - scriptComponent: !<reference.ScriptComponent> 91e8b20e-c54d-4927-95c2-ac7f04ded5fe
           functionName: confirmGamePosition
+        - scriptComponent: !<reference.ScriptComponent> 91e8b20e-c54d-4927-95c2-ac7f04ded5fe
+          functionName: stopBillboard
       cooldownDuration: 0.500000
   ScriptTypes:
     "":
@@ -2243,6 +2246,7 @@
       confirmButton: !<reference.SceneObject> 7bfd9d9d-1bcb-4ead-992b-883f46130377
       startingObject: !<reference.SceneObject> 369715e4-02f9-462d-96b0-92299a31755b
       gameRoot: !<reference.SceneObject> 0f7ba201-9d36-42cf-8b3a-7fbe5b0d132c
+      billboardScript: !<MappingBased.AssignableType> f8c8d8f9-2c46-4fa6-86f0-7956d5b25f79
       disableOnConfirm: !<reference.SceneObject[]>
         - !<reference> 5902e213-71e8-4af4-a1d9-dbf7cd6e86cc
         - !<reference> 7224c1dc-60a6-40dc-97a4-7c9c18a310bb
@@ -3459,6 +3463,22 @@
     []
   Components:
     - !<own> a784f45f-842b-4967-af0b-56d26c2eac41
+- !<ScriptComponent/f8c8d8f9-2c46-4fa6-86f0-7956d5b25f79>
+  PrefabRemaps:
+    []
+  Name: BillboardToCamera
+  Enabled: true
+  ScriptAsset: !<reference> e49d4d66-e9fa-4a16-b9dc-b925fd2e7580
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/faaf2313-9d6c-495c-b340-248d5c98d9e5>
   PrefabRemaps:
     []
