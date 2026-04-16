@@ -549,7 +549,7 @@
   PrefabRemaps:
     []
   Name: face_plane
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.006375}
@@ -748,7 +748,7 @@
   PrefabRemaps:
     []
   Name: salthalf
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.319925, z: -5.983702}
@@ -1074,12 +1074,13 @@
   Enabled: true
   ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
   ScriptInputsDefault:
-    {}
+    winSFXObject: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      winObject: !<reference.SceneObject> c81aa362-dca3-4ea4-9a19-b21628cc8090
+      winObject: !<reference.SceneObject> 21f5b40c-626b-4a35-a1fe-2a35da059808
+      winSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       winTextObject: !<reference.SceneObject> bb36e5d3-7718-461b-9ade-f95e7ea636cd
       gm: !<MappingBased.AssignableType> a44cf1fa-a3ee-4847-8f48-4bd334059118
   ScriptTypes:
@@ -1601,12 +1602,12 @@
   PrefabRemaps:
     []
   Name: paperboard
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.158517, y: 0.105357, z: 0.046834}
-    Rotation: {x: 0.000000, y: 0.000000, z: -3.899477}
-    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    Position: {x: 2.638861, y: 3.861919, z: -0.704618}
+    Rotation: {x: 1.816344, y: -24.938158, z: -4.301155}
+    Scale: {x: 2.000000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> bb36e5d3-7718-461b-9ade-f95e7ea636cd
@@ -2053,6 +2054,7 @@
   Children:
     - !<own> 73ac16ba-0915-4900-ba2d-a760a0a7cd10
     - !<own> 97be3e86-ad71-4b99-8972-d27ef7ad786f
+    - !<own> 21f5b40c-626b-4a35-a1fe-2a35da059808
   Components:
     - !<own> baee8c19-c36b-4b11-baba-b70ea95edb24
     - !<own> 4362d907-d678-46cd-94d2-c373dda1a98b
@@ -4027,7 +4029,7 @@
   PrefabRemaps:
     []
   Name: belt
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.000005, y: 0.017249, z: -0.009255}
@@ -5575,7 +5577,7 @@
   PrefabRemaps:
     []
   Name: cap
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.000000, y: 1.451501, z: -0.011531}
@@ -7052,7 +7054,7 @@
   PrefabRemaps:
     []
   Name: receipe
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.409391, y: 0.829459, z: 0.327650}
@@ -8271,7 +8273,7 @@
   PrefabRemaps:
     []
   Name: left_hand
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.487714, y: -0.351784, z: -0.149623}
@@ -8940,7 +8942,7 @@
   PrefabRemaps:
     []
   Name: right_hand
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.490309, y: -0.052494, z: -0.016737}
@@ -10125,7 +10127,7 @@
   PrefabRemaps:
     []
   Name: glassbottle
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.319925, z: -5.983702}
@@ -11882,7 +11884,7 @@
     - e35da15d-f2c7-40b5-b35c-912854110ce8: 5b26ecdd-8184-4f33-6fb4-09c14fd15800
     - e7e4f7fa-4963-4e46-9162-b0a59f101164: b4a23464-3cdd-4b89-7639-21c86287f5bc
   Name: shakernew
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12068,7 +12070,7 @@
   PrefabRemaps:
     []
   Name: shakerreal
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12085,7 +12087,6 @@
     - !<own> 40a55d4e-ba01-4846-be73-6f85c07e2f4f
     - !<own> 0f0798cd-c90a-49ba-8b6f-05551d1ede41
     - !<own> 8c3904da-3731-41c0-8ba6-2abd80d2d753
-    - !<own> 21f5b40c-626b-4a35-a1fe-2a35da059808
   Components:
     []
 - !<SceneObject/e9876289-9354-467d-8109-73dac3ef8adc>
