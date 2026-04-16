@@ -35,7 +35,6 @@ export class SoupPotCollider extends BaseScriptComponent {
         if (ingredient) {
             EventManager.SoupPotIngredientCollisionLocalEvent.trigger(ingredient.getIngredientInfo())
             otherObj.enabled = false    // Disable the ingredient object after collision
-            // TODO: add an event to actually destroy the object once the interaction ends?
         }
     }
 }

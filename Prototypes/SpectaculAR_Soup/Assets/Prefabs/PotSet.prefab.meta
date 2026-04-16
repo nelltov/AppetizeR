@@ -163,7 +163,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.500000, z: 0.000000}
+    Position: {x: 0.000000, y: -0.400000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -171,7 +171,7 @@
     []
   Components:
     - !<own> 8b257308-77d4-47f1-51d8-dd5a68d72744
-    - !<own> 89dbe484-04a2-4336-8293-bd073cee336b
+    - !<own> d13efc2f-6aa8-4c0d-af6e-ab4bea2170cb
 - !<SceneObject/1919326f-a238-406d-bc6e-d50024ce8862>
   PrefabRemaps:
     []
@@ -562,6 +562,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/4a815234-4390-481f-8007-6fc842c8d0a6>
+  PrefabRemaps:
+    []
+  Name: GravityCollider
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 2.600000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> cb71b8dd-a408-46e9-a5a5-0aff8973fecc
+    - !<own> 8cd4eaa9-64f2-41c6-a14d-05da6a961a14
 - !<SceneObject/4c7b7e74-4c3d-45fa-be0b-71d9feb49fa9>
   PrefabRemaps:
     []
@@ -939,22 +955,6 @@
     - !<own> 2f283e7a-1298-498c-b1c8-c8bc9a0344d5
   Components:
     - !<own> 63f60600-5abc-48ef-88f2-9cbb3062d55c
-- !<ScriptComponent/89dbe484-04a2-4336-8293-bd073cee336b>
-  PrefabRemaps:
-    []
-  Name: SoupPotCollider
-  Enabled: true
-  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/8a5d86bf-e40e-4ad5-b01c-8778a8ff8e17>
   PrefabRemaps:
     []
@@ -977,7 +977,7 @@
   Enabled: true
   Shape: !<Cylinder>
     Axis: Y
-    Length: 1.500000
+    Length: 2.000000
     Radius: 3.500000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -988,7 +988,23 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
+  ShowCollider: true
+- !<ScriptComponent/8cd4eaa9-64f2-41c6-a14d-05da6a961a14>
+  PrefabRemaps:
+    []
+  Name: GravityCollider
+  Enabled: true
+  ScriptAsset: !<reference> 58f555ac-0e3a-4df3-955c-e1dca2ae3c47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/9120c6b3-2ac0-43ae-40e2-ab0f5e7e43d2>
   PrefabRemaps:
     []
@@ -1397,6 +1413,25 @@
     []
   Components:
     - !<own> 1397734e-9ac2-4b24-7387-d4023fab05f6
+- !<ColliderComponent/cb71b8dd-a408-46e9-a5a5-0aff8973fecc>
+  PrefabRemaps:
+    []
+  Name: Physics Collider
+  Enabled: true
+  Shape: !<Cylinder>
+    Axis: Y
+    Length: 4.000000
+    Radius: 2.500000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: true
+  ShowCollider: true
 - !<RenderMeshVisual/cfaa2243-92cb-49ac-985a-1e01a8dbf508>
   PrefabRemaps:
     []
@@ -1417,6 +1452,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/d13efc2f-6aa8-4c0d-af6e-ab4bea2170cb>
+  PrefabRemaps:
+    []
+  Name: SoupPotCollider
+  Enabled: true
+  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/d1c3021d-69ec-4c1e-b9b9-0124c27f41ed>
   PrefabRemaps:
     []
@@ -1476,6 +1527,7 @@
   Children:
     - !<own> 21db786d-fbc3-4dfc-4f6b-300329c93507
     - !<own> 16c01c34-19f7-4d9e-6b31-1b5ef924e742
+    - !<own> 4a815234-4390-481f-8007-6fc842c8d0a6
     - !<own> 1db73a51-5c3f-46eb-862e-9836b34094d9
     - !<own> 5fc28f0f-2e67-4b8d-b280-20d9fe695bba
   Components:

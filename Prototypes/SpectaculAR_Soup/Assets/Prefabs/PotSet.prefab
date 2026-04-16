@@ -171,7 +171,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.500000, z: 0.000000}
+    Position: {x: 0.000000, y: -0.400000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -179,7 +179,7 @@
     []
   Components:
     - !<own> 8b257308-77d4-47f1-ae27-22a59728d8bb
-    - !<own> 49f2f1cb-1911-4e2b-a8eb-40eed83b450a
+    - !<own> f114e8b2-52ed-45d3-af00-74cab4207d1b
 - !<SceneObject/19e6b453-b0f8-41d8-a172-175dff284554>
   PrefabRemaps:
     []
@@ -613,22 +613,6 @@
     []
   Components:
     - !<own> 0f37de26-198f-4df6-95ae-c26275c0700f
-- !<ScriptComponent/49f2f1cb-1911-4e2b-a8eb-40eed83b450a>
-  PrefabRemaps:
-    []
-  Name: SoupPotCollider
-  Enabled: true
-  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/4cbf244f-ef03-4b07-9404-de91d6b9b757>
   PrefabRemaps:
     []
@@ -886,7 +870,7 @@
   Enabled: true
   Shape: !<Cylinder>
     Axis: Y
-    Length: 1.500000
+    Length: 2.000000
     Radius: 3.500000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
@@ -897,7 +881,7 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
+  ShowCollider: true
 - !<RenderMeshVisual/9120c6b3-2ac0-43ae-bf1d-54f0a181bc2d>
   PrefabRemaps:
     []
@@ -918,6 +902,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/938458db-e1d1-44a0-a1e8-72cf52a6642b>
+  PrefabRemaps:
+    []
+  Name: GravityCollider
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 2.600000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> fd9141fc-0dc9-4ea9-a588-e6c024580475
+    - !<own> a93d3b94-8f22-42a9-bf4e-150537b43bc6
 - !<SceneObject/96459020-653a-4698-858c-83048c584ce7>
   PrefabRemaps:
     []
@@ -1131,6 +1131,22 @@
       winObject: !<reference.SceneObject> c7b47a35-e94e-4e9a-b627-c9ce0c9c4ab7
       winTextObject: !<reference.SceneObject> bfe21b9d-7249-4907-9ed4-be3a054ae3b3
       gm: !<MappingBased.AssignableType> b03a1794-dee5-4650-81d1-1d3f4f947660
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/a93d3b94-8f22-42a9-bf4e-150537b43bc6>
+  PrefabRemaps:
+    []
+  Name: GravityCollider
+  Enabled: true
+  ScriptAsset: !<reference> 58f555ac-0e3a-4df3-955c-e1dca2ae3c47
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}
@@ -1518,7 +1534,6 @@
     - 3c3adb00-7181-4a3c-929c-a90fed963a2a: 3c3adb00-7181-4a3c-6d63-56f01269c5d5
     - 3e8df2f7-627a-4833-b4ec-881810821e7c: c33efca4-259b-47ea-8597-a3ce38fb3908
     - 411e54eb-55c8-49e3-9ff7-34169c0c5c2a: eb0512bd-af4f-4b87-aa91-8a3945447f20
-    - 49f2f1cb-1911-4e2b-a8eb-40eed83b450a: 89dbe484-04a2-4336-8293-bd073cee336b
     - 4cbf244f-ef03-4b07-9404-de91d6b9b757: 806e769a-b7fa-40b0-bb12-13078e1fd934
     - 4e13632a-c88b-4948-b984-a18f2891c9de: 53901ad1-a639-4dd8-b9fb-1a814cd71dff
     - 58d29d88-dba4-4817-b872-dfdffb0fd3a3: 26e4ad2a-2461-4a87-ba24-6b15a6349a51
@@ -1536,6 +1551,7 @@
     - 8a991be3-039c-4aef-8d08-93fecb5cc6e5: 72588a70-e32a-4224-80a4-94303e1d6890
     - 8b257308-77d4-47f1-ae27-22a59728d8bb: 8b257308-77d4-47f1-51d8-dd5a68d72744
     - 9120c6b3-2ac0-43ae-bf1d-54f0a181bc2d: 9120c6b3-2ac0-43ae-40e2-ab0f5e7e43d2
+    - 938458db-e1d1-44a0-a1e8-72cf52a6642b: 4a815234-4390-481f-8007-6fc842c8d0a6
     - 96459020-653a-4698-858c-83048c584ce7: 387c286f-73b7-4324-ad4c-ca8ec2735f56
     - 9b8e272a-f588-4e7e-a4bd-2de7ee61205d: e98d9bf8-a5f9-447f-aff2-0a2524c2d3ae
     - 9bc8cfc4-7866-4b30-8a36-97a4e27bb6e3: 1db73a51-5c3f-46eb-862e-9836b34094d9
@@ -1548,6 +1564,7 @@
     - a48782bd-b23a-4378-9b1a-4f342fbbb01d: a83e713b-8195-48f7-a9e4-929b721097c4
     - a6fab101-5be4-4f74-a393-399b5d3a96f7: 6b1df6d7-0caf-478d-a310-568676bf77dd
     - a86a6538-5837-4e12-957f-797aed174caa: 28b109ed-09cf-4a48-8bf1-b2d56b6fa25d
+    - a93d3b94-8f22-42a9-bf4e-150537b43bc6: 8cd4eaa9-64f2-41c6-a14d-05da6a961a14
     - a93f9f54-ba87-4b51-a6c6-beb3afbfd403: a93f9f54-ba87-4b51-5939-414c50402bfc
     - aa30e105-dec9-46fb-99d0-e14836afa9bd: 02a9935c-cfa5-484f-902b-01d681a91315
     - ae302907-7e9b-4400-bfd2-7861b03b101d: 811376e2-2abd-4101-b7f4-befc2a5aab2f
@@ -1573,9 +1590,11 @@
     - e80f6638-c3f8-4c4f-b8d3-3bc6e950b9ed: cfaa2243-92cb-49ac-985a-1e01a8dbf508
     - e8754582-4de1-4569-bb92-cccb4be3ef67: 83db66c3-cf44-4e45-93e1-6fe1ccedd715
     - ec467baa-229c-4734-908c-7280893f348f: 56559e8f-0b42-4e99-b46f-97b80555f898
+    - f114e8b2-52ed-45d3-af00-74cab4207d1b: d13efc2f-6aa8-4c0d-af6e-ab4bea2170cb
     - f4b2b6dd-0fb7-4778-badd-76e3c4a517ac: aa67de90-c5d1-40d7-9b7f-21438891467a
     - f6fc8bfc-4b7c-445c-b300-b42242f4a08d: 63f60600-5abc-48ef-88f2-9cbb3062d55c
     - f9d1be7c-87df-4135-95f7-343be197dc48: b9976e9a-6ebc-42c8-a413-50413028da87
+    - fd9141fc-0dc9-4ea9-a588-e6c024580475: cb71b8dd-a408-46e9-a5a5-0aff8973fecc
     - ff9cf164-b37d-4155-9a70-18d89d198a56: 0359b123-2266-41ca-8cd4-c93cf79f9a25
     - ffbf3dde-853a-407e-ba0d-380d0980a4bf: eabbbf06-387b-4be8-acf9-468973022653
   Name: PotSet
@@ -1589,6 +1608,7 @@
   Children:
     - !<own> 21db786d-fbc3-4dfc-b094-cffcd636caf8
     - !<own> 16c01c34-19f7-4d9e-94ce-e4a106db18bd
+    - !<own> 938458db-e1d1-44a0-a1e8-72cf52a6642b
     - !<own> 9bc8cfc4-7866-4b30-8a36-97a4e27bb6e3
     - !<own> e6bf12a0-8413-4809-bb37-cefbad3ad745
   Components:
@@ -1706,6 +1726,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/f114e8b2-52ed-45d3-af00-74cab4207d1b>
+  PrefabRemaps:
+    []
+  Name: SoupPotCollider
+  Enabled: true
+  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/f4b2b6dd-0fb7-4778-badd-76e3c4a517ac>
   PrefabRemaps:
     []
@@ -1767,6 +1803,25 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ColliderComponent/fd9141fc-0dc9-4ea9-a588-e6c024580475>
+  PrefabRemaps:
+    []
+  Name: Physics Collider
+  Enabled: true
+  Shape: !<Cylinder>
+    Axis: Y
+    Length: 4.000000
+    Radius: 2.500000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: true
+  ShowCollider: true
 - !<SceneObject/ff9cf164-b37d-4155-9a70-18d89d198a56>
   PrefabRemaps:
     []

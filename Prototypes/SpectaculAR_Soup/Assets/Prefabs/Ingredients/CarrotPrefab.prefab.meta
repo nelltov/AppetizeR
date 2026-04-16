@@ -34,7 +34,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -69,6 +69,7 @@
   Components:
     - !<own> 07cdb37a-545f-41f4-4557-c81b93609614
     - !<own> 69bf8647-9017-4245-6db6-677edf2e1cd9
+    - !<own> 81a4d400-49bc-4de9-8010-bb8c0e2a0544
     - !<own> 6a86b82b-5e01-4b89-7ff4-7aee2e857288
     - !<own> ce4e6b91-a035-429e-6091-3972edd13a09
 - !<ObjectPrefabAssetData/4117a707-00cb-4eb7-9366-21dc510c557f>
@@ -127,6 +128,22 @@
       acceptableYDirections: !<float> 0.000000
       acceptableZDirections: !<float> 1.000000
       useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/81a4d400-49bc-4de9-8010-bb8c0e2a0544>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}
