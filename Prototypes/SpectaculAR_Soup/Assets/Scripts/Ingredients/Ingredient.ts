@@ -1,5 +1,5 @@
 export enum IngredientType {
-    // Bacon = 0,
+    Bacon = 0,
     Bayleaf = 1,
     // Beef = 2,
     Carrot = 3,

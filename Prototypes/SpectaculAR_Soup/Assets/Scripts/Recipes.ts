@@ -4,10 +4,10 @@ export type Recipes = [string, IngredientInfo[]]
 
 export const Recipe0: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Tofu),
-    new IngredientInfo(IngredientType.Noodles),
+    new IngredientInfo(IngredientType.Pasta),
     new IngredientInfo(IngredientType.Mushroom),
     new IngredientInfo(IngredientType.Onion),
-    new IngredientInfo(IngredientType.Leek),
+    new IngredientInfo(IngredientType.Bacon),
     new IngredientInfo(IngredientType.Celery),
     new IngredientInfo(IngredientType.Spinach)
 ]
