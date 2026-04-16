@@ -1286,7 +1286,6 @@
     - e822eeb9-bbd1-4a80-8217-043d8729aca8: 4552ad61-8013-4fbf-a41c-b1a4a200d998
     - ea0a798d-127a-494c-9bed-10ce957df866: bf8a828b-a75d-4157-8853-e40e86e5abbb
     - eac201e0-882c-4a7b-b7c6-0d03a7158762: 06093d15-0791-449a-8428-7282f0afe443
-    - eae52614-7f60-400d-b6b5-57f1fc3441e3: 0f4bfa6e-ea64-4db6-9a34-c7253d89d3b3
     - ebccffba-f136-4020-a3fd-ef03412abe7b: 8acbacb4-7bb3-4aea-89dd-e431ddf0e064
     - ecf0bead-9e37-4ea1-88c3-bc9c91e67be7: 08914291-a94f-42d6-aa95-9817bb376079
     - ed1dbc58-dbc6-4fb3-ad5d-7c801b5dbc69: 2ed2ce0c-1e2a-4da4-a188-068788ace0e9
@@ -1566,7 +1565,6 @@
     []
   Components:
     - !<own> b5bb3014-467a-4131-acfb-8b5912ad4dca
-    - !<own> eae52614-7f60-400d-b6b5-57f1fc3441e3
 - !<AnimationPlayer/1ccfd3be-c283-4f2f-9eab-ab234d59e32d>
   PrefabRemaps:
     []
@@ -7168,7 +7166,6 @@
     - e5872020-5f1d-428d-b037-fdc6f1e996eb: 41d86da4-3b2c-4414-7cd2-c6094bf15995
     - e822eeb9-bbd1-4a80-8217-043d8729aca8: d64b1b17-27f4-4635-aeaa-0b887ee19ba7
     - ea0a798d-127a-494c-9bed-10ce957df866: aaddb4f4-4a2d-4b71-7a2f-ff2df7d6d279
-    - eae52614-7f60-400d-b6b5-57f1fc3441e3: d3560498-0d73-4a99-8a78-76f85d38f079
     - ebccffba-f136-4020-a3fd-ef03412abe7b: 7ef08084-93d1-4b01-9aa4-84b7f69d884a
     - ee5c7983-75a0-4b1f-a735-598f53a0b441: d5c3c17f-1256-40d2-bd77-875330cb7ea1
     - f054cb71-f45c-429b-b388-9361e9c097a4: a2ebfd8c-9383-4339-4597-d36a5bd0c5e1
@@ -7421,7 +7418,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 30.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 18.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -7704,22 +7701,6 @@
     []
   Components:
     - !<own> 6b27c65e-f8a3-4b6a-8afb-61b36b95bb08
-- !<ScriptComponent/eae52614-7f60-400d-b6b5-57f1fc3441e3>
-  PrefabRemaps:
-    []
-  Name: SoupPotCollider
-  Enabled: true
-  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<ColliderComponent/ebccffba-f136-4020-a3fd-ef03412abe7b>
   PrefabRemaps:
     []
@@ -7727,8 +7708,8 @@
   Enabled: true
   Shape: !<Cylinder>
     Axis: Y
-    Length: 40.000000
-    Radius: 25.000000
+    Length: 60.000000
+    Radius: 30.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000

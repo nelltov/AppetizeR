@@ -53,9 +53,9 @@ export class GameManager extends BaseScriptComponent {
             print("Chef subscribed");
             this.amITheChef();
             print("Current Chef will change")
+
             // Spawn chef instructions with the recipe info
             if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
-                // print("Nellie wants print statements that say i am the chef as she stands here and tells me everything to type")
                 EventManager.SpawnChefInstructions.trigger(this.currentRecipeIngredientInfo || [])
             }
         })
@@ -67,13 +67,7 @@ export class GameManager extends BaseScriptComponent {
 
 
         this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
-
         this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
-
-        // TODO: delete this? need to check later
-        // Handle late-joiners: if chef was already selected before this player joined,
-        // onAnyChange will never fire, so check the current value immediately
-        this.amITheChef()
     }
 
     /**
@@ -238,9 +232,6 @@ export class GameManager extends BaseScriptComponent {
     // Phasing this out, won't be needed for the refactored game start
     private amITheChef()
     {   
-        // Get my own ID
-        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
-
         // Turn off game start locally
         if (this.chefSelected.currentOrPendingValue !== true) return;
         this.gameStartButton.enabled = false;
