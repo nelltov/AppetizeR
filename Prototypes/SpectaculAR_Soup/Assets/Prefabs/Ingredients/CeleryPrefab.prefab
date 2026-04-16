@@ -4,6 +4,22 @@
     - !<own> 30819eb0-1575-4422-b3bb-ebe99afc6fce
   LazyLoading: false
   RetainAssets: true
+- !<ScriptComponent/0c026a80-464e-404e-8cb8-4af0b0b0fe1f>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/21d5b4d8-1d89-43f1-9b7b-e10b3ebf5916>
   PrefabRemaps:
     []
@@ -44,6 +60,7 @@
       {}
 - !<SceneObject/30819eb0-1575-4422-b3bb-ebe99afc6fce>
   PrefabRemaps:
+    - 0c026a80-464e-404e-8cb8-4af0b0b0fe1f: 813290d4-e10d-49ac-96b0-53d119436207
     - 21d5b4d8-1d89-43f1-9b7b-e10b3ebf5916: 21d5b4d8-1d89-43f1-6484-1ef4c140a6e9
     - 30819eb0-1575-4422-b3bb-ebe99afc6fce: 30819eb0-1575-4422-4c44-141665039031
     - 311cf49e-8c24-4e0d-a908-e3d7715dcc1d: 311cf49e-8c24-4e0d-56f7-1c288ea233e2
@@ -66,6 +83,7 @@
     - !<own> e616e88b-001b-4823-8c4e-7d2d74daaeda
     - !<own> 21d5b4d8-1d89-43f1-9b7b-e10b3ebf5916
     - !<own> ae9207d2-63b6-4ede-804b-f0e2496a5960
+    - !<own> 0c026a80-464e-404e-8cb8-4af0b0b0fe1f
 - !<SceneObject/311cf49e-8c24-4e0d-a908-e3d7715dcc1d>
   PrefabRemaps:
     []
@@ -121,7 +139,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -137,8 +155,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -163,8 +179,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000

@@ -52,6 +52,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/26137591-a06c-4657-9fde-1650bb5c4afa>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/73210a4e-0ad5-4e40-73dd-f34267e50e15>
   PrefabRemaps:
     []
@@ -120,8 +136,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -146,8 +160,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -184,6 +198,7 @@
     - !<own> 115da865-703d-4c2b-6ce2-f0685c180f03
     - !<own> aa62c617-6ec5-4c10-7c18-6d082c2a4e1d
     - !<own> d07ec0e7-1cf0-488c-7670-50b9c64b2468
+    - !<own> 26137591-a06c-4657-9fde-1650bb5c4afa
 - !<BodyComponent/d07ec0e7-1cf0-488c-7670-50b9c64b2468>
   PrefabRemaps:
     []
@@ -204,7 +219,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000

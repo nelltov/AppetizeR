@@ -31,8 +31,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -57,8 +55,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -116,7 +114,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -183,6 +181,7 @@
     - d778bd3c-52f1-4113-9591-ecf9b40671f5: d778bd3c-52f1-4113-6a6e-13064bf98e0a
     - ddc46f57-2b27-45c1-9d89-71e8aa3e3140: ddc46f57-2b27-45c1-6276-8e1755c1cebf
     - e2795643-44de-4bdd-ac3d-c4d6130139ce: e2795643-44de-4bdd-53c2-3b29ecfec631
+    - f57883fb-5f7e-47da-8857-c6eca4630f5a: a439b41d-f4bf-4069-826d-a555df8aae03
     - f9086412-df26-4557-865c-07822bebb73a: f9086412-df26-4557-79a3-f87dd41448c5
   Name: TofuPrefab
   Enabled: true
@@ -201,6 +200,7 @@
     - !<own> a7f3a483-9fff-47f7-a48b-5fceda1e966e
     - !<own> e2795643-44de-4bdd-ac3d-c4d6130139ce
     - !<own> 21a2f825-a9e3-4c49-9ec4-6323fd939eee
+    - !<own> f57883fb-5f7e-47da-8857-c6eca4630f5a
 - !<RenderMeshVisual/ddc46f57-2b27-45c1-9d89-71e8aa3e3140>
   PrefabRemaps:
     []
@@ -256,6 +256,22 @@
       acceptableYDirections: !<float> 0.000000
       acceptableZDirections: !<float> 1.000000
       useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/f57883fb-5f7e-47da-8857-c6eca4630f5a>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}

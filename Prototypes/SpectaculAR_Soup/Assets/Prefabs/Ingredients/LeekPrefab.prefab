@@ -93,6 +93,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/a27e5665-d3f3-4315-a60b-08b12ecee242>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2>
   PrefabRemaps:
     []
@@ -105,8 +121,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -131,8 +145,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -157,6 +171,7 @@
     - 73210a4e-0ad5-4e40-8c22-0cbd981af1ea: 73210a4e-0ad5-4e40-73dd-f34267e50e15
     - 8e468669-dee4-443e-bef9-7c70a0326a8c: 8e468669-dee4-443e-4106-838f5fcd9573
     - 974729c4-de3a-43c9-944c-63440541697e: 974729c4-de3a-43c9-6bb3-9cbbfabe9681
+    - a27e5665-d3f3-4315-a60b-08b12ecee242: 26137591-a06c-4657-9fde-1650bb5c4afa
     - aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2: aa62c617-6ec5-4c10-7c18-6d082c2a4e1d
     - af74030f-471c-4aaf-9c5d-d5e6d989422a: af74030f-471c-4aaf-63a2-2a192676bdd5
     - d07ec0e7-1cf0-488c-898f-af4639b4db97: d07ec0e7-1cf0-488c-7670-50b9c64b2468
@@ -175,6 +190,7 @@
     - !<own> 115da865-703d-4c2b-931d-0f97a3e7f0fc
     - !<own> aa62c617-6ec5-4c10-83e7-92f7d3d5b1e2
     - !<own> d07ec0e7-1cf0-488c-898f-af4639b4db97
+    - !<own> a27e5665-d3f3-4315-a60b-08b12ecee242
 - !<BodyComponent/d07ec0e7-1cf0-488c-898f-af4639b4db97>
   PrefabRemaps:
     []
@@ -195,7 +211,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000

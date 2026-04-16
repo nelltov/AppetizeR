@@ -76,10 +76,26 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<ScriptComponent/5a825f26-9137-429f-b6fa-e39c65206203>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/a3daafb9-411a-4254-ab16-d4b42901394a>
   PrefabRemaps:
     []
@@ -112,8 +128,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -138,8 +152,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -179,6 +193,7 @@
     - 17cb83d3-982c-43d3-9229-2c96c5a6d9a8: 17cb83d3-982c-43d3-6dd6-d3693a592657
     - 2e900164-b79b-445a-8e0f-fce1c3e0b6ba: 2e900164-b79b-445a-71f0-031e3c1f4945
     - 533c9f05-5c32-46e4-93c0-ffd01f8bb935: 533c9f05-5c32-46e4-6c3f-002fe07446ca
+    - 5a825f26-9137-429f-b6fa-e39c65206203: 46c3fdf5-968a-47cc-9b62-afd9854a1d2a
     - a3daafb9-411a-4254-ab16-d4b42901394a: a3daafb9-411a-4254-54e9-2b4bd6fec6b5
     - a7cc96df-5fa4-4e8f-ab9c-5fdaa52947c5: a7cc96df-5fa4-4e8f-5463-a0255ad6b83a
     - e4999ccf-e422-4edf-917f-419499c811a6: e4999ccf-e422-4edf-6e80-be6b6637ee59
@@ -198,3 +213,4 @@
     - !<own> e4999ccf-e422-4edf-917f-419499c811a6
     - !<own> 17cb83d3-982c-43d3-9229-2c96c5a6d9a8
     - !<own> a7cc96df-5fa4-4e8f-ab9c-5fdaa52947c5
+    - !<own> 5a825f26-9137-429f-b6fa-e39c65206203

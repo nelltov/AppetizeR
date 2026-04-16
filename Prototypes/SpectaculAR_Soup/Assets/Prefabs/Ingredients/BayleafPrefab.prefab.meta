@@ -99,6 +99,7 @@
     - !<own> 2405ec56-e6f7-4cee-7276-9bd6749e858a
     - !<own> 5f92b15f-17ff-46c7-5f4f-b4638ef58e94
     - !<own> 86f2c938-e501-4db9-6271-89f58fb5b456
+    - !<own> 89bb472a-c235-459c-a211-6fbb01ce2d2b
 - !<ObjectPrefabAssetData/4d248ae2-326d-4fa0-bce6-7601221c3a38>
   Prototype: !<ObjectOwner/a32b5cd5-a41f-4622-90e6-013e9983ed35>
     PackagePath: ""
@@ -174,8 +175,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -200,8 +199,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -217,6 +216,22 @@
       showRotationProperties: false
       _rotationAxis: All
       isSynced: false
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/89bb472a-c235-459c-a211-6fbb01ce2d2b>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}
@@ -240,7 +255,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000

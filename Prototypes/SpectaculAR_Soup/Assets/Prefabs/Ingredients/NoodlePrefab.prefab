@@ -31,8 +31,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -57,8 +55,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -97,7 +95,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -114,6 +112,22 @@
   ScriptInputs:
     "":
       ingredientEnumNumber: !<float> 9.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/b4a94353-4acb-4db4-9eaf-224a9c7ed0f0>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}
@@ -161,6 +175,7 @@
     - 1f633d52-faf2-4ff3-9f78-cb8efe5422bc: 1f633d52-faf2-4ff3-6087-347101abdd43
     - 51507f35-4473-46d9-b497-09fc3b77b883: 51507f35-4473-46d9-4b68-f603c488477c
     - aae391c8-b063-4008-bd9b-dc76754c8ffe: aae391c8-b063-4008-4264-23898ab37001
+    - b4a94353-4acb-4db4-9eaf-224a9c7ed0f0: 75bdf780-68e6-4971-9ee8-6617c8cd0f59
     - b7f94de4-154f-40dc-8e95-06d48083d713: b7f94de4-154f-40dc-716a-f92b7f7c28ec
     - c23b14d1-3916-4572-bcd2-d5b49d8ad468: c23b14d1-3916-4572-432d-2a4b62752b97
     - fd34d613-888f-4e14-9601-8ee4a8f4116f: fd34d613-888f-4e14-69fe-711b570bee90
@@ -179,6 +194,7 @@
     - !<own> aae391c8-b063-4008-bd9b-dc76754c8ffe
     - !<own> b7f94de4-154f-40dc-8e95-06d48083d713
     - !<own> 1f633d52-faf2-4ff3-9f78-cb8efe5422bc
+    - !<own> b4a94353-4acb-4db4-9eaf-224a9c7ed0f0
 - !<RenderMeshVisual/fd34d613-888f-4e14-9601-8ee4a8f4116f>
   PrefabRemaps:
     []

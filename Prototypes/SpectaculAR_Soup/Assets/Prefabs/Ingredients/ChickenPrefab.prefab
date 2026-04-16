@@ -74,8 +74,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -100,8 +98,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
@@ -140,10 +138,26 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<ScriptComponent/a37ab102-f3ae-46a0-adf8-ce2bded45117>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/a490243c-3ec5-4946-8ea3-2f61ded508ab>
   PrefabRemaps:
     []
@@ -166,6 +180,7 @@
     - 41fb2ca6-b383-45de-b228-259efdf83290: 41fb2ca6-b383-45de-4dd7-da610207cd6f
     - 51b843e6-069e-44ec-a498-4d8fa0b70a94: 51b843e6-069e-44ec-5b67-b2705f48f56b
     - 5386cbbd-4ab6-42f8-b567-d9bb05cbb8e8: 5386cbbd-4ab6-42f8-4a98-2644fa344717
+    - a37ab102-f3ae-46a0-adf8-ce2bded45117: 41a19c6d-1aeb-4a09-a260-545f1b32665a
     - a490243c-3ec5-4946-8ea3-2f61ded508ab: a490243c-3ec5-4946-715c-d09e212af754
     - cd9a3175-eba1-41b6-991d-9e1058c912f7: cd9a3175-eba1-41b6-66e2-61efa736ed08
     - d8fa6ed3-0afe-449d-ba4a-15930c13ca55: d8fa6ed3-0afe-449d-45b5-ea6cf3ec35aa
@@ -184,6 +199,7 @@
     - !<own> a490243c-3ec5-4946-8ea3-2f61ded508ab
     - !<own> 41fb2ca6-b383-45de-b228-259efdf83290
     - !<own> 51b843e6-069e-44ec-a498-4d8fa0b70a94
+    - !<own> a37ab102-f3ae-46a0-adf8-ce2bded45117
 - !<SceneObject/d8fa6ed3-0afe-449d-ba4a-15930c13ca55>
   PrefabRemaps:
     []

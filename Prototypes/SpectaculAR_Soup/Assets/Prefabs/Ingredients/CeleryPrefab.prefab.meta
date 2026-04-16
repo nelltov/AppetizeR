@@ -75,6 +75,7 @@
     - !<own> e616e88b-001b-4823-73b1-82d28b255125
     - !<own> 21d5b4d8-1d89-43f1-6484-1ef4c140a6e9
     - !<own> ae9207d2-63b6-4ede-7fb4-0f1db695a69f
+    - !<own> 813290d4-e10d-49ac-96b0-53d119436207
 - !<SceneObject/311cf49e-8c24-4e0d-56f7-1c288ea233e2>
   PrefabRemaps:
     []
@@ -110,6 +111,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/813290d4-e10d-49ac-96b0-53d119436207>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<BodyComponent/92c34618-f91f-4390-68a7-81026c3b176d>
   PrefabRemaps:
     []
@@ -130,7 +147,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -146,8 +163,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -172,8 +187,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000

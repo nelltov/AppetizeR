@@ -39,6 +39,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/21156c2e-e489-4488-8e5f-e111efa6567c>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/2405ec56-e6f7-4cee-8d89-64298b617a75>
   PrefabRemaps:
     []
@@ -74,6 +90,7 @@
   PrefabRemaps:
     - 087916e4-598f-4dd5-81a2-450f729e896c: 087916e4-598f-4dd5-7e5d-baf08d617693
     - 16e3464f-4604-461e-9368-e40792f6a3b3: 16e3464f-4604-461e-6c97-1bf86d095c4c
+    - 21156c2e-e489-4488-8e5f-e111efa6567c: 89bb472a-c235-459c-a211-6fbb01ce2d2b
     - 2405ec56-e6f7-4cee-8d89-64298b617a75: 2405ec56-e6f7-4cee-7276-9bd6749e858a
     - 2676546c-d223-4cce-9495-733ee0cddf97: 2676546c-d223-4cce-6b6a-8cc11f322068
     - 41c06806-4125-4608-88b6-fdeea91d8f98: 41c06806-4125-4608-7749-021156e27067
@@ -97,6 +114,7 @@
     - !<own> 2405ec56-e6f7-4cee-8d89-64298b617a75
     - !<own> 5f92b15f-17ff-46c7-a0b0-4b9c710a716b
     - !<own> 86f2c938-e501-4db9-9d8e-760a704a4ba9
+    - !<own> 21156c2e-e489-4488-8e5f-e111efa6567c
 - !<BodyComponent/4a687949-460e-4292-bfce-c75dbce072dc>
   PrefabRemaps:
     []
@@ -117,7 +135,7 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
@@ -191,8 +209,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -217,8 +233,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000

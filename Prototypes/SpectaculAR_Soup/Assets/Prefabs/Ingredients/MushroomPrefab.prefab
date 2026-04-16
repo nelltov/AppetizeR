@@ -23,13 +23,30 @@
   Intangible: false
   ShowCollider: false
   Dynamic: true
-  BodySetting: Density
+  BodySetting: Mass
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
+- !<ScriptComponent/224cf9ee-4fc9-46ef-adac-dd2ee2ad1ca8>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/474cbdaf-4538-4016-a0db-08a532c96618>
   PrefabRemaps:
     - 091f1d71-209d-44ec-88c4-7545ef0d023e: 091f1d71-209d-44ec-773b-8aba10f2fdc1
+    - 224cf9ee-4fc9-46ef-adac-dd2ee2ad1ca8: 570632d4-eb29-4cc0-87b3-11efac844811
     - 474cbdaf-4538-4016-a0db-08a532c96618: 474cbdaf-4538-4016-5f24-f75acd3699e7
     - 55ec27d6-75c7-4715-bd7c-7e8db9451b2d: 55ec27d6-75c7-4715-4283-817246bae4d2
     - 70ae36fa-f459-47f3-89fe-f86ddb530310: 70ae36fa-f459-47f3-7601-079224acfcef
@@ -51,6 +68,7 @@
     - !<own> 70ae36fa-f459-47f3-89fe-f86ddb530310
     - !<own> 861868c7-54b5-4835-ae24-4d2d9a0c8ccf
     - !<own> 7c550b40-2cbf-4ce6-beb9-d2748acaa69f
+    - !<own> 224cf9ee-4fc9-46ef-adac-dd2ee2ad1ca8
 - !<SceneObject/55ec27d6-75c7-4715-bd7c-7e8db9451b2d>
   PrefabRemaps:
     []
@@ -94,8 +112,6 @@
     maximumScaleFactor: true
     enableTranslation: true
     enableRotation: true
-    enableScale: true
-    enableStretchZ: true
     showStretchZProperties: true
     zStretchFactorMin: true
     zStretchFactorMax: true
@@ -120,8 +136,8 @@
       maximumScaleFactor: !<float> 20.000000
       enableTranslation: true
       enableRotation: true
-      enableScale: true
-      enableStretchZ: true
+      enableScale: false
+      enableStretchZ: false
       showStretchZProperties: false
       zStretchFactorMin: !<float> 1.000000
       zStretchFactorMax: !<float> 12.000000
