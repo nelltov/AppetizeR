@@ -1,0 +1,130 @@
+- !<AssetImportMetadata/e0a128d5-fd3c-462d-a134-4878b2c181ad>
+  ImportedAssetIds:
+    .hidden/openPBR_shader1: !<reference> 8be5d7ca-5bd1-4058-a91b-065e3995d665
+    .hidden/white: !<reference> 47ed11dc-436d-43e7-bbf3-ff04c7abe6de
+    2028ca51e4a54211: !<reference> 3bba58c3-0fa4-4c38-90fe-1c27848162b1
+    7a0dd5cd69df73fa: !<reference> ae1f4eea-c86e-49c2-b74c-923242cb1429
+    Animations/BaseLayer: !<reference> ac474b4f-c109-4b99-97b1-cf40a0253e88
+    Materials/openPBR_shader1: !<reference> 82ee516e-8911-40ca-a9fc-95345764af26
+    Materials/openPBR_shader1|openPBR_shader1|GraphPassInfo: !<reference> b78223a5-69ac-495e-be56-7f868b12abc2
+    Meshes/bacon: !<reference> ba6521b2-512c-4c68-a557-54ecddc1879a
+    Scene: !<reference> 87f71bbf-c0b5-42c4-b520-a61400e81969
+    a839ac5678ce7685: !<reference> 7486f180-5061-48e0-b58b-492c40f4f8a6
+    b4d387dd9db68c13: !<reference> fa4609e8-0e85-4da2-a7ee-e49b40d80f2b
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 87f71bbf-c0b5-42c4-b520-a61400e81969
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 8c99f13e-a1d3-4d86-b556-2357cbd6b03f
+  DependentFiles:
+    []
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangentsAndBinormals: true
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: true
+    ImportBlendShapeAnimation: true
+    ImportVertexAnimation: true
+    GeneratePivots: true
+    TriangulateNURBS: true
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      jpg: Performance Compression
+    Overrides:
+      {}
+- !<AnimationPlayer/3bba58c3-0fa4-4c38-6f01-e3d87b7e9d4e>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> ac474b4f-c109-4b99-97b1-cf40a0253e88
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<RenderMeshVisual/7486f180-5061-48e0-4a74-b6d3bf0b0759>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 82ee516e-8911-40ca-a9fc-95345764af26
+  Mesh: !<reference> ba6521b2-512c-4c68-a557-54ecddc1879a
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/8c99f13e-a1d3-4d86-b556-2357cbd6b03f>
+  Prototype: !<ObjectOwner/2c334fa9-c101-4ef4-842e-1f715627226f>
+    PackagePath: ""
+    objects:
+      - !<own> ae1f4eea-c86e-49c2-48b3-6dcdbd34ebd6
+- !<SceneObject/ae1f4eea-c86e-49c2-48b3-6dcdbd34ebd6>
+  PrefabRemaps:
+    []
+  Name: bacon
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> fa4609e8-0e85-4da2-5811-1b64bf27f0d4
+  Components:
+    - !<own> 3bba58c3-0fa4-4c38-6f01-e3d87b7e9d4e
+- !<SceneObject/fa4609e8-0e85-4da2-5811-1b64bf27f0d4>
+  PrefabRemaps:
+    []
+  Name: bacon
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7486f180-5061-48e0-4a74-b6d3bf0b0759
