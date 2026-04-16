@@ -36,10 +36,10 @@ export class SaltShaderController extends BaseScriptComponent {
         this.faceShader = faceShaderMaterial.mainPass
 
         // Starting params
-        this.saltAmount = 1.0
+        this.saltAmount = 0.8
         this.pourThreshold = -0.1
         this.pourSpeed = 0.1
-        this.wh = new vec2(10.0, 15.0)
+        this.wh = new vec2(2.5, 4.5)
         this.tilt = 1.0
         this.pour = false
 
@@ -57,19 +57,21 @@ export class SaltShaderController extends BaseScriptComponent {
         // set face
         this.faceShader.ahh = this.pour
 
-        // set pour VFX
-        let canPour = this.pour && this.saltAmount > 0.01
-        if (this.saltVFX) this.saltVFX.enabled = canPour
+        if (this.pour) {
+            this.saltAmount = Math.max(this.saltAmount - this.pourSpeed * 0.01, 0.01)
+        } 
 
-        // set salt surface
-        if (canPour) {
-            this.saltAmount -= this.pourSpeed * 0.01
+        // Pour VFX
+        if (this.saltVFX) this.saltVFX.enabled = this.pour && this.saltAmount > 0.03
+
+        // Set salt surface
+        if (this.saltAmount > 0.01) {
             this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
         }
     }
 
     private calculateSurfaceLevel(wh: vec2, tilt: number, saltAmount: number): number {
-        const scale = MathUtils.lerp(wh.y, wh.x, Math.abs(tilt))
+        const scale = MathUtils.lerp(wh.x, wh.y, Math.abs(tilt))
         const amount = MathUtils.remap(saltAmount, 0, 1, -1, 1)
         return scale * amount
     }

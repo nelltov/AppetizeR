@@ -18,12 +18,19 @@ export class ConfirmPosition extends BaseScriptComponent {
     @input
     gameRoot: SceneObject
 
-    // Objects to enable when all players are ready
+    // Objects to enable when player clicks the confirm button
     @input
-    public objectsToDisable : SceneObject[]
+    public disableOnConfirm : SceneObject[]
 
     @input
-    public objectsToEnable : SceneObject[]
+    public enableOnConfirm : SceneObject[]
+
+    // Objects to enable when all players are ready
+    @input
+    public disableOnAllReady : SceneObject[]
+
+    @input
+    public enableOnAllReady : SceneObject[]
 
     onAwake() {
         this.syncEntity = new SyncEntity(this);
@@ -39,12 +46,11 @@ export class ConfirmPosition extends BaseScriptComponent {
         })
     }
 
-
     /* This function is attached to sync event by PlayersReady script */
     public checkAllPlayersReady() {
         if (this.playersReady === this.totalPlayers) {
-            this.objectsToEnable.forEach((obj) => obj.enabled = true)
-            this.objectsToDisable.forEach((obj) => obj.enabled = false)
+            this.enableOnAllReady.forEach((obj) => obj.enabled = true)
+            this.disableOnAllReady.forEach((obj) => obj.enabled = false)
 
             EventManager.CenterPositionSetLocal.trigger(this.gameRoot.getTransform().getWorldPosition())
         }
@@ -52,9 +58,8 @@ export class ConfirmPosition extends BaseScriptComponent {
 
     /* Lock position and deactivate button for each individual player */
     public confirmGamePosition() {
-        print("confirm game position")
-        this.confirmButton.enabled = false
         this.startObjectInteractableManipulation.enabled = false
-        this.gameRoot.enabled = true
+        this.enableOnConfirm.forEach((obj) => obj.enabled = true)
+        this.disableOnConfirm.forEach((obj) => obj.enabled = false)
     }
 }
