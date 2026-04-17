@@ -32,17 +32,19 @@ export class ResultHelper extends BaseScriptComponent {
                 if (!this.winObject?.enabled) {
                     this.winObject.enabled = true;
                     this.winSFXObject.enabled = true;
+                    this.winSFXObject.getComponent("VFXComponent").restart();
                     if (this.gm?.starterRecipeComplete.currentValue) {
                         const winText = this.winTextObject.getComponent("Text")
                         winText.sizeToFit == false
                         winText.size = 40
-                        winText.text = "To PLAY AGAIN hit restart, OR if you want to see Peppi's response to our soup FLIP OVER YOUR PLACEMAT!"
+                        winText.text = "To PLAY AGAIN hit restart...Or just ADD SOME OF ME TO THE POT and enjoy the Soup of the Day!!!"
                     }
                 }
                 //visualEffect.enabled = true;
             } else {
                 print("GM heard the Event Manager call for a loss")
                 this.loseSFXObject.enabled = true;
+                this.loseSFXObject.getComponent("VFXComponent").restart();
             }
         })
 
