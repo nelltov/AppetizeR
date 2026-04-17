@@ -1080,6 +1080,8 @@
   ScriptInputs:
     "":
       winObject: !<reference.SceneObject> 21f5b40c-626b-4a35-a1fe-2a35da059808
+      winSFXObject: !<reference.SceneObject> a3fc179a-80b1-4aef-8a41-32b954ddfd5f
+      loseSFXObject: !<reference.SceneObject> deef726e-8b28-4723-a778-68ab48c88d84
       winTextObject: !<reference.SceneObject> bb36e5d3-7718-461b-9ade-f95e7ea636cd
       gm: !<MappingBased.AssignableType> a44cf1fa-a3ee-4847-8f48-4bd334059118
   ScriptTypes:
@@ -5952,16 +5954,18 @@
 - !<SceneObject/756ce511-cab1-402c-b546-3dedf5d33b33>
   PrefabRemaps:
     []
-  Name: Win!
+  Name: ResultHandler
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.503827, z: 0.000000}
+    Position: {x: 0.000000, y: 37.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> c81aa362-dca3-4ea4-9a19-b21628cc8090
+    - !<own> a3fc179a-80b1-4aef-8a41-32b954ddfd5f
+    - !<own> deef726e-8b28-4723-a778-68ab48c88d84
   Components:
     - !<own> e4e967ec-3bd9-4b46-805f-dc611c2870b0
     - !<own> 12cd4e36-4643-4ea7-8514-f96c9f8fafd3
@@ -7895,6 +7899,22 @@
     - !<own> 97a2053f-6ed8-48db-b6c0-4719a3f99f33
   Components:
     - !<own> b6480a04-5d14-44aa-823d-8c8e97c4f7b9
+- !<SceneObject/a3fc179a-80b1-4aef-8a41-32b954ddfd5f>
+  PrefabRemaps:
+    - a3fc179a-80b1-4aef-8a41-32b954ddfd5f: 2a2a1825-85ea-4b1a-560c-157302c3593d
+    - aef8c51b-e91d-4194-ac71-c470f66e14cb: ede089ce-556a-4765-68d0-653a44055c01
+  Name: WinEffect
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> aef8c51b-e91d-4194-ac71-c470f66e14cb
 - !<ScriptComponent/a44cf1fa-a3ee-4847-8f48-4bd334059118>
   PrefabRemaps:
     []
@@ -8428,6 +8448,19 @@
     []
   Components:
     - !<own> 8cfbe136-b0f3-49f0-a23f-509265389954
+- !<VFXComponent/aef8c51b-e91d-4194-ac71-c470f66e14cb>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> cc995ade-4ec1-4334-b2d1-3059c6033760
 - !<Image/af028799-2a48-4cca-8d20-df02fad8e1c0>
   PrefabRemaps:
     []
@@ -8592,6 +8625,19 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<VFXComponent/b1c043db-7d38-48dc-a2d5-67ae5fef5220>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 055c98e5-f138-4ef3-9ef0-f00ef3f917fd
 - !<SceneObject/b1f8254d-7ff0-4786-bdb0-5811371eac87>
   PrefabRemaps:
     []
@@ -11484,6 +11530,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/deef726e-8b28-4723-a778-68ab48c88d84>
+  PrefabRemaps:
+    - b1c043db-7d38-48dc-a2d5-67ae5fef5220: da17eed7-6b1f-4adb-4cd0-011df24a409f
+    - deef726e-8b28-4723-a778-68ab48c88d84: f1a798eb-6755-4f5e-5fd4-ce416222b813
+  Name: LoseEffect
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b1c043db-7d38-48dc-a2d5-67ae5fef5220
 - !<SceneObject/def0725d-e76b-4a85-81c3-39285e960833>
   PrefabRemaps:
     - 26ef6d72-535d-4bc8-b1ae-fb4861b0d146: 110013a3-2c88-4550-4e76-a8287353b0f8

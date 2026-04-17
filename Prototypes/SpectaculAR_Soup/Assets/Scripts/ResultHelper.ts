@@ -6,8 +6,11 @@ export class ResultHelper extends BaseScriptComponent {
   @input
   winObject!: SceneObject | null
 
-//   @input
-//   winSFXObject! : SceneObject | null
+  @input
+  winSFXObject! : SceneObject | null
+
+  @input
+  loseSFXObject! : SceneObject | null
 
   @input
   winTextObject!: SceneObject | null
@@ -28,6 +31,7 @@ export class ResultHelper extends BaseScriptComponent {
             if (isVictory) {
                 if (!this.winObject?.enabled) {
                     this.winObject.enabled = true;
+                    this.winSFXObject.enabled = true;
                     if (this.gm?.starterRecipeComplete.currentValue) {
                         const winText = this.winTextObject.getComponent("Text")
                         winText.sizeToFit == false
@@ -38,13 +42,15 @@ export class ResultHelper extends BaseScriptComponent {
                 //visualEffect.enabled = true;
             } else {
                 print("GM heard the Event Manager call for a loss")
-                // TODO: loss object
+                this.loseSFXObject.enabled = true;
             }
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
             visualEffect.enabled = false;
             this.winObject.enabled = false;
+            this.winSFXObject.enabled = false;
+            this.loseSFXObject.enabled = false;
         })
     }
 }
