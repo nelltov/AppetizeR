@@ -22,6 +22,8 @@ export class EventManager extends BaseScriptComponent {
     static SoupPotIngredientCollisionLocalEvent = new EventWrapper<[IngredientInfo]>() 
 
     // Transition to the stage of checking the soup
+    static SaltSoupLocalEvent = new EventWrapper()
+    static SaltSoupNetworkEvent = new EventWrapper()
     static CheckSoupLocalEvent = new EventWrapper()
     static CheckSoupNetworkEvent = new EventWrapper()
     static CheckRecipeLocalEvent = new EventWrapper()

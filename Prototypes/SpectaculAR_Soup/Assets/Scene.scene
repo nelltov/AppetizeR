@@ -2111,6 +2111,7 @@
     - !<own> 4866834d-626f-4ccc-ae16-b596058fa490
     - !<own> 0de960e4-1f34-4c3f-aa7e-a23bae8d0c1a
     - !<own> a61b1c2f-49f7-40e9-8463-562cc9900148
+    - !<own> bf6b0fc3-6250-4467-b430-1b0866645117
     - !<own> 3c4400df-0aaf-478d-b1c3-08ee240c6760
   Components:
     - !<own> c0d3b5e8-dc03-4390-ac26-21a5184c4e8d
@@ -3217,6 +3218,7 @@
       ingredientNameTextPanel: !<reference.Text> 6f75a402-0722-4091-9a35-b64101f6a371
       ingredientIcon: !<reference.Image> 824b8479-6016-4ca5-8a97-3baaa7d337d5
       chefCheckSoupObject: !<reference.SceneObject> a61b1c2f-49f7-40e9-8463-562cc9900148
+      chefSaltSoupObject: !<reference.SceneObject> bf6b0fc3-6250-4467-b430-1b0866645117
       victoryObject: !<reference.SceneObject> 97423a9f-e78b-47f7-b839-49374ba1144c
       lossObject: !<reference.SceneObject> 321c0859-71da-47a1-80db-64a3acd2195f
   ScriptTypes:
@@ -4721,6 +4723,25 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Loop
+- !<Image/5c2344d4-b84b-4fb4-9bb2-8ec4d1d9ced2>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fill
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6829673a-4025-4439-9f1f-3412c417b0e4
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/5cd42989-eddc-4b76-b34d-55a456ebc239>
   PrefabRemaps:
     []
@@ -6106,6 +6127,21 @@
     - !<own> 4d47e834-d11a-41f9-bafa-2871f51ed619
   Components:
     []
+- !<SceneObject/78dad0a5-bbf0-45a5-a5c1-b30264ba581d>
+  PrefabRemaps:
+    []
+  Name: salt_Soup
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 22.799999, y: 12.479999, z: 12.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5c2344d4-b84b-4fb4-9bb2-8ec4d1d9ced2
 - !<RenderMeshVisual/79047e11-d03e-45c7-beb4-1c1f72bd7391>
   PrefabRemaps:
     []
@@ -9616,6 +9652,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/bf6b0fc3-6250-4467-b430-1b0866645117>
+  PrefabRemaps:
+    []
+  Name: SaltSoup
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 78dad0a5-bbf0-45a5-a5c1-b30264ba581d
+  Components:
+    []
 - !<RenderMeshVisual/c09107b8-8ca5-419c-8dc0-c8262b4e8848>
   PrefabRemaps:
     []
