@@ -30,7 +30,7 @@
     loseSFXObject: false
     winObject: false
     winSFXObject: false
-    winTextObject: false
+    winText: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -43,7 +43,7 @@
     - winObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       winSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       loseSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      winTextObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      winText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       gm: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
@@ -52,5 +52,5 @@
     - // @input SceneObject winObject
     - // @input SceneObject winSFXObject
     - // @input SceneObject loseSFXObject
-    - // @input SceneObject winTextObject
+    - // @input Component.Text winText
     - // @input AssignableType gm

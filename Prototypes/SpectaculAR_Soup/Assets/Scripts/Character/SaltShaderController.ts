@@ -1,3 +1,6 @@
+import { EventManager } from "Scripts/EventManager"
+import Event from "SpectaclesInteractionKit.lspkg/Utils/Event"
+
 @component
 export class SaltShaderController extends BaseScriptComponent {
     @input
@@ -45,6 +48,12 @@ export class SaltShaderController extends BaseScriptComponent {
 
         // Shader params
         this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
+
+        // Reset saltie amount
+        EventManager.ResetGameNetworkEvent.add(() => {
+            this.saltAmount = 0.8
+            this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
+        })
     }
 
     onUpdate() {

@@ -30,6 +30,9 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     private distanceFromCenter: number = 50  // Distance between plate parent transform and center of table, adjust as needed
     private verticalOffset: number = -12     // Account for pivot point being higher up than the table
 
+    private saltieOriginalPosition: vec3
+    private saltieOriginalRotation: quat
+
     onAwake() {
         // Set up during Start event after all components are awake
         let startEvent = this.createEvent("OnStartEvent")
@@ -50,7 +53,14 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         EventManager.CenterPositionSetLocal.add((centerPosition: vec3) => {
             this.movePlatesToTable(centerPosition)
             this.setObjectVisibility(this.nonChefObjects, true)
-            this.setObjectVisibility(this.saltShaker, true)  
+            this.setObjectVisibility(this.saltShaker, true)
+            
+            // Get original position and rotation of Saltie relative to where the objects spawn
+            if (this.saltShaker) {
+                const saltTransform = this.saltShaker.getTransform()
+                this.saltieOriginalPosition = saltTransform?.getLocalPosition()
+                this.saltieOriginalRotation = saltTransform?.getLocalRotation()
+            }
         })
 
         EventManager.SpawnPlayerIngredients.add((ingredientIndices: number[]) => {
@@ -78,6 +88,10 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             this.setObjectVisibility(this.instructionObject, true)
             this.setObjectVisibility(this.nonChefObjects, false) 
             this.setObjectVisibility(this.chefObjects, true)
+        })
+
+        EventManager.PlayerVictoryNetworkEvent.add((_) => {
+            this.resetSaltiePosition()
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
@@ -109,6 +123,14 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             for (let child of ingredientPosition.children) {
                 this.setObjectVisibility(child, false)
             }
+        }
+    }
+
+    private resetSaltiePosition() {
+        if (this.saltShaker) {
+            const saltTransform = this.saltShaker.getTransform()
+            saltTransform.setLocalPosition(this.saltieOriginalPosition)
+            saltTransform.setLocalRotation(this.saltieOriginalRotation)
         }
     }
 

@@ -13,7 +13,7 @@ export class ResultHelper extends BaseScriptComponent {
   loseSFXObject! : SceneObject | null
 
   @input
-  winTextObject!: SceneObject | null
+  winText!: Text | null
 
   @input
   gm!: GameManager | null
@@ -34,10 +34,9 @@ export class ResultHelper extends BaseScriptComponent {
                     this.winSFXObject.enabled = true;
                     this.winSFXObject.getComponent("VFXComponent").restart();
                     if (this.gm?.starterRecipeComplete.currentValue) {
-                        const winText = this.winTextObject.getComponent("Text")
-                        winText.sizeToFit == false
-                        winText.size = 40
-                        winText.text = "To PLAY AGAIN hit restart...Or just ADD SOME OF ME TO THE POT and enjoy the Soup of the Day!!!"
+                        this.winText.text = "To PLAY AGAIN hit restart...Or just enjoy the Soup of the Day!!!"
+                    } else {
+                        this.winText.text = "That one was a warmup! Go Again!"
                     }
                 }
                 //visualEffect.enabled = true;
