@@ -30,6 +30,9 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     @input
     chefCheckSoupObject: SceneObject
 
+    @input
+    chefSaltSoupObject: SceneObject
+
     // Results
     @input
     victoryObject: SceneObject
@@ -80,6 +83,11 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
             this.showChosenIngredient(ingredientInfo)
         })
 
+        EventManager.SaltSoupNetworkEvent.add(() => {
+            if (this.isChef == null) return
+            this.showSaltSoup()
+        })
+
         EventManager.CheckSoupNetworkEvent.add(() => {
             if (this.isChef == null) return
             this.showCheckSoup()
@@ -95,14 +103,19 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     }
 
     public nextInstruction() {
-        if (this.isChef == null || !this.isChef || this.currentIngredientIndex >= this.currentRecipeIngredients.length) {
+        if (this.isChef == null || !this.isChef || this.currentIngredientIndex >= this.currentRecipeIngredients.length + 2) {
             return
         }
 
         // Just increment the index and call local events, network event will handle switching the UI to the next instruction
         this.currentIngredientIndex++
         if (this.currentIngredientIndex === this.currentRecipeIngredients.length) {
+            EventManager.SaltSoupLocalEvent.trigger()
+            print("Should Show Salting Instruction")
+        }
+        else if (this.currentIngredientIndex >= this.currentRecipeIngredients.length + 1) {
             EventManager.CheckSoupLocalEvent.trigger()
+            print("Should Show Spin Instruction")
         } else {  // still have more instructions to go through
             EventManager.NextInstructionLocalEvent.trigger()
         }
@@ -152,7 +165,13 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     /* Screen instructing players to spin the lazy susan */
     private showCheckSoup() {
         this.clearOutIngredientUI()
+        this.setObjectVisibility(this.chefSaltSoupObject, false);
         this.setObjectVisibility(this.chefCheckSoupObject, true)
+    }
+
+    private showSaltSoup() {
+        this.clearOutIngredientUI()
+        this.setObjectVisibility(this.chefSaltSoupObject, true)
     }
 
     /* Either soup victory or loss screen */

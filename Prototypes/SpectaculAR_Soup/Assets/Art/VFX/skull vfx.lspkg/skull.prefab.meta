@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/8afbb782-0d61-be43-538c-4cb6412642df>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> f05bf1e4-79fe-42ad-bda6-caf0a5cb48e9
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> f05bf1e4-79fe-42ad-bda6-caf0a5cb48e9
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 5f06a0ea-2633-4d87-b69b-2166ca5457ff
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/5f06a0ea-2633-4d87-b69b-2166ca5457ff>
+  Prototype: !<ObjectOwner/c4bf33d1-363e-4e14-b995-24056e2c6f1a>
+    PackagePath: ""
+    objects:
+      - !<own> f1a798eb-6755-4f5e-5fd4-ce416222b813
+- !<VFXComponent/da17eed7-6b1f-4adb-4cd0-011df24a409f>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 055c98e5-f138-4ef3-9ef0-f00ef3f917fd
+- !<SceneObject/f1a798eb-6755-4f5e-5fd4-ce416222b813>
+  PrefabRemaps:
+    []
+  Name: skull
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 47.725044, z: -2.062229}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> da17eed7-6b1f-4adb-4cd0-011df24a409f

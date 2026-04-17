@@ -2930,12 +2930,15 @@
   Enabled: true
   ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
   ScriptInputsDefault:
-    {}
+    winSFXObject: true
+    loseSFXObject: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       winObject: !<reference.SceneObject> 89cfb642-8062-46aa-b526-7d3ce3d73576
+      winSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      loseSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       winTextObject: !<reference.SceneObject> 41d86da4-3b2c-4414-832d-39f6b40ea66a
       gm: !<MappingBased.AssignableType> a784f45f-842b-4967-af0b-56d26c2eac41
   ScriptTypes:

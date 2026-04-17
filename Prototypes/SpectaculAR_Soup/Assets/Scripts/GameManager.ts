@@ -108,6 +108,14 @@ export class GameManager extends BaseScriptComponent {
         this.syncEntity.onEventReceived.add("nextInstruction", () => {
             EventManager.NextInstructionNetworkEvent.trigger()
         })
+        
+         EventManager.SaltSoupLocalEvent.add(() => {
+            this.syncEntity.sendEvent("saltSoup", {})
+        })
+
+        this.syncEntity.onEventReceived.add("saltSoup", () => {
+            EventManager.SaltSoupNetworkEvent.trigger()
+        })
 
         EventManager.CheckSoupLocalEvent.add(() => {
             this.syncEntity.sendEvent("checkSoup", {})
