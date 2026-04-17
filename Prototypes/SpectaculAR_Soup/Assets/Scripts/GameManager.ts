@@ -13,8 +13,8 @@ export class GameManager extends BaseScriptComponent {
     
     private chefSelected = StorageProperty.manualBool("has chef been chose", false);
     private currentChef = StorageProperty.manualString("", "");
-    public starterRecipeComplete = StorageProperty.manualBool("Has Starter Recipe Been Finished?", false);
-    private networkedUnusedRecipesArray = StorageProperty.manualStringArray("recipeName", ["this should be the first optional value", "This should be the second optional value"])
+    public starterRecipeComplete = StorageProperty.manualBool("starterRecipeComplete", false);
+    private networkedUnusedRecipesArray = StorageProperty.manualStringArray("unusedRecipes", [])
 
     @input
     camera: Camera
@@ -25,7 +25,6 @@ export class GameManager extends BaseScriptComponent {
     @input
     public gameStartButton : SceneObject
     
-    private unUsedRecipesArray: string[]
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private myID: string = ""
 
@@ -44,6 +43,8 @@ export class GameManager extends BaseScriptComponent {
     }
 
     onReady() {
+        this.myID = SessionController.getInstance().getLocalUserInfo().connectionId
+        
         // Attach functions to EventManager and syncEntity events
         this.bindGameplayEvents()
 
@@ -65,9 +66,7 @@ export class GameManager extends BaseScriptComponent {
             this.amITheChef();
         })
 
-
-        this.unUsedRecipesArray = ourRecipes.map((recipe) => recipe[0]);
-        this.networkedUnusedRecipesArray.setPendingValue(this.unUsedRecipesArray)
+        this.networkedUnusedRecipesArray.setPendingValue(ourRecipes.map((recipe) => recipe[0]))
     }
 
     /**
@@ -154,10 +153,7 @@ export class GameManager extends BaseScriptComponent {
 
     public RandomizeRecipe()
     {
-        // Take a SHALLOW COPY so you're not mutating the networked array directly
-        const currentRecipes: string[] = [...this.networkedUnusedRecipesArray.currentOrPendingValue];
-
-        print("Network Recipes = " + currentRecipes.length + " and Local Recipe = " + this.unUsedRecipesArray.length);
+        const currentRecipes: string[] = [...this.networkedUnusedRecipesArray.currentOrPendingValue]
 
         if (currentRecipes.length === 0)
         {
@@ -170,11 +166,10 @@ export class GameManager extends BaseScriptComponent {
         if (this.starterRecipeComplete.currentOrPendingValue == false) {
             recipeName = "Starter Recipe";
         }
-        print("Selected recipe: " + recipeName);
 
         this.syncEntity.sendEvent("recipeSelected", { selectedRecipeName: recipeName })
 
-        // Find and remove the chosen recipe from the copy
+        // Find and remove the chosen recipe
         const index = currentRecipes.indexOf(recipeName);
         if (index !== -1)
         {
@@ -183,11 +178,7 @@ export class GameManager extends BaseScriptComponent {
 
         // Update both local and networked state from the same source of truth
         this.currentRecipeIngredientInfo = recipeDictionary[recipeName];
-        this.unUsedRecipesArray = currentRecipes;
         this.networkedUnusedRecipesArray.setPendingValue(currentRecipes);
-
-        print("After splice — Local: " + this.unUsedRecipesArray.length 
-            + ", Network pending: " + this.networkedUnusedRecipesArray.currentOrPendingValue.length);
     }
 
     public RandomizePlayerRoles()
