@@ -14,6 +14,26 @@
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<RenderMeshVisual/02a5eb92-c522-40e9-ae4c-6e69b3c21b19>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<BodyComponent/07d67302-623c-4255-68e3-2d23096b9790>
   PrefabRemaps:
     []
@@ -163,6 +183,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/42204487-9613-4e96-bb44-4a865ab16f30>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.952877, y: -1.653176, z: -0.626311}
+    Rotation: {x: 78.685631, y: -0.214194, z: -91.070404}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b4621e0c-a2c0-4230-b76c-cf2be2ff84a6
 - !<SceneObject/43da0e39-722b-438c-a5b7-f19fcb44dc29>
   PrefabRemaps:
     []
@@ -272,7 +307,6 @@
   Enabled: true
   ScriptAsset: !<reference> 32872c2d-c82b-4c31-91d3-5df6d2fba1af
   ScriptInputsDefault:
-    targetingMode: true
     targetingVisual: true
     ignoreInteractionPlane: true
     keepHoverOnTrigger: true
@@ -288,7 +322,7 @@
     {}
   ScriptInputs:
     "":
-      targetingMode: !<float> 3.000000
+      targetingMode: !<float> 1.000000
       targetingVisual: !<float> 1.000000
       ignoreInteractionPlane: false
       keepHoverOnTrigger: false
@@ -358,6 +392,41 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<RenderMeshVisual/b4621e0c-a2c0-4230-b76c-cf2be2ff84a6>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/ce844ea6-c8b9-4100-8c0a-0b7296bb14fb>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.230504, y: 0.708263, z: -1.596838}
+    Rotation: {x: 90.000000, y: 19.404789, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 02a5eb92-c522-40e9-ae4c-6e69b3c21b19
 - !<SceneObject/ddf2e440-93df-4e19-4958-d3f02105147c>
   PrefabRemaps:
     []
@@ -374,6 +443,9 @@
     - !<own> 43da0e39-722b-438c-a5b7-f19fcb44dc29
     - !<own> 49e4d11c-befa-4e2f-8194-cc058076fdbf
     - !<own> 9f089960-65a2-4025-bfe1-ece9667a1bb2
+    - !<own> f07b2c41-0137-40c4-9e20-db4911c9d48b
+    - !<own> ce844ea6-c8b9-4100-8c0a-0b7296bb14fb
+    - !<own> 42204487-9613-4e96-bb44-4a865ab16f30
     - !<own> fd94b4fd-da70-4a04-9f7e-0e4c67892adf
     - !<own> 117dd074-cb8c-4121-a9f2-0d80274af0d4
     - !<own> 21f1dd79-bd5f-4ca3-867f-9e2799706b26
@@ -383,6 +455,26 @@
     - !<own> 4bad2c1e-c19c-4f50-6a8b-91f1874baa16
     - !<own> 07d67302-623c-4255-68e3-2d23096b9790
     - !<own> 68a58542-71ed-4ead-b8fb-ff960f2dc0b3
+- !<RenderMeshVisual/e177f871-ec7a-4ac2-ac26-972b895d04b3>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/e51a183c-bb8f-4f7b-4f1c-f6759349a0dd>
   PrefabRemaps:
     []
@@ -403,6 +495,21 @@
     PackagePath: ""
     objects:
       - !<own> ddf2e440-93df-4e19-4958-d3f02105147c
+- !<SceneObject/f07b2c41-0137-40c4-9e20-db4911c9d48b>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.473759, y: -1.744346, z: -1.812568}
+    Rotation: {x: 90.000000, y: -20.604940, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e177f871-ec7a-4ac2-ac26-972b895d04b3
 - !<RenderMeshVisual/f8bce95f-f1dd-4c8c-6412-d90c53914583>
   PrefabRemaps:
     []
