@@ -4,19 +4,19 @@ import { GameManager } from "./GameManager";
 @component
 export class ResultHelper extends BaseScriptComponent {
   @input
-  winObject!: SceneObject | null
+  dialogueObject: SceneObject | null
 
   @input
-  winSFXObject! : SceneObject | null
+  dialogueText: Text | null
 
   @input
-  loseSFXObject! : SceneObject | null
+  winSFXObject : SceneObject | null
 
   @input
-  winText!: Text | null
+  loseSFXObject : SceneObject | null
 
   @input
-  gm!: GameManager | null
+  gameManager!: GameManager | null
 
     onAwake(): void {
         let startEvent = this.createEvent("OnStartEvent")
@@ -28,30 +28,31 @@ export class ResultHelper extends BaseScriptComponent {
         if (visualEffect == null) print("didntfindRenderMatForResultObject")
 
         EventManager.PlayerVictoryNetworkEvent.add((isVictory: boolean) => {
+            this.dialogueObject.enabled = true;
+
             if (isVictory) {
-                if (!this.winObject?.enabled) {
-                    this.winObject.enabled = true;
-                    this.winSFXObject.enabled = true;
-                    this.winSFXObject.getComponent("VFXComponent").restart();
-                    if (this.gm?.starterRecipeComplete.currentValue) {
-                        this.winText.text = "To PLAY AGAIN hit restart...Or just enjoy the Soup of the Day!!!"
-                    } else {
-                        this.winText.text = "That one was a warmup! Go Again!"
-                    }
+                this.winSFXObject.enabled = true;
+                this.winSFXObject.getComponent("VFXComponent").restart()
+
+                if (this.gameManager?.starterRecipeComplete.currentValue) {
+                    this.dialogueText.text = "We've done it, Chefs! This \"Soup of the Day\" is perfect!"
+                } else {
+                    this.dialogueText.text = "That one was a warmup! Now make the real thing!"
                 }
-                //visualEffect.enabled = true;
             } else {
                 print("GM heard the Event Manager call for a loss")
+
+                this.dialogueText.text = "Oof, that's a... unique flavor."
                 this.loseSFXObject.enabled = true;
-                this.loseSFXObject.getComponent("VFXComponent").restart();
+                this.loseSFXObject.getComponent("VFXComponent").restart()
             }
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
-            visualEffect.enabled = false;
-            this.winObject.enabled = false;
-            this.winSFXObject.enabled = false;
-            this.loseSFXObject.enabled = false;
+            visualEffect.enabled = false
+            this.dialogueObject.enabled = false
+            this.winSFXObject.enabled = false
+            this.loseSFXObject.enabled = false
         })
     }
 }

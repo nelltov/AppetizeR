@@ -1,6 +1,4 @@
 import { EventManager } from "Scripts/EventManager"
-import Event from "SpectaclesInteractionKit.lspkg/Utils/Event"
-import { setTimeout } from "SpectaclesInteractionKit.lspkg/Utils/FunctionTimingUtils"
 
 @component
 export class SaltShaderController extends BaseScriptComponent {
@@ -59,6 +57,7 @@ export class SaltShaderController extends BaseScriptComponent {
            this.cooldownHeart = Math.random() + 0.5;
            print("Heard the ingredient collide. StartHeartTime is: " + this.startHeartTime);
         })
+
         // Reset saltie amount
         EventManager.ResetGameNetworkEvent.add(() => {
             this.saltAmount = 0.8
@@ -68,8 +67,8 @@ export class SaltShaderController extends BaseScriptComponent {
 
     onUpdate() {
         let transform = this.sceneObject.getTransform()
-
         this.currentHeartDuration = getTime();
+
         // tilting status
         this.tilt = transform.up.dot(new vec3(0, 1, 0))
         this.pour = this.tilt < this.pourThreshold
@@ -81,13 +80,8 @@ export class SaltShaderController extends BaseScriptComponent {
             this.saltAmount = Math.max(this.saltAmount - this.pourSpeed * 0.01, 0.01)
         } 
 
-        if (this.startHeartTime + this.cooldownHeart >= this.currentHeartDuration){
-            print("Should change the face to hearts");
-            this.faceShader.love = true;
-        }
-        else {
-            this.faceShader.love = false;
-        }
+        // Heart eyes
+        this.faceShader.love = this.startHeartTime + this.cooldownHeart >= this.currentHeartDuration
 
         // Pour VFX
         if (this.saltVFX) this.saltVFX.enabled = this.pour && this.saltAmount > 0.03

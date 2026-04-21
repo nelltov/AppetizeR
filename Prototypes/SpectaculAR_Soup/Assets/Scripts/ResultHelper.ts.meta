@@ -26,11 +26,11 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    gm: false
+    dialogueObject: false
+    dialogueText: false
+    gameManager: false
     loseSFXObject: false
-    winObject: false
     winSFXObject: false
-    winText: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,17 +40,17 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - winObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - dialogueObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      dialogueText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       winSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       loseSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      winText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      gm: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      gameManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input SceneObject winObject
+    - // @input SceneObject dialogueObject
+    - // @input Component.Text dialogueText
     - // @input SceneObject winSFXObject
     - // @input SceneObject loseSFXObject
-    - // @input Component.Text winText
-    - // @input AssignableType gm
+    - // @input AssignableType gameManager

@@ -167,7 +167,7 @@
   PrefabRemaps:
     []
   Name: belt
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.000005, y: 0.017249, z: -0.009255}
@@ -437,7 +437,6 @@
     []
   Components:
     - !<own> 8411c44a-dedc-43c6-bb65-c015321fb09d
-    - !<own> ebb224a7-48c1-43ad-b4c3-129901c4aa63
 - !<RenderMeshVisual/0c6e5165-ffec-4d1a-a902-7d1c12f5af8b>
   PrefabRemaps:
     []
@@ -689,7 +688,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 30.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 18.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -771,6 +770,19 @@
     - !<own> 200c483b-906b-489a-693c-29cc58eabdde
   Components:
     []
+- !<VFXComponent/16b77691-74ae-4e32-871b-87f66783d31d>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> cc995ade-4ec1-4334-b2d1-3059c6033760
 - !<SceneObject/16d2b397-42de-417a-aaea-8722dc974496>
   PrefabRemaps:
     []
@@ -842,7 +854,7 @@
   PrefabRemaps:
     []
   Name: cap
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.000000, y: 1.451501, z: -0.011531}
@@ -1039,6 +1051,7 @@
     - 110123a4-17e9-493a-9399-218fdc98ffb8: aa67de90-c5d1-40d7-9b7f-21438891467a
     - 13a6a05b-6a44-467f-b305-bd429748c0bc: 88f01525-9ad6-4441-afa4-d6dcefbd34db
     - 15d37c0a-7801-44d3-993c-39c7766925bd: 4a815234-4390-481f-8007-6fc842c8d0a6
+    - 16b77691-74ae-4e32-871b-87f66783d31d: 1d62a842-ee38-4b35-b41a-401ec624022a
     - 1b2c0687-70c1-45a2-b96b-37dabbf9a5a4: 20de7f93-c922-4e1e-ab40-36bcc6829cc9
     - 2663153d-58b0-4b85-b16d-001f4d1fcea2: dbd9260c-7fa1-4926-7618-e76f6095d495
     - 2694feaf-66b7-40d9-bda5-35c652a41da4: 5fc28f0f-2e67-4b8d-b280-20d9fe695bba
@@ -1050,6 +1063,7 @@
     - 390c2157-296c-4d92-99a2-09989ff92856: 1db73a51-5c3f-46eb-862e-9836b34094d9
     - 39db7822-6c77-44dc-ae8e-afa6c0687449: d1c3021d-69ec-4c1e-b9b9-0124c27f41ed
     - 40d72491-ff91-4b28-82e2-64e3c77d8755: 605e4c02-d2e4-4541-a5fd-6a72f775512e
+    - 428d84e9-215b-48db-a372-ea164f813e1c: 4fe6ac76-9668-4faa-9218-c0ded922f1e9
     - 458f109b-fa94-4b08-8b86-12bcfe86e07d: 3ef78433-c530-44f5-a80b-6ce9b2373974
     - 489daf47-d6cd-4f6e-a223-71dd856fb09a: 53901ad1-a639-4dd8-b9fb-1a814cd71dff
     - 4f0115b8-da7a-4638-b6c1-96f4d3db321b: 9c1299aa-3c14-4019-7919-037cab91246a
@@ -1066,16 +1080,15 @@
     - 8a992100-d440-49b0-b502-66621c9f8279: 63f60600-5abc-48ef-88f2-9cbb3062d55c
     - 8b0927ab-15fd-4ca2-8817-0ec24f09e52f: ba687d7e-edc5-44f0-b634-ed5aee064cf4
     - 8e6c0efa-a374-4bd9-9b83-6dec58493e2d: 4a2efa5e-9a6f-4067-80bb-7cc6ea91ff8b
-    - 9168ccb0-1947-4379-a515-5b42d062b264: 855eb4b5-4e5c-49dc-9f43-2eb53121a8b5
     - 943e6989-c27a-4c37-a460-6848ab2fc6c1: 2f283e7a-1298-498c-b1c8-c8bc9a0344d5
     - 9669edb0-9d65-41d3-bd62-2f83d3102558: 83db66c3-cf44-4e45-93e1-6fe1ccedd715
     - 96bec004-6a85-48fb-90e4-a031f0bea18b: 4c7b7e74-4c3d-45fa-be0b-71d9feb49fa9
     - 98720723-5940-417f-b880-0d9e38187a1d: f891c239-4d51-4430-b8e0-5a2a705cae6e
+    - 9961fd15-a6c9-490a-a06b-4f814dc2fba6: 65d69340-ecec-4b27-aaa2-a1d96d08a99a
     - 9d587928-4406-47d0-8df4-eb948ec010c5: 28b109ed-09cf-4a48-8bf1-b2d56b6fa25d
     - 9d72bf53-6fc3-48cc-88de-676c404d767a: eb0512bd-af4f-4b87-aa91-8a3945447f20
     - 9eb761bf-98a0-4390-af2b-226098e74bef: 5638804b-d089-4613-b28d-9dcda8e0e015
     - 9fbb9512-8624-4e09-89de-845f47560576: 387c286f-73b7-4324-ad4c-ca8ec2735f56
-    - a3077dee-af38-446b-bd60-19e16ea0715c: 417f1116-19e0-4357-bc5c-d454f482f469
     - a5018226-cae4-4090-a958-2820e9831568: 34778211-c336-4334-9ed2-9383effc0b1e
     - a5c9a057-df47-438f-a760-c25d3fe3e0ca: a83e713b-8195-48f7-a9e4-929b721097c4
     - a8ffc16f-4e41-4333-bac5-bbe9c1a3cce7: c33efca4-259b-47ea-8597-a3ce38fb3908
@@ -1085,6 +1098,7 @@
     - bda3a1a8-c1ba-48f4-ab91-13aa565c571b: d970b98e-64a7-44db-8b63-391e6dde097f
     - c0872a61-81b8-44c6-80bd-7c2e28ee4823: ef7d0e5c-33e9-4c08-87c2-016c751a4380
     - c29dbc38-bb8f-4fee-8b14-a26c4c776e34: 72588a70-e32a-4224-80a4-94303e1d6890
+    - c6ef721a-6a59-4a56-888e-3d70d212d73a: e36bf801-dfc2-4c8b-8764-dc1c0b521d0b
     - ca1d665d-f285-4d00-8a78-597da27b896d: 6b847ec9-28cc-4a01-88c2-1461e585612c
     - cf6e927a-9a11-4f28-9bb6-be2012556cec: 70b2e3f3-a71d-4a77-ba96-be1256250f9d
     - cfd78371-259f-4256-84e7-a96c4f283333: 2141ac2d-fd33-4ae0-878b-fd5d42d0fd11
@@ -1098,9 +1112,6 @@
     - df31e602-4a91-4160-bad7-bd65714ce363: 1b445236-9b12-45d0-8b72-a5162289a690
     - e0220e53-92cd-47ed-9115-c61b3c9c24dd: 8cd4eaa9-64f2-41c6-a14d-05da6a961a14
     - e0a6f904-c052-4493-b1ef-656eaca02ec6: c3714306-2c1c-4de4-8857-358005f39cd1
-    - e2d2592e-8c63-4c2e-a099-35a4350e736a: 5c26cb2d-8cd8-4c0e-9abb-8399f98c8a0b
-    - ebb224a7-48c1-43ad-b4c3-129901c4aa63: d13efc2f-6aa8-4c0d-af6e-ab4bea2170cb
-    - ee619aef-88c6-424a-abcc-ba36a58fd8dd: 9afc914e-d838-4b07-9d85-696ab80859de
     - f143b2cf-783b-4bf8-a216-43707d3f94b3: 26e4ad2a-2461-4a87-ba24-6b15a6349a51
     - f210943e-c2b4-4eaa-8883-1529df8e9836: a50ca0af-0faa-4316-b35a-4a52406431fe
     - f40c5bfd-1f68-45d7-a59c-725829e12c40: d5764002-0ac6-40f1-9689-d9f01ee35119
@@ -1133,9 +1144,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 2.500000, z: 0.000000}
+    Position: {x: 0.000000, y: 15.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.100000, y: 0.100000, z: 0.100000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1587,7 +1598,7 @@
     - f143b2cf-783b-4bf8-a216-43707d3f94b3: daff22c2-12d6-4512-7a13-664f949ec509
     - f210943e-c2b4-4eaa-8883-1529df8e9836: 17280cce-a44d-4937-7318-c02261c08773
   Name: shakernew
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1662,16 +1673,18 @@
 - !<SceneObject/390c2157-296c-4d92-99a2-09989ff92856>
   PrefabRemaps:
     []
-  Name: Win!
+  Name: ResultHandler
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.503827, z: 0.000000}
+    Position: {x: 0.000000, y: 37.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 08914291-a94f-42d6-aa95-9817bb376079
+    - !<own> 9961fd15-a6c9-490a-a06b-4f814dc2fba6
+    - !<own> 428d84e9-215b-48db-a372-ea164f813e1c
   Components:
     - !<own> db19617f-0a6b-4642-bac1-78769f066582
     - !<own> 9d587928-4406-47d0-8df4-eb948ec010c5
@@ -2003,6 +2016,22 @@
     []
   Components:
     - !<own> 21ef4e67-ccd7-45cb-862a-aec7a79ae204
+- !<SceneObject/428d84e9-215b-48db-a372-ea164f813e1c>
+  PrefabRemaps:
+    - 428d84e9-215b-48db-a372-ea164f813e1c: f1a798eb-6755-4f5e-5fd4-ce416222b813
+    - c6ef721a-6a59-4a56-888e-3d70d212d73a: da17eed7-6b1f-4adb-4cd0-011df24a409f
+  Name: LoseEffect
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c6ef721a-6a59-4a56-888e-3d70d212d73a
 - !<SceneObject/42e0fb35-f045-439f-bc0a-72fa970278c2>
   PrefabRemaps:
     []
@@ -2689,7 +2718,7 @@
   PrefabRemaps:
     []
   Name: face_plane
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.006375}
@@ -2726,7 +2755,7 @@
   PrefabRemaps:
     []
   Name: shakerreal
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2743,7 +2772,6 @@
     - !<own> f143b2cf-783b-4bf8-a216-43707d3f94b3
     - !<own> d05177d9-b1a7-4e03-88c1-5e86c7d13d3c
     - !<own> a8ffc16f-4e41-4333-bac5-bbe9c1a3cce7
-    - !<own> e2d2592e-8c63-4c2e-a099-35a4350e736a
   Components:
     []
 - !<ScriptComponent/5a6104e1-8c5c-4315-9dad-eba2c9fcbb71>
@@ -2753,16 +2781,16 @@
   Enabled: true
   ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
   ScriptInputsDefault:
-    winText: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      winObject: !<reference.SceneObject> 21f5b40c-626b-4a35-a1fe-2a35da059808
+      dialogueObject: !<reference.SceneObject> ab7672d6-53c3-4eca-9cf7-146840c9cfd9
+      dialogueText: !<reference.Text> 9f76f98d-cdef-4bca-a1f9-f4af1d1a40ef
       winSFXObject: !<reference.SceneObject> d1df129a-7191-4740-b42d-d50ab6f91103
       loseSFXObject: !<reference.SceneObject> 70ffae50-fc1a-4d15-82fc-3844cb213c0a
-      winText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      gm: !<MappingBased.AssignableType> e6318ae6-46ca-4dfa-877e-faf05f01a763
+      gameManager: !<MappingBased.AssignableType> a44cf1fa-a3ee-4847-8f48-4bd334059118
   ScriptTypes:
     "":
       {}
@@ -4203,26 +4231,6 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
-- !<RenderMeshVisual/9168ccb0-1947-4379-a515-5b42d062b264>
-  PrefabRemaps:
-    []
-  Name: component_9
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 93e659f4-28cc-4d62-a55e-060f3826e798
-  Mesh: !<reference> 94b46cab-ba86-4595-bc3c-6ab848f5b929
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
 - !<SceneObject/91cf21ec-3e22-4924-9018-eb157767ab10>
   PrefabRemaps:
     []
@@ -4500,7 +4508,7 @@
   PrefabRemaps:
     []
   Name: right_hand
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.490309, y: -0.052494, z: -0.016737}
@@ -4528,6 +4536,22 @@
     - !<own> 48108577-c532-4c79-b023-59d11c2c3b8f
     - !<own> 6a8efca0-3dce-49b5-bf4a-96f9059440da
     - !<own> cb39edcc-8328-4805-a66d-7b63e695cafd
+- !<SceneObject/9961fd15-a6c9-490a-a06b-4f814dc2fba6>
+  PrefabRemaps:
+    - 16b77691-74ae-4e32-871b-87f66783d31d: ede089ce-556a-4765-68d0-653a44055c01
+    - 9961fd15-a6c9-490a-a06b-4f814dc2fba6: 2a2a1825-85ea-4b1a-560c-157302c3593d
+  Name: WinEffect
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 16b77691-74ae-4e32-871b-87f66783d31d
 - !<SceneObject/9a359c99-d692-4bb6-b725-f17460946dff>
   PrefabRemaps:
     []
@@ -4720,18 +4744,16 @@
   Enabled: true
   ScriptAsset: !<reference> c0f3969f-47b1-40cf-8d34-e26e744af437
   ScriptInputsDefault:
-    winSFXObject: true
-    loseSFXObject: true
-    winText: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      winObject: !<reference.SceneObject> 08914291-a94f-42d6-aa95-9817bb376079
-      winSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      loseSFXObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      winText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      gm: !<MappingBased.AssignableType> e6318ae6-46ca-4dfa-877e-faf05f01a763
+      dialogueObject: !<reference.SceneObject> ab7672d6-53c3-4eca-9cf7-146840c9cfd9
+      dialogueText: !<reference.Text> 9f76f98d-cdef-4bca-a1f9-f4af1d1a40ef
+      winSFXObject: !<reference.SceneObject> 9961fd15-a6c9-490a-a06b-4f814dc2fba6
+      loseSFXObject: !<reference.SceneObject> 428d84e9-215b-48db-a372-ea164f813e1c
+      gameManager: !<MappingBased.AssignableType> a44cf1fa-a3ee-4847-8f48-4bd334059118
   ScriptTypes:
     "":
       {}
@@ -4739,7 +4761,7 @@
   PrefabRemaps:
     []
   Name: left_hand
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.487714, y: -0.351784, z: -0.149623}
@@ -4911,21 +4933,6 @@
     []
   Components:
     - !<own> 7258c833-4b6c-4788-b4b9-cdc428c6dc50
-- !<SceneObject/a3077dee-af38-446b-bd60-19e16ea0715c>
-  PrefabRemaps:
-    []
-  Name: Screen Text
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 1.478900, y: 3.192223, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.980706}
-    Scale: {x: 0.333333, y: 0.333333, z: 0.333333}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> ee619aef-88c6-424a-abcc-ba36a58fd8dd
 - !<ScriptComponent/a36eb793-1e83-4a88-a3ff-03851d567f5d>
   PrefabRemaps:
     []
@@ -5169,7 +5176,7 @@
   PrefabRemaps:
     []
   Name: receipe
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.409391, y: 0.829459, z: 0.327650}
@@ -5982,7 +5989,7 @@
   PrefabRemaps:
     []
   Name: glassbottle
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.319925, z: -5.983702}
@@ -6222,6 +6229,19 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<VFXComponent/c6ef721a-6a59-4a56-888e-3d70d212d73a>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 055c98e5-f138-4ef3-9ef0-f00ef3f917fd
 - !<SceneObject/c759602c-dad0-4807-b22b-07e99c5a1a87>
   PrefabRemaps:
     []
@@ -6470,7 +6490,7 @@
   PrefabRemaps:
     []
   Name: salthalf
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.319925, z: -5.983702}
@@ -6982,21 +7002,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/e2d2592e-8c63-4c2e-a099-35a4350e736a>
-  PrefabRemaps:
-    []
-  Name: paperboard
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: -0.158517, y: 0.105357, z: 0.046834}
-    Rotation: {x: 0.000000, y: 0.000000, z: -3.899477}
-    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> a3077dee-af38-446b-bd60-19e16ea0715c
-  Components:
-    - !<own> 9168ccb0-1947-4379-a515-5b42d062b264
 - !<Text/e3cfce02-bbc0-4b51-a9c5-0c29933f889c>
   PrefabRemaps:
     []
@@ -7208,22 +7213,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/ebb224a7-48c1-43ad-b4c3-129901c4aa63>
-  PrefabRemaps:
-    []
-  Name: SoupPotCollider
-  Enabled: true
-  ScriptAsset: !<reference> a0014d9a-0d12-435e-af85-7d555a08b3f9
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/ee148198-d1d1-4798-95e3-e2c9cd823b18>
   PrefabRemaps:
     []
@@ -7259,87 +7248,6 @@
   ScriptTypes:
     "":
       {}
-- !<Text/ee619aef-88c6-424a-abcc-ba36a58fd8dd>
-  PrefabRemaps:
-    []
-  Name: Text
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Text: That one was a warmup! Go Again!
-  Editable: false
-  ShowEditingPreview: true
-  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
-  SizeToFit: false
-  FontSize: 70
-  Font: !<reference> 8c328174-0aff-4b56-817c-bfd5e53bc489
-  LayoutRect:
-    left: -7.500000
-    bottom: -2.250000
-    right: 7.500000
-    top: 2.250000
-  OverflowVertical: Overflow
-  OverflowHorizontal: Wrap
-  Fill: !<TextFill>
-    Mode: Solid
-    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-    Texture: !<reference> 00000000-0000-0000-0000-000000000000
-    ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    TileCount: 5.000000
-    TileZone: Rect
-    TextureStretch: FitWidth
-  BlendMode: PremultipliedAlpha
-  Outline: !<OutlineSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    Size: 0.250000
-  Dropshadow: !<DropshadowSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    OffsetX: 0.250000
-    OffsetY: 0.250000
-  Background: !<BackgroundSettings>
-    Enabled: false
-    Fill: !<TextFill>
-      Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-      Texture: !<reference> 00000000-0000-0000-0000-000000000000
-      ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-      TileCount: 5.000000
-      TileZone: Rect
-      TextureStretch: FitWidth
-    Margins:
-      left: 0.000000
-      bottom: 0.000000
-      right: 0.000000
-      top: 0.000000
-    CornerRadius: 0.000000
-  AdvancedLayout: !<TextAdvancedLayout>
-    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
-    LetterSpacing: 0.000000
-    LineSpacing: 1.000000
-    CapitalizationOverride: None
-  DepthTest: false
-  TwoSided: false
 - !<ColliderComponent/efc5c31f-30b8-4214-b66b-af441109b976>
   PrefabRemaps:
     []
@@ -7420,7 +7328,6 @@
     - 09c8fca0-856f-47a4-91e7-fd3f368153dd: 2ab504e0-e349-4a92-9126-5a961f06fd02
     - 0cc88feb-29b0-4dd2-8351-301966d05fdb: 9c1299aa-3c14-4019-7919-037cab91246a
     - 0f236c0c-c313-435e-bc86-43b37fdf7ad5: 52f8145e-cf65-43a0-93fa-4cae2fb3ce79
-    - 0f4bfa6e-ea64-4db6-9a34-c7253d89d3b3: d13efc2f-6aa8-4c0d-af6e-ab4bea2170cb
     - 15324e2e-8b6a-486e-af1e-7d86e1e9f9ee: e182acaa-9c1a-4660-8afe-f462e35f0de9
     - 166bd4f6-71fb-4213-8646-ecbce69d01a4: 63f60600-5abc-48ef-88f2-9cbb3062d55c
     - 21ef4e67-ccd7-45cb-862a-aec7a79ae204: 05961ff6-125f-4605-8a30-0258d25473ca
@@ -7428,7 +7335,6 @@
     - 2ba255a8-fc7b-47c0-9f21-214d131b55f7: 605e4c02-d2e4-4541-a5fd-6a72f775512e
     - 2d135e11-d502-4fc6-9d97-04ed5ad8954a: 3d0fc073-c622-49f4-9a04-b64c8983b71f
     - 30d2bd0e-9e00-4922-a317-984bc6ea30e3: c3714306-2c1c-4de4-8857-358005f39cd1
-    - 3116d26b-0643-4ec7-9ec4-a229484ed5b9: 855eb4b5-4e5c-49dc-9f43-2eb53121a8b5
     - 316bdb32-0097-49f3-857e-9d4d9aaf18a6: aaa5285f-f7ed-4163-8fc5-8cbe2a95a346
     - 3292d455-ec59-4547-8418-17dc3af7f6fd: b9345e6c-0a40-46fe-b0d5-c202726bf11f
     - 32b65fa8-7700-499f-86bb-5be3d8d8f70d: f891c239-4d51-4430-b8e0-5a2a705cae6e
@@ -7449,10 +7355,12 @@
     - 55fdc4bd-f427-4c99-bcd6-d95782c3e709: d1c3021d-69ec-4c1e-b9b9-0124c27f41ed
     - 56df6354-a80f-4ad1-8662-7ff7d5cd4880: 26e4ad2a-2461-4a87-ba24-6b15a6349a51
     - 5a6104e1-8c5c-4315-9dad-eba2c9fcbb71: 28b109ed-09cf-4a48-8bf1-b2d56b6fa25d
+    - 610944ee-0352-41af-bdba-6c30f669269c: 1d62a842-ee38-4b35-b41a-401ec624022a
     - 627057b1-02a7-4f64-a4cd-d03ed68a1527: 0359b123-2266-41ca-8cd4-c93cf79f9a25
     - 64930f5a-f479-43bf-8f8e-81bd2c763058: b3d08204-e91f-4bca-9ee5-7cfff6bd4abd
     - 6d469c07-873b-4f52-85e6-db3719b669f6: 99f828e8-0bfc-4386-b1a8-e1fda32c72ea
     - 707810b1-fd7e-4ab5-80ed-f582f1e5e904: d970b98e-64a7-44db-8b63-391e6dde097f
+    - 70ffae50-fc1a-4d15-82fc-3844cb213c0a: 4fe6ac76-9668-4faa-9218-c0ded922f1e9
     - 789fa800-936e-4c88-b694-efbfcd9f2962: a83e713b-8195-48f7-a9e4-929b721097c4
     - 8464fa49-506d-495c-b104-4533fa4ca98f: 5638804b-d089-4613-b28d-9dcda8e0e015
     - 8acbacb4-7bb3-4aea-89dd-e431ddf0e064: cb71b8dd-a408-46e9-a5a5-0aff8973fecc
@@ -7466,7 +7374,6 @@
     - 968140fb-062e-4352-b5ab-7eb49dd5da4f: 1919326f-a238-406d-bc6e-d50024ce8862
     - 979e7b86-b839-465c-977f-bdd95ebfbe16: eb0512bd-af4f-4b87-aa91-8a3945447f20
     - 9c2f2758-db3d-4d25-a96a-f1c5bfcf25a4: e8d017a4-86fa-4fa3-a316-7722fccce90d
-    - 9f1feb36-d24e-4594-a5c7-2cb926d8be87: 9afc914e-d838-4b07-9d85-696ab80859de
     - 9f374042-31b2-43ac-a1d6-5203eef3f920: b9976e9a-6ebc-42c8-a413-50413028da87
     - a39b220b-88b5-4a73-b192-676ff44c58e2: 6b1df6d7-0caf-478d-a310-568676bf77dd
     - a4d8d18b-ab09-411d-9da9-188ec3392efd: 20de7f93-c922-4e1e-ab40-36bcc6829cc9
@@ -7482,10 +7389,10 @@
     - c0f9786e-9e0e-440e-9551-e7f817c487ae: ef7d0e5c-33e9-4c08-87c2-016c751a4380
     - c8ed3d22-7a67-488a-9090-12775db4dc4e: 0e1db741-655b-4099-a9c3-e456c7b4e799
     - cfeaeea7-6b3f-4747-9518-79301ea12bc3: 88f01525-9ad6-4441-afa4-d6dcefbd34db
-    - d80d8d4b-57f7-40c9-95c4-45fc71071341: 417f1116-19e0-4357-bc5c-d454f482f469
-    - dcac293b-3f84-43d0-a68c-6fd6896d35e2: 5c26cb2d-8cd8-4c0e-9abb-8399f98c8a0b
+    - d1df129a-7191-4740-b42d-d50ab6f91103: 65d69340-ecec-4b27-aaa2-a1d96d08a99a
     - e08f30f2-161b-4aa0-9591-6a7d16dba6bc: 1b445236-9b12-45d0-8b72-a5162289a690
     - e842bdbf-63e3-4b05-90f8-6d954bfded2c: ec9da794-7e07-4ef9-b2bb-ab51932494bb
+    - ea8f5e59-1709-456f-b67d-af7faf55d960: e36bf801-dfc2-4c8b-8764-dc1c0b521d0b
     - f1ba982c-3581-40ca-bb26-bf06710c75a4: dbd9260c-7fa1-4926-7618-e76f6095d495
     - f7f692f9-c3bf-4936-bf84-54407ceebdc6: 3ef78433-c530-44f5-a80b-6ce9b2373974
     - fe150b3d-0442-495d-906f-247084939f40: 4a2efa5e-9a6f-4067-80bb-7cc6ea91ff8b
@@ -7849,8 +7756,8 @@
   Enabled: true
   Shape: !<Cylinder>
     Axis: Y
-    Length: 40.000000
-    Radius: 25.000000
+    Length: 60.000000
+    Radius: 30.000000
   Matter: !<reference> 00000000-0000-0000-0000-000000000000
   Filter: !<reference> 00000000-0000-0000-0000-000000000000
   OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
