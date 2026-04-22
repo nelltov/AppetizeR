@@ -41,6 +41,12 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     private saltieOriginalRotation: quat
     private saltieOriginalPositionSet: boolean
 
+    @input
+    saltieAboveSoupObject: SceneObject
+    private saltieAboveSoupPosition: vec3
+    private saltieAboveSoupRotation: quat
+    private saltieAboveSoupPositionSet: boolean
+
     onAwake() {
         // Set up during Start event after all components are awake
         let startEvent = this.createEvent("OnStartEvent")
@@ -53,6 +59,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
         this.saltieOriginalPositionSet = false
+        this.saltieAboveSoupPositionSet = false
         this.apprenticeIngredients = []
 
         // specifically hide on start, otherwise resetting should make them visible
@@ -71,6 +78,14 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                 this.saltieOriginalPosition = saltTransform?.getLocalPosition()
                 this.saltieOriginalRotation = saltTransform?.getLocalRotation()
                 this.saltieOriginalPositionSet = true
+            }
+
+            // Position of Saltie above soup for displaying results
+            if (this.saltieAboveSoupObject) {
+                const saltAboveSoupTransform = this.saltieAboveSoupObject.getTransform()
+                this.saltieAboveSoupPosition = saltAboveSoupTransform?.getWorldPosition()
+                this.saltieAboveSoupRotation = saltAboveSoupTransform?.getWorldRotation()
+                this.saltieAboveSoupPositionSet = true
             }
         })
 
@@ -93,8 +108,6 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                 }
             }
 
-            print(`apprentice ingredient length: ${this.apprenticeIngredients.length}`)
-
             // Show instructions
             this.setObjectVisibility(this.instructionObject, true)
         })
@@ -111,7 +124,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             this.setObjectVisibility(this.startButton, false)
             this.setObjectVisibility(this.nextIngredientButton, true)
 
-            // Make apprentice objects visible
+            // Make apprentice ingredients visible
             if (this.apprenticeIngredients.length > 0) {
                 this.apprenticeIngredients.forEach((ingredient) => {
                     ingredient.enabled = true
@@ -124,13 +137,24 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         })
 
         EventManager.PlayerVictoryNetworkEvent.add((_) => {
-            this.resetSaltiePosition()
+            this.moveSaltieAboveSoup()
             this.setObjectVisibility(this.nextIngredientButton, false)
             this.setObjectVisibility(this.endGameButtons, true)
+
+            // Deactivate apprentice ingredients visible
+            if (this.apprenticeIngredients.length > 0) {
+                this.apprenticeIngredients.forEach((ingredient) => {
+                    ingredient.enabled = false
+                })
+            }
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
             this.resetPlayerIngredientObjects()
+        })
+
+        EventManager.EndGameNetworkEvent.add(() => {
+            this.setObjectVisibility(this.endGameButtons, false)
         })
     }
 
@@ -177,6 +201,14 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             const saltTransform = this.saltShaker.getTransform()
             saltTransform.setLocalPosition(this.saltieOriginalPosition)
             saltTransform.setLocalRotation(this.saltieOriginalRotation)
+        }
+    }
+
+    private moveSaltieAboveSoup() {
+        if (this.saltieAboveSoupPositionSet) {
+            const saltTransform = this.saltShaker.getTransform()
+            saltTransform.setWorldPosition(this.saltieAboveSoupPosition)
+            saltTransform.setWorldRotation(this.saltieAboveSoupRotation)
         }
     }
 

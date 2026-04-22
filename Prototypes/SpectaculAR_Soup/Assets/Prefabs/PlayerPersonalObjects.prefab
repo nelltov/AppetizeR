@@ -261,7 +261,7 @@
       instructionObject: !<reference.SceneObject> 15cee72a-8aeb-4d02-9020-4f9047368456
       ingredientPositionsObject: !<reference.SceneObject> f09550db-db15-4104-9575-97685396c5a4
       ingredientPrefabList: !<reference.ObjectPrefab[]>
-        - !<reference> 9010cb8f-153d-4322-9be3-49c4b170a332
+        - !<reference> 2b593446-406f-4886-921f-1f2829be1285
         - !<reference> f79f81dd-b355-40b4-9bf4-d1d088a279fd
         - !<reference> 00000000-0000-0000-0000-000000000000
         - !<reference> ade56458-8e08-4c84-9f8b-78a7cc6a6a57
@@ -277,6 +277,7 @@
         - !<reference> e99dc75f-37df-4ebd-8f60-ee8d554dce40
         - !<reference> 93a168e5-1777-4148-bd36-d85ba67ceb19
         - !<reference> a9ec6148-da47-4ce8-954e-3b4a5dbb9f97
+      saltieAboveSoupObject: !<reference.SceneObject> 67636ae1-7748-4fa6-a2c9-e1605cb4d1bc
   ScriptTypes:
     "":
       {}
@@ -1641,7 +1642,6 @@
     _renderOrder: true
     _size: true
     _inactive: true
-    triggerStartCallbacks: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -1651,7 +1651,8 @@
       _inactive: false
       _playAudio: true
       triggerStartCallbacks:
-        []
+        - scriptComponent: !<reference.ScriptComponent> a44cf1fa-a3ee-4847-8f48-4bd334059118
+          functionName: GameEnd
       cooldownDuration: !<float> 1.000000
   ScriptTypes:
     "":

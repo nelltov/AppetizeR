@@ -155,13 +155,16 @@ export class GameManager extends BaseScriptComponent {
         })
 
         this.syncEntity.onEventReceived.add('heardResetCondition', () => {
-            this.ingManager.resetCurrentIngredients();  // one-time reset of the current ingredients in the pot
-            EventManager.ResetGameNetworkEvent.trigger();
+            this.ingManager.resetCurrentIngredients()  // one-time reset of the current ingredients in the pot
+            EventManager.ResetGameNetworkEvent.trigger()
         })
 
-        // Reset the chef selection button
         EventManager.ResetGameNetworkEvent.add(() => {
-            this.gameStartButtonReset();
+            this.gameStartButtonReset() // Reset the chef selection button
+        })
+
+        this.syncEntity.onEventReceived.add('endGame', () => {
+            EventManager.EndGameNetworkEvent.trigger()
         })
     }
 
@@ -244,8 +247,11 @@ export class GameManager extends BaseScriptComponent {
 
     private GameReset()
     {
-        print("Game Resetting!")
         this.syncEntity.sendEvent('heardResetCondition')
+    }
+
+    private GameEnd() {
+        this.syncEntity.sendEvent('endGame', {})
     }
 
     public gameStartButtonReset() {
