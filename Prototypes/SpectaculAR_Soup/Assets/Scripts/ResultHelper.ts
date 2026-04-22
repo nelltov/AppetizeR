@@ -54,5 +54,9 @@ export class ResultHelper extends BaseScriptComponent {
             this.winSFXObject.enabled = false
             this.loseSFXObject.enabled = false
         })
+
+        EventManager.EndGameNetworkEvent.add(() => {
+            this.dialogueText.text = "Enjoy your meal!"
+        })
     }
 }

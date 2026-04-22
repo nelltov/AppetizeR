@@ -108,8 +108,6 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                 }
             }
 
-            print(`apprentice ingredient length: ${this.apprenticeIngredients.length}`)
-
             // Show instructions
             this.setObjectVisibility(this.instructionObject, true)
         })
@@ -126,7 +124,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             this.setObjectVisibility(this.startButton, false)
             this.setObjectVisibility(this.nextIngredientButton, true)
 
-            // Make apprentice objects visible
+            // Make apprentice ingredients visible
             if (this.apprenticeIngredients.length > 0) {
                 this.apprenticeIngredients.forEach((ingredient) => {
                     ingredient.enabled = true
@@ -142,10 +140,21 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             this.moveSaltieAboveSoup()
             this.setObjectVisibility(this.nextIngredientButton, false)
             this.setObjectVisibility(this.endGameButtons, true)
+
+            // Deactivate apprentice ingredients visible
+            if (this.apprenticeIngredients.length > 0) {
+                this.apprenticeIngredients.forEach((ingredient) => {
+                    ingredient.enabled = false
+                })
+            }
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
             this.resetPlayerIngredientObjects()
+        })
+
+        EventManager.EndGameNetworkEvent.add(() => {
+            this.setObjectVisibility(this.endGameButtons, false)
         })
     }
 
