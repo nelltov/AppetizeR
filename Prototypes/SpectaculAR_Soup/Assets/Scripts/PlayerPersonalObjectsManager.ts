@@ -32,6 +32,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
 
     private saltieOriginalPosition: vec3
     private saltieOriginalRotation: quat
+    private saltieOriginalPositionSet: boolean
 
     onAwake() {
         // Set up during Start event after all components are awake
@@ -44,6 +45,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.sceneObj = this.getSceneObject()
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
+        this.saltieOriginalPositionSet = false
 
         // specifically hide on start, otherwise resetting should make them visible
         this.setObjectVisibility(this.nonChefObjects, false)  
@@ -60,6 +62,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                 const saltTransform = this.saltShaker.getTransform()
                 this.saltieOriginalPosition = saltTransform?.getLocalPosition()
                 this.saltieOriginalRotation = saltTransform?.getLocalRotation()
+                this.saltieOriginalPositionSet = true
             }
         })
 
@@ -114,6 +117,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
 
     private resetPlayerIngredientObjects() {
         this.setObjectVisibility(this.nonChefObjects, true)    // empty plates
+        this.resetSaltiePosition()
         this.setObjectVisibility(this.saltShaker, true)        // saltie model
         this.setObjectVisibility(this.chefObjects, false) 
         this.setObjectVisibility(this.instructionObject, false)
@@ -127,7 +131,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     }
 
     private resetSaltiePosition() {
-        if (this.saltShaker) {
+        if (this.saltieOriginalPositionSet) {
             const saltTransform = this.saltShaker.getTransform()
             saltTransform.setLocalPosition(this.saltieOriginalPosition)
             saltTransform.setLocalRotation(this.saltieOriginalRotation)
