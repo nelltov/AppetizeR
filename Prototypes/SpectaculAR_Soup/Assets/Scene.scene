@@ -4818,6 +4818,7 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> ddf3a805-74b2-4820-8520-157940eca97a
+    - !<own> e8a36277-8029-4399-8bc8-5d19c8435105
   Components:
     - !<own> cf76f491-2da7-497b-9ff9-b3ad099873f7
 - !<RenderMeshVisual/4e5dc1c1-bf9e-406e-bed7-c0d21273209a>
@@ -9022,7 +9023,7 @@
   AdvancedLayout: !<TextAdvancedLayout>
     ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
     LetterSpacing: 0.000000
-    LineSpacing: 1.000000
+    LineSpacing: 0.750000
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: true
@@ -9130,7 +9131,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 16.750000, z: 0.099998}
+    Position: {x: 0.000000, y: 16.430071, z: 0.099998}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -13408,6 +13409,26 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<RenderMeshVisual/e51a580b-8d9f-4501-b6e5-635bcb5591be>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 1d832658-8ca7-48c8-a846-04657eb00dd6
+  Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<DeviceTracking/e5553c8a-0b7e-4ef4-92d9-3e1318fb82c1>
   PrefabRemaps:
     []
@@ -13577,6 +13598,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/e8a36277-8029-4399-8bc8-5d19c8435105>
+  PrefabRemaps:
+    []
+  Name: Box
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e51a580b-8d9f-4501-b6e5-635bcb5591be
 - !<SceneObject/e9876289-9354-467d-8109-73dac3ef8adc>
   PrefabRemaps:
     []
