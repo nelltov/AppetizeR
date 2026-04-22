@@ -18,6 +18,10 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     @input
     nextIngredientButtonText: Text
 
+    // 3D models for chef
+    @input
+    chefIngredientPosition: SceneObject
+
     // Ingredient portion
     @input
     apprenticeInstructions: SceneObject
@@ -161,14 +165,17 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.clearOutIngredientUI()
 
         let currentIngredientInfo = this.currentRecipeIngredients[currentIndex]
+        let currentIngredientType = currentIngredientInfo.getIngredientType()
 
         this.topInstructionTextPanel.text = "Use One Word to Describe:"
         this.ingredientNameTextPanel.text = currentIngredientInfo.getIngredientName()
 
-        let currentMaterial = this.ingredientMaterials[currentIngredientInfo.getIngredientType()]
+        let currentMaterial = this.ingredientMaterials[currentIngredientType]
         if (currentMaterial) this.ingredientIcon.materials = [currentMaterial]
 
         this.setObjectVisibility(this.ingredientParentObject, true)
+
+        this.chefIngredientPosition.getChild(currentIngredientType).enabled = true
     }
 
     private showChosenIngredient(ingredientInfo: IngredientInfo) {
@@ -220,6 +227,10 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.setObjectVisibility(this.chefCheckSoupObject, false)
         this.setObjectVisibility(this.victoryObject, false)
         this.setObjectVisibility(this.lossObject, false)
+
+        this.chefIngredientPosition.children.forEach((childIngredient) => {
+            childIngredient.enabled = false
+        })
     }
 
     /* Utility function for turning objects on and off */

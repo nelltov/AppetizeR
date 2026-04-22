@@ -1,20 +1,40 @@
-- !<AssetImportMetadata/9a02cf56-d226-40b2-992c-cc9b62d95e1d>
+- !<AssetImportMetadata/8366aad8-cba7-4c97-89b9-f6ea72e1d95a>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 9010cb8f-153d-4322-9be3-49c4b170a332
+    ObjectPrefab: !<reference> 2b593446-406f-4886-921f-1f2829be1285
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 9010cb8f-153d-4322-9be3-49c4b170a332
+  PrimaryAsset: !<reference> 2b593446-406f-4886-921f-1f2829be1285
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 98198370-9093-4231-a638-ca53c75f90b0
+    ObjectPrefab: !<own> e063a2c2-69ac-4203-8053-168d21e96919
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptComponent/11938426-01d5-43ea-b7f1-1e611fd745fb>
+- !<RenderMeshVisual/050c81b3-9bb3-4388-7dc5-b0bbe7eeaa77>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> b3af2ef4-dba8-4e3c-a8f3-27030feffcf0
+  Mesh: !<reference> ba6521b2-512c-4c68-a557-54ecddc1879a
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ScriptComponent/536bae31-7894-4aef-56dd-1d88ce55d9ff>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -70,23 +90,7 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/22a456cd-6d59-42e8-9908-9737a61e0ac6>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    ingredientEnumNumber: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      ingredientEnumNumber: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/394385f3-3375-4697-aa5e-282399450147>
+- !<ScriptComponent/67c10a54-da37-485a-70ad-499300277018>
   PrefabRemaps:
     []
   Name: Interactable
@@ -123,7 +127,7 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/43a0bc2b-9863-4eb7-9803-457ddbcc28bf>
+- !<SceneObject/79356aca-e64a-445c-7a19-45ccaa326b0f>
   PrefabRemaps:
     []
   Name: Bacon
@@ -137,33 +141,59 @@
   Children:
     []
   Components:
-    - !<own> 8b11d9b3-37d1-48af-b6af-806de2e20d48
-- !<RenderMeshVisual/8b11d9b3-37d1-48af-b6af-806de2e20d48>
+    - !<own> 050c81b3-9bb3-4388-7dc5-b0bbe7eeaa77
+- !<ScriptComponent/80e873fb-3425-47ea-7cf2-5a74f5d39d27>
   PrefabRemaps:
     []
-  Name: Render Mesh Visual
+  Name: IngredientTrigger
   Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> b3af2ef4-dba8-4e3c-a8f3-27030feffcf0
-  Mesh: !<reference> ba6521b2-512c-4c68-a557-54ecddc1879a
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
     {}
-- !<ObjectPrefabAssetData/98198370-9093-4231-a638-ca53c75f90b0>
-  Prototype: !<ObjectOwner/c5259d98-2645-4259-bc7b-734312cfea6d>
-    PackagePath: ""
-    objects:
-      - !<own> e55dd8b4-4774-45b3-bd61-d3eb424136bc
-- !<BodyComponent/a4086cfe-98a8-45c5-939c-531f4b3c2829>
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/9e754ae9-0790-43d2-7c5e-196410b21ec9>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    ingredientEnumNumber: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/aeb2488e-16c3-43eb-483d-f96b736e85b7>
+  PrefabRemaps:
+    []
+  Name: BaconPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 79356aca-e64a-445c-7a19-45ccaa326b0f
+  Components:
+    - !<own> d100b795-fed6-4b5a-5a66-e47aad8f22d9
+    - !<own> 9e754ae9-0790-43d2-7c5e-196410b21ec9
+    - !<own> 67c10a54-da37-485a-70ad-499300277018
+    - !<own> 536bae31-7894-4aef-56dd-1d88ce55d9ff
+    - !<own> 80e873fb-3425-47ea-7cf2-5a74f5d39d27
+- !<BodyComponent/d100b795-fed6-4b5a-5a66-e47aad8f22d9>
   PrefabRemaps:
     []
   Name: Physics Body
@@ -187,38 +217,8 @@
   BodySettingValue: 0.000000
   Damping: 0.000000
   AngularDamping: 0.000000
-- !<ScriptComponent/bdefdd85-1993-4cd0-8984-ea86b4d36b7c>
-  PrefabRemaps:
-    []
-  Name: IngredientTrigger
-  Enabled: true
-  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
-- !<SceneObject/e55dd8b4-4774-45b3-bd61-d3eb424136bc>
-  PrefabRemaps:
-    []
-  Name: ChickenPrefab
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> 43a0bc2b-9863-4eb7-9803-457ddbcc28bf
-  Components:
-    - !<own> a4086cfe-98a8-45c5-939c-531f4b3c2829
-    - !<own> 22a456cd-6d59-42e8-9908-9737a61e0ac6
-    - !<own> 394385f3-3375-4697-aa5e-282399450147
-    - !<own> 11938426-01d5-43ea-b7f1-1e611fd745fb
-    - !<own> bdefdd85-1993-4cd0-8984-ea86b4d36b7c
+- !<ObjectPrefabAssetData/e063a2c2-69ac-4203-8053-168d21e96919>
+  Prototype: !<ObjectOwner/36af7c34-3fef-4604-ba1c-7fd112438656>
+    PackagePath: ""
+    objects:
+      - !<own> aeb2488e-16c3-43eb-483d-f96b736e85b7

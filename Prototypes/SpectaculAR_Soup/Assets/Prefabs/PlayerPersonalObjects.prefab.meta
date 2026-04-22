@@ -161,6 +161,26 @@
     []
   Components:
     - !<own> 5a051eb9-7183-4fc2-baa5-b0b2d5b95171
+- !<RenderMeshVisual/03cf1df2-5b84-4c61-b29d-e6445d07b0b0>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6b57cc92-7999-4651-87d1-2e0099311cd1
+  Mesh: !<reference> 2b7e625a-dd21-4dbf-aed3-88d92d26f22d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<RenderMeshVisual/04b8de82-e42c-4474-59db-258930d4b119>
   PrefabRemaps:
     []
@@ -403,6 +423,89 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/10f5193e-fb43-4066-9c69-f8dfc914d5f1>
+  PrefabRemaps:
+    []
+  Name: TofuPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 787cee90-e062-4b8d-9eef-1743ed4e312d
+    - !<own> 3e6c9524-391e-498c-8bb9-fb25b4e494c8
+    - !<own> d2a1512a-54ac-4f53-8cc2-014981901321
+  Components:
+    - !<own> a90a5dd7-763e-404d-be31-225dc91912f8
+- !<SceneObject/110bbb6c-6a5b-41ca-b556-ffa76bb341e2>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.230504, y: 0.708263, z: -1.596838}
+    Rotation: {x: 90.000000, y: 19.404789, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e6fab284-ba04-4bad-ad71-6e02a1ac9f1c
+- !<ScriptComponent/120e1fdd-94f7-4c28-b89c-840c38f648c6>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/130f40ab-33aa-4fc0-8e9d-ede055f5b5d5>
+  PrefabRemaps:
+    []
+  Name: Bacon
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
+    Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> aa204ebc-f22f-4da7-950a-c2d23b867359
+- !<RenderMeshVisual/13296d0a-3ad9-4f33-a6e5-f22129f8fee2>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 0df2bd34-4bb1-4765-97ac-7641d963b0bb
+  Mesh: !<reference> 816ae105-502f-4acb-8463-54def5698389
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/14eca31f-9a7e-465b-9de1-b77b64277a98>
   PrefabRemaps:
     []
@@ -589,6 +692,42 @@
     []
   Components:
     - !<own> 82fdd4e2-901d-45f3-6c8f-d48428475001
+- !<RenderMeshVisual/17d260d2-2890-4ba4-9b93-3f2bda3098fe>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ScriptComponent/17dd1a64-1b5d-406e-9ead-7e066caa72c1>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<Image/18ca65a6-04bc-4046-92cc-f9085ed1c809>
   PrefabRemaps:
     []
@@ -608,6 +747,57 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/19d33ed1-3502-4923-8ccb-e2eeaeee4273>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/1add93c5-9a93-427f-956c-e8ba7f03b30a>
+  PrefabRemaps:
+    []
+  Name: leek
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.790000, y: 0.790000, z: 0.790000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 293f45ae-30c1-430b-9d10-40131f321079
+- !<RenderMeshVisual/1b437ebe-a0bd-46d9-b031-f4a12df418c1>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9948a2fc-3fc9-40e1-9ad2-428c67962937
+  Mesh: !<reference> abbf2cf3-f3a7-49bd-a26c-a34e29172e6f
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/1b60c6f5-8d0e-41cc-8a3b-ab2d73b41b4a>
   PrefabRemaps:
     []
@@ -742,6 +932,21 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/1e1b6fa4-bed4-49ad-8552-15100fa64b1e>
+  PrefabRemaps:
+    []
+  Name: MushroomPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> a65fe56c-3313-4671-8e32-5850b7e5b1c1
+  Components:
+    - !<own> 9f595069-ff53-41f6-8b58-20f0a123c074
 - !<ColliderComponent/1e3ba058-8614-469d-8e88-5f4c53415688>
   PrefabRemaps:
     []
@@ -846,6 +1051,21 @@
     - !<own> 28a905c1-b2c3-4619-7dd6-639da95b24a1
   Components:
     []
+- !<SceneObject/22a9f3fd-9ac5-48ec-8441-a757902441e8>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.952877, y: -1.653176, z: -0.626311}
+    Rotation: {x: 78.685631, y: -0.214194, z: -91.070404}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3a481375-3e36-462a-a42c-d76ecc06aba7
 - !<SceneObject/23e94394-f78a-424a-7b86-86ffa9b4392b>
   PrefabRemaps:
     - 23e94394-f78a-424a-7b86-86ffa9b4392b: 98d8f7dc-d709-484b-5ac5-15842f5098a3
@@ -906,7 +1126,7 @@
   PrefabRemaps:
     []
   Name: CheckSoupButton
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -19.240791, y: 19.590046, z: -32.125450}
@@ -953,6 +1173,46 @@
     []
   Components:
     []
+- !<RenderMeshVisual/27cac8af-526c-4e3a-a149-dbfe638a422a>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/28630bf8-467f-41ca-becd-01350c26caaa>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/28a905c1-b2c3-4619-7dd6-639da95b24a1>
   PrefabRemaps:
     []
@@ -973,6 +1233,26 @@
     - !<own> fe60ba3e-de96-4ff0-5933-1a5a5b1ef261
   Components:
     []
+- !<RenderMeshVisual/293f45ae-30c1-430b-9d10-40131f321079>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> fb4b11d3-a97e-4c67-ba21-aafe2a53ab71
+  Mesh: !<reference> 73698ed4-ed15-4871-ae43-0f1f9461def8
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/2a5e8f76-0ece-4ff0-ba75-f67584e6e17c>
   PrefabRemaps:
     []
@@ -1104,6 +1384,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/2db8cf54-9967-45b9-bb28-604b4157f29a>
+  PrefabRemaps:
+    []
+  Name: BayleafPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> dd5d5193-ceb1-428c-b39e-09d2c723444c
+    - !<own> 8c0dec24-80f2-4b88-a21b-634d6541c386
+  Components:
+    - !<own> 3b5ed280-3200-4090-85e1-280ef0e97a31
 - !<ScriptComponent/2e0a62aa-32be-4fb5-9c33-d899ce002301>
   PrefabRemaps:
     []
@@ -1401,6 +1697,26 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<RenderMeshVisual/377f3b88-0852-4aa7-905d-62d5d020db6a>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> db588edd-6d00-4a98-941b-231b691e3e14
+  Mesh: !<reference> 2d5d77ee-9a56-422b-826a-2d2895ef905b
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/38159851-9c07-48a2-822e-083d8fff164b>
   PrefabRemaps:
     []
@@ -1416,6 +1732,26 @@
     - !<own> f8f71752-f6db-410c-9f00-8da8479aeb16
   Components:
     []
+- !<RenderMeshVisual/3877b506-c3fc-451a-a6bf-e258bb0e9f45>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/38a52bf5-07ff-4e46-807d-36d608dda41a>
   PrefabRemaps:
     []
@@ -1471,6 +1807,26 @@
     []
   Components:
     - !<own> fed82fa1-2405-418f-86f3-00e7d5cc9a97
+- !<RenderMeshVisual/3a481375-3e36-462a-a42c-d76ecc06aba7>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<RenderMeshVisual/3a8c6048-684e-48cc-41b1-2b6112cc1471>
   PrefabRemaps:
     []
@@ -1491,6 +1847,67 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/3b5ed280-3200-4090-85e1-280ef0e97a31>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/3bd67ff9-1e80-48fe-9071-5eaa557cfdbe>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.952877, y: -1.653176, z: -0.626311}
+    Rotation: {x: 78.685631, y: -0.214194, z: -91.070404}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ce5a8659-537a-4c23-8964-10f6da095725
+- !<SceneObject/3c07799d-7581-49e5-ad7e-33199910625a>
+  PrefabRemaps:
+    []
+  Name: potato
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -0.300000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 4.000000, y: 4.000000, z: 4.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 1b437ebe-a0bd-46d9-b031-f4a12df418c1
+- !<SceneObject/3e6c9524-391e-498c-8bb9-fb25b4e494c8>
+  PrefabRemaps:
+    []
+  Name: tofu 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.007169, y: 0.245463, z: 0.000000}
+    Rotation: {x: -28.583771, y: -0.000000, z: -21.655464}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> da9c92f0-1fc9-4bee-9b39-d166571e2281
 - !<SceneObject/3eb4a6d0-1149-403f-bb4e-ecde4ce9bbb4>
   PrefabRemaps:
     []
@@ -1506,6 +1923,21 @@
     - !<own> 2a66acab-e8fa-46ae-a017-408358ab0ade
   Components:
     - !<own> 079877cd-84fa-4dcb-8e29-d498699847b6
+- !<SceneObject/411d05c0-3b61-4923-8277-ca46ba5e12ab>
+  PrefabRemaps:
+    []
+  Name: Empty (Corn)
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<SceneObject/41478fdb-2ad2-4817-b3f7-f9622f9aaae8>
   PrefabRemaps:
     []
@@ -1521,6 +1953,36 @@
     []
   Components:
     - !<own> 06e56e97-4613-42c0-8eb9-865ef68e2be8
+- !<SceneObject/41ea173f-94e2-4a6f-83ae-0dce0d8eaca9>
+  PrefabRemaps:
+    []
+  Name: chicken
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 3.034127, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 377f3b88-0852-4aa7-905d-62d5d020db6a
+- !<SceneObject/42c3f6fd-1522-470e-9c8e-0116788586da>
+  PrefabRemaps:
+    []
+  Name: NoodlePrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> c5c01a04-5747-4f19-81d8-aec71c649db4
+  Components:
+    - !<own> 120e1fdd-94f7-4c28-b89c-840c38f648c6
 - !<AnimationPlayer/42ebfbd6-9a5b-4f8b-8520-e9ae72613008>
   PrefabRemaps:
     []
@@ -1542,6 +2004,41 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Loop
+- !<SceneObject/43d5cb69-78d4-402e-a70b-474c0d015da6>
+  PrefabRemaps:
+    []
+  Name: tomato_mesh
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.750000, y: 0.750000, z: 0.750000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f9391456-62b8-4846-9562-bcaa4b866a2a
+- !<RenderMeshVisual/4429ac80-f2a9-4307-b894-697d70ea6eb4>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<Image/47312bac-0a21-4635-9e00-920279b6bb94>
   PrefabRemaps:
     []
@@ -1595,6 +2092,37 @@
       acceptableYDirections: !<float> 0.000000
       acceptableZDirections: !<float> 1.000000
       useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/49c9a7a8-bda2-48f4-af10-a2bf4303065f>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.330219, y: 0.000000, z: -1.152377}
+    Rotation: {x: 90.000000, y: -0.000000, z: 16.945572}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 28630bf8-467f-41ca-becd-01350c26caaa
+- !<ScriptComponent/4b05339f-aed2-4d30-a37a-1a1c039ee1e9>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
   ScriptTypes:
     "":
       {}
@@ -1716,6 +2244,41 @@
     []
   Components:
     []
+- !<SceneObject/5032d139-29de-450d-98a4-71c986f0a472>
+  PrefabRemaps:
+    []
+  Name: carrot
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 5.500000, z: -0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.800000, y: 0.800000, z: 0.800000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 509e8396-d927-4690-858c-47b637da897c
+- !<RenderMeshVisual/509e8396-d927-4690-858c-47b637da897c>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 3afb1753-b095-461a-8825-de4293002b90
+  Mesh: !<reference> d42abd3c-7788-4015-aed5-4ace21e8ad41
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/52dba662-71a8-4c25-7119-14327bc94573>
   PrefabRemaps:
     - 52dba662-71a8-4c25-7119-14327bc94573: fb0219bd-8c10-4ad6-79b3-5a067d03cfe6
@@ -1747,6 +2310,7 @@
     - !<own> 941c35cb-ba65-426f-4605-51a4a6e0c0c3
     - !<own> 1d806cc1-76eb-4975-8238-f2a8f1bbe5d0
     - !<own> 6ce6041b-c8bc-4642-b28f-3902f48913fb
+    - !<own> 5e84dd15-649a-4d6a-887c-d4003b7bdf17
   Components:
     []
 - !<ColliderComponent/53320f55-bcd7-48c8-93a8-11282f851185>
@@ -1848,6 +2412,61 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/5624dbc6-30b8-4376-8b30-53196e6b15a0>
+  PrefabRemaps:
+    []
+  Name: ChickenPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 41ea173f-94e2-4a6f-83ae-0dce0d8eaca9
+  Components:
+    - !<own> 7e4eac68-4eef-4818-adc6-5129fb89502d
+- !<RenderMeshVisual/56bb16bb-efcc-4b53-b6c2-c955c204180d>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/580c40a3-7c2d-4f2b-9c06-2ac140f131fc>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<RenderMeshVisual/5a051eb9-7183-4fc2-baa5-b0b2d5b95171>
   PrefabRemaps:
     []
@@ -1868,6 +2487,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/5d4d87e8-1d78-4f80-9b9f-24ee9c33c985>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.952877, y: -1.653176, z: -0.626311}
+    Rotation: {x: 78.685631, y: -0.214194, z: -91.070404}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e0d7619b-0673-4ca4-adea-b4943f49f0dc
 - !<SceneObject/5d93fec5-5ed8-478d-7802-aff384decd5b>
   PrefabRemaps:
     []
@@ -1883,6 +2517,36 @@
     []
   Components:
     - !<own> be971ff8-c1c3-4b6a-4d18-a653d0ffa454
+- !<SceneObject/5e84dd15-649a-4d6a-887c-d4003b7bdf17>
+  PrefabRemaps:
+    []
+  Name: IngredientPosition
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 5.000000, z: 8.000000}
+    Rotation: {x: 89.999992, y: -0.000019, z: 180.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ce75356e-f54f-4cde-b77b-747b2f2e9d7a
+    - !<own> 2db8cf54-9967-45b9-bb28-604b4157f29a
+    - !<own> 8138cbec-6ec6-4b98-90d9-e7f454198f8a
+    - !<own> cdad1f34-f064-49a8-98fa-febe4124c2af
+    - !<own> 71ab4632-bc07-4fab-afd5-973fc01bba73
+    - !<own> 5624dbc6-30b8-4376-8b30-53196e6b15a0
+    - !<own> 411d05c0-3b61-4923-8277-ca46ba5e12ab
+    - !<own> 9496ea7d-62ed-4e1d-97fb-aeecc868972f
+    - !<own> 1e1b6fa4-bed4-49ad-8552-15100fa64b1e
+    - !<own> 42c3f6fd-1522-470e-9c8e-0116788586da
+    - !<own> 767dd416-9fff-433b-9313-cdff33125b8e
+    - !<own> 979658ad-925c-422b-9884-fc4d441168d0
+    - !<own> 9b1035bb-1bf5-47cf-8e1e-8e45dfae0d79
+    - !<own> 9aac61bd-fdc4-4b40-bf50-8a1cc2d6fa9f
+    - !<own> 10f5193e-fb43-4066-9c69-f8dfc914d5f1
+    - !<own> cdcfb68b-ffd1-4132-a282-74b1a82b5dc6
+  Components:
+    []
 - !<Text/6029004f-e121-47cb-aec7-61d3f1e605e3>
   PrefabRemaps:
     []
@@ -2082,6 +2746,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/654c28a6-aabb-4fb5-9a83-6fec5a85c269>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/65a06edc-3b1a-4c79-4ba4-ed292069da39>
   PrefabRemaps:
     - 65a06edc-3b1a-4c79-4ba4-ed292069da39: fb0219bd-8c10-4ad6-79b3-5a067d03cfe6
@@ -2241,6 +2921,21 @@
     - !<own> 41478fdb-2ad2-4817-b3f7-f9622f9aaae8
   Components:
     []
+- !<SceneObject/71ab4632-bc07-4fab-afd5-973fc01bba73>
+  PrefabRemaps:
+    []
+  Name: CeleryPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> e69da6eb-7019-4d15-8496-e24c2bf3a67d
+  Components:
+    - !<own> 654c28a6-aabb-4fb5-9a83-6fec5a85c269
 - !<SceneObject/71d7ba4c-588a-48cd-a498-0748b1aa3327>
   PrefabRemaps:
     []
@@ -2375,6 +3070,51 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/767dd416-9fff-433b-9313-cdff33125b8e>
+  PrefabRemaps:
+    []
+  Name: OnionPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> c7d8c66f-28f8-4048-905b-e05582f4abe7
+  Components:
+    - !<own> c53a3a7c-c1a7-49ef-8099-1b0f6b3a51ad
+- !<SceneObject/77b8a89f-c8c9-4a99-a3ad-b5eebc4c6cb5>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 1.952877, y: -1.653176, z: -0.626311}
+    Rotation: {x: 78.685631, y: -0.214194, z: -91.070404}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8a48bca8-784a-45b3-81db-4c7345a50c9d
+- !<SceneObject/787cee90-e062-4b8d-9eef-1743ed4e312d>
+  PrefabRemaps:
+    []
+  Name: tofu
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.854296, y: 0.245463, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> cb0e3018-8431-4f97-93d6-76864ad12c48
 - !<ScriptComponent/787d361d-bfe6-4deb-add5-e02dc6215ac0>
   PrefabRemaps:
     []
@@ -2433,6 +3173,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/7b54a6dc-3353-4bae-89a3-b19527473b1d>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.473759, y: -1.744346, z: -1.812568}
+    Rotation: {x: 90.000000, y: -20.604940, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 580c40a3-7c2d-4f2b-9c06-2ac140f131fc
 - !<SceneObject/7bd21465-b1e7-4bc2-9c0e-eb3c74b7e1e5>
   PrefabRemaps:
     []
@@ -2448,6 +3203,57 @@
     []
   Components:
     - !<own> 9f84b132-a959-4263-a940-c9c3bb2d3a17
+- !<RenderMeshVisual/7c72e159-a02c-43f8-a50e-e3a96a1ec5c4>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 7bd10464-1cad-437a-9be6-0654fbb3db11
+  Mesh: !<reference> d22354e7-e09f-4877-9a40-aef7eb6ab594
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ScriptComponent/7e4eac68-4eef-4818-adc6-5129fb89502d>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/7e9f04e8-d167-496c-9c30-ec7e1eacd3fd>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.230504, y: 0.708263, z: -1.596838}
+    Rotation: {x: 90.000000, y: 19.404789, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> af4e968e-052e-46e9-b9e3-30ec2ee812ac
 - !<SceneObject/7f862e4e-512e-4e41-5fdb-b4f8c327d39b>
   PrefabRemaps:
     - 72305a0c-8727-44ab-72be-e5b55bc78462: 6ba934c7-57bd-43ba-7a0e-123c65154a55
@@ -2469,6 +3275,21 @@
     - !<own> 8057101c-6365-49da-6e9f-2cdaf4e2251b
   Components:
     []
+- !<SceneObject/8028982b-238c-4362-9e98-4abb9bf45e9f>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.230504, y: 0.708263, z: -1.596838}
+    Rotation: {x: 90.000000, y: 19.404789, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3877b506-c3fc-451a-a6bf-e258bb0e9f45
 - !<SceneObject/8034200a-4f08-4790-42a3-9ec68aa4ed40>
   PrefabRemaps:
     []
@@ -2517,6 +3338,21 @@
     []
   Components:
     - !<own> c5ef8218-25d8-4664-6048-28a689eec157
+- !<SceneObject/8138cbec-6ec6-4b98-90d9-e7f454198f8a>
+  PrefabRemaps:
+    []
+  Name: Empty (Beef)
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<RenderMeshVisual/8190012f-2169-4d4f-bcb7-cd7fdbc5ba9e>
   PrefabRemaps:
     []
@@ -2712,6 +3548,41 @@
     []
   Components:
     - !<own> fc7bb1ca-46ec-4cff-70e7-e8d107bcb1f2
+- !<RenderMeshVisual/8a48bca8-784a-45b3-81db-4c7345a50c9d>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/8c0dec24-80f2-4b88-a21b-634d6541c386>
+  PrefabRemaps:
+    []
+  Name: bay_leaf 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 180.000000}
+    Scale: {x: 1.500000, y: 1.500000, z: -1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ea39aa33-9c2d-4f11-8110-21831c6c97cd
 - !<RenderMeshVisual/8c6de0b8-025a-4b81-a841-28c3d3644a9b>
   PrefabRemaps:
     []
@@ -2836,6 +3707,51 @@
     - !<own> 3100c43b-da25-4800-7376-01b99b9d1e13
   Components:
     []
+- !<SceneObject/9496ea7d-62ed-4e1d-97fb-aeecc868972f>
+  PrefabRemaps:
+    []
+  Name: LeekPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 1add93c5-9a93-427f-956c-e8ba7f03b30a
+  Components:
+    - !<own> 17dd1a64-1b5d-406e-9ead-7e066caa72c1
+- !<SceneObject/969d55c9-8dd2-4809-905b-9375235830ff>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.473759, y: -1.744346, z: -1.812568}
+    Rotation: {x: 90.000000, y: -20.604940, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4429ac80-f2a9-4307-b894-697d70ea6eb4
+- !<SceneObject/979658ad-925c-422b-9884-fc4d441168d0>
+  PrefabRemaps:
+    []
+  Name: PotatoPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 3c07799d-7581-49e5-ad7e-33199910625a
+  Components:
+    - !<own> 4b05339f-aed2-4d30-a37a-1a1c039ee1e9
 - !<ObjectPrefabAssetData/987d2141-1e4f-438f-8464-a582e6895e0c>
   Prototype: !<ObjectOwner/9b779c2e-18c5-4836-bec5-176994789fcb>
     PackagePath: ""
@@ -2856,6 +3772,63 @@
     []
   Components:
     - !<own> 345611d3-3aa3-4f32-b90b-2dbbfbe5a9ae
+- !<SceneObject/998adee9-e7e6-44c6-ad08-a24b539f0e0a>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.473759, y: -1.744346, z: -1.812568}
+    Rotation: {x: 90.000000, y: -20.604940, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 17d260d2-2890-4ba4-9b93-3f2bda3098fe
+- !<SceneObject/9aac61bd-fdc4-4b40-bf50-8a1cc2d6fa9f>
+  PrefabRemaps:
+    []
+  Name: SpinachPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> bf1179c1-7c29-45d3-b3fa-6f7a1414fc1d
+  Components:
+    - !<own> eaf6c9b3-d724-43a0-a8ba-45f8e8fd84c3
+- !<SceneObject/9b1035bb-1bf5-47cf-8e1e-8e45dfae0d79>
+  PrefabRemaps:
+    []
+  Name: PastaPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000010, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 49c9a7a8-bda2-48f4-af10-a2bf4303065f
+    - !<own> 998adee9-e7e6-44c6-ad08-a24b539f0e0a
+    - !<own> c356b263-22ed-44db-813c-83714b06967b
+    - !<own> 5d4d87e8-1d78-4f80-9b9f-24ee9c33c985
+    - !<own> 7b54a6dc-3353-4bae-89a3-b19527473b1d
+    - !<own> 7e9f04e8-d167-496c-9c30-ec7e1eacd3fd
+    - !<own> 77b8a89f-c8c9-4a99-a3ad-b5eebc4c6cb5
+    - !<own> cf251f48-2650-4989-a42e-07b9603da62d
+    - !<own> 110bbb6c-6a5b-41ca-b556-ffa76bb341e2
+    - !<own> 22a9f3fd-9ac5-48ec-8441-a757902441e8
+    - !<own> 969d55c9-8dd2-4809-905b-9375235830ff
+    - !<own> 8028982b-238c-4362-9e98-4abb9bf45e9f
+    - !<own> 3bd67ff9-1e80-48fe-9071-5eaa557cfdbe
+  Components:
+    - !<own> 9cd5a380-1375-45f6-8fc3-66ea40735548
 - !<ScriptComponent/9b382df3-aeb1-4e99-7495-befe7c17581f>
   PrefabRemaps:
     []
@@ -2999,6 +3972,22 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScriptComponent/9cd5a380-1375-45f6-8fc3-66ea40735548>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ColliderComponent/9f0e52af-c609-49fd-8e84-4f2b7e28799b>
   PrefabRemaps:
     []
@@ -3017,6 +4006,22 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: false
+- !<ScriptComponent/9f595069-ff53-41f6-8b58-20f0a123c074>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/9f7bc545-2db2-4f24-bc32-da15022c555d>
   PrefabRemaps:
     []
@@ -3150,6 +4155,37 @@
     []
   Components:
     - !<own> 31bb23b9-4e92-48f3-8059-eeebf63f2d2b
+- !<SceneObject/a65fe56c-3313-4671-8e32-5850b7e5b1c1>
+  PrefabRemaps:
+    []
+  Name: MASHROOM
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -1.125158}
+    Rotation: {x: 90.000000, y: -0.000022, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c774b763-3d1d-493f-8e2a-3bc261cbc679
+- !<ScriptComponent/a6638a7e-f51e-45df-a25e-9670cc9e28b8>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/a6862b88-c9e2-4674-79b8-e8d44f9880d4>
   PrefabRemaps:
     []
@@ -3252,6 +4288,22 @@
     []
   Components:
     - !<own> 9307e8b5-2c3f-4016-719e-3db64a58516f
+- !<ScriptComponent/a90a5dd7-763e-404d-be31-225dc91912f8>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/a9af13e1-1aa9-4fa3-a8ab-8e76703a8e93>
   PrefabRemaps:
     []
@@ -3267,6 +4319,26 @@
     []
   Components:
     - !<own> c87852c0-0dc4-41a4-af66-a3dacd00149f
+- !<RenderMeshVisual/aa204ebc-f22f-4da7-950a-c2d23b867359>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> b3af2ef4-dba8-4e3c-a8f3-27030feffcf0
+  Mesh: !<reference> ba6521b2-512c-4c68-a557-54ecddc1879a
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<Text/ab588040-fe9f-44a7-8646-c8f4ec4777b7>
   PrefabRemaps:
     []
@@ -3423,6 +4495,26 @@
     []
   Components:
     - !<own> 0173ed1a-bbc6-4a44-9768-6198d980ad0f
+- !<RenderMeshVisual/af4e968e-052e-46e9-b9e3-30ec2ee812ac>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/b10dff8c-cdd8-4868-ba51-9badee2552e9>
   PrefabRemaps:
     []
@@ -3691,6 +4783,7 @@
       recipeName: !<reference.Text> 6029004f-e121-47cb-aec7-61d3f1e605e3
       coverInstructions: !<reference.Text> 53d69e24-1850-4207-8b59-823558fab574
       nextIngredientButtonText: !<reference.Text> 1dcf0e72-3a5f-4606-913e-29bcaaa777ff
+      chefIngredientPosition: !<reference.SceneObject> 5e84dd15-649a-4d6a-887c-d4003b7bdf17
       apprenticeInstructions: !<reference.SceneObject> a413b569-d876-4a73-ac16-7344fd5cc89a
       ingredientParentObject: !<reference.SceneObject> c99be7e1-7425-4f67-a4e2-de94bda50161
       topInstructionTextPanel: !<reference.Text> 0d332d14-4933-41ee-8816-013e7bf2a302
@@ -3766,6 +4859,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/bf1179c1-7c29-45d3-b3fa-6f7a1414fc1d>
+  PrefabRemaps:
+    []
+  Name: spinach
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.233289, y: -0.593112, z: 0.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 03cf1df2-5b84-4c61-b29d-e6445d07b0b0
 - !<SceneObject/bfdca8c5-2bc7-43ed-a2f1-a957503ad4b1>
   PrefabRemaps:
     []
@@ -3801,6 +4909,57 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<RenderMeshVisual/c30e9702-ae5a-4138-a1be-63346cdefa15>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> d4bd745c-1cdb-4508-b150-aa71329cfd14
+  Mesh: !<reference> 306d90d5-ea63-449f-8ea0-7363bb12cedc
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/c356b263-22ed-44db-813c-83714b06967b>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.230504, y: 0.708263, z: -1.596838}
+    Rotation: {x: 90.000000, y: 19.404789, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 56bb16bb-efcc-4b53-b6c2-c955c204180d
+- !<ScriptComponent/c53a3a7c-c1a7-49ef-8099-1b0f6b3a51ad>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<Text/c5a58fa7-6282-461e-9302-fb574c1fd239>
   PrefabRemaps:
     []
@@ -3882,6 +5041,21 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/c5c01a04-5747-4f19-81d8-aec71c649db4>
+  PrefabRemaps:
+    []
+  Name: noodle
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -1.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c30e9702-ae5a-4138-a1be-63346cdefa15
 - !<Text/c5ef8218-25d8-4664-6048-28a689eec157>
   PrefabRemaps:
     []
@@ -3963,6 +5137,41 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<RenderMeshVisual/c774b763-3d1d-493f-8e2a-3bc261cbc679>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac602355-9ea4-4de8-9926-6d3ae95c05a8
+  Mesh: !<reference> b81c8545-f254-47fa-9570-bf1e4660bca5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/c7d8c66f-28f8-4048-905b-e05582f4abe7>
+  PrefabRemaps:
+    []
+  Name: Onion
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 0.750000, y: 0.750000, z: 0.750000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 13296d0a-3ad9-4f33-a6e5-f22129f8fee2
 - !<Text/c87852c0-0dc4-41a4-af66-a3dacd00149f>
   PrefabRemaps:
     []
@@ -4116,6 +5325,141 @@
     []
   Components:
     - !<own> 3a8c6048-684e-48cc-41b1-2b6112cc1471
+- !<RenderMeshVisual/cb0e3018-8431-4f97-93d6-76864ad12c48>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/cdad1f34-f064-49a8-98fa-febe4124c2af>
+  PrefabRemaps:
+    []
+  Name: CarrotPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.000003, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5032d139-29de-450d-98a4-71c986f0a472
+  Components:
+    - !<own> a6638a7e-f51e-45df-a25e-9670cc9e28b8
+- !<SceneObject/cdcfb68b-ffd1-4132-a282-74b1a82b5dc6>
+  PrefabRemaps:
+    []
+  Name: TomatoPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 43d5cb69-78d4-402e-a70b-474c0d015da6
+  Components:
+    - !<own> 19d33ed1-3502-4923-8ccb-e2eeaeee4273
+- !<RenderMeshVisual/ce5a8659-537a-4c23-8964-10f6da095725>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/ce75356e-f54f-4cde-b77b-747b2f2e9d7a>
+  PrefabRemaps:
+    []
+  Name: BaconPrefab
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 130f40ab-33aa-4fc0-8e9d-ede055f5b5d5
+  Components:
+    - !<own> fee88a2f-4ac1-4ea0-bc16-a4a04ef2b6bf
+- !<RenderMeshVisual/ceed8f1d-f344-4cd7-b922-aa6a92341b1a>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 56d4ac8d-2111-4efd-bca3-2072d98e0d2e
+  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/cf251f48-2650-4989-a42e-07b9603da62d>
+  PrefabRemaps:
+    []
+  Name: ButterflyPasta 1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.473759, y: -1.744346, z: -1.812568}
+    Rotation: {x: 90.000000, y: -20.604940, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 27cac8af-526c-4e3a-a149-dbfe638a422a
+- !<SceneObject/d2a1512a-54ac-4f53-8cc2-014981901321>
+  PrefabRemaps:
+    []
+  Name: tofu 2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.187553, y: -1.201386, z: 0.000000}
+    Rotation: {x: 92.341301, y: -1.078336, z: 22.651888}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d893def6-08d9-4a14-aadf-2fc448bc3bf1
 - !<Text/d589138b-ca4c-4bac-8943-aa4c6897d3c6>
   PrefabRemaps:
     []
@@ -4292,6 +5636,26 @@
     - !<own> 81a33a94-e9c2-4610-778c-939e969fe087
     - !<own> 7382781c-4bfe-4d7c-8169-4f2016eed01c
     - !<own> d7753176-a061-4825-b56d-870c15ffbe84
+- !<RenderMeshVisual/d893def6-08d9-4a14-aadf-2fc448bc3bf1>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/d8fd5414-af26-4064-a2f9-a92d67d0196c>
   PrefabRemaps:
     []
@@ -4332,6 +5696,26 @@
   Materials:
     - !<reference> 420e3f6e-6523-4294-b19a-3533065960c4
   Mesh: !<reference> bb888944-3ea3-4ec3-b6ca-8309252dac96
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/da9c92f0-1fc9-4bee-9b39-d166571e2281>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 897a574c-eeb2-4d29-a40a-b217652fb266
+  Mesh: !<reference> 3208046c-d2b4-4044-8b3b-637c567eac23
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
@@ -4414,6 +5798,21 @@
   Components:
     - !<own> 09f6ef4d-384c-4552-5fc9-1eb6b1626397
     - !<own> bd8c4cab-0197-4d4e-a717-0aa5da4fe37d
+- !<SceneObject/dd5d5193-ceb1-428c-b39e-09d2c723444c>
+  PrefabRemaps:
+    []
+  Name: bay_leaf
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ceed8f1d-f344-4cd7-b922-aa6a92341b1a
 - !<RenderMeshVisual/de3f9ab3-9add-494c-5205-035a60d18903>
   PrefabRemaps:
     []
@@ -4475,6 +5874,26 @@
     []
   Components:
     []
+- !<RenderMeshVisual/e0d7619b-0673-4ca4-adea-b4943f49f0dc>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/e213f833-9549-42e8-5f50-efe7ce35c197>
   PrefabRemaps:
     - 240121d8-f03f-41d1-6c9d-9ec09484425b: 1af11b7e-1873-42d0-781c-e7c5c3fe6cf0
@@ -4682,6 +6101,41 @@
     - !<own> f1a8401f-bfde-48bd-b2cc-63cc3c32d107
     - !<own> 53320f55-bcd7-48c8-93a8-11282f851185
     - !<own> d8fd5414-af26-4064-a2f9-a92d67d0196c
+- !<SceneObject/e69da6eb-7019-4d15-8496-e24c2bf3a67d>
+  PrefabRemaps:
+    []
+  Name: celery
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7c72e159-a02c-43f8-a50e-e3a96a1ec5c4
+- !<RenderMeshVisual/e6fab284-ba04-4bad-ad71-6e02a1ac9f1c>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 97e432ee-f0e4-4d99-93c4-6e3b9c9e95e6
+  Mesh: !<reference> 0e438df2-2622-4595-b6f7-c25995efaa38
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<RenderMeshVisual/e8f2d1bb-311b-440b-b14a-91c0c171b952>
   PrefabRemaps:
     []
@@ -4697,6 +6151,26 @@
   Materials:
     - !<reference> 6fbd8dd3-06bf-4b0d-a192-203029e4cc9c
   Mesh: !<reference> 8b2a4d6f-3d8f-4d84-bd75-837c97566522
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/ea39aa33-9c2d-4f11-8110-21831c6c97cd>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 56d4ac8d-2111-4efd-bca3-2072d98e0d2e
+  Mesh: !<reference> f9e58eef-f5ac-4ba2-aa3f-dddba2ae569d
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
@@ -4722,6 +6196,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/eaf6c9b3-d724-43a0-a8ba-45f8e8fd84c3>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/ec1943fa-7ba7-4670-727f-17215b88269d>
   PrefabRemaps:
     - ccef29a1-66ce-4573-8fa0-e3d5ac57054e: 1af11b7e-1873-42d0-781c-e7c5c3fe6cf0
@@ -4957,6 +6447,26 @@
     []
   Components:
     - !<own> 870c23a8-201c-4592-8b69-2ff71577d0e4
+- !<RenderMeshVisual/f9391456-62b8-4846-9562-bcaa4b866a2a>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 8d92d283-f6d9-4f3a-8086-133a39a775fe
+  Mesh: !<reference> e476b87a-8e91-40aa-8664-a937ba930277
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/fad0eca0-7bf3-43f1-4927-1ee0731d3aa3>
   PrefabRemaps:
     []
@@ -5144,3 +6654,19 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/fee88a2f-4ac1-4ea0-bc16-a4a04ef2b6bf>
+  PrefabRemaps:
+    []
+  Name: IngredientRotation
+  Enabled: true
+  ScriptAsset: !<reference> ea8c23d7-82b8-4f68-a96b-cfbd58f24f06
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}

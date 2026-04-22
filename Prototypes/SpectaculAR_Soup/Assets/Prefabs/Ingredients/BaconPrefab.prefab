@@ -1,63 +1,10 @@
-- !<ObjectPrefab/9010cb8f-153d-4322-9be3-49c4b170a332>
+- !<ObjectPrefab/2b593446-406f-4886-921f-1f2829be1285>
   PackagePath: ""
   objects:
-    - !<own> e4201b1d-1544-49e6-bd09-ca82cc602746
+    - !<own> aeb2488e-16c3-43eb-b7c2-06948c917a48
   LazyLoading: false
   RetainAssets: true
-- !<ScriptComponent/0216b310-1ee5-4993-8ccc-2680f96bf91f>
-  PrefabRemaps:
-    []
-  Name: Ingredient
-  Enabled: true
-  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
-  ScriptInputsDefault:
-    ingredientEnumNumber: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      ingredientEnumNumber: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/08d61eca-14d6-4ffe-a1a6-242962736c7a>
-  PrefabRemaps:
-    []
-  Name: Interactable
-  Enabled: true
-  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
-  ScriptInputsDefault:
-    targetingVisual: true
-    ignoreInteractionPlane: true
-    keepHoverOnTrigger: true
-    enableInstantDrag: true
-    isScrollable: true
-    allowMultipleInteractors: true
-    enablePokeDirectionality: true
-    acceptableXDirections: true
-    acceptableYDirections: true
-    acceptableZDirections: true
-    useFilteredPinch: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      targetingMode: !<float> 1.000000
-      targetingVisual: !<float> 1.000000
-      ignoreInteractionPlane: false
-      keepHoverOnTrigger: false
-      enableInstantDrag: false
-      isScrollable: false
-      allowMultipleInteractors: true
-      enablePokeDirectionality: false
-      acceptableXDirections: !<float> 0.000000
-      acceptableYDirections: !<float> 0.000000
-      acceptableZDirections: !<float> 1.000000
-      useFilteredPinch: false
-  ScriptTypes:
-    "":
-      {}
-- !<RenderMeshVisual/71e6f7ea-d651-460b-99e9-6a6c76677541>
+- !<RenderMeshVisual/050c81b3-9bb3-4388-823a-4f4418115588>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -77,23 +24,7 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/7eb5b673-1203-4b85-8f87-e884dea61cee>
-  PrefabRemaps:
-    []
-  Name: IngredientTrigger
-  Enabled: true
-  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/b419b02a-72d2-4501-b8a5-ecae0eb83096>
+- !<ScriptComponent/536bae31-7894-4aef-a922-e27731aa2600>
   PrefabRemaps:
     []
   Name: InteractableManipulation
@@ -149,33 +80,44 @@
   ScriptTypes:
     "":
       {}
-- !<SceneObject/e4201b1d-1544-49e6-bd09-ca82cc602746>
+- !<ScriptComponent/67c10a54-da37-485a-8f52-b66cffd88fe7>
   PrefabRemaps:
-    - 0216b310-1ee5-4993-8ccc-2680f96bf91f: 22a456cd-6d59-42e8-9908-9737a61e0ac6
-    - 08d61eca-14d6-4ffe-a1a6-242962736c7a: 394385f3-3375-4697-aa5e-282399450147
-    - 71e6f7ea-d651-460b-99e9-6a6c76677541: 8b11d9b3-37d1-48af-b6af-806de2e20d48
-    - 7eb5b673-1203-4b85-8f87-e884dea61cee: bdefdd85-1993-4cd0-8984-ea86b4d36b7c
-    - b419b02a-72d2-4501-b8a5-ecae0eb83096: 11938426-01d5-43ea-b7f1-1e611fd745fb
-    - e4201b1d-1544-49e6-bd09-ca82cc602746: e55dd8b4-4774-45b3-bd61-d3eb424136bc
-    - e49370d2-f8f6-46b8-90e3-a0e1061cb170: 43a0bc2b-9863-4eb7-9803-457ddbcc28bf
-    - f7e66a2d-db21-4c9b-b9cd-5646bc0955c5: a4086cfe-98a8-45c5-939c-531f4b3c2829
-  Name: ChickenPrefab
+    []
+  Name: Interactable
   Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    - !<own> e49370d2-f8f6-46b8-90e3-a0e1061cb170
-  Components:
-    - !<own> f7e66a2d-db21-4c9b-b9cd-5646bc0955c5
-    - !<own> 0216b310-1ee5-4993-8ccc-2680f96bf91f
-    - !<own> 08d61eca-14d6-4ffe-a1a6-242962736c7a
-    - !<own> b419b02a-72d2-4501-b8a5-ecae0eb83096
-    - !<own> 7eb5b673-1203-4b85-8f87-e884dea61cee
-- !<SceneObject/e49370d2-f8f6-46b8-90e3-a0e1061cb170>
+  ScriptAsset: !<reference> 652e631a-22d0-4941-9f74-2943df59f34c
+  ScriptInputsDefault:
+    targetingVisual: true
+    ignoreInteractionPlane: true
+    keepHoverOnTrigger: true
+    enableInstantDrag: true
+    isScrollable: true
+    allowMultipleInteractors: true
+    enablePokeDirectionality: true
+    acceptableXDirections: true
+    acceptableYDirections: true
+    acceptableZDirections: true
+    useFilteredPinch: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 1.000000
+      targetingVisual: !<float> 1.000000
+      ignoreInteractionPlane: false
+      keepHoverOnTrigger: false
+      enableInstantDrag: false
+      isScrollable: false
+      allowMultipleInteractors: true
+      enablePokeDirectionality: false
+      acceptableXDirections: !<float> 0.000000
+      acceptableYDirections: !<float> 0.000000
+      acceptableZDirections: !<float> 1.000000
+      useFilteredPinch: false
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/79356aca-e64a-445c-85e6-ba3355cd94f0>
   PrefabRemaps:
     []
   Name: Bacon
@@ -189,8 +131,66 @@
   Children:
     []
   Components:
-    - !<own> 71e6f7ea-d651-460b-99e9-6a6c76677541
-- !<BodyComponent/f7e66a2d-db21-4c9b-b9cd-5646bc0955c5>
+    - !<own> 050c81b3-9bb3-4388-823a-4f4418115588
+- !<ScriptComponent/80e873fb-3425-47ea-830d-a58b0a2c62d8>
+  PrefabRemaps:
+    []
+  Name: IngredientTrigger
+  Enabled: true
+  ScriptAsset: !<reference> 57aac8bf-5c13-4d86-b3d5-383746e317ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/9e754ae9-0790-43d2-83a1-e69bef4de136>
+  PrefabRemaps:
+    []
+  Name: Ingredient
+  Enabled: true
+  ScriptAsset: !<reference> e787a32d-04d5-4674-a28c-fd8615903e47
+  ScriptInputsDefault:
+    ingredientEnumNumber: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      ingredientEnumNumber: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/aeb2488e-16c3-43eb-b7c2-06948c917a48>
+  PrefabRemaps:
+    - 050c81b3-9bb3-4388-823a-4f4418115588: 050c81b3-9bb3-4388-7dc5-b0bbe7eeaa77
+    - 536bae31-7894-4aef-a922-e27731aa2600: 536bae31-7894-4aef-56dd-1d88ce55d9ff
+    - 67c10a54-da37-485a-8f52-b66cffd88fe7: 67c10a54-da37-485a-70ad-499300277018
+    - 79356aca-e64a-445c-85e6-ba3355cd94f0: 79356aca-e64a-445c-7a19-45ccaa326b0f
+    - 80e873fb-3425-47ea-830d-a58b0a2c62d8: 80e873fb-3425-47ea-7cf2-5a74f5d39d27
+    - 9e754ae9-0790-43d2-83a1-e69bef4de136: 9e754ae9-0790-43d2-7c5e-196410b21ec9
+    - aeb2488e-16c3-43eb-b7c2-06948c917a48: aeb2488e-16c3-43eb-483d-f96b736e85b7
+    - d100b795-fed6-4b5a-a599-1b855270dd26: d100b795-fed6-4b5a-5a66-e47aad8f22d9
+  Name: BaconPrefab
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: -0.000014}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 79356aca-e64a-445c-85e6-ba3355cd94f0
+  Components:
+    - !<own> d100b795-fed6-4b5a-a599-1b855270dd26
+    - !<own> 9e754ae9-0790-43d2-83a1-e69bef4de136
+    - !<own> 67c10a54-da37-485a-8f52-b66cffd88fe7
+    - !<own> 536bae31-7894-4aef-a922-e27731aa2600
+    - !<own> 80e873fb-3425-47ea-830d-a58b0a2c62d8
+- !<BodyComponent/d100b795-fed6-4b5a-a599-1b855270dd26>
   PrefabRemaps:
     []
   Name: Physics Body
