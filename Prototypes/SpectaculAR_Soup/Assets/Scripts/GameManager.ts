@@ -11,8 +11,8 @@ import { distributeIngredients } from "./Ingredients/IngredientDistribution";
 export class GameManager extends BaseScriptComponent {
     private syncEntity: SyncEntity
     
-    private chefSelected = StorageProperty.manualBool("has chef been chose", false);
-    private currentChef = StorageProperty.manualString("", "");
+    private chefSelectedStorageProperty = StorageProperty.manualBool("chefChosenThisRound", false);
+    private currentChefStorageProperty = StorageProperty.manualString("currentChef", "");
     public starterRecipeComplete = StorageProperty.manualBool("starterRecipeComplete", false);
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("unusedRecipes", [])
 
@@ -36,8 +36,8 @@ export class GameManager extends BaseScriptComponent {
         this.syncEntity.notifyOnReady(() => this.onReady())
 
         // Initializing the Chef Variable
-        this.syncEntity.addStorageProperty(this.currentChef);
-        this.syncEntity.addStorageProperty(this.chefSelected)
+        this.syncEntity.addStorageProperty(this.currentChefStorageProperty);
+        this.syncEntity.addStorageProperty(this.chefSelectedStorageProperty)
         this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray);
         this.syncEntity.addStorageProperty(this.starterRecipeComplete);
     }
@@ -49,19 +49,19 @@ export class GameManager extends BaseScriptComponent {
         this.bindGameplayEvents()
 
         // Subscribe to synced chef property changes
-        this.currentChef.onAnyChange.add(() =>
+        this.currentChefStorageProperty.onAnyChange.add(() =>
         {
             print("Chef subscribed");
             this.amITheChef();
             print("Current Chef will change")
 
             // Spawn chef instructions with the recipe info
-            if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChef.currentOrPendingValue) {
+            if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChefStorageProperty.currentOrPendingValue) {
                 EventManager.SpawnChefInstructions.trigger(this.currentRecipeIngredientInfo || [])
             }
         })
 
-        this.chefSelected.onAnyChange.add(() =>
+        this.chefSelectedStorageProperty.onAnyChange.add(() =>
         {
             this.amITheChef();
         })
@@ -191,7 +191,7 @@ export class GameManager extends BaseScriptComponent {
 
     public RandomizePlayerRoles()
     {
-        if (this.chefSelected.currentOrPendingValue == true) return;
+        if (this.chefSelectedStorageProperty.currentOrPendingValue) return;
 
         this.RandomizeRecipe();
 
@@ -222,8 +222,8 @@ export class GameManager extends BaseScriptComponent {
 
     private assignChef(chefId: string)
     {
-        this.chefSelected.setPendingValue(true);
-        this.currentChef.setPendingValue(chefId);
+        this.chefSelectedStorageProperty.setPendingValue(true);
+        this.currentChefStorageProperty.setPendingValue(chefId);
         print("Picked chef connectionId = " + chefId);
     }
 
@@ -232,7 +232,7 @@ export class GameManager extends BaseScriptComponent {
     private amITheChef()
     {   
         // Turn off game start locally
-        if (this.chefSelected.currentOrPendingValue !== true) return;
+        if (!this.chefSelectedStorageProperty.currentOrPendingValue) return;
         this.gameStartButton.enabled = false;
     }
 
@@ -244,8 +244,8 @@ export class GameManager extends BaseScriptComponent {
 
     public gameStartButtonReset() {
         this.gameStartButton.enabled = true;
-        this.chefSelected.setPendingValue(false);
-        this.currentChef.setPendingValue("");
+        this.chefSelectedStorageProperty.setPendingValue(false);
+        this.currentChefStorageProperty.setPendingValue("");
     }
 
     private checkSoupCorrectness()
