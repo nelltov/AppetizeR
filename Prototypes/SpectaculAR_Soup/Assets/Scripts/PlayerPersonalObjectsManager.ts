@@ -119,6 +119,10 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             }
         })
 
+        EventManager.CheckSoupNetworkEvent.add(() => {
+            this.setObjectVisibility(this.nextIngredientButton, false)
+        })
+
         EventManager.PlayerVictoryNetworkEvent.add((_) => {
             this.resetSaltiePosition()
             this.setObjectVisibility(this.nextIngredientButton, false)

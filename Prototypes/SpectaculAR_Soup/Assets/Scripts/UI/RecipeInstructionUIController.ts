@@ -14,6 +14,10 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
     @input
     coverInstructions: Text
 
+    // Next ingredient button
+    @input
+    nextIngredientButtonText: Text
+
     // Ingredient portion
     @input
     apprenticeInstructions: SceneObject
@@ -120,6 +124,9 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
 
         // Just increment the index and call local events, network event will handle switching the UI to the next instruction
         this.currentIngredientIndex++
+        if (this.currentIngredientIndex === this.currentRecipeIngredients.length - 1) {
+            this.nextIngredientButtonText.text = "Finish"
+        }
         if (this.currentIngredientIndex === this.currentRecipeIngredients.length) {
             EventManager.SaltSoupLocalEvent.trigger()   // Add salt instructions
         }
@@ -203,6 +210,7 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.isChef = null
         this.currentRecipeIngredients = []
         this.currentIngredientIndex = -1
+        this.nextIngredientButtonText.text = "Next Ingredient"
     }
 
     private clearOutIngredientUI() {

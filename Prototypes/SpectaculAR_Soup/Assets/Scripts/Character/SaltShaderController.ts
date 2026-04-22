@@ -52,10 +52,10 @@ export class SaltShaderController extends BaseScriptComponent {
         // Shader params
         this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
 
-        EventManager.SoupPotIngredientCollisionNetworkEvent.add(() => {
+        // Heart eyes only when you add something to the pot
+        EventManager.SoupPotIngredientCollisionLocalEvent.add(() => {
            this.startHeartTime = getTime();
            this.cooldownHeart = Math.random() + 1.0;
-           print("Heard the ingredient collide. StartHeartTime is: " + this.startHeartTime);
         })
 
         // Reset saltie amount
