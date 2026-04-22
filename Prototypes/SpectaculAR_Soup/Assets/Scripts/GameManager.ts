@@ -51,9 +51,7 @@ export class GameManager extends BaseScriptComponent {
         // Subscribe to synced chef property changes
         this.currentChefStorageProperty.onAnyChange.add(() =>
         {
-            print("Chef subscribed");
             this.amITheChef();
-            print("Current Chef will change")
 
             // Spawn chef instructions with the recipe info
             if (SessionController.getInstance().getLocalUserInfo().connectionId === this.currentChefStorageProperty.currentOrPendingValue) {
@@ -101,6 +99,14 @@ export class GameManager extends BaseScriptComponent {
         })
 
         // UI-related events
+        EventManager.ChefStartedGameLocal.add(() => {
+            this.syncEntity.sendEvent("startGame", {})
+        })
+
+        this.syncEntity.onEventReceived.add("startGame", () => {
+            EventManager.ChefStartedGameNetwork.trigger()
+        })
+
         EventManager.NextInstructionLocalEvent.add(() => {
             this.syncEntity.sendEvent("nextInstruction", {})
         })

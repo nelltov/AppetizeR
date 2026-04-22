@@ -54,7 +54,7 @@ export class SaltShaderController extends BaseScriptComponent {
 
         EventManager.SoupPotIngredientCollisionNetworkEvent.add(() => {
            this.startHeartTime = getTime();
-           this.cooldownHeart = Math.random() + 0.5;
+           this.cooldownHeart = Math.random() + 1.0;
            print("Heard the ingredient collide. StartHeartTime is: " + this.startHeartTime);
         })
 

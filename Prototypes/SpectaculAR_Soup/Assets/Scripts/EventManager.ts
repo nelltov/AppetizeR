@@ -16,6 +16,8 @@ export class EventManager extends BaseScriptComponent {
     static SpawnChefInstructions = new EventWrapper<[IngredientInfo[]]>()
 
     // Chef progressing through recipe instructions and other players adding ingredients to soup
+    static ChefStartedGameLocal = new EventWrapper()
+    static ChefStartedGameNetwork = new EventWrapper()
     static NextInstructionNetworkEvent = new EventWrapper() 
     static NextInstructionLocalEvent = new EventWrapper()
     static SoupPotIngredientCollisionNetworkEvent = new EventWrapper<[IngredientInfo]>() 

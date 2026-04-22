@@ -28,11 +28,14 @@
   ScriptInputsHidden:
     cameraObject: false
     chefObjects: false
+    endGameButtons: false
     ingredientPositionsObject: false
     ingredientPrefabList: false
     instructionObject: false
+    nextIngredientButton: false
     nonChefObjects: false
     saltShaker: false
+    startButton: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -46,6 +49,9 @@
       cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       nonChefObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       chefObjects: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      startButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      nextIngredientButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      endGameButtons: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       instructionObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPositionsObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       ingredientPrefabList: !<reference.ObjectPrefab[]>
@@ -58,6 +64,9 @@
     - // @input SceneObject cameraObject
     - // @input SceneObject nonChefObjects
     - // @input SceneObject chefObjects
+    - // @input SceneObject startButton
+    - // @input SceneObject nextIngredientButton
+    - // @input SceneObject endGameButtons
     - // @input SceneObject instructionObject
     - // @input SceneObject ingredientPositionsObject
     - "// @input Asset.ObjectPrefab[] ingredientPrefabList"

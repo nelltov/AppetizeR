@@ -13,6 +13,12 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
 
     @input
     chefObjects: SceneObject
+    @input
+    startButton: SceneObject
+    @input
+    nextIngredientButton: SceneObject
+    @input
+    endGameButtons: SceneObject
 
     @input
     instructionObject: SceneObject
@@ -20,6 +26,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
     @input
     ingredientPositionsObject: SceneObject
     private ingredientPositions: SceneObject[]
+    private apprenticeIngredients: SceneObject[] = []
 
     @input
     ingredientPrefabList: ObjectPrefab[]
@@ -46,6 +53,7 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.ingredientPositions = this.ingredientPositionsObject.children
         this.resetPlayerIngredientObjects()
         this.saltieOriginalPositionSet = false
+        this.apprenticeIngredients = []
 
         // specifically hide on start, otherwise resetting should make them visible
         this.setObjectVisibility(this.nonChefObjects, false)  
@@ -78,10 +86,14 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                     let ingredientPrefab = this.ingredientPrefabList[ingredientIdx]
                     let parentToSpawnUnder = this.ingredientPositions[i]
                     if (ingredientPrefab && parentToSpawnUnder) {
-                        ingredientPrefab.instantiate(parentToSpawnUnder)
+                        let spawnedIngredient = ingredientPrefab.instantiate(parentToSpawnUnder)
+                        this.apprenticeIngredients.push(spawnedIngredient)
+                        spawnedIngredient.enabled = false   // don't enable them until game has started
                     }
                 }
             }
+
+            print(`apprentice ingredient length: ${this.apprenticeIngredients.length}`)
 
             // Show instructions
             this.setObjectVisibility(this.instructionObject, true)
@@ -91,15 +103,35 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
             this.setObjectVisibility(this.instructionObject, true)
             this.setObjectVisibility(this.nonChefObjects, false) 
             this.setObjectVisibility(this.chefObjects, true)
+            this.setObjectVisibility(this.startButton, true)
+        })
+
+        EventManager.ChefStartedGameNetwork.add(() => {
+            // Chef buttons
+            this.setObjectVisibility(this.startButton, false)
+            this.setObjectVisibility(this.nextIngredientButton, true)
+
+            // Make apprentice objects visible
+            if (this.apprenticeIngredients.length > 0) {
+                this.apprenticeIngredients.forEach((ingredient) => {
+                    ingredient.enabled = true
+                })
+            }
         })
 
         EventManager.PlayerVictoryNetworkEvent.add((_) => {
             this.resetSaltiePosition()
+            this.setObjectVisibility(this.nextIngredientButton, false)
+            this.setObjectVisibility(this.endGameButtons, true)
         })
 
         EventManager.ResetGameNetworkEvent.add(() => {
             this.resetPlayerIngredientObjects()
         })
+    }
+
+    public StartGame() {
+        EventManager.ChefStartedGameLocal.trigger()
     }
 
     private movePlatesToTable(centerPosition: vec3) {
@@ -120,6 +152,9 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
         this.resetSaltiePosition()
         this.setObjectVisibility(this.saltShaker, true)        // saltie model
         this.setObjectVisibility(this.chefObjects, false) 
+        this.setObjectVisibility(this.startButton, false) 
+        this.setObjectVisibility(this.nextIngredientButton, false) 
+        this.setObjectVisibility(this.endGameButtons, false) 
         this.setObjectVisibility(this.instructionObject, false)
 
         // Deactivate any existing ingredient objects under the ingredient positions
@@ -128,6 +163,9 @@ export class PlayerPersonalObjectsManager extends BaseScriptComponent {
                 this.setObjectVisibility(child, false)
             }
         }
+
+        // Clear out apprentice ingredients
+        this.apprenticeIngredients.splice(0, this.apprenticeIngredients.length)
     }
 
     private resetSaltiePosition() {

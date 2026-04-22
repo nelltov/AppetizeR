@@ -65,8 +65,18 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         })
 
         EventManager.SpawnPlayerIngredients.add((_: number[]) => {
-            this.showApprenticeInstructions()
+            this.showApprenticeCover()
             this.isChef = false
+        })
+
+        EventManager.ChefStartedGameNetwork.add(() => {
+            if (this.isChef == null) return
+            print("heart chef started game network instruction")
+            if (this.isChef) {
+                this.nextInstruction()
+            } else {
+                this.showApprenticeInstructions()
+            }
         })
 
         EventManager.NextInstructionNetworkEvent.add(() => {
@@ -102,6 +112,7 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         })
     }
 
+
     public nextInstruction() {
         if (this.isChef == null || !this.isChef || this.currentIngredientIndex >= this.currentRecipeIngredients.length + 2) {
             return
@@ -110,13 +121,11 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         // Just increment the index and call local events, network event will handle switching the UI to the next instruction
         this.currentIngredientIndex++
         if (this.currentIngredientIndex === this.currentRecipeIngredients.length) {
-            EventManager.SaltSoupLocalEvent.trigger()
-            print("Should Show Salting Instruction")
+            EventManager.SaltSoupLocalEvent.trigger()   // Add salt instructions
         }
         else if (this.currentIngredientIndex >= this.currentRecipeIngredients.length + 1) {
-            EventManager.CheckSoupLocalEvent.trigger()
-            print("Should Show Spin Instruction")
-        } else {  // still have more instructions to go through
+            EventManager.CheckSoupLocalEvent.trigger()  // Spin the lazy susan instructions
+        } else {  // Still have more instructions to go through
             EventManager.NextInstructionLocalEvent.trigger()
         }
     }
@@ -125,6 +134,13 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
         this.clearOutIngredientUI()
         this.setObjectVisibility(this.coverObject, true)
         this.currentRecipeIngredients = recipeIngredients
+        this.coverInstructions.text = "Click Start to Begin Instructions"
+    }
+
+    private showApprenticeCover() {
+        this.clearOutIngredientUI()
+        this.setObjectVisibility(this.coverObject, true)
+        this.coverInstructions.text = "Wait for the Head Chef \nto Start Cooking"
     }
 
     private showApprenticeInstructions() {
