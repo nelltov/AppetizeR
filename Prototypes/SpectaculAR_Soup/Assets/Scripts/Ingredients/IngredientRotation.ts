@@ -13,7 +13,7 @@ export class NewScript extends BaseScriptComponent {
 
     onStart() {
         this.sceneObj = this.getSceneObject()
-        this.rotateSpeed = Math.PI * 0.5
+        this.rotateSpeed = Math.PI * 0.25
     }
 
     onUpdate() {
