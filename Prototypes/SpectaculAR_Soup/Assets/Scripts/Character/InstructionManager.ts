@@ -11,6 +11,15 @@ export class InstructionManager extends BaseScriptComponent {
 
     private currentInstruction: number = 0
 
+    onAwake() {
+        let startEvent = this.createEvent("OnStartEvent")
+        startEvent.bind(() => { this.onStart() })
+    }
+
+    onStart() {
+        this.instructionStringHolderObject.lineSpacing = 0.75
+    }
+
     public nextInstruction() {
         this.currentInstruction += 1
 
