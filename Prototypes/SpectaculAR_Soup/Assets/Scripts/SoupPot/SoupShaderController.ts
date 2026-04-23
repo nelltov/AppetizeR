@@ -15,6 +15,8 @@ export class SoupShaderController extends BaseScriptComponent {
     @input
     private soupVFX: VFXComponent;
 
+    private sceneObj: SceneObject
+
      onAwake() {
         // Set up during Start event after all components are awake
         let startEvent = this.createEvent("OnStartEvent")
@@ -31,6 +33,8 @@ export class SoupShaderController extends BaseScriptComponent {
     }
 
     onStart() {
+        this.sceneObj = this.getSceneObject()
+
         // Rotation of soup
         const soupSurfaceMaterial = this.soupSurfaceObject.getComponent("Component.RenderMeshVisual").getMaterial(0)
         this.soupSurfaceShader = soupSurfaceMaterial.mainPass
@@ -39,6 +43,14 @@ export class SoupShaderController extends BaseScriptComponent {
 
         EventManager.UpdateSoupSwirlAmount.add((swirlAmount: number) => {
             this.soupSurfaceShader.swirlAmount = swirlAmount
+        })
+
+        // Rotate the entire pot
+        EventManager.UpdatePotRotation.add((rotation: number) => {
+            const currentRot = this.sceneObject.getTransform().getLocalRotation()
+            const additionalRot = quat.fromEulerVec(new vec3(0, rotation * Math.PI / 180, 0))
+            const newRot = additionalRot.multiply(currentRot)
+            this.sceneObject.getTransform().setLocalRotation(newRot)
         })
 
         // Ingredients being added to the soup

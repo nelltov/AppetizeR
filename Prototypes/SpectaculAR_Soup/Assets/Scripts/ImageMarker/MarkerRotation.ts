@@ -39,6 +39,7 @@ export class SoupStirring extends BaseScriptComponent {
             this.swirlAmount = lerp(this.swirlAmount, 0, smoothingAlpha / 5)
         }
 
+        EventManager.UpdatePotRotation.trigger(rotationSinceLastFrame)
         EventManager.UpdateSoupSwirlAmount.trigger(this.swirlAmount)
 
         // Update rotation value for next frame
