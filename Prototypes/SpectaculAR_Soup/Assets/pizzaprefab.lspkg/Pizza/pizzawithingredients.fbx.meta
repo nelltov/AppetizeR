@@ -1,0 +1,185 @@
+- !<AssetImportMetadata/a7bec66b-30f3-d7de-05fa-797143688da0>
+  ImportedAssetIds:
+    1672135959d4256e: !<reference> b5a5a43a-5fda-4d39-9f4a-7e8e65e43bd9
+    1da5601c499b61f8: !<reference> c79c0415-ec2d-4e24-ad73-e82db56d1d18
+    2028ca51e4a54211: !<reference> 3cab5aea-a4be-4ecf-a97a-b6347f5c61ae
+    3826509b8d9bfa35: !<reference> 16776614-0db3-43e5-a9c6-f89707122ae0
+    7a0dd5cd69df73fa: !<reference> 90a64bca-4386-487d-b5fa-e68e468a1f1b
+    Animations/BaseLayer: !<reference> 375ee434-6ee4-4e80-bfdc-2e01c0f8ce62
+    Meshes/ingredients: !<reference> 78dace8a-726d-457e-8aa7-e4e560df9ee6
+    Meshes/pizzabase: !<reference> 3699ec2b-7e3a-48da-8681-c8011ef532e5
+    Scene: !<reference> 9a18ef44-4bed-4252-8289-1e75a6fd9e5f
+    Textures/pizza_pizza_base: !<reference> bce2f05b-914f-4e4c-a144-5d01b8d2864e
+    Textures/pizza_pizza_normal: !<reference> 53c70e12-c571-4f26-bc65-9c0f20d9a1ee
+    a8549e4df77b8f60: !<reference> 23d7d1ce-15f3-477e-a555-87e4c1f24b23
+    d8b33c448169f2f8: !<reference> 8c0c0197-2ec9-4fdf-89ac-e3995ce8353c
+  ImporterName: FbxImporter
+  PrimaryAsset: !<reference> 9a18ef44-4bed-4252-8289-1e75a6fd9e5f
+  PackageType: LegacyPackage
+  LegacyPackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> 97392f9c-9e26-401d-a25e-427cb1fe0bd9
+  DependentFiles:
+    - pizza_pizza_base.png
+    - pizza_pizza_materialParams.png
+    - pizza_pizza_normal.png
+  ImporterSettings: !<FbxImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: false
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: false
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: false
+    ImportTangentsAndBinormals: false
+    RegenerateTangentsAndBinormals: false
+    RegenerateNormalsForSkinnedMeshes: false
+    ImportBlendShapeAnimation: false
+    ImportVertexAnimation: false
+    GeneratePivots: false
+    TriangulateNURBS: false
+    UseLegacyFbxLoader: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      png: Performance Compression
+    Overrides:
+      {}
+- !<RenderMeshVisual/16776614-0db3-43e5-5639-0768f8edd51f>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> 3699ec2b-7e3a-48da-8681-c8011ef532e5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/23d7d1ce-15f3-477e-5aaa-781b3e0db4dc>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 00000000-0000-0000-0000-000000000000
+  Mesh: !<reference> 78dace8a-726d-457e-8aa7-e4e560df9ee6
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<AnimationPlayer/3cab5aea-a4be-4ecf-5685-49cb80a39e51>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 375ee434-6ee4-4e80-bfdc-2e01c0f8ce62
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
+- !<SceneObject/8c0c0197-2ec9-4fdf-7653-1c66a317cac3>
+  PrefabRemaps:
+    []
+  Name: Pizza
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> b5a5a43a-5fda-4d39-60b5-81719a1bc426
+    - !<own> c79c0415-ec2d-4e24-528c-17d24a92e2e7
+  Components:
+    []
+- !<SceneObject/90a64bca-4386-487d-4a05-1971b975e0e4>
+  PrefabRemaps:
+    []
+  Name: pizzawithingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 8c0c0197-2ec9-4fdf-7653-1c66a317cac3
+  Components:
+    - !<own> 3cab5aea-a4be-4ecf-5685-49cb80a39e51
+- !<ObjectPrefabAssetData/97392f9c-9e26-401d-a25e-427cb1fe0bd9>
+  Prototype: !<ObjectOwner/be108c8b-b9f2-4827-a4e4-0ecf784f588b>
+    PackagePath: ""
+    objects:
+      - !<own> 90a64bca-4386-487d-4a05-1971b975e0e4
+- !<SceneObject/b5a5a43a-5fda-4d39-60b5-81719a1bc426>
+  PrefabRemaps:
+    []
+  Name: pizzabase
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.047472, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 2.664013, y: 2.664013, z: 2.664013}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 16776614-0db3-43e5-5639-0768f8edd51f
+- !<SceneObject/c79c0415-ec2d-4e24-528c-17d24a92e2e7>
+  PrefabRemaps:
+    []
+  Name: ingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -0.241174, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 23d7d1ce-15f3-477e-5aaa-781b3e0db4dc
