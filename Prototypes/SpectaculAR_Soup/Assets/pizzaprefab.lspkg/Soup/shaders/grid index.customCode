@@ -1,0 +1,23 @@
+input_vec2 uv;
+input_int grid;
+
+output_float index;
+
+void main()
+{
+    // soup
+    if (uv.x < 0.05 && uv.y < 0.05) {
+        index = 0.0;
+    } else {
+        // ingredient
+        float u = clamp(uv.x, 0.0, 0.99999);
+        float v = clamp(uv.y, 0.0, 0.99999);
+
+        float g = float(grid);
+
+        float x = floor(u * g);
+        float y = floor(v * g);
+
+        index = y * g + x;
+    }
+}
