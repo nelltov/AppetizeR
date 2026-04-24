@@ -1,0 +1,143 @@
+- !<AssetImportMetadata/3878e6cf-f024-d7ad-7050-1d496d6a8959>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> cbfb6fbc-0e28-45b5-83d8-5180846d51ca
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> cbfb6fbc-0e28-45b5-83d8-5180846d51ca
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> a732a3de-6df1-436e-9edb-04fc6e1d4f18
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/1be4cd92-47b2-4081-4dae-4b5bde8660ed>
+  PrefabRemaps:
+    []
+  Name: pizzabase
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 862b66f4-f1ef-4536-5410-36a7bc962d9c
+- !<SceneObject/3247b431-9869-4d29-48f7-eb838bd3d216>
+  PrefabRemaps:
+    []
+  Name: ingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 81bb21a0-1771-4f46-7221-a5d1e965cb7f
+- !<RenderMeshVisual/81bb21a0-1771-4f46-7221-a5d1e965cb7f>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> f54bde17-84ed-49a6-a059-548114129872
+  Mesh: !<reference> 78dace8a-726d-457e-8aa7-e4e560df9ee6
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/862b66f4-f1ef-4536-5410-36a7bc962d9c>
+  PrefabRemaps:
+    []
+  Name: component_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> f5ff4456-a638-4fb2-8e54-96a750cc23dd
+  Mesh: !<reference> 3699ec2b-7e3a-48da-8681-c8011ef532e5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/9626bfda-c5a9-43f6-7035-8c7b521741e2>
+  PrefabRemaps:
+    []
+  Name: pizzawithingredients
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d6991b4c-f7a8-43b0-43e6-aca999d6f5bb
+  Components:
+    - !<own> f3171f3e-3748-4721-784c-86a66759f2ea
+- !<ObjectPrefabAssetData/a732a3de-6df1-436e-9edb-04fc6e1d4f18>
+  Prototype: !<ObjectOwner/3aee1668-752c-4d07-8e04-a6b1c97ff842>
+    PackagePath: ""
+    objects:
+      - !<own> 9626bfda-c5a9-43f6-7035-8c7b521741e2
+- !<SceneObject/d6991b4c-f7a8-43b0-43e6-aca999d6f5bb>
+  PrefabRemaps:
+    []
+  Name: Pizza
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 5.000000, y: 5.000000, z: 5.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 1be4cd92-47b2-4081-4dae-4b5bde8660ed
+    - !<own> 3247b431-9869-4d29-48f7-eb838bd3d216
+  Components:
+    []
+- !<AnimationPlayer/f3171f3e-3748-4721-784c-86a66759f2ea>
+  PrefabRemaps:
+    []
+  Name: component_2
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 375ee434-6ee4-4e80-bfdc-2e01c0f8ce62
+      Name: BaseLayer
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 0.000000
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
