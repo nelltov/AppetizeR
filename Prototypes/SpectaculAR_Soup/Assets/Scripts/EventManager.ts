@@ -39,6 +39,7 @@ export class EventManager extends BaseScriptComponent {
     // Shader/Soup Pot actions
     static UpdateSoupSwirlAmount = new EventWrapper<[number]>()
     static UpdatePotRotation = new EventWrapper<[number]>()
+    static StartSaltieDialogue = new EventWrapper()
 
     // Add more events as needed, following the pattern above.
     // Specify the event name and the types of parameters it should accept.

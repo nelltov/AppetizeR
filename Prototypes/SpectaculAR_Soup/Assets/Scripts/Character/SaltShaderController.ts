@@ -13,6 +13,9 @@ export class SaltShaderController extends BaseScriptComponent {
     @input
     saltVFX: SceneObject
 
+    @input
+    startsTalking: boolean = false
+
     private saltAmount: number
     private pourThreshold: number
     private pourSpeed: number
@@ -21,9 +24,9 @@ export class SaltShaderController extends BaseScriptComponent {
     private tilt: number
     private pour: boolean
 
-    public cooldownHeart: number = 1;
-    private startHeartTime: number = 0;
-    private currentHeartDuration: number = 0;
+    public cooldownHeart: number = 1
+    private startHeartTime: number = 0
+    private currentHeartDuration: number = 0
 
     onAwake() {
         let startEvent = this.createEvent("OnStartEvent")
@@ -52,6 +55,29 @@ export class SaltShaderController extends BaseScriptComponent {
         // Shader params
         this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
 
+        // Saltie talking
+        this.faceShader.talk = this.startsTalking
+
+        EventManager.StartSaltieDialogue.add(() => {
+            print("Saltie start talking (confirmed position)")
+            this.faceShader.talk = true
+        })
+
+        EventManager.PlayerReadyEvent.add(() => {
+            print("Saltie stop talking (player ready)")
+            this.faceShader.talk = false
+        })
+
+        EventManager.CenterPositionSetLocal.add((_) => {
+            print("Saltie stop talking (obj spawn)")
+            this.faceShader.talk = false
+        })
+
+        EventManager.PlayerVictoryNetworkEvent.add((_) => {
+            print("Saltie start talking (victory)")
+            this.faceShader.talk = true
+        })
+
         // Heart eyes only when you add something to the pot
         EventManager.SoupPotIngredientCollisionLocalEvent.add(() => {
            this.startHeartTime = getTime();
@@ -62,6 +88,7 @@ export class SaltShaderController extends BaseScriptComponent {
         EventManager.ResetGameNetworkEvent.add(() => {
             this.saltAmount = 0.8
             this.saltShader.surfacelevel = this.calculateSurfaceLevel(this.wh, this.tilt, this.saltAmount)
+            this.faceShader.talk = false
         })
     }
 
