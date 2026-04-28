@@ -26,7 +26,10 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    gridObj: false
     imagePrefab: false
+    item_dimensions: false
+    selectedImageMaterial: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -37,8 +40,14 @@
     []
   DefaultScriptInputs:
     - imagePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      item_dimensions: !<Vec2> {x: 0.000000, y: 0.000000}
+      gridObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      selectedImageMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Asset.ObjectPrefab imagePrefab
+    - // @input vec2 item_dimensions
+    - // @input SceneObject gridObj
+    - // @input Asset.Material selectedImageMaterial

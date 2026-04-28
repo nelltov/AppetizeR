@@ -59,22 +59,18 @@ export class SaltShaderController extends BaseScriptComponent {
         this.faceShader.talk = this.startsTalking
 
         EventManager.StartSaltieDialogue.add(() => {
-            print("Saltie start talking (confirmed position)")
             this.faceShader.talk = true
         })
 
         EventManager.PlayerReadyEvent.add(() => {
-            print("Saltie stop talking (player ready)")
             this.faceShader.talk = false
         })
 
         EventManager.CenterPositionSetLocal.add((_) => {
-            print("Saltie stop talking (obj spawn)")
             this.faceShader.talk = false
         })
 
         EventManager.PlayerVictoryNetworkEvent.add((_) => {
-            print("Saltie start talking (victory)")
             this.faceShader.talk = true
         })
 
