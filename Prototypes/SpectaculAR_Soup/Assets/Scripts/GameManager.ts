@@ -17,9 +17,6 @@ export class GameManager extends BaseScriptComponent {
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("unusedRecipes", [])
 
     @input
-    camera: Camera
-
-    @input
     ingManager: IngredientManager
 
     @input
@@ -247,7 +244,7 @@ export class GameManager extends BaseScriptComponent {
 
     private GameReset()
     {
-        this.syncEntity.sendEvent('heardResetCondition')
+        this.syncEntity.sendEvent('heardResetCondition', {})
     }
 
     private GameEnd() {

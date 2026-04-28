@@ -2431,7 +2431,6 @@
     {}
   ScriptInputs:
     "":
-      camera: !<reference.Camera> 00000000-0000-0065-0000-000000000065
       ingManager: !<MappingBased.AssignableType> de907fe7-41e5-4f30-ba35-d742c9a13b53
       gameStartButton: !<reference.SceneObject> 674a36b3-5fef-4c20-86af-c487b5933096
   ScriptTypes:
@@ -3084,11 +3083,12 @@
   Enabled: true
   ScriptAsset: !<reference> 13e2c778-76ea-423e-a83f-d3808e0cdad8
   ScriptInputsDefault:
-    {}
+    isPizza: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
+      isPizza: false
       audioVictoryTrack: !<reference.AudioTrackAsset> 3cc661d0-e0cf-40c8-b19a-8bf03d61f2b5
       audioLoserTrack: !<reference.AudioTrackAsset> c24eecd1-6413-4d06-8e6d-44f0dec6acc0
       audioCollisionTrack: !<reference.AudioTrackAsset> cb03f2e6-1053-428a-a4ea-bdcc5e5d6d5e

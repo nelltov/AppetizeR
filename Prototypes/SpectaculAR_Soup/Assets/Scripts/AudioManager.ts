@@ -4,6 +4,8 @@ import { SyncEntity } from "SpectaclesSyncKit.lspkg/Core/SyncEntity";
 
 @component
 export class AudioManager extends BaseScriptComponent {
+    @input
+    isPizza: boolean = false
 
     private syncEntity: SyncEntity;
     private audio: AudioComponent;
@@ -31,6 +33,9 @@ export class AudioManager extends BaseScriptComponent {
         })
 
         EventManager.SoupPotIngredientCollisionNetworkEvent.add((_: IngredientInfo) => {
+            if (this.isPizza) {
+                return  // Don't play splash sound if this is the pizza prototype
+            }
             this.audio.audioTrack = this.audioCollisionTrack; 
             this.audio.play(1);
         })

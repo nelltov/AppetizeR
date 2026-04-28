@@ -26,7 +26,6 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    camera: false
     gameStartButton: false
     ingManager: false
   ScriptTypesHidden:
@@ -38,13 +37,11 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
-      ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+    - ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input Component.Camera camera
     - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
