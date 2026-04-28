@@ -79,7 +79,6 @@ export class RecipeInstructionUIController extends BaseScriptComponent {
 
         EventManager.ChefStartedGameNetwork.add(() => {
             if (this.isChef == null) return
-            print("heart chef started game network instruction")
             if (this.isChef) {
                 this.nextInstruction()
             } else {
