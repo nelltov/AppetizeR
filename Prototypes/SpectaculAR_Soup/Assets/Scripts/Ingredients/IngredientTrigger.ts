@@ -28,7 +28,7 @@ export class IngredientTrigger extends BaseScriptComponent {
         var otherObj = other?.overlap?.collider?.sceneObject
         if (isNull(otherObj)) return
 
-        if (otherObj && otherObj.name === "SoupCollider" && this.ingredient) {
+        if (otherObj && otherObj.name === "AddIngredientCollider" && this.ingredient) {
             EventManager.SoupPotIngredientCollisionLocalEvent.trigger(this.ingredient.getIngredientInfo())
             this.sceneObj.enabled = false    // Disable the ingredient object after collision
         }

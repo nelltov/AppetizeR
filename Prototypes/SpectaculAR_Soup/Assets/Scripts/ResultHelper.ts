@@ -1,22 +1,18 @@
-import { EventManager } from "./EventManager";
-import { GameManager } from "./GameManager";
+import { EventManager } from "./EventManager"
 
 @component
 export class ResultHelper extends BaseScriptComponent {
-  @input
-  dialogueObject: SceneObject | null
+    @input
+    dialogueObject: SceneObject | null
 
-  @input
-  dialogueText: Text | null
+    @input
+    dialogueText: Text | null
 
-  @input
-  winSFXObject : SceneObject | null
+    @input
+    winSFXObject : SceneObject | null
 
-  @input
-  loseSFXObject : SceneObject | null
-
-  @input
-  gameManager!: GameManager | null
+    @input
+    loseSFXObject : SceneObject | null
 
     onAwake(): void {
         let startEvent = this.createEvent("OnStartEvent")
@@ -33,18 +29,11 @@ export class ResultHelper extends BaseScriptComponent {
             if (isVictory) {
                 this.winSFXObject.enabled = true;
                 this.winSFXObject.getComponent("VFXComponent").restart()
-
-                if (this.gameManager?.starterRecipeComplete.currentValue) {
-                    this.dialogueText.text = "We've done it, Chefs! This \"Soup of the Day\" is perfect!"
-                } else {
-                    this.dialogueText.text = "That one was a warmup! Now make the real thing!"
-                }
+                this.dialogueText.text = "We've done it, Chefs! This \"Soup of the Day\" is perfect!"
             } else {
-                print("GM heard the Event Manager call for a loss")
-
-                this.dialogueText.text = "Oof, that's a... unique flavor."
                 this.loseSFXObject.enabled = true;
                 this.loseSFXObject.getComponent("VFXComponent").restart()
+                this.dialogueText.text = "Oof, that's a... unique flavor."
             }
         })
 

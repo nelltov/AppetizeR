@@ -29,6 +29,7 @@
     audioCollisionTrack: false
     audioLoserTrack: false
     audioVictoryTrack: false
+    isPizza: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,13 +39,15 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - audioVictoryTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+    - isPizza: false
+      audioVictoryTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
       audioLoserTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
       audioCollisionTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
+    - // @input bool isPizza
     - // @input Asset.AudioTrackAsset audioVictoryTrack
     - // @input Asset.AudioTrackAsset audioLoserTrack
     - // @input Asset.AudioTrackAsset audioCollisionTrack

@@ -13,6 +13,7 @@ export class SoupShaderController extends BaseScriptComponent {
     private ingredientList: Float32Array
 
     @input
+    @allowUndefined
     private soupVFX: VFXComponent;
 
     private sceneObj: SceneObject

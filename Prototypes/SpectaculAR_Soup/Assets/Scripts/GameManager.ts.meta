@@ -26,9 +26,9 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    camera: false
     gameStartButton: false
     ingManager: false
+    isPizza: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,13 +38,13 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
-      ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+    - ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      isPizza: false
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input Component.Camera camera
     - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
+    - // @input bool isPizza
