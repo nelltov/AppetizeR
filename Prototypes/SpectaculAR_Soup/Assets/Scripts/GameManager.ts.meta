@@ -28,6 +28,7 @@
   ScriptInputsHidden:
     gameStartButton: false
     ingManager: false
+    isPizza: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,9 +40,11 @@
   DefaultScriptInputs:
     - ingManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       gameStartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      isPizza: false
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AssignableType ingManager
     - // @input SceneObject gameStartButton
+    - // @input bool isPizza

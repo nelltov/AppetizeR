@@ -2,7 +2,7 @@ import { IngredientInfo, IngredientType } from "./Ingredients/Ingredient";
 
 export type Recipes = [string, IngredientInfo[]] 
 
-export const Recipe0: IngredientInfo[] = [
+const soupRecipe0: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Tofu),
     new IngredientInfo(IngredientType.Pasta),
     new IngredientInfo(IngredientType.Mushroom),
@@ -12,7 +12,7 @@ export const Recipe0: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Spinach)
 ]
 
-export const Recipe1: IngredientInfo[] = [
+const soupRecipe1: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Onion),
     new IngredientInfo(IngredientType.Celery),
     new IngredientInfo(IngredientType.Chicken),
@@ -22,20 +22,20 @@ export const Recipe1: IngredientInfo[] = [
     new IngredientInfo(IngredientType.Pasta)
 ]
 
-export const StarterRecipe: IngredientInfo[] = [
-    new IngredientInfo(IngredientType.Carrot),
-    new IngredientInfo(IngredientType.Chicken),
-    new IngredientInfo(IngredientType.Pasta),
+const pizzaRecipe0: IngredientInfo[] = [
+    new IngredientInfo(IngredientType.Bacon),
+    new IngredientInfo(IngredientType.Mushroom),
+    new IngredientInfo(IngredientType.Onion), 
+    new IngredientInfo(IngredientType.Spinach),
+    new IngredientInfo(IngredientType.Tomato),
+    new IngredientInfo(IngredientType.Chicken)
 ]
 
-export const recipeDictionary: Record<string, IngredientInfo[]> = {
-    "Auntie's Spicy Bisque": Recipe0,
-    "Grandma's Secret Soup": Recipe1,
-    "Starter Recipe": StarterRecipe
+export const soupRecipeDictionary: Record<string, IngredientInfo[]> = {
+    "Auntie's Spicy Bisque": soupRecipe0,
+    "Grandma's Secret Soup": soupRecipe1
 }
 
-export const ourRecipes : Recipes[] = [
-    ["Auntie's Spicy Bisque", Recipe0],
-    ["Grandma's Secret Soup", Recipe1],
-    ["Starter Recipe", StarterRecipe]
-]
+export const pizzaRecipeDictionary: Record<string, IngredientInfo[]> = {
+    "AppetizeR Special": pizzaRecipe0
+}

@@ -3,7 +3,7 @@ import { StorageProperty } from "SpectaclesSyncKit.lspkg/Core/StorageProperty"
 import { SessionController } from "SpectaclesSyncKit.lspkg/Core/SessionController"
 import { IngredientManager } from "./IngredientManager";
 import { EventManager } from "./EventManager";
-import { ourRecipes, recipeDictionary} from "./Recipes";
+import { soupRecipeDictionary, pizzaRecipeDictionary } from "./Recipes";
 import { IngredientInfo } from "./Ingredients/Ingredient";
 import { distributeIngredients } from "./Ingredients/IngredientDistribution";
 
@@ -13,7 +13,6 @@ export class GameManager extends BaseScriptComponent {
     
     private chefSelectedStorageProperty = StorageProperty.manualBool("chefChosenThisRound", false);
     private currentChefStorageProperty = StorageProperty.manualString("currentChef", "");
-    public starterRecipeComplete = StorageProperty.manualBool("starterRecipeComplete", false);
     private networkedUnusedRecipesArray = StorageProperty.manualStringArray("unusedRecipes", [])
 
     @input
@@ -21,6 +20,9 @@ export class GameManager extends BaseScriptComponent {
 
     @input
     public gameStartButton : SceneObject
+
+    @input
+    isPizza: boolean = false
     
     private currentRecipeIngredientInfo: IngredientInfo[] | null;
     private myID: string = ""
@@ -36,7 +38,6 @@ export class GameManager extends BaseScriptComponent {
         this.syncEntity.addStorageProperty(this.currentChefStorageProperty);
         this.syncEntity.addStorageProperty(this.chefSelectedStorageProperty)
         this.syncEntity.addStorageProperty(this.networkedUnusedRecipesArray);
-        this.syncEntity.addStorageProperty(this.starterRecipeComplete);
     }
 
     onReady() {
@@ -61,7 +62,7 @@ export class GameManager extends BaseScriptComponent {
             this.amITheChef();
         })
 
-        this.networkedUnusedRecipesArray.setPendingValue(ourRecipes.map((recipe) => recipe[0]))
+        this.networkedUnusedRecipesArray.setPendingValue(Object.keys(this.isPizza ? pizzaRecipeDictionary : soupRecipeDictionary))
     }
 
     /**
@@ -167,20 +168,15 @@ export class GameManager extends BaseScriptComponent {
 
     public RandomizeRecipe()
     {
-        const currentRecipes: string[] = [...this.networkedUnusedRecipesArray.currentOrPendingValue]
+        let currentRecipes: string[] = [...this.networkedUnusedRecipesArray.currentOrPendingValue]
 
         if (currentRecipes.length === 0)
         {
-            print("No recipes left!");
-            return;
+            print("No recipes left! - repopulating the array")
+            currentRecipes = Object.keys(this.isPizza ? pizzaRecipeDictionary : soupRecipeDictionary)
         }
 
         var recipeName = this.getRandomElement<string>(currentRecipes) as string;
-        
-        if (this.starterRecipeComplete.currentOrPendingValue == false) {
-            recipeName = "Starter Recipe";
-        }
-
         this.syncEntity.sendEvent("recipeSelected", { selectedRecipeName: recipeName })
 
         // Find and remove the chosen recipe
@@ -191,7 +187,7 @@ export class GameManager extends BaseScriptComponent {
         }
 
         // Update both local and networked state from the same source of truth
-        this.currentRecipeIngredientInfo = recipeDictionary[recipeName];
+        this.currentRecipeIngredientInfo = this.isPizza ? pizzaRecipeDictionary[recipeName] : soupRecipeDictionary[recipeName];
         this.networkedUnusedRecipesArray.setPendingValue(currentRecipes);
     }
 
@@ -280,7 +276,6 @@ export class GameManager extends BaseScriptComponent {
         }
 
         // Soup check passed
-        this.starterRecipeComplete.setPendingValue(true)
         EventManager.PlayerVictoryLocalEvent.trigger(true)
     }
 
